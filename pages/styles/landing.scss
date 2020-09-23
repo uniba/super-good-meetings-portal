@@ -6,4 +6,10 @@
   height: 100%;
   background-color: $background;
   color: $white;
+  padding: 24px 0px 160px 0px;
+
+  .hero_area {
+    background-size: 100%;
+    background-image: url("/images/background_hero.svg");
+  }
 }
