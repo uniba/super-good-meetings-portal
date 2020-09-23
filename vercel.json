@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/:match*", "destination": "https://supergoodmeetings.com/:match*" }
+  ]
+}
