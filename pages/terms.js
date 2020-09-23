@@ -370,6 +370,8 @@ export default function Terms() {
               </dl>
             </dd>
           </dl>
+
+          <p className={styles.caption}>2020年9月30日制定</p>
         </div>
       </Layout>
       <style jsx>{`
