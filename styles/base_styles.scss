@@ -2,6 +2,12 @@
 @import "typo.scss";
 @import "color.scss";
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: $JPtypo, "Hiragino Sans", "ヒラギノ角ゴシック",
     "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans",
