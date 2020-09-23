@@ -1,16 +1,15 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import Layout from "../components/layout";
 
-export default function Home() {
+export default function Privacy() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>プライバシーポリシー - SuperGoodMeetings</title>
       </Head>
       <Layout>
-        <div>トップページ</div>
+        <div>プライバシーポリシー</div>
       </Layout>
     </>
   );
