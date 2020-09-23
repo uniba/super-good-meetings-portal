@@ -1,0 +1,24 @@
+$JPtypo: "Noto Sans JP";
+$ENGtypo: "Open Sans";
+
+@mixin font-size($size) {
+  @if $size == "h1-pc" {
+    font-size: 32px;
+  } @else if $size == "h2-pc" {
+    font-size: 24px;
+  } @else if $size == "body-pc" {
+    font-size: 18px;
+  } @else if $size == "label-pc" {
+    font-size: 16px;
+  } @else if $size == "caption-pc" {
+    font-size: 14px;
+  } @else if $size == "h1-sp" {
+    font-size: 20px;
+  } @else if $size == "h2-sp" {
+    font-size: 16px;
+  } @else if $size == "body-sp" {
+    font-size: 13px;
+  } @else if $size == "caption-sp" {
+    font-size: 12px;
+  }
+}
