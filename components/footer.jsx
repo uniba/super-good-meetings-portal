@@ -36,12 +36,10 @@ const Footer = () => {
           </ul>
           <ul>
             <li>
-              <Link href="https://supergoodmeetings.com/login">
-                プライバシーポリシー
-              </Link>
+              <Link href="/privacy">プライバシーポリシー</Link>
             </li>
             <li>
-              <Link href="https://supergoodmeetings.com/login">利用規約</Link>
+              <Link href="/terms">利用規約</Link>
             </li>
           </ul>
         </div>

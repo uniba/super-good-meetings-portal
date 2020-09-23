@@ -17,10 +17,15 @@ $ENGtypo: "Open Sans";
     font-size: 18px;
     font-weight: 700;
     line-height: 27px;
-  } @else if $size == "label-pc" {
+  } @else if $size == "label-pc-bold" {
     font-style: normal;
     font-size: 16px;
     font-weight: 700;
+    line-height: 24px;
+  } @else if $size == "label-pc-medium" {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 500;
     line-height: 24px;
   } @else if $size == "caption-pc" {
     font-style: normal;
@@ -37,10 +42,15 @@ $ENGtypo: "Open Sans";
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
-  } @else if $size == "body-sp" {
+  } @else if $size == "body-sp-bold" {
     font-style: normal;
     font-size: 13px;
     font-weight: 700;
+    line-height: 19.5px;
+  } @else if $size == "body-sp-medium" {
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 500;
     line-height: 19.5px;
   } @else if $size == "caption-sp" {
     font-style: normal;

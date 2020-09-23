@@ -4,10 +4,12 @@ import styles from "./styles/header.module.scss";
 const Header = () => {
   return (
     <div className={styles.header}>
-      <h1>
-        <img src="/images/sgm_logo.png" alt="SuperGoodMeetings" />
-        <span>クローズドβ版</span>
-      </h1>
+      <Link href="/">
+        <h1>
+          <img src="/images/sgm_logo.png" alt="SuperGoodMeetings" />
+          <span>クローズドβ版</span>
+        </h1>
+      </Link>
       <ul className={styles.sessions}>
         <li>
           <Link href="https://supergoodmeetings.com/login">LOG IN</Link>
