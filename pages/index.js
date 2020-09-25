@@ -18,7 +18,9 @@ export default function Home() {
               <br />
               会議にしよう
             </h1>
-            <p>ミーティングのアジェンダが、プロジェクトをスムースに</p>
+            <p>
+              ミーティングのアジェンダが、<span></span>プロジェクトをスムースに
+            </p>
           </div>
 
           <div className={styles.service_about}>

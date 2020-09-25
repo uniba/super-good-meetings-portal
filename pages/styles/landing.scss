@@ -22,6 +22,12 @@
         color: $color;
       }
     }
+    @media screen and (max-width: 1000px) {
+      a {
+        @include font-size("h2-sp");
+        line-height: 40px;
+      }
+    }
   }
 }
 
@@ -49,6 +55,19 @@
     p {
       @include font-size("h2-pc");
       padding-bottom: 368px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      h1 {
+        font-size: 34px;
+      }
+      p {
+        @include font-size("h2-sp");
+        padding-bottom: 200px;
+        span {
+          display: block;
+        }
+      }
     }
   }
 
@@ -114,6 +133,7 @@
         padding-top: 48px;
         box-sizing: border-box;
         background-image: url("/images/background_about_project.svg");
+        background-size: cover;
         text-align: center;
         img {
           width: 183px;
@@ -135,6 +155,7 @@
         padding-top: 48px;
         box-sizing: border-box;
         background-image: url("/images/background_about_team.svg");
+        background-size: cover;
         text-align: center;
         img {
           width: 173px;
@@ -146,6 +167,86 @@
         }
         p {
           @include font-size("body-pc");
+        }
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: auto;
+      margin: auto 24px;
+      .story1 {
+        flex-direction: column;
+        margin-bottom: 0px;
+        figure {
+          width: auto;
+          margin: 0;
+        }
+        .content {
+          h2 {
+            @include font-size("h1-sp");
+            margin-bottom: 16px;
+          }
+          p {
+            @include font-size("body-sp-bold");
+          }
+        }
+      }
+      .bubbles {
+        position: relative;
+        width: 306px;
+        height: 736px;
+        margin: auto;
+        .bubble:nth-child(1) {
+          position: absolute;
+          top: 75px;
+          right: 0;
+          width: 265px;
+          height: 266px;
+          padding-top: 32px;
+          img {
+            width: 171px;
+          }
+          h3 {
+            @include font-size("h2-sp");
+          }
+          p {
+            @include font-size("body-sp-bold");
+          }
+        }
+        .bubble:nth-child(2) {
+          position: absolute;
+          top: 357px;
+          left: 0;
+          width: 265px;
+          height: 257px;
+          padding-top: 32px;
+          img {
+            width: 162px;
+          }
+          h3 {
+            @include font-size("h2-sp");
+          }
+          p {
+            @include font-size("body-sp-bold");
+          }
+        }
+      }
+      .story2 {
+        flex-direction: column;
+        margin-bottom: 80px;
+        figure {
+          width: auto;
+          margin: 0;
+        }
+        .content {
+          order: 2;
+          h2 {
+            @include font-size("h1-sp");
+            margin-bottom: 16px;
+          }
+          p {
+            @include font-size("body-sp-bold");
+          }
         }
       }
     }
@@ -173,6 +274,33 @@
         }
       }
     }
+
+    @media screen and (max-width: 1000px) {
+      width: auto;
+      margin: 0 24px 80px;
+      h2 {
+        @include font-size("h2-sp");
+        margin: 0 0 32px 0;
+      }
+      .items {
+        flex-wrap: wrap;
+        li {
+          @include font-size("body-sp-bold");
+          width: 50%;
+          box-sizing: border-box;
+          margin: 0;
+          margin-bottom: 20px;
+          padding-right: 16px;
+          figure {
+            img {
+              display: block;
+              margin: auto;
+              max-width: 280px;
+            }
+          }
+        }
+      }
+    }
   }
 
   .service_change {
@@ -190,11 +318,40 @@
       margin-bottom: 72px;
       li {
         margin-right: 40px;
+        margin-bottom: 20px;
         width: 233px;
         figure {
           margin: 0 0 16px 0;
           img {
             width: 100%;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: auto;
+      margin: auto 24px;
+      h2 {
+        @include font-size("h2-sp");
+        margin: 0 0 32px 0;
+      }
+      .items {
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        li {
+          @include font-size("body-sp-bold");
+          width: 50%;
+          box-sizing: border-box;
+          margin: 0;
+          margin-bottom: 20px;
+          padding-right: 16px;
+          figure {
+            img {
+              display: block;
+              margin: auto;
+              max-width: 260px;
+            }
           }
         }
       }
@@ -209,6 +366,7 @@
       margin-bottom: 80px;
       figure {
         margin: 0;
+        min-width: 64px;
         width: 64px;
         height: 64px;
         background: $white;
@@ -245,6 +403,33 @@
         }
       }
     }
+    @media screen and (max-width: 1000px) {
+      width: auto;
+      margin: 0 24px;
+      .pgs {
+        p {
+          margin-top: 0;
+          @include font-size("body-sp-bold");
+          a {
+            @include font-size("body-sp-bold");
+          }
+        }
+      }
+      .download {
+        width: auto;
+        margin: 0 auto 120px;
+        h2 {
+          @include font-size("h1-sp");
+        }
+        p {
+          @include font-size("body-sp-bold");
+          text-align: left;
+          img {
+            float: left;
+          }
+        }
+      }
+    }
   }
 
   .movie {
@@ -266,6 +451,22 @@
       height: 405px;
       border-radius: 24px;
       background: $secondary;
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: auto;
+      margin: 0 24px 120px;
+      h2 {
+        @include font-size("h1-sp");
+        span {
+          @include font-size("h1-sp");
+          font-style: oblique;
+        }
+      }
+    }
+    .dummymovie {
+      width: auto;
+      height: 300px;
     }
   }
 
@@ -329,6 +530,47 @@
       }
       .button {
         margin: 0 auto;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      display: block;
+      width: auto;
+      margin: auto 24px;
+      .user_community {
+        margin-right: 0;
+        margin-bottom: 40px;
+        padding: 40px;
+        @include font-size("body-sp-bold");
+        h2 {
+          @include font-size("h1-sp");
+        }
+        figure {
+          img {
+            height: 74px;
+          }
+        }
+        .text {
+          margin-bottom: 48px;
+          height: auto;
+        }
+      }
+      .contact_us {
+        margin-right: 0;
+        margin-bottom: 40px;
+        padding: 40px;
+        @include font-size("body-sp-bold");
+        h2 {
+          @include font-size("h1-sp");
+        }
+        figure {
+          img {
+            height: 74px;
+          }
+        }
+        .text {
+          margin-bottom: 48px;
+          height: auto;
+        }
       }
     }
   }
