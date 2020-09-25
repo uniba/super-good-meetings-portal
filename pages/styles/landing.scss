@@ -74,12 +74,13 @@
     }
 
     @media screen and (max-width: 1000px) {
+      margin-bottom: 80px;
       h1 {
         font-size: 34px;
       }
       p {
         @include font-size("h2-sp");
-        padding-bottom: 200px;
+        padding-bottom: 160px;
         span {
           display: block;
         }
@@ -194,7 +195,6 @@
     @media screen and (max-width: 1000px) {
       width: auto;
       margin: auto 24px;
-      background-size: contain;
 
       .story1 {
         flex-direction: column;
