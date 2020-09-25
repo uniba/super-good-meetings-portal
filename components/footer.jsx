@@ -11,27 +11,37 @@ const Footer = () => {
         <div className={styles.footer_navigation}>
           <ul>
             <li>
-              <Link href="https://supergoodmeetings.com/login">
-                サービス紹介
-              </Link>
+              <Link href="#about">サービス紹介</Link>
             </li>
             <li>
-              <Link href="https://supergoodmeetings.com/login">
-                お問い合わせ
+              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
+                <a target="_blank" rel="noopener">
+                  お問い合わせ
+                </a>
               </Link>
             </li>
           </ul>
           <ul>
             <li>
-              <Link href="https://supergoodmeetings.com/login">
-                ユーザーコミュニティ
+              <Link href="http://slack.projectsprint.org/">
+                <a target="_blank" rel="noopener">
+                  ユーザーコミュニティ
+                </a>
               </Link>
             </li>
             <li>
-              <Link href="https://supergoodmeetings.com/login">YouTube</Link>
+              <Link href="https://www.youtube.com/channel/UCOnbQVQNF5Q_7yjGZoNkFhw/">
+                <a target="_blank" rel="noopener">
+                  Youtube
+                </a>
+              </Link>
             </li>
             <li>
-              <Link href="https://supergoodmeetings.com/login">Note</Link>
+              <Link href="https://note.com/sgms/m/m3633f7f797e5">
+                <a target="_blank" rel="noopener">
+                  Note
+                </a>
+              </Link>
             </li>
           </ul>
           <ul>

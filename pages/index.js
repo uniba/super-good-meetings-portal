@@ -1,8 +1,29 @@
 import Head from "next/head";
 import Link from "next/link";
+import YouTube from "react-youtube";
 import styles from "./styles/landing.scss";
 
 import Layout from "../components/layout";
+
+function _onReady(event) {
+  // event.target.playVideo();
+  if (process.browser) {
+    console.log(document.getElementById("movieArea"));
+    document.getElementById("movieArea").addEventListener("click", function () {
+      let promise = new Promise((resolve, reject) => {
+        this.classList.add(styles.fadeout);
+        resolve("Hello ");
+      });
+      promise.then((msg) => {
+        return new Promise((resolve, reject) => {
+          this.classList.add(styles.displaynone);
+        });
+      });
+      console.log(this);
+      event.target.playVideo();
+    });
+  }
+}
 
 export default function Home() {
   return (
@@ -23,7 +44,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className={styles.service_about}>
+          <div id="about" className={styles.service_about}>
             <div className={styles.story1}>
               <figure>
                 <img
@@ -91,129 +112,131 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.service_effect}>
-            <h2>サービス導入による効果</h2>
-            <ul className={styles.items}>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_effect1.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                定例ミーティングの実施によってリズムが生まれ、プロジェクトを計画しやすくなります。
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_effect2.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                定期的に試しながら進めるため、フィードバックを得ながらプロジェクトを実行できます。
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_effect3.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                アジェンダをみんなで提案するので、プロジェクトにおける問題意識を共有できます。
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_effect4.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                プロジェクト全体のマイルストーンを常に意識でき、アップデートしやすくなります。
-              </li>
-            </ul>
-          </div>
+          <div className={styles.service_value}>
+            <div className={styles.service_effect}>
+              <h2>サービス導入による効果</h2>
+              <ul className={styles.items}>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_effect1.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  定例ミーティングの実施によってリズムが生まれ、プロジェクトを計画しやすくなります。
+                </li>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_effect2.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  定期的に試しながら進めるため、フィードバックを得ながらプロジェクトを実行できます。
+                </li>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_effect3.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  アジェンダをみんなで提案するので、プロジェクトにおける問題意識を共有できます。
+                </li>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_effect4.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  プロジェクト全体のマイルストーンを常に意識でき、アップデートしやすくなります。
+                </li>
+              </ul>
+            </div>
 
-          <div className={styles.service_change}>
-            <h2>サービス導入後の変化</h2>
-            <ul className={styles.items}>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change_project.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change1.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                変化を前提とし、 <br />
-                柔軟に対応できるように <br />
-                なります。
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change2.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                本質的な問題解決に向けて <br /> 進化しやすくなります。
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change3.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                課題や変化の兆しを <br /> 発見しやすくなります。
-              </li>
-            </ul>
-            <ul className={styles.items}>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change_team.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change4.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                進める際に最適な <br />
-                アプローチを <br /> 考えやすくなります。
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change5.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                自律的にプロジェクトを <br />
-                推進できるようになります。
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change6.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                メンバー全員での改善が <br />
-                行われやすくなります。
-              </li>
-            </ul>
+            <div className={styles.service_change}>
+              <h2>サービス導入後の変化</h2>
+              <ul className={styles.items}>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_change_project.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_change1.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  変化を前提とし、 <br />
+                  柔軟に対応できるように <br />
+                  なります。
+                </li>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_change2.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  本質的な問題解決に向けて <br /> 進化しやすくなります。
+                </li>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_change3.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  課題や変化の兆しを <br /> 発見しやすくなります。
+                </li>
+              </ul>
+              <ul className={styles.items}>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_change_team.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_change4.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  進める際に最適な <br />
+                  アプローチを <br /> 考えやすくなります。
+                </li>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_change5.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  自律的にプロジェクトを <br />
+                  推進できるようになります。
+                </li>
+                <li>
+                  <figure>
+                    <img
+                      src="/images/illust_change6.svg"
+                      alt="イメージイラスト"
+                    ></img>
+                  </figure>
+                  メンバー全員での改善が <br />
+                  行われやすくなります。
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className={styles.service_detail}>
@@ -237,7 +260,9 @@ export default function Home() {
               <h2>サービス紹介PDFをダウンロード</h2>
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
-                SuperGoodMeetings Introduction.pdf(2.4MB)
+                <Link href="https://drive.google.com/file/d/1kuO7A_Bas_U07_uWQuFUHZOHFS-YllN9/view">
+                  SuperGoodMeetings Introduction.pdf(2.4MB)
+                </Link>
               </p>
             </div>
           </div>
@@ -246,7 +271,21 @@ export default function Home() {
             <h2>
               動画でわかる、<span>SuperGoodMeetings</span>
             </h2>
-            <div className={styles.dummymovie}></div>
+            <div className={styles.dummymovie}>
+              <img
+                id="movieArea"
+                src="/images/movie_thumb.png"
+                alt="クリックで再生"
+              ></img>
+              <YouTube
+                videoId="gsYUS-lxhgE"
+                opts={{
+                  height: "200",
+                  width: "300",
+                }}
+                onReady={_onReady}
+              />
+            </div>
           </div>
 
           <div className={styles.contact}>
@@ -269,12 +308,10 @@ export default function Home() {
                 </p>
               </div>
               <div className={styles.button} role="button">
-                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
-                  今すぐ登録！
-                </Link>
+                <Link href="http://slack.projectsprint.org/">今すぐ登録！</Link>
               </div>
               <p className={styles.caption}>
-                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
+                <Link href="https://projectsprint.slack.com/">
                   すでに登録している方はこちら
                 </Link>
               </p>
