@@ -1,0 +1,6 @@
+@import "../../styles/base_styles.scss";
+
+.container {
+  background: $background;
+  @include font-size("h1-pc");
+}

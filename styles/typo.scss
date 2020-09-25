@@ -1,0 +1,62 @@
+$JPtypo: "Noto Sans JP";
+$ENGtypo: "Open Sans";
+
+@mixin font-size($size) {
+  @if $size == "h1-pc" {
+    font-style: normal;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 28px;
+  } @else if $size == "h2-pc" {
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+  } @else if $size == "body-pc" {
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+  } @else if $size == "label-pc-bold" {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  } @else if $size == "label-pc-medium" {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  } @else if $size == "caption-pc" {
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+  } @else if $size == "h1-sp" {
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 28px;
+  } @else if $size == "h2-sp" {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  } @else if $size == "body-sp-bold" {
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19.5px;
+  } @else if $size == "body-sp-medium" {
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19.5px;
+  } @else if $size == "caption-sp" {
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.5px;
+  }
+}

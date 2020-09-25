@@ -1,0 +1,153 @@
+@import "../../styles/base_styles.scss";
+
+.policy {
+  background: $white;
+  color: $black;
+  @include font-size("label-pc-medium");
+  padding: 48px 194px 120px 194px;
+  a {
+    color: $sky;
+  }
+
+  nav {
+    ul {
+      @include font-size("label-pc-bold");
+      margin-bottom: 56px;
+      display: flex;
+
+      li {
+        margin-right: 40px;
+        a {
+          color: $secondary;
+          text-decoration: none;
+
+          &:hover {
+            color: $sky;
+          }
+        }
+      }
+
+      li.active {
+        a {
+          color: $sky;
+        }
+      }
+    }
+  }
+
+  h1 {
+    margin: 0 0 24px 0;
+    @include font-size("h1-pc");
+  }
+
+  & > dl {
+    & > dt {
+      @include font-size("h2-pc");
+      margin-top: 64px;
+      margin-bottom: 32px;
+      counter-increment: clause;
+    }
+    & > dd {
+      margin: 0;
+      & > dl {
+        & > dt {
+          margin-bottom: 16px;
+        }
+        & > dd {
+          margin-bottom: 16px;
+        }
+      }
+      &:last-child {
+        margin-bottom: 64px !important;
+      }
+    }
+  }
+
+  .parentheses {
+    padding-left: 24px;
+    & > dt {
+      counter-increment: paren;
+      position: relative;
+      margin-bottom: 16px;
+      padding-left: 40px;
+      &::before {
+        position: absolute;
+        left: 0;
+        content: "(" counter(paren) ")";
+      }
+    }
+  }
+
+  .bullet > dd {
+    display: list-item;
+    list-style-type: disc;
+  }
+
+  .number > dd {
+    counter-increment: number;
+    position: relative;
+    padding-left: 40px;
+    margin-left: 0;
+    margin-bottom: 16px;
+    &::before {
+      position: absolute;
+      left: 0;
+      content: counter(clause) "-" counter(number);
+    }
+  }
+
+  .caption {
+    @include font-size("caption-pc");
+  }
+
+  @media screen and (max-width: 1000px) {
+    padding: 32px 24px 120px 24px;
+    @include font-size("body-sp-medium");
+
+    nav {
+      ul {
+        @include font-size("body-sp-bold");
+      }
+    }
+
+    h1 {
+      @include font-size("h1-sp");
+    }
+
+    & > dl {
+      & > dt {
+        @include font-size("h2-sp");
+        margin-top: 32px;
+        margin-bottom: 16px;
+      }
+      & > dd {
+        & > dl {
+          & > dt {
+            margin-bottom: 8px;
+          }
+          & > dd {
+            margin-bottom: 8px;
+          }
+        }
+        &:last-child {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+    .parentheses {
+      padding-left: 0px;
+      dd {
+        margin-left: 2em;
+      }
+      & > dt {
+        margin-bottom: 8px;
+        padding-left: 2em;
+      }
+    }
+
+    .number > dd {
+      margin-bottom: 8px;
+    }
+  }
+}
