@@ -31,6 +31,22 @@
   }
 }
 
+.fadeout {
+  animation: fadeOut 1s;
+  animation-fill-mode: both;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.displaynone {
+  display: none;
+}
+
 .landing {
   overflow: hidden;
   height: 100%;
@@ -75,6 +91,10 @@
     width: 1176px;
     position: relative;
     margin: 0 auto;
+    background-image: url("/images/background_bubbles.svg");
+    background-size: contain;
+    background-position: top 600px right 0px;
+    background-repeat: no-repeat;
 
     .story1 {
       display: flex;
@@ -174,6 +194,8 @@
     @media screen and (max-width: 1000px) {
       width: auto;
       margin: auto 24px;
+      background-size: contain;
+
       .story1 {
         flex-direction: column;
         margin-bottom: 0px;
@@ -252,15 +274,24 @@
     }
   }
 
-  .service_effect {
-    width: 1176px;
-    margin: 0 auto 160px;
+  .service_value {
+    background-image: url("/images/background_bubbles2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media screen and (max-width: 1000px) {
+      background-image: none;
+    }
+  }
 
+  .service_effect {
     h2 {
+      width: 1176px;
       @include font-size("h2-pc");
-      margin: 0 0 32px 0;
+      margin: 0 auto 32px;
     }
     .items {
+      width: 1176px;
+      margin: 0 auto 160px;
       @include font-size("label-pc-bold");
       display: flex;
       li {
@@ -276,13 +307,18 @@
     }
 
     @media screen and (max-width: 1000px) {
+      background-image: none;
       width: auto;
       margin: 0 24px 80px;
       h2 {
+        width: auto;
+        margin: auto;
         @include font-size("h2-sp");
         margin: 0 0 32px 0;
       }
       .items {
+        width: auto;
+        margin: auto;
         flex-wrap: wrap;
         li {
           @include font-size("body-sp-bold");
@@ -382,6 +418,9 @@
           @include font-size("label-pc-bold");
           color: $white;
           margin-left: 0.6em;
+          &:hover {
+            opacity: 0.8;
+          }
         }
       }
     }
@@ -400,6 +439,13 @@
         border-radius: 8px;
         img {
           margin-right: 16px;
+        }
+        a {
+          color: $white;
+          text-decoration: none;
+          &:hover {
+            opacity: 0.8;
+          }
         }
       }
     }
@@ -447,10 +493,30 @@
       }
     }
     .dummymovie {
+      position: relative;
       width: 720px;
       height: 405px;
       border-radius: 24px;
       background: $secondary;
+      img {
+        position: absolute;
+        width: 720px;
+        height: 405px;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        &:hover {
+          filter: brightness(80%);
+        }
+      }
+      iframe {
+        position: absolute;
+        width: 720px;
+        height: 405px;
+        border-radius: 24px;
+        left: 0;
+        top: 0;
+      }
     }
 
     @media screen and (max-width: 1000px) {
@@ -465,8 +531,17 @@
       }
     }
     .dummymovie {
-      width: auto;
-      height: 300px;
+      width: 100%;
+      padding-top: 55%;
+      height: 0;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
