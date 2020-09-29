@@ -7,6 +7,16 @@
     height: 51px;
     border-radius: 30px;
     border: 5px solid $white;
+    &:hover {
+      border: none;
+      a {
+        width: 204px;
+        height: 51px;
+        line-height: 51px;
+        background: $white;
+        color: $color;
+      }
+    }
 
     a {
       @include font-size("body-pc");
@@ -17,10 +27,6 @@
       line-height: 41px;
       width: 100%;
       border-radius: 30px;
-      &:hover {
-        background: $white;
-        color: $color;
-      }
     }
     @media screen and (max-width: 1000px) {
       a {
@@ -110,10 +116,8 @@
       }
       .content {
         h2 {
-          font-weight: 900;
-          font-size: 20px;
-          line-height: 123%;
-          margin-bottom: 70px;
+          @include font-size("h1-pc");
+          margin-bottom: 24px;
         }
         p {
           @include font-size("body-pc");
@@ -133,10 +137,8 @@
       }
       .content {
         h2 {
-          font-size: 20px;
-          font-weight: 900;
-          line-height: 123%;
-          margin-bottom: 70px;
+          @include font-size("h1-pc");
+          margin-bottom: 24px;
         }
         p {
           @include font-size("body-pc");
@@ -285,16 +287,19 @@
 
   .service_effect {
     h2 {
-      width: 1176px;
+      width: 1056px;
       @include font-size("h2-pc");
       margin: 0 auto 32px;
     }
     .items {
-      width: 1176px;
+      width: 1056px;
       margin: 0 auto 160px;
       @include font-size("label-pc-bold");
       display: flex;
       li {
+        &:last-child {
+          margin-right: 0;
+        }
         margin-right: 40px;
         width: 233px;
         figure {
@@ -327,6 +332,7 @@
           margin: 0;
           margin-bottom: 20px;
           padding-right: 16px;
+          text-align: left;
           figure {
             img {
               display: block;
@@ -340,7 +346,7 @@
   }
 
   .service_change {
-    width: 1176px;
+    width: 1056px;
     margin: 0 auto 120px;
 
     h2 {
@@ -350,12 +356,16 @@
     .items {
       @include font-size("label-pc-bold");
       display: flex;
+      flex-wrap: wrap;
       text-align: center;
       margin-bottom: 72px;
       li {
         margin-right: 40px;
         margin-bottom: 20px;
         width: 233px;
+        &:last-child {
+          margin-right: 0;
+        }
         figure {
           margin: 0 0 16px 0;
           img {
@@ -382,6 +392,7 @@
           margin: 0;
           margin-bottom: 20px;
           padding-right: 16px;
+          text-align: left;
           figure {
             img {
               display: block;
@@ -407,8 +418,12 @@
         height: 64px;
         background: $white;
         border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
-          width: 100%;
+          display: block;
+          width: 88%;
         }
       }
       p {
@@ -455,9 +470,18 @@
       .pgs {
         p {
           margin-top: 0;
+          margin-left: 12px;
           @include font-size("body-sp-bold");
-          a {
-            @include font-size("body-sp-bold");
+          .pgs_link {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            margin: 0 auto;
+            margin-top: 24px;
+            a {
+              @include font-size("h2-sp");
+            }
           }
         }
       }
@@ -470,7 +494,15 @@
         p {
           @include font-size("body-sp-bold");
           text-align: left;
+          @media screen and (max-width: 400px) {
+            white-space: nowrap;
+            span {
+              display: block;
+            }
+          }
           img {
+            width: 16px;
+            margin-right: 10px;
             float: left;
           }
         }
@@ -526,6 +558,7 @@
         @include font-size("h1-sp");
         span {
           @include font-size("h1-sp");
+          display: block;
           font-style: oblique;
         }
       }
@@ -540,7 +573,13 @@
       }
       iframe {
         width: 100%;
-        height: 100%;
+        height: 102.3%;
+        .html5-video-container {
+          position: absolute !important;
+          height: 100% !important;
+          width: 100%;
+          overflow: hidden;
+        }
       }
     }
   }
@@ -618,8 +657,10 @@
         @include font-size("body-sp-bold");
         h2 {
           @include font-size("h1-sp");
+          margin-top: 0px;
         }
         figure {
+          margin-bottom: 0px;
           img {
             height: 74px;
           }
@@ -636,8 +677,10 @@
         @include font-size("body-sp-bold");
         h2 {
           @include font-size("h1-sp");
+          margin-top: 0px;
         }
         figure {
+          margin-bottom: 0px;
           img {
             height: 74px;
           }
