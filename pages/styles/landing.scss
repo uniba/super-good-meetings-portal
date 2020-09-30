@@ -664,11 +664,13 @@
 
       figure {
         text-align: center;
+        margin-bottom: 0px;
         img {
           height: 112px;
         }
       }
       h2 {
+        margin-top: 0px;
         font-family: $ENGtypo;
         text-align: center;
         @include font-size("h1-pc");
@@ -696,11 +698,13 @@
 
       figure {
         text-align: center;
+        margin-bottom: 0px;
         img {
           height: 112px;
         }
       }
       h2 {
+        margin-top: 0px;
         font-family: $ENGtypo;
         text-align: center;
         @include font-size("h1-pc");
@@ -723,10 +727,8 @@
         @include font-size("body-sp-bold");
         h2 {
           @include font-size("h1-sp");
-          margin-top: 0px;
         }
         figure {
-          margin-bottom: 0px;
           img {
             height: 74px;
           }
@@ -743,10 +745,8 @@
         @include font-size("body-sp-bold");
         h2 {
           @include font-size("h1-sp");
-          margin-top: 0px;
         }
         figure {
-          margin-bottom: 0px;
           img {
             height: 74px;
           }
