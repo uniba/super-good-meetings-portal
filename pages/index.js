@@ -6,20 +6,17 @@ import styles from "./styles/landing.scss";
 import Layout from "../components/layout";
 
 function _onReady(event) {
-  // event.target.playVideo();
   if (process.browser) {
-    console.log(document.getElementById("movieArea"));
     document.getElementById("movieArea").addEventListener("click", function () {
       let promise = new Promise((resolve, reject) => {
         this.classList.add(styles.fadeout);
-        resolve("Hello ");
+        resolve();
       });
       promise.then((msg) => {
         return new Promise((resolve, reject) => {
           this.classList.add(styles.displaynone);
         });
       });
-      console.log(this);
       event.target.playVideo();
     });
   }
@@ -247,21 +244,25 @@ export default function Home() {
               <p>
                 「SuperGoodMeetings」はプロジェクト推進メソッド「プロジェクトスプリント」にもとづいて設計されています。
                 <br />
-                <Link href="http://projectsprint.orgs">
-                  <a target="_blank">projectsprint.orgs</a>
-                </Link>
-                <img
-                  src="/images/icon_external_link.svg"
-                  alt="外部リンクアイコン"
-                ></img>
+                <div className={styles.pgs_link}>
+                  <Link href="http://projectsprint.org">
+                    <a target="_blank">projectsprint.org</a>
+                  </Link>
+                  <img
+                    src="/images/icon_external_link.svg"
+                    alt="外部リンクアイコン"
+                  ></img>
+                </div>
               </p>
             </div>
             <div className={styles.download}>
               <h2>サービス紹介PDFをダウンロード</h2>
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
-                <Link href="https://drive.google.com/file/d/1kuO7A_Bas_U07_uWQuFUHZOHFS-YllN9/view">
-                  SuperGoodMeetings Introduction.pdf(2.4MB)
+                <Link href="/src/SuperGoodMeetings_introduction_ver1.0.pdf">
+                  <a>
+                    SuperGoodMeetings Introduction<span></span>.pdf(2.4MB)
+                  </a>
                 </Link>
               </p>
             </div>
@@ -269,7 +270,8 @@ export default function Home() {
 
           <div className={styles.movie}>
             <h2>
-              動画でわかる、<span>SuperGoodMeetings</span>
+              動画でわかる、
+              <span>SuperGoodMeetings</span>
             </h2>
             <div className={styles.dummymovie}>
               <img
@@ -296,7 +298,7 @@ export default function Home() {
                   alt="ユーザーコミュニティのイラスト"
                 ></img>
               </figure>
-              <h2>User Community</h2>
+              <h2>User community</h2>
               <div className={styles.text}>
                 <p>
                   プロジェクト推進メソッド Project

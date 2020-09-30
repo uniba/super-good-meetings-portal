@@ -40,6 +40,19 @@
     @include font-size("h1-pc");
   }
 
+  table {
+    margin-top: 24px;
+    th {
+      text-align: left;
+      vertical-align: top;
+      width: 4em;
+      @include font-size("label-pc-medium");
+      @media screen and (max-width: 1000px) {
+        @include font-size("body-sp-medium");
+      }
+    }
+  }
+
   & > dl {
     & > dt {
       @include font-size("h2-pc");
@@ -86,7 +99,7 @@
   .number > dd {
     counter-increment: number;
     position: relative;
-    padding-left: 40px;
+    padding-left: 32px;
     margin-left: 0;
     margin-bottom: 16px;
     &::before {

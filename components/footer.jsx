@@ -55,14 +55,16 @@ const Footer = () => {
         </div>
       </div>
       <address>
-        Copyright &copy; 2020 &nbsp;
+        Developed by
+        <br />
         <a href="https://copilot.jp/" target="_blank" rel="noopener">
           COPILOT Inc.
         </a>
-        &nbsp; All Rights Reserved.
-        <br />
-        Developed by <span className={styles.sp}></span> COPILOT Inc. + UNIBA
-        INC. Project Sprint Team.
+        &nbsp;+&nbsp;
+        <a href="https://uniba.jp/" target="_blank" rel="noopener">
+          UNIBA Inc.
+        </a>
+        &nbsp;Project Sprint Team.
       </address>
     </div>
   );
