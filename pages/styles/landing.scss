@@ -95,19 +95,48 @@
   }
 
   .service_about {
+    position: relative;
     width: 1176px;
     position: relative;
     margin: 0 auto;
-    background-image: url("/images/background_bubbles.svg");
-    background-size: contain;
-    background-position: top 600px right 0px;
-    background-repeat: no-repeat;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 600px;
+      right: -240px;
+      width: 300px;
+      height: 300px;
+      background-image: url("/images/background_bubbles3.svg");
+      background-position: bottom 0px right 0px;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 320px;
+      left: -70px;
+      width: 260px;
+      height: 260px;
+      background-size: contain;
+      background-image: url("/images/background_bubbles.svg");
+      background-position: bottom 0px right 0px;
+      background-repeat: no-repeat;
+      @media screen and (max-width: 1000px) {
+        top: 80px;
+        width: 180px;
+        height: 180px;
+      }
+    }
 
     .story1 {
+      z-index: 1;
       display: flex;
       justify-content: space-between;
       margin-bottom: 502px;
       figure {
+        z-index: 1;
         width: 560px;
         margin-top: 117px;
         img {
@@ -115,6 +144,7 @@
         }
       }
       .content {
+        z-index: 1;
         h2 {
           @include font-size("h1-pc");
           margin-bottom: 24px;
@@ -128,7 +158,46 @@
     .story2 {
       display: flex;
       justify-content: space-between;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 220px;
+        right: -160px;
+        width: 300px;
+        height: 300px;
+        background-image: url("/images/background_bubbles4.svg");
+        background-position: bottom 0px right 0px;
+        background-repeat: no-repeat;
+        @media screen and (max-width: 1000px) {
+          top: 100px;
+          right: -60px;
+          width: 140px;
+          height: 140px;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 370px;
+        left: -280px;
+        width: 300px;
+        height: 300px;
+        background-image: url("/images/background_bubbles5.svg");
+        background-position: bottom 0px right 0px;
+        background-repeat: no-repeat;
+        @media screen and (max-width: 1000px) {
+          top: -200px;
+          left: -100px;
+          width: 180px;
+          height: 180px;
+        }
+      }
+
       figure {
+        z-index: 1;
         width: 560px;
         margin-top: 117px;
         img {
@@ -277,9 +346,6 @@
   }
 
   .service_value {
-    background-image: url("/images/background_bubbles2.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
     @media screen and (max-width: 1000px) {
       background-image: none;
     }

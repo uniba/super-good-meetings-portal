@@ -3,8 +3,11 @@
 <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 312.6 302.6" style="enable-background:new 0 0 312.6 302.6;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#1E32B3;}
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#F5AA00;}
 </style>
-<path class="st0" d="M162.4,33C217,33.2,269.7,60.5,287,110.8c17.9,51.8-3.7,108.2-49.2,140.1c-45.1,31.6-105.5,31.4-150.9,0.1
-	C40.2,218.7,15,162.1,33.2,109.4C51,58.1,106.6,32.7,162.4,33z"/>
+<g>
+	<path class="st0" d="M287.7,155.3c-1.6,37.9-29.7,68.1-61.2,89.9c-28.8,19.9-63.5,26.1-98.2,20.3c-37.9-6.3-77.2-19.5-95.5-52.8
+		c-19.1-34.8-13.6-77.4,4.4-112.8c17.7-34.6,49.7-59.6,88-68.2c38.3-8.6,78.2,0.2,109.3,23.8C266.3,79.8,289.4,115.9,287.7,155.3z"
+		/>
+</g>
 </svg>
