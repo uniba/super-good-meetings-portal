@@ -181,7 +181,9 @@ export default function Home() {
                       alt="イメージイラスト"
                     ></img>
                   </figure>
-                  本質的な問題解決に向けて <br /> 進化しやすくなります。
+                  本質的な問題解決に向けて
+                  <br className={styles.sp_displaynone} />
+                  進化しやすくなります。
                 </li>
                 <li>
                   <figure>
@@ -241,7 +243,7 @@ export default function Home() {
               <figure>
                 <img src="/images/pjs_logo.png" alt="Project Sprintロゴ"></img>
               </figure>
-              <p>
+              <div>
                 「SuperGoodMeetings」はプロジェクト推進メソッド「プロジェクトスプリント」にもとづいて設計されています。
                 <br />
                 <div className={styles.pgs_link}>
@@ -253,15 +255,15 @@ export default function Home() {
                     alt="外部リンクアイコン"
                   ></img>
                 </div>
-              </p>
+              </div>
             </div>
             <div className={styles.download}>
               <h2>サービス紹介PDFをダウンロード</h2>
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
-                <Link href="/src/SuperGoodMeetings_introduction_ver1.0.pdf">
+                <Link href="/src/SuperGoodMeetings_introduction.pdf">
                   <a>
-                    SuperGoodMeetings Introduction<span></span>.pdf(2.4MB)
+                    SuperGoodMeetings Introduction.pdf<span></span>(2.6MB)
                   </a>
                 </Link>
               </p>
