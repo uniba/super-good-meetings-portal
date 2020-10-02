@@ -5,9 +5,13 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.footer_inner}>
-        <h1>
-          <img src="/images/logo_mark.svg" alt="" />
-        </h1>
+        <Link href="/">
+          <a>
+            <h1>
+              <img src="/images/logo_mark.svg" alt="" />
+            </h1>
+          </a>
+        </Link>
         <div className={styles.footer_navigation}>
           <ul>
             <li>

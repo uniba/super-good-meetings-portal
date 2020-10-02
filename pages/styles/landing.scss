@@ -53,6 +53,12 @@
   display: none;
 }
 
+.sp_displaynone {
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+}
+
 .landing {
   overflow: hidden;
   height: 100%;
@@ -492,7 +498,7 @@
           width: 88%;
         }
       }
-      p {
+      div {
         margin-left: 8px;
         @include font-size("caption-pc");
         a {
@@ -534,7 +540,7 @@
       width: auto;
       margin: 0 24px;
       .pgs {
-        p {
+        div {
           margin-top: 0;
           margin-left: 12px;
           @include font-size("body-sp-bold");
@@ -560,16 +566,28 @@
         p {
           @include font-size("body-sp-bold");
           text-align: left;
-          @media screen and (max-width: 400px) {
-            white-space: nowrap;
-            span {
-              display: block;
-            }
+          img {
+            width: 17px;
+            margin-right: 12px;
+            float: left;
+          }
+        }
+
+        @media screen and (max-width: 400px) {
+          white-space: nowrap;
+          span {
+            display: block;
           }
           img {
-            width: 16px;
-            margin-right: 10px;
-            float: left;
+            display: block;
+            width: 32px;
+            margin: 4px 12px 0 0px;
+          }
+        }
+        @media screen and (max-width: 340px) {
+          white-space: pre-wrap;
+          span {
+            display: inline;
           }
         }
       }
