@@ -59,7 +59,7 @@ export default function Home() {
                 </h2>
                 <p>
                   そう考えているチームのために、ミーティング活用クラウド
-                  <br />
+                  <br className={styles.sp_displaynone} />
                   サービス SuperGoodMeetingsは開発されました。
                 </p>
               </div>
