@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://supergoodmeetings.com" />
           <meta
             property="og:image"
-            content="https://supergoodmeetings.com/og_sgm.png"
+            content="https://supergoodmeetings.com/images/og_sgm.png"
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="SuperGoodMeetings" />
@@ -35,7 +35,7 @@ class MyDocument extends Document {
           <meta name="twitter:url" content="https://supergoodmeetings.com" />
           <meta
             name="twitter:image"
-            content="https://supergoodmeetings.com/og_sgm.png"
+            content="https://supergoodmeetings.com/images/og_sgm.png"
           />
           <meta
             name="msapplication-square70x70logo"
