@@ -1,5 +1,5 @@
 {
   "redirects": [
-    { "source": "/p/:match*", "destination": "https://supergoodmeetings.com/p/:match*" }
+    { "source": "/p/:match*", "destination": "https://sgms.app/p/:match*" }
   ]
 }
