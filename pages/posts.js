@@ -3,12 +3,6 @@ import Link from 'next/link';
 import { chunk } from 'lodash';
 import { getAllPosts } from '../lib/api';
 
-const PageLink = (page) => {
-  return (
-    <li key={page}><Link href={{ pathname: '/posts', query: { page } }}>{page}</Link></li>
-  )
-}
-
 export default function Posts({ allPosts }) {
   const router = useRouter()
   const currentPage = router.query.page ? parseInt(router.query.page, 10) : 1
@@ -35,7 +29,6 @@ export default function Posts({ allPosts }) {
           if (page === currentPage) {
             return <li key={page}>{page}</li>;
           } else {
-            // return <PageLink page={page} />
             return <li key={page}><Link href={{ pathname: '/posts', query: { page } }}>{`${page}`}</Link></li>;
           }
         })}
