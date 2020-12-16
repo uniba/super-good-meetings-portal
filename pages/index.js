@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import YouTube from "react-youtube";
 import styles from "./styles/landing.scss";
-
+import { getAllPosts } from '../lib/api';
 import Layout from "../components/layout";
 
 function _onReady(event) {
@@ -22,7 +22,8 @@ function _onReady(event) {
   }
 }
 
-export default function Home() {
+export default function Home({ allPosts }) {
+  const posts = allPosts.slice(0, 5)
   return (
     <>
       <Head>
@@ -292,6 +293,25 @@ export default function Home() {
             </div>
           </div>
 
+          {posts.length > 0 ? (
+            <div>
+              <h2>お知らせ</h2>
+              <Link href="/posts">
+                お知らせ一覧
+              </Link>
+              <ul>
+                {posts.map((post, i) => (
+                  <li key={i}>
+                    <span>{post.date}</span>
+                    <Link href={`/posts/${encodeURIComponent(post.slug)}`}>
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
           <div className={styles.contact}>
             <div className={styles.user_community}>
               <figure>
@@ -345,4 +365,11 @@ export default function Home() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const allPosts = getAllPosts(['slug', 'title', 'date'])
+  return {
+    props: { allPosts }
+  }
 }
