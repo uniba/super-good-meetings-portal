@@ -1,9 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
 import YouTube from "react-youtube";
+import Swiper from 'react-id-swiper';
+import MediaQuery from "react-responsive";
 import styles from "./styles/landing.scss";
 import { getAllPosts } from '../lib/api';
 import Layout from "../components/layout";
+import { findLastIndex } from "lodash";
 
 function _onReady (event) {
   if (process.browser) {
@@ -23,11 +26,30 @@ function _onReady (event) {
 }
 
 export default function Home ({ allPosts }) {
-  const posts = allPosts.slice(0, 5)
+  const posts = allPosts.slice(0, 5);
+
+  const params = {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+  };
+
   return (
     <>
       <Head>
         <title>SuperGoodMeetings</title>
+        <style>{`.swiper-wrapper { 
+          display: flex;
+          margin-left: 24px;
+          margin-right: 24px; } 
+          .swiper-slide{  
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 90% !important;
+          margin-right: 48px; 
+          position: relative;
+          transition-property: transform;}/* custom! */`
+        }
+        </style>
       </Head>
       <Layout>
         <div className={styles.landing_container}>
@@ -327,20 +349,38 @@ export default function Home ({ allPosts }) {
 
           <div className={styles.service_media}>
             <h2 className={styles.service_media_title}>メディア掲載</h2>
-            <div className={styles.service_media_contents}>
-              <div className={styles.service_media_contents_item}>
-                <a href="">
-                  <h3>Web Designing 2020年2月号</h3>
-                  <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
-                </a>
+            <MediaQuery query="(max-width: 1000px)">
+              <Swiper {...params}>
+                <div className={styles.service_media_contents_item}>
+                  <a href="">
+                    <h3>Web Designing 2020年2月号</h3>
+                    <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
+                  </a>
+                </div>
+                <div className={styles.service_media_contents_item}>
+                  <a href="">
+                    <h3>デザイン情報サイト[JDN]</h3>
+                    <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
+                  </a>
+                </div>
+              </Swiper>
+            </MediaQuery>
+            <MediaQuery query="(min-width: 1001px)">
+              <div className={styles.service_media_contents}>
+                <div className={styles.service_media_contents_item}>
+                  <a href="">
+                    <h3>Web Designing 2020年2月号</h3>
+                    <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
+                  </a>
+                </div>
+                <div className={styles.service_media_contents_item}>
+                  <a href="">
+                    <h3>デザイン情報サイト[JDN]</h3>
+                    <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
+                  </a>
+                </div>
               </div>
-              <div className={styles.service_media_contents_item}>
-                <a href="">
-                  <h3>デザイン情報サイト[JDN]</h3>
-                  <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
-                </a>
-              </div>
-            </div>
+            </MediaQuery>
           </div>
 
           <div className={styles.service_contact}>

@@ -408,7 +408,7 @@
         }
       }
       .image {
-        width: 280px;
+        max-width: 280px;
         margin: 24px auto 48px;
         img {
           width: 100%;
@@ -440,6 +440,7 @@
       text-align: center;
       margin: 0 0 40px;
     }
+
     &_contents {
       display: flex;
       justify-content: center;
@@ -800,6 +801,26 @@
         .footnote {
           @include font-size("body-sp-bold");
           span {
+            @include font-size("body-sp-bold");
+          }
+        }
+      }
+    }
+
+    .service_media {
+      margin-bottom: 100px;
+      &_title {
+        @include font-size("h1-sp");
+      }
+      &_contents {
+        &_item {
+          height: 202px;
+          padding: 32px 16px 38px 16px;
+          h3 {
+            @include font-size("h2-sp");
+            text-align: center;
+          }
+          p {
             @include font-size("body-sp-bold");
           }
         }
