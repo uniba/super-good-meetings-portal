@@ -1,5 +1,7 @@
 @import "../../styles/base_styles.scss";
 
+// ボタン用共通スタイル
+
 @mixin button($color) {
   .button {
     box-sizing: border-box;
@@ -7,17 +9,6 @@
     height: 51px;
     border-radius: 30px;
     border: 5px solid $white;
-    &:hover {
-      border: none;
-      a {
-        width: 204px;
-        height: 51px;
-        line-height: 51px;
-        background: $white;
-        color: $color;
-      }
-    }
-
     a {
       @include font-size("body-pc");
       color: $white;
@@ -28,6 +19,16 @@
       width: 100%;
       border-radius: 30px;
     }
+    &:hover {
+      border: none;
+      a {
+        width: 204px;
+        height: 51px;
+        line-height: 51px;
+        background: $white;
+        color: $color;
+      }
+    }
     @media screen and (max-width: 1000px) {
       a {
         @include font-size("h2-sp");
@@ -37,43 +38,22 @@
   }
 }
 
-.fadeout {
-  animation: fadeOut 1s;
-  animation-fill-mode: both;
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.displaynone {
-  display: none;
-}
-
-.sp_displaynone {
-  @media screen and (max-width: 400px) {
-    display: none;
-  }
-}
-
-.landing {
+// 全体コンテナ
+.landing_container {
   overflow: hidden;
   height: 100%;
   background-color: $background;
   color: $white;
   padding: 24px 0px 160px 0px;
 
-  .hero_area {
+  // ヒーローエリア----------------------------------------------
+  .service_hero_area {
     background-size: 100%;
     background-image: url("/images/background_hero.svg");
     background-repeat: no-repeat;
     background-position: bottom;
     text-align: center;
     margin-bottom: 160px;
-
     h1 {
       font-weight: 900;
       font-size: 68px;
@@ -84,28 +64,14 @@
       @include font-size("h2-pc");
       padding-bottom: 368px;
     }
-
-    @media screen and (max-width: 1000px) {
-      margin-bottom: 80px;
-      h1 {
-        font-size: 34px;
-      }
-      p {
-        @include font-size("h2-sp");
-        padding-bottom: 160px;
-        span {
-          display: block;
-        }
-      }
-    }
   }
 
+  // サービス概要説明----------------------------------------------
   .service_about {
     position: relative;
     width: 1176px;
     position: relative;
     margin: 0 auto;
-
     &::after {
       content: "";
       position: absolute;
@@ -117,7 +83,6 @@
       background-position: bottom 0px right 0px;
       background-repeat: no-repeat;
     }
-
     &::before {
       content: "";
       position: absolute;
@@ -129,14 +94,8 @@
       background-image: url("/images/background_bubbles.svg");
       background-position: bottom 0px right 0px;
       background-repeat: no-repeat;
-      @media screen and (max-width: 1000px) {
-        top: 80px;
-        width: 180px;
-        height: 180px;
-      }
     }
-
-    .story1 {
+    &_message1 {
       z-index: 1;
       display: flex;
       justify-content: space-between;
@@ -160,68 +119,7 @@
         }
       }
     }
-
-    .story2 {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 220px;
-        right: -160px;
-        width: 300px;
-        height: 300px;
-        background-image: url("/images/background_bubbles4.svg");
-        background-position: bottom 0px right 0px;
-        background-repeat: no-repeat;
-        @media screen and (max-width: 1000px) {
-          top: 100px;
-          right: -60px;
-          width: 140px;
-          height: 140px;
-        }
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 370px;
-        left: -280px;
-        width: 300px;
-        height: 300px;
-        background-image: url("/images/background_bubbles5.svg");
-        background-position: bottom 0px right 0px;
-        background-repeat: no-repeat;
-        @media screen and (max-width: 1000px) {
-          top: -200px;
-          left: -100px;
-          width: 180px;
-          height: 180px;
-        }
-      }
-
-      figure {
-        z-index: 1;
-        width: 560px;
-        margin-top: 117px;
-        img {
-          width: 100%;
-        }
-      }
-      .content {
-        h2 {
-          @include font-size("h1-pc");
-          margin-bottom: 24px;
-        }
-        p {
-          @include font-size("body-pc");
-        }
-      }
-    }
-
-    .bubbles {
+    &_message2 {
       .bubble:nth-child(1) {
         position: absolute;
         top: 360px;
@@ -268,95 +166,53 @@
         }
       }
     }
-
-    @media screen and (max-width: 1000px) {
-      width: auto;
-      margin: auto 24px;
-
-      .story1 {
-        flex-direction: column;
-        margin-bottom: 0px;
-        figure {
-          width: auto;
-          margin: 0;
-        }
-        .content {
-          h2 {
-            @include font-size("h1-sp");
-            margin-bottom: 16px;
-          }
-          p {
-            @include font-size("body-sp-bold");
-          }
+    &_message3 {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 220px;
+        right: -160px;
+        width: 300px;
+        height: 300px;
+        background-image: url("/images/background_bubbles4.svg");
+        background-position: bottom 0px right 0px;
+        background-repeat: no-repeat;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 370px;
+        left: -280px;
+        width: 300px;
+        height: 300px;
+        background-image: url("/images/background_bubbles5.svg");
+        background-position: bottom 0px right 0px;
+        background-repeat: no-repeat;
+      }
+      figure {
+        z-index: 1;
+        width: 560px;
+        margin-top: 117px;
+        img {
+          width: 100%;
         }
       }
-      .bubbles {
-        position: relative;
-        width: 306px;
-        height: 736px;
-        margin: auto;
-        .bubble:nth-child(1) {
-          position: absolute;
-          top: 75px;
-          right: 0;
-          width: 265px;
-          height: 266px;
-          padding-top: 32px;
-          img {
-            width: 171px;
-          }
-          h3 {
-            @include font-size("h2-sp");
-          }
-          p {
-            @include font-size("body-sp-bold");
-          }
+      .content {
+        h2 {
+          @include font-size("h1-pc");
+          margin-bottom: 24px;
         }
-        .bubble:nth-child(2) {
-          position: absolute;
-          top: 357px;
-          left: 0;
-          width: 265px;
-          height: 257px;
-          padding-top: 32px;
-          img {
-            width: 162px;
-          }
-          h3 {
-            @include font-size("h2-sp");
-          }
-          p {
-            @include font-size("body-sp-bold");
-          }
-        }
-      }
-      .story2 {
-        flex-direction: column;
-        margin-bottom: 80px;
-        figure {
-          width: auto;
-          margin: 0;
-        }
-        .content {
-          order: 2;
-          h2 {
-            @include font-size("h1-sp");
-            margin-bottom: 16px;
-          }
-          p {
-            @include font-size("body-sp-bold");
-          }
+        p {
+          @include font-size("body-pc");
         }
       }
     }
   }
 
-  .service_value {
-    @media screen and (max-width: 1000px) {
-      background-image: none;
-    }
-  }
-
+  //サービス導入の効果説明----------------------------------------------
   .service_effect {
     h2 {
       width: 1056px;
@@ -382,45 +238,12 @@
         }
       }
     }
-
-    @media screen and (max-width: 1000px) {
-      background-image: none;
-      width: auto;
-      margin: 0 24px 80px;
-      h2 {
-        width: auto;
-        margin: auto;
-        @include font-size("h2-sp");
-        margin: 0 0 32px 0;
-      }
-      .items {
-        width: auto;
-        margin: auto;
-        flex-wrap: wrap;
-        li {
-          @include font-size("body-sp-bold");
-          width: 50%;
-          box-sizing: border-box;
-          margin: 0;
-          margin-bottom: 20px;
-          padding-right: 16px;
-          text-align: left;
-          figure {
-            img {
-              display: block;
-              margin: auto;
-              max-width: 280px;
-            }
-          }
-        }
-      }
-    }
   }
 
+  //サービス導入の変化説明----------------------------------------------
   .service_change {
     width: 1056px;
     margin: 0 auto 120px;
-
     h2 {
       @include font-size("h2-pc");
       margin: 0 0 32px 0;
@@ -446,37 +269,9 @@
         }
       }
     }
-
-    @media screen and (max-width: 1000px) {
-      width: auto;
-      margin: auto 24px;
-      h2 {
-        @include font-size("h2-sp");
-        margin: 0 0 32px 0;
-      }
-      .items {
-        flex-wrap: wrap;
-        margin-bottom: 40px;
-        li {
-          @include font-size("body-sp-bold");
-          width: 50%;
-          box-sizing: border-box;
-          margin: 0;
-          margin-bottom: 20px;
-          padding-right: 16px;
-          text-align: left;
-          figure {
-            img {
-              display: block;
-              margin: auto;
-              max-width: 260px;
-            }
-          }
-        }
-      }
-    }
   }
 
+  //PJsの紹介、サービス紹介PDFへのダウンロード----------------------------------------------
   .service_detail {
     width: 1176px;
     margin: 0 auto;
@@ -536,7 +331,395 @@
         }
       }
     }
-    @media screen and (max-width: 1000px) {
+  }
+
+  //動画----------------------------------------------
+  .service_movie {
+    text-align: center;
+    width: 720px;
+    margin: 0 auto 160px;
+    h2 {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 40px;
+      span {
+        @include font-size("h1-pc");
+        font-family: $ENGtypo;
+        font-style: oblique;
+      }
+    }
+    .dummymovie {
+      position: relative;
+      border-radius: 24px;
+      background: $secondary;
+      width: 100%;
+      padding-top: 55%;
+      height: 0;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        &:hover {
+          filter: brightness(80%);
+        }
+      }
+      iframe {
+        position: absolute;
+        border-radius: 24px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 102.3%;
+        .html5-video-container {
+          position: absolute !important;
+          height: 100% !important;
+          width: 100%;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .service_interview {
+    width: 615px;
+    margin: 0 auto 160px;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+    &_title {
+      @include font-size("h1-pc");
+      text-align: center;
+      margin: 0 0 40px;
+    }
+    &_content {
+      padding: 48px 40px 80px 40px;
+      border-radius: 24px;
+      background: $blue;
+      .logo {
+        line-height: 30px;
+        margin: 0;
+        img {
+          width: 160px;
+          height: 30px;
+        }
+      }
+      .image {
+        width: 280px;
+        margin: 24px auto 48px;
+        img {
+          width: 100%;
+        }
+      }
+      .caption {
+        @include font-size("h2-pc");
+        margin: 0 0 16px;
+      }
+      .footnote {
+        @include font-size("body-pc");
+        color: $sky;
+        margin: 0;
+        span {
+          @include font-size("label-pc-bold");
+        }
+      }
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .service_media {
+    margin-bottom: 160px;
+    &_title {
+      @include font-size("h1-pc");
+      text-align: center;
+      margin: 0 0 40px;
+    }
+    &_contents {
+      display: flex;
+      justify-content: center;
+      &_item {
+        width: 397px;
+        padding: 32px 32px 48px 32px;
+        margin-right: 40px;
+        box-sizing: border-box;
+        border-radius: 24px;
+        background: $green;
+        a {
+          color: $white;
+          text-decoration: none;
+        }
+        h3 {
+          @include font-size("h2-pc");
+          margin: 0 0 24px;
+        }
+        p {
+          @include font-size("label-pc-bold");
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  //ユーザコミュニティ、お問い合わせ----------------------------------------------
+  .service_contact {
+    width: 1052px;
+    margin: auto;
+    display: flex;
+    .user_community {
+      @include font-size("caption-pc");
+      @include button($violet);
+      background: $violet;
+      border-radius: 24px;
+      margin-right: 40px;
+      padding: 32px;
+      figure {
+        text-align: center;
+        margin-bottom: 0px;
+        img {
+          height: 112px;
+        }
+      }
+      h2 {
+        margin-top: 0px;
+        font-family: $ENGtypo;
+        text-align: center;
+        @include font-size("h1-pc");
+      }
+      .button {
+        margin: 0 auto;
+      }
+      .text {
+        height: 160px;
+      }
+      .caption {
+        text-align: center;
+        a {
+          color: $white;
+        }
+      }
+    }
+    .contact_us {
+      @include font-size("caption-pc");
+      @include button($blue);
+      background: $blue;
+      border-radius: 24px;
+      padding: 32px;
+      figure {
+        text-align: center;
+        margin-bottom: 0px;
+        img {
+          height: 112px;
+        }
+      }
+      h2 {
+        margin-top: 0px;
+        font-family: $ENGtypo;
+        text-align: center;
+        @include font-size("h1-pc");
+      }
+      .text {
+        height: 160px;
+      }
+      .button {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+//タブレット以下設定
+
+@media screen and (max-width: 1000px) {
+  .landing_container {
+    .service_hero_area {
+      margin-bottom: 80px;
+      h1 {
+        font-size: 34px;
+      }
+      p {
+        @include font-size("h2-sp");
+        padding-bottom: 160px;
+        span {
+          display: block;
+        }
+      }
+    }
+    .service_about {
+      width: auto;
+      margin: auto 24px;
+
+      &::before {
+        top: 80px;
+        width: 180px;
+        height: 180px;
+      }
+
+      &_message1 {
+        flex-direction: column;
+        margin-bottom: 0px;
+        figure {
+          width: auto;
+          margin: 0;
+        }
+        .content {
+          h2 {
+            @include font-size("h1-sp");
+            margin-bottom: 16px;
+          }
+          p {
+            @include font-size("body-sp-bold");
+          }
+        }
+      }
+
+      &_message2 {
+        position: relative;
+        width: 306px;
+        height: 736px;
+        margin: auto;
+        .bubble:nth-child(1) {
+          position: absolute;
+          top: 75px;
+          right: 0;
+          width: 265px;
+          height: 266px;
+          padding-top: 32px;
+          img {
+            width: 171px;
+          }
+          h3 {
+            @include font-size("h2-sp");
+          }
+          p {
+            @include font-size("body-sp-bold");
+          }
+        }
+        .bubble:nth-child(2) {
+          position: absolute;
+          top: 357px;
+          left: 0;
+          width: 265px;
+          height: 257px;
+          padding-top: 32px;
+          img {
+            width: 162px;
+          }
+          h3 {
+            @include font-size("h2-sp");
+          }
+          p {
+            @include font-size("body-sp-bold");
+          }
+        }
+      }
+
+      &_message3 {
+        flex-direction: column;
+        margin-bottom: 80px;
+        &::after {
+          top: 100px;
+          right: -60px;
+          width: 140px;
+          height: 140px;
+        }
+        &::before {
+          top: -200px;
+          left: -100px;
+          width: 180px;
+          height: 180px;
+        }
+        figure {
+          width: auto;
+          margin: 0;
+        }
+        .content {
+          order: 2;
+          h2 {
+            @include font-size("h1-sp");
+            margin-bottom: 16px;
+          }
+          p {
+            @include font-size("body-sp-bold");
+          }
+        }
+      }
+    }
+
+    .service_effect {
+      background-image: none;
+      width: auto;
+      margin: 0 24px 80px;
+      h2 {
+        width: auto;
+        margin: auto;
+        @include font-size("h2-sp");
+        margin: 0 0 32px 0;
+      }
+      .items {
+        width: auto;
+        margin: auto;
+        flex-wrap: wrap;
+        li {
+          @include font-size("body-sp-bold");
+          width: 50%;
+          box-sizing: border-box;
+          margin: 0;
+          margin-bottom: 20px;
+          padding-right: 16px;
+          text-align: left;
+          figure {
+            img {
+              display: block;
+              margin: auto;
+              max-width: 280px;
+            }
+          }
+        }
+      }
+    }
+
+    .service_change {
+      width: auto;
+      margin: auto 24px;
+      h2 {
+        @include font-size("h2-sp");
+        margin: 0 0 32px 0;
+      }
+      .items {
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        li {
+          @include font-size("body-sp-bold");
+          width: 50%;
+          box-sizing: border-box;
+          margin: 0;
+          margin-bottom: 20px;
+          padding-right: 16px;
+          text-align: left;
+          figure {
+            img {
+              display: block;
+              margin: auto;
+              max-width: 260px;
+            }
+          }
+        }
+      }
+    }
+
+    .service_detail {
       width: auto;
       margin: 0 24px;
       .pgs {
@@ -592,50 +775,38 @@
         }
       }
     }
-  }
 
-  .movie {
-    text-align: center;
-    width: 720px;
-    margin: 0 auto 160px;
-    h2 {
-      font-size: 20px;
-      font-weight: 900;
-      margin-bottom: 40px;
-      span {
-        @include font-size("h1-pc");
-        font-family: $ENGtypo;
-        font-style: oblique;
+    .service_interview {
+      width: auto;
+      margin: 100px 24px;
+      &_title {
+        @include font-size("h1-sp");
       }
-    }
-    .dummymovie {
-      position: relative;
-      width: 720px;
-      height: 405px;
-      border-radius: 24px;
-      background: $secondary;
-      img {
-        position: absolute;
-        width: 720px;
-        height: 405px;
-        left: 0;
-        top: 0;
-        z-index: 1;
-        &:hover {
-          filter: brightness(80%);
+      &_content {
+        box-sizing: border-box;
+        padding: 40px 24px 58px 24px;
+        .logo {
+          text-align: center;
+          img {
+            width: 132px;
+          }
+        }
+        .image {
+          margin: 32px auto 32px;
+        }
+        .caption {
+          @include font-size("h1-sp");
+        }
+        .footnote {
+          @include font-size("body-sp-bold");
+          span {
+            @include font-size("body-sp-bold");
+          }
         }
       }
-      iframe {
-        position: absolute;
-        width: 720px;
-        height: 405px;
-        border-radius: 24px;
-        left: 0;
-        top: 0;
-      }
     }
 
-    @media screen and (max-width: 1000px) {
+    .service_movie {
       width: auto;
       margin: 0 24px 120px;
       h2 {
@@ -647,94 +818,8 @@
         }
       }
     }
-    .dummymovie {
-      width: 100%;
-      padding-top: 55%;
-      height: 0;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-      iframe {
-        width: 100%;
-        height: 102.3%;
-        .html5-video-container {
-          position: absolute !important;
-          height: 100% !important;
-          width: 100%;
-          overflow: hidden;
-        }
-      }
-    }
-  }
 
-  .contact {
-    width: 1052px;
-    margin: auto;
-    display: flex;
-    .user_community {
-      @include font-size("caption-pc");
-      @include button($violet);
-      background: $violet;
-      border-radius: 24px;
-      margin-right: 40px;
-      padding: 32px;
-
-      figure {
-        text-align: center;
-        margin-bottom: 0px;
-        img {
-          height: 112px;
-        }
-      }
-      h2 {
-        margin-top: 0px;
-        font-family: $ENGtypo;
-        text-align: center;
-        @include font-size("h1-pc");
-      }
-      .button {
-        margin: 0 auto;
-      }
-      .text {
-        height: 160px;
-      }
-      .caption {
-        text-align: center;
-        a {
-          color: $white;
-        }
-      }
-    }
-
-    .contact_us {
-      @include font-size("caption-pc");
-      @include button($blue);
-      background: $blue;
-      border-radius: 24px;
-      padding: 32px;
-
-      figure {
-        text-align: center;
-        margin-bottom: 0px;
-        img {
-          height: 112px;
-        }
-      }
-      h2 {
-        margin-top: 0px;
-        font-family: $ENGtypo;
-        text-align: center;
-        @include font-size("h1-pc");
-      }
-      .text {
-        height: 160px;
-      }
-      .button {
-        margin: 0 auto;
-      }
-    }
-    @media screen and (max-width: 1000px) {
+    .service_contact {
       display: block;
       width: auto;
       margin: auto 24px;
@@ -775,5 +860,33 @@
         }
       }
     }
+  }
+}
+
+// SP改行調整用
+
+.displaynone {
+  display: none;
+}
+
+.sp_displaynone {
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+}
+
+// 動画クリック時に、画像をフェードアウトする
+
+.fadeout {
+  animation: fadeOut 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

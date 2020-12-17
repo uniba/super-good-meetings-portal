@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { chunk } from 'lodash';
 import { getAllPosts } from '../lib/api';
 
-export default function Posts({ allPosts }) {
+export default function Posts ({ allPosts }) {
   const router = useRouter()
   const currentPage = router.query.page ? parseInt(router.query.page, 10) : 1
-  const pages = chunk(allPosts, 2)
+  const pages = chunk(allPosts, 10)
   const posts = pages[currentPage - 1]
   return (
     <div>
@@ -37,7 +37,7 @@ export default function Posts({ allPosts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const allPosts = getAllPosts(['slug', 'title', 'date']);
   return {
     props: { allPosts }

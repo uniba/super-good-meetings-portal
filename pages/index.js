@@ -5,7 +5,7 @@ import styles from "./styles/landing.scss";
 import { getAllPosts } from '../lib/api';
 import Layout from "../components/layout";
 
-function _onReady(event) {
+function _onReady (event) {
   if (process.browser) {
     document.getElementById("movieArea").addEventListener("click", function () {
       let promise = new Promise((resolve, reject) => {
@@ -22,7 +22,7 @@ function _onReady(event) {
   }
 }
 
-export default function Home({ allPosts }) {
+export default function Home ({ allPosts }) {
   const posts = allPosts.slice(0, 5)
   return (
     <>
@@ -30,8 +30,8 @@ export default function Home({ allPosts }) {
         <title>SuperGoodMeetings</title>
       </Head>
       <Layout>
-        <div className={styles.landing}>
-          <div className={styles.hero_area}>
+        <div className={styles.landing_container}>
+          <div className={styles.service_hero_area}>
             <h1>
               仕事をドライブさせる
               <br />
@@ -43,7 +43,7 @@ export default function Home({ allPosts }) {
           </div>
 
           <div id="about" className={styles.service_about}>
-            <div className={styles.story1}>
+            <div className={styles.service_about_message1}>
               <figure>
                 <img
                   src="/images/sgms_screenshot1.png"
@@ -65,7 +65,7 @@ export default function Home({ allPosts }) {
                 </p>
               </div>
             </div>
-            <div className={styles.bubbles}>
+            <div className={styles.service_about_message2}>
               <div className={styles.bubble}>
                 <img
                   src="/images/illust_project.svg"
@@ -89,7 +89,7 @@ export default function Home({ allPosts }) {
                 </p>
               </div>
             </div>
-            <div className={styles.story2}>
+            <div className={styles.service_about_message3}>
               <div className={styles.content}>
                 <h2>
                   みんなでプロジェクトを <br />
@@ -271,7 +271,7 @@ export default function Home({ allPosts }) {
             </div>
           </div>
 
-          <div className={styles.movie}>
+          <div className={styles.service_movie}>
             <h2>
               動画でわかる、
               <span>SuperGoodMeetings</span>
@@ -293,7 +293,7 @@ export default function Home({ allPosts }) {
             </div>
           </div>
 
-          {posts.length > 0 ? (
+          {/* {posts.length > 0 ? (
             <div>
               <h2>お知らせ</h2>
               <Link href="/posts">
@@ -310,9 +310,40 @@ export default function Home({ allPosts }) {
                 ))}
               </ul>
             </div>
-          ) : null}
+          ) : null} */}
 
-          <div className={styles.contact}>
+          <div className={styles.service_interview}>
+            <h2 className={styles.service_interview_title}>インタビュー</h2>
+            <div className={styles.service_interview_content}>
+              <a href="">
+                <figure className={styles.logo}><img src="/images/venect.svg" alt="ヴェネクトロゴ"></img></figure>
+                <figure className={styles.image}><img src="/images/interview_venect.png" alt="インタビュー見出し"></img></figure>
+                <h3 className={styles.caption}>会議は「事前に設計」するもの。<br />
+              可視化がプロジェクトの進行を加速させる</h3>
+                <p className={styles.footnote}>ヴェネクト株式会社<br /><span>牟田和貴、加藤智司</span></p>
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.service_media}>
+            <h2 className={styles.service_media_title}>メディア掲載</h2>
+            <div className={styles.service_media_contents}>
+              <div className={styles.service_media_contents_item}>
+                <a href="">
+                  <h3>Web Designing 2020年2月号</h3>
+                  <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
+                </a>
+              </div>
+              <div className={styles.service_media_contents_item}>
+                <a href="">
+                  <h3>デザイン情報サイト[JDN]</h3>
+                  <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.service_contact}>
             <div className={styles.user_community}>
               <figure>
                 <img
@@ -367,7 +398,7 @@ export default function Home({ allPosts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const allPosts = getAllPosts(['slug', 'title', 'date'])
   return {
     props: { allPosts }
