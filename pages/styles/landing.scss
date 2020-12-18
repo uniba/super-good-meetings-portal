@@ -389,6 +389,11 @@
     a {
       color: $white;
       text-decoration: none;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 48px 40px 80px 40px;
     }
     &_title {
       @include font-size("h1-pc");
@@ -396,7 +401,6 @@
       margin: 0 0 40px;
     }
     &_content {
-      padding: 48px 40px 80px 40px;
       border-radius: 24px;
       background: $blue;
       .logo {
@@ -446,7 +450,6 @@
       justify-content: center;
       &_item {
         width: 397px;
-        padding: 32px 32px 48px 32px;
         margin-right: 40px;
         box-sizing: border-box;
         border-radius: 24px;
@@ -454,6 +457,11 @@
         a {
           color: $white;
           text-decoration: none;
+          display: block;
+          box-sizing: border-box;
+          width: 100%;
+          height: 100%;
+          padding: 32px 32px 48px 32px;
         }
         h3 {
           @include font-size("h2-pc");
@@ -780,12 +788,14 @@
     .service_interview {
       width: auto;
       margin: 100px 24px;
+      a {
+        padding: 40px 24px 58px 24px;
+      }
       &_title {
         @include font-size("h1-sp");
       }
       &_content {
         box-sizing: border-box;
-        padding: 40px 24px 58px 24px;
         .logo {
           text-align: center;
           img {
@@ -809,13 +819,15 @@
 
     .service_media {
       margin-bottom: 100px;
+      a {
+        padding: 32px 16px 38px 16px;
+      }
       &_title {
         @include font-size("h1-sp");
       }
       &_contents {
         &_item {
           height: 202px;
-          padding: 32px 16px 38px 16px;
           h3 {
             @include font-size("h2-sp");
             text-align: center;

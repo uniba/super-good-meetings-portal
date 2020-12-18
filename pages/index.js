@@ -337,7 +337,7 @@ export default function Home ({ allPosts }) {
           <div className={styles.service_interview}>
             <h2 className={styles.service_interview_title}>インタビュー</h2>
             <div className={styles.service_interview_content}>
-              <a href="">
+              <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
                 <figure className={styles.logo}><img src="/images/venect.svg" alt="ヴェネクトロゴ"></img></figure>
                 <figure className={styles.image}><img src="/images/interview_venect.png" alt="インタビュー見出し"></img></figure>
                 <h3 className={styles.caption}>会議は「事前に設計」するもの。<br />
@@ -352,13 +352,13 @@ export default function Home ({ allPosts }) {
             <MediaQuery query="(max-width: 1000px)">
               <Swiper {...params}>
                 <div className={styles.service_media_contents_item}>
-                  <a href="">
+                  <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
                     <h3>Web Designing 2020年2月号</h3>
                     <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
                   </a>
                 </div>
                 <div className={styles.service_media_contents_item}>
-                  <a href="">
+                  <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
                     <h3>デザイン情報サイト[JDN]</h3>
                     <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
                   </a>
@@ -368,13 +368,13 @@ export default function Home ({ allPosts }) {
             <MediaQuery query="(min-width: 1001px)">
               <div className={styles.service_media_contents}>
                 <div className={styles.service_media_contents_item}>
-                  <a href="">
+                  <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
                     <h3>Web Designing 2020年2月号</h3>
                     <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
                   </a>
                 </div>
                 <div className={styles.service_media_contents_item}>
-                  <a href="">
+                  <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
                     <h3>デザイン情報サイト[JDN]</h3>
                     <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
                   </a>
