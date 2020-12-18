@@ -465,6 +465,7 @@
         }
         h3 {
           @include font-size("h2-pc");
+          text-align: center;
           margin: 0 0 24px;
         }
         p {
