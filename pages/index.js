@@ -1,11 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
 import YouTube from "react-youtube";
+import Swiper from 'react-id-swiper';
+import MediaQuery from "react-responsive";
 import styles from "./styles/landing.scss";
-
+import { getAllPosts } from '../lib/api';
 import Layout from "../components/layout";
+import { findLastIndex } from "lodash";
 
-function _onReady(event) {
+function _onReady (event) {
   if (process.browser) {
     document.getElementById("movieArea").addEventListener("click", function () {
       let promise = new Promise((resolve, reject) => {
@@ -22,15 +25,35 @@ function _onReady(event) {
   }
 }
 
-export default function Home() {
+export default function Home ({ allPosts }) {
+  const posts = allPosts.slice(0, 5);
+
+  const params = {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+  };
+
   return (
     <>
       <Head>
         <title>SuperGoodMeetings</title>
+        <style>{`.swiper-wrapper { 
+          display: flex;
+          margin-left: 24px;
+          margin-right: 24px; } 
+          .swiper-slide{  
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 90% !important;
+          margin-right: 48px; 
+          position: relative;
+          transition-property: transform;}/* custom! */`
+        }
+        </style>
       </Head>
       <Layout>
-        <div className={styles.landing}>
-          <div className={styles.hero_area}>
+        <div className={styles.landing_container}>
+          <div className={styles.service_hero_area}>
             <h1>
               仕事をドライブさせる
               <br />
@@ -42,7 +65,7 @@ export default function Home() {
           </div>
 
           <div id="about" className={styles.service_about}>
-            <div className={styles.story1}>
+            <div className={styles.service_about_message1}>
               <figure>
                 <img
                   src="/images/sgms_screenshot1.png"
@@ -64,7 +87,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className={styles.bubbles}>
+            <div className={styles.service_about_message2}>
               <div className={styles.bubble}>
                 <img
                   src="/images/illust_project.svg"
@@ -88,7 +111,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className={styles.story2}>
+            <div className={styles.service_about_message3}>
               <div className={styles.content}>
                 <h2>
                   みんなでプロジェクトを <br />
@@ -261,7 +284,7 @@ export default function Home() {
               <h2>サービス紹介PDFをダウンロード</h2>
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
-                <Link href="/src/SuperGoodMeetings_introduction.pdf">
+                <Link href="/src/SuperGoodMeetings_introduction_20201218.pdf">
                   <a>
                     SuperGoodMeetings Introduction.pdf<span></span>(2.6MB)
                   </a>
@@ -270,7 +293,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.movie}>
+          <div className={styles.service_movie}>
             <h2>
               動画でわかる、
               <span>SuperGoodMeetings</span>
@@ -292,7 +315,75 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.contact}>
+          {/* {posts.length > 0 ? (
+            <div>
+              <h2>お知らせ</h2>
+              <Link href="/posts">
+                お知らせ一覧
+              </Link>
+              <ul>
+                {posts.map((post, i) => (
+                  <li key={i}>
+                    <span>{post.date}</span>
+                    <Link href={`/posts/${encodeURIComponent(post.slug)}`}>
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null} */}
+
+          <div className={styles.service_interview}>
+            <h2 className={styles.service_interview_title}>インタビュー</h2>
+            <div className={styles.service_interview_content}>
+              <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
+                <figure className={styles.logo}><img src="/images/venect.svg" alt="ヴェネクトロゴ"></img></figure>
+                <figure className={styles.image}><img src="/images/interview_venect.png" alt="インタビュー見出し"></img></figure>
+                <h3 className={styles.caption}>会議は「事前に設計」するもの。<br />
+              可視化がプロジェクトの進行を加速させる</h3>
+                <p className={styles.footnote}>ヴェネクト株式会社<br /><span>牟田和貴、加藤智司</span></p>
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.service_media}>
+            <h2 className={styles.service_media_title}>メディア掲載</h2>
+            <MediaQuery query="(max-width: 1000px)">
+              <Swiper {...params}>
+                <div className={styles.service_media_contents_item}>
+                  <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
+                    <h3>Web Designing 2020年2月号</h3>
+                    <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
+                  </a>
+                </div>
+                <div className={styles.service_media_contents_item}>
+                  <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
+                    <h3>デザイン情報サイト[JDN]</h3>
+                    <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
+                  </a>
+                </div>
+              </Swiper>
+            </MediaQuery>
+            <MediaQuery query="(min-width: 1001px)">
+              <div className={styles.service_media_contents}>
+                <div className={styles.service_media_contents_item}>
+                  <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
+                    <h3>Web Designing 2020年2月号</h3>
+                    <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
+                  </a>
+                </div>
+                <div className={styles.service_media_contents_item}>
+                  <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
+                    <h3>デザイン情報サイト[JDN]</h3>
+                    <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
+                  </a>
+                </div>
+              </div>
+            </MediaQuery>
+          </div>
+
+          <div className={styles.service_contact}>
             <div className={styles.user_community}>
               <figure>
                 <img
@@ -345,4 +436,11 @@ export default function Home() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps () {
+  const allPosts = getAllPosts(['slug', 'title', 'date'])
+  return {
+    props: { allPosts }
+  }
 }
