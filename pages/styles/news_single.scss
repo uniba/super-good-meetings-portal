@@ -1,0 +1,67 @@
+@import "../../styles/base_styles.scss";
+
+.post_container {
+  background: $white;
+  color: $black;
+  min-height: calc(100vh - 640px);
+  @include font-size("label-pc-medium");
+  padding: 48px 194px 120px 194px;
+
+  h1 {
+    margin: 0 0 80px 0;
+    @include font-size("h1-pc");
+  }
+
+  .post_title {
+    margin: 0 0 40px 0;
+    @include font-size("h1-pc");
+  }
+
+  .post_all {
+    margin-top: 56px;
+    text-align: center;
+    a {
+      color: $sky;
+      @include font-size("body-pc");
+    }
+  }
+
+  //-----
+
+  a {
+    color: $sky;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  li {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .post_container {
+    padding: 48px 24px 120px 24px;
+    h1 {
+      margin: 0 0 24px 0;
+      @include font-size("h1-sp");
+    }
+    .post_title {
+      margin: 0 0 24px 0;
+      @include font-size("h1-sp");
+    }
+
+    .post_content {
+      @include font-size("body-sp-medium");
+    }
+
+    .post_all {
+      a {
+        @include font-size("body-sp-medium");
+      }
+    }
+  }
+}

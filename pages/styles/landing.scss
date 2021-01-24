@@ -18,18 +18,21 @@
       line-height: 41px;
       width: 100%;
       border-radius: 30px;
+      margin: 0;
     }
     &:hover {
       border: none;
       a {
-        width: 204px;
-        height: 51px;
+        width: 100%;
+        height: 100%;
         line-height: 51px;
         background: $white;
         color: $color;
       }
     }
     @media screen and (max-width: 1000px) {
+      width: 100%;
+      max-width: 248px;
       a {
         @include font-size("h2-sp");
         line-height: 40px;
@@ -49,11 +52,12 @@
   // ヒーローエリア----------------------------------------------
   .service_hero_area {
     background-size: 100%;
-    background-image: url("/images/background_hero.svg");
+    background-image: url("/images/background_hero1.svg"), url("/images/background_hero2.svg");
+    background-size: contain, contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: left, right;
     text-align: center;
-    margin-bottom: 160px;
+    margin-bottom: 16px;
     h1 {
       font-weight: 900;
       font-size: 68px;
@@ -62,7 +66,17 @@
     }
     p {
       @include font-size("h2-pc");
-      padding-bottom: 368px;
+      margin-bottom: 48px;
+    }
+    figure {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 24px;
+      img {
+        width: 100%;
+        max-width: 724px;
+      }
     }
   }
 
@@ -276,8 +290,43 @@
     width: 1176px;
     margin: 0 auto;
     .pgs {
+      background: $blue;
+      width: 1052px;
+      padding: 80px 48px 64px 48px;
+      border-radius: 30px;
       display: flex;
+      flex-direction: column;
       margin-bottom: 80px;
+      .pgs_about {
+        display: flex;
+        figure {
+          margin-right: 16px;
+        }
+        p {
+          @include font-size("label-pc-medium");
+          margin: 0;
+        }
+      }
+      .pgs_title {
+        @include font-size("label-pc-bold");
+        margin: 40px 0 8px;
+      }
+      .pgs_link {
+        margin-bottom: 48px;
+        li {
+          list-style: "-";
+          a {
+            @include font-size("label-pc-medium");
+          }
+        }
+      }
+      .pgs_button {
+        @include button($blue);
+        .button {
+          width: 248px;
+          margin: auto;
+        }
+      }
       figure {
         margin: 0;
         min-width: 64px;
@@ -378,6 +427,46 @@
           height: 100% !important;
           width: 100%;
           overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .service_news {
+    width: 80%;
+    margin: auto;
+    position: relative;
+    &_title {
+      @include font-size("h1-pc");
+      text-align: center;
+      margin: 0 0 40px;
+    }
+    &_link {
+      a {
+        @include font-size("label-pc-bold");
+        color: $white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    &_items {
+      @include font-size("label-pc-bold");
+      li {
+        margin-bottom: 16px;
+        span {
+          width: 108px;
+          margin-right: 80px;
+        }
+        a {
+          color: $white;
+          text-decoration: none;
+          &:hover {
+            opacity: 0.8;
+          }
         }
       }
     }
@@ -554,13 +643,13 @@
 @media screen and (max-width: 1000px) {
   .landing_container {
     .service_hero_area {
-      margin-bottom: 80px;
+      margin-bottom: 160px;
       h1 {
         font-size: 34px;
       }
       p {
+        margin-bottom: 80px;
         @include font-size("h2-sp");
-        padding-bottom: 160px;
         span {
           display: block;
         }
@@ -733,20 +822,26 @@
       width: auto;
       margin: 0 24px;
       .pgs {
-        div {
-          margin-top: 0;
-          margin-left: 12px;
-          @include font-size("body-sp-bold");
-          .pgs_link {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 40px 24px;
+        .pgs_about {
+          align-items: center;
+          flex-direction: column;
+          p {
             margin-top: 24px;
-            a {
-              @include font-size("h2-sp");
-            }
+            @include font-size("body-sp-bold");
+          }
+        }
+        .pgs_conference {
+          display: none;
+        }
+        .pgs_button {
+          margin-top: 48px;
+          .button {
+            width: 100%;
+            max-width: 248px;
+            @include font-size("body-sp-bold");
           }
         }
       }
@@ -781,6 +876,36 @@
           white-space: pre-wrap;
           span {
             display: inline;
+          }
+        }
+      }
+    }
+
+    .service_news {
+      &_title {
+        @include font-size("h1-sp");
+      }
+      &_link {
+        text-align: right;
+        margin-bottom: 16px;
+        a {
+          position: static;
+          @include font-size("body-sp-bold");
+        }
+      }
+      &_items {
+        @include font-size("body-sp-bold");
+        li {
+          margin-bottom: 24px;
+          span {
+            display: block;
+            width: auto;
+            margin-right: 0;
+            margin-bottom: 8px;
+          }
+          a {
+            color: $white;
+            text-decoration: none;
           }
         }
       }

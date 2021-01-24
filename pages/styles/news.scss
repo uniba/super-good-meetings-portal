@@ -1,0 +1,68 @@
+@import "../../styles/base_styles.scss";
+
+.posts_container {
+  background: $white;
+  color: $black;
+  min-height: calc(100vh - 650px);
+  @include font-size("label-pc-medium");
+  padding: 48px 194px 120px 194px;
+
+  h1 {
+    margin: 0 0 80px 0;
+    @include font-size("h1-pc");
+  }
+
+  .posts_item {
+    display: flex;
+    align-items: center;
+    span {
+      display: block;
+      width: 80px;
+      margin-right: 64px;
+      @include font-size("label-pc-medium");
+    }
+    a {
+      color: $black;
+      text-decoration: none;
+      @include font-size("h2-pc");
+    }
+  }
+
+  .pager {
+    display: flex;
+    justify-content: center;
+    @include font-size("h2-pc");
+    margin-top: 80px;
+    li {
+      margin-right: 8px;
+      a {
+        color: $secondary;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .posts_container {
+    padding: 48px 24px 120px 24px;
+    h1 {
+      margin: 0 0 24px 0;
+      @include font-size("h1-sp");
+    }
+
+    .posts_item {
+      display: block;
+      span {
+        @include font-size("body-sp-medium");
+      }
+      a {
+        @include font-size("h2-sp");
+      }
+    }
+
+    .pager {
+      @include font-size("h2-sp");
+    }
+  }
+}
