@@ -4,7 +4,7 @@ import styles from "./styles/policy.scss";
 
 import Layout from "../components/layout";
 
-export default function Terms() {
+export default function Terms () {
   return (
     <>
       <Head>
@@ -328,6 +328,9 @@ export default function Terms() {
                 <dd>
                   運営者は、登録ユーザーが運営者に提供した情報、データ等を、個人を特定できない形での統計的な情報として、運営者の裁量で、利用及び公開することができるものとし、登録ユーザーはこれに同意するものとします。
                 </dd>
+                <dd>
+                  登録ユーザーが退会した場合、運営者は、ただちに当該登録ユーザーの利用者情報を削除することができるものとします。本項に基づく運営者の措置及び判断により登録ユーザーに損害又は不利益が生じた場合であっても、運営者はその責任を負わないものとします。
+                </dd>
               </dl>
             </dd>
             <dt>第16条（本規約等の変更）</dt>
@@ -372,6 +375,7 @@ export default function Terms() {
           </dl>
 
           <p className={styles.caption}>2020年9月30日制定</p>
+          <p className={styles.caption}>2021年1月31日改定</p>
         </div>
       </Layout>
       <style jsx>{`

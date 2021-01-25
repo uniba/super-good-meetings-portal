@@ -282,22 +282,20 @@ export default function Home ({ allPosts }) {
                 <h3 className={styles.pgs_title}>Project Sprintの登壇実績</h3>
                 <ul className={styles.pgs_link}>
                   <li>
-                    <Link href="http://projectsprint.org">
-                      <a target="_blank">経済産業省 DX-Techmembersランチ会（2020.09.29）</a>
-                    </Link>
+                    経済産業省 DX-Techmembersランチ会（2020.09.29）
                   </li>
                   <li>
-                    <Link href="http://projectsprint.org">
+                    <Link href="https://itr-lounge.connpass.com/event/183245/">
                       <a target="_blank">ITR Lounge ハナシバ vol.5 激動の時代、隣のプロジェクトマネージャが取り組んでいる事（2020.08.12）</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="http://projectsprint.org">
+                    <Link href="https://2019.pmconf.jp/">
                       <a target="_blank">プロダクトマネージャーカンファレンス 2019（2019.11.13）</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="http://projectsprint.org">
+                    <Link href="https://peatix.com/event/1366420/">
                       <a target="_blank">日本ナレッジマネジメント学会：実践ナレッジ・イノベーション研究部会11月度（2019.11.12）</a>
                     </Link>
                   </li>
@@ -315,7 +313,7 @@ export default function Home ({ allPosts }) {
               <h2>サービス紹介PDFをダウンロード</h2>
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
-                <Link href="/src/SuperGoodMeetings_introduction_20201218.pdf">
+                <Link href="/src/Supergoodmeetings_introduction_20210131.pdf">
                   <a>
                     SuperGoodMeetings Introduction.pdf<span></span>(2.6MB)
                   </a>

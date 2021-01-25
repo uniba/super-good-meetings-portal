@@ -57,7 +57,7 @@
     background-repeat: no-repeat;
     background-position: left, right;
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 200px;
     h1 {
       font-weight: 900;
       font-size: 68px;
@@ -85,7 +85,7 @@
     position: relative;
     width: 1176px;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto 80px;
     &::after {
       content: "";
       position: absolute;
@@ -117,7 +117,7 @@
       figure {
         z-index: 1;
         width: 560px;
-        margin-top: 117px;
+        margin-top: 0;
         img {
           width: 100%;
         }
@@ -126,6 +126,7 @@
         z-index: 1;
         h2 {
           @include font-size("h1-pc");
+          margin-top: 56px;
           margin-bottom: 24px;
         }
         p {
@@ -209,7 +210,7 @@
       figure {
         z-index: 1;
         width: 560px;
-        margin-top: 117px;
+        margin-top: 160px;
         img {
           width: 100%;
         }
@@ -217,6 +218,7 @@
       .content {
         h2 {
           @include font-size("h1-pc");
+          margin-top: 220px;
           margin-bottom: 24px;
         }
         p {
@@ -314,8 +316,11 @@
       .pgs_link {
         margin-bottom: 48px;
         li {
-          list-style: "-";
+          list-style: "- ";
+          list-style-position: inside;
+          @include font-size("label-pc-medium");
           a {
+            margin: 0;
             @include font-size("label-pc-medium");
           }
         }
@@ -434,7 +439,7 @@
 
   .service_news {
     width: 80%;
-    margin: auto;
+    margin: 0 auto 160px;
     position: relative;
     &_title {
       @include font-size("h1-pc");
@@ -882,6 +887,7 @@
     }
 
     .service_news {
+      margin: 0 auto 100px;
       &_title {
         @include font-size("h1-sp");
       }
