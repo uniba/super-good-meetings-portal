@@ -62,12 +62,9 @@ export default function Home ({ allPosts }) {
             <p>
               ミーティングのアジェンダが、<span></span>プロジェクトをスムースに
             </p>
-            <figure>
-              <img
-                src="/images/dummy_movie.png"
-                alt="ダミームービー"
-              ></img>
-            </figure>
+            <div className={styles.service_hero_area_movie}>
+              <video controls autoPlay muted playsInline src="/src/SGMs_LP_top.mp4"></video>
+            </div>
           </div>
 
           <div id="about" className={styles.service_about}>
