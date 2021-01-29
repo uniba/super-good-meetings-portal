@@ -30,6 +30,16 @@
         color: $color;
       }
     }
+    &:hover {
+      border: none;
+      a {
+        width: 204px;
+        height: 51px;
+        line-height: 51px;
+        background: $white;
+        color: $color;
+      }
+    }
     @media screen and (max-width: 1000px) {
       width: 100%;
       max-width: 248px;
