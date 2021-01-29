@@ -7,7 +7,7 @@ const Header = () => {
       <Link href="/">
         <h1>
           <img src="/images/sgm_logo.png" alt="SuperGoodMeetings" />
-          <span>クローズドβ版</span>
+          <span>β版</span>
         </h1>
       </Link>
       <ul className={styles.sessions}>

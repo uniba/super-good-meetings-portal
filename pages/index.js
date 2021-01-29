@@ -55,13 +55,14 @@ export default function Home ({ allPosts }) {
         <div className={styles.landing_container}>
           <div className={styles.service_hero_area}>
             <h1>
-              仕事をドライブさせる
-              <br />
-              会議にしよう
+              仕事をドライブさせる会議にしよう
             </h1>
             <p>
               ミーティングのアジェンダが、<span></span>プロジェクトをスムースに
             </p>
+            <div className={styles.service_hero_area_movie}>
+              <video autoPlay muted playsInline src="/src/SGMs_LP_top.mp4" poster="/images/poster.png"></video>
+            </div>
           </div>
 
           <div id="about" className={styles.service_about}>
@@ -263,20 +264,43 @@ export default function Home ({ allPosts }) {
 
           <div className={styles.service_detail}>
             <div className={styles.pgs}>
-              <figure>
-                <img src="/images/pjs_logo.png" alt="Project Sprintロゴ"></img>
-              </figure>
-              <div>
-                「SuperGoodMeetings」はプロジェクト推進メソッド「プロジェクトスプリント」にもとづいて設計されています。
-                <br />
-                <div className={styles.pgs_link}>
+              <div className={styles.pgs_about}>
+                <figure>
+                  <img src="/images/pjs_logo.png" alt="Project Sprintロゴ"></img>
+                </figure>
+                <p>
+                  SuperGoodMeetingsはプロジェクト推進メソッドProject Sprintに基づいて設計されています。<br />
+                  Project Sprintは、ミーティングを活用してプロジェクトを推進する方法論です。コパイロツトがこれまでの業務において積み上げてきたプロジェクト推進の実践知を元に、汎用的な方法論にまとめ、オープンソースとして公開しているものです。
+                </p>
+              </div>
+              <div className={styles.pgs_conference}>
+                <h3 className={styles.pgs_title}>Project Sprintの登壇実績</h3>
+                <ul className={styles.pgs_link}>
+                  <li>
+                    経済産業省 DX-Techmembersランチ会（2020.09.29）
+                  </li>
+                  <li>
+                    <Link href="https://itr-lounge.connpass.com/event/183245/">
+                      <a target="_blank">ITR Lounge ハナシバ vol.5 激動の時代、隣のプロジェクトマネージャが取り組んでいる事（2020.08.12）</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://2019.pmconf.jp/">
+                      <a target="_blank">プロダクトマネージャーカンファレンス 2019（2019.11.13）</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://peatix.com/event/1366420/">
+                      <a target="_blank">日本ナレッジマネジメント学会：実践ナレッジ・イノベーション研究部会11月度（2019.11.12）</a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.pgs_button}>
+                <div className={styles.button}>
                   <Link href="http://projectsprint.org">
                     <a target="_blank">projectsprint.org</a>
                   </Link>
-                  <img
-                    src="/images/icon_external_link.svg"
-                    alt="外部リンクアイコン"
-                  ></img>
                 </div>
               </div>
             </div>
@@ -284,7 +308,7 @@ export default function Home ({ allPosts }) {
               <h2>サービス紹介PDFをダウンロード</h2>
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
-                <Link href="/src/SuperGoodMeetings_introduction_20201218.pdf">
+                <Link href="/src/Supergoodmeetings_introduction_20210131.pdf">
                   <a>
                     SuperGoodMeetings Introduction.pdf<span></span>(2.6MB)
                   </a>
@@ -315,13 +339,15 @@ export default function Home ({ allPosts }) {
             </div>
           </div>
 
-          {/* {posts.length > 0 ? (
-            <div>
-              <h2>お知らせ</h2>
-              <Link href="/posts">
-                お知らせ一覧
-              </Link>
-              <ul>
+          {posts.length > 0 ? (
+            <div className={styles.service_news}>
+              <h2 className={styles.service_news_title}>お知らせ</h2>
+              <div className={styles.service_news_link}>
+                <Link href="/posts">
+                  お知らせ一覧
+                </Link>
+              </div>
+              <ul className={styles.service_news_items}>
                 {posts.map((post, i) => (
                   <li key={i}>
                     <span>{post.date}</span>
@@ -332,9 +358,9 @@ export default function Home ({ allPosts }) {
                 ))}
               </ul>
             </div>
-          ) : null} */}
+          ) : null}
 
-          <div className={styles.service_interview}>
+          <div id="interview" className={styles.service_interview}>
             <h2 className={styles.service_interview_title}>インタビュー</h2>
             <div className={styles.service_interview_content}>
               <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
@@ -347,7 +373,7 @@ export default function Home ({ allPosts }) {
             </div>
           </div>
 
-          <div className={styles.service_media}>
+          <div id="media" className={styles.service_media}>
             <h2 className={styles.service_media_title}>メディア掲載</h2>
             <MediaQuery query="(max-width: 1000px)">
               <Swiper {...params}>

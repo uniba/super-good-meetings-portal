@@ -18,6 +18,17 @@
       line-height: 41px;
       width: 100%;
       border-radius: 30px;
+      margin: 0;
+    }
+    &:hover {
+      border: none;
+      a {
+        width: 100%;
+        height: 100%;
+        line-height: 51px;
+        background: $white;
+        color: $color;
+      }
     }
     &:hover {
       border: none;
@@ -30,6 +41,8 @@
       }
     }
     @media screen and (max-width: 1000px) {
+      width: 100%;
+      max-width: 248px;
       a {
         @include font-size("h2-sp");
         line-height: 40px;
@@ -49,29 +62,41 @@
   // ヒーローエリア----------------------------------------------
   .service_hero_area {
     background-size: 100%;
-    background-image: url("/images/background_hero.svg");
+    background-image: url("/images/background_hero1.svg"), url("/images/background_hero2.svg");
+    background-size: contain, contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: left, right;
     text-align: center;
-    margin-bottom: 160px;
+    margin-bottom: 200px;
     h1 {
       font-weight: 900;
-      font-size: 68px;
+      font-size: 54px;
       line-height: 123%;
       margin: 0;
     }
     p {
       @include font-size("h2-pc");
-      padding-bottom: 368px;
+      margin-bottom: 48px;
+    }
+    &_movie {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 24px;
+      video {
+        width: 100%;
+        max-width: 724px;
+        background: $blue;
+      }
     }
   }
 
   // サービス概要説明----------------------------------------------
   .service_about {
     position: relative;
-    width: 1176px;
+    width: 1056px;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto 80px;
     &::after {
       content: "";
       position: absolute;
@@ -87,7 +112,7 @@
       content: "";
       position: absolute;
       top: 320px;
-      left: -70px;
+      left: -200px;
       width: 260px;
       height: 260px;
       background-size: contain;
@@ -103,7 +128,7 @@
       figure {
         z-index: 1;
         width: 560px;
-        margin-top: 117px;
+        margin: 0 0 0 -100px;
         img {
           width: 100%;
         }
@@ -112,6 +137,7 @@
         z-index: 1;
         h2 {
           @include font-size("h1-pc");
+          margin-top: 56px;
           margin-bottom: 24px;
         }
         p {
@@ -120,6 +146,7 @@
       }
     }
     &_message2 {
+      z-index: 1;
       .bubble:nth-child(1) {
         position: absolute;
         top: 360px;
@@ -173,8 +200,8 @@
       &::after {
         content: "";
         position: absolute;
-        top: 220px;
-        right: -160px;
+        top: 360px;
+        right: -280px;
         width: 300px;
         height: 300px;
         background-image: url("/images/background_bubbles4.svg");
@@ -184,8 +211,8 @@
       &::before {
         content: "";
         position: absolute;
-        top: 370px;
-        left: -280px;
+        top: 450px;
+        left: -320px;
         width: 300px;
         height: 300px;
         background-image: url("/images/background_bubbles5.svg");
@@ -195,14 +222,16 @@
       figure {
         z-index: 1;
         width: 560px;
-        margin-top: 117px;
+        margin: 160px -100px 0 0;
         img {
           width: 100%;
         }
       }
       .content {
+        z-index: 1;
         h2 {
           @include font-size("h1-pc");
+          margin-top: 220px;
           margin-bottom: 24px;
         }
         p {
@@ -273,11 +302,50 @@
 
   //PJsの紹介、サービス紹介PDFへのダウンロード----------------------------------------------
   .service_detail {
-    width: 1176px;
+    width: 1056px;
     margin: 0 auto;
     .pgs {
+      background: $blue;
+      width: 1056px;
+      box-sizing: border-box;
+      padding: 80px 48px 64px 48px;
+      border-radius: 30px;
       display: flex;
+      flex-direction: column;
       margin-bottom: 80px;
+      .pgs_about {
+        display: flex;
+        figure {
+          margin-right: 16px;
+        }
+        p {
+          @include font-size("label-pc-medium");
+          margin: 0;
+        }
+      }
+      .pgs_title {
+        @include font-size("label-pc-bold");
+        margin: 40px 0 8px;
+      }
+      .pgs_link {
+        margin-bottom: 48px;
+        li {
+          list-style: "- ";
+          list-style-position: inside;
+          @include font-size("label-pc-medium");
+          a {
+            margin: 0;
+            @include font-size("label-pc-medium");
+          }
+        }
+      }
+      .pgs_button {
+        @include button($blue);
+        .button {
+          width: 248px;
+          margin: auto;
+        }
+      }
       figure {
         margin: 0;
         min-width: 64px;
@@ -358,7 +426,7 @@
       img {
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 102.3%;
         left: 0;
         top: 0;
         z-index: 1;
@@ -378,6 +446,46 @@
           height: 100% !important;
           width: 100%;
           overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .service_news {
+    width: 1056px;
+    margin: 0 auto 160px;
+    position: relative;
+    &_title {
+      @include font-size("h1-pc");
+      text-align: center;
+      margin: 0 0 40px;
+    }
+    &_link {
+      a {
+        @include font-size("label-pc-bold");
+        color: $white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    &_items {
+      @include font-size("label-pc-bold");
+      li {
+        margin-bottom: 16px;
+        span {
+          width: 108px;
+          margin-right: 80px;
+        }
+        a {
+          color: $white;
+          text-decoration: none;
+          &:hover {
+            opacity: 0.8;
+          }
         }
       }
     }
@@ -484,7 +592,7 @@
 
   //ユーザコミュニティ、お問い合わせ----------------------------------------------
   .service_contact {
-    width: 1052px;
+    width: 1056px;
     margin: auto;
     display: flex;
     .user_community {
@@ -554,13 +662,13 @@
 @media screen and (max-width: 1000px) {
   .landing_container {
     .service_hero_area {
-      margin-bottom: 80px;
+      margin-bottom: 160px;
       h1 {
         font-size: 34px;
       }
       p {
+        margin-bottom: 80px;
         @include font-size("h2-sp");
-        padding-bottom: 160px;
         span {
           display: block;
         }
@@ -586,6 +694,7 @@
         .content {
           h2 {
             @include font-size("h1-sp");
+            margin-top: 24px;
             margin-bottom: 16px;
           }
           p {
@@ -658,6 +767,7 @@
           order: 2;
           h2 {
             @include font-size("h1-sp");
+            margin-top: 24px;
             margin-bottom: 16px;
           }
           p {
@@ -733,20 +843,26 @@
       width: auto;
       margin: 0 24px;
       .pgs {
-        div {
-          margin-top: 0;
-          margin-left: 12px;
-          @include font-size("body-sp-bold");
-          .pgs_link {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 40px 24px;
+        .pgs_about {
+          align-items: center;
+          flex-direction: column;
+          p {
             margin-top: 24px;
-            a {
-              @include font-size("h2-sp");
-            }
+            @include font-size("body-sp-bold");
+          }
+        }
+        .pgs_conference {
+          display: none;
+        }
+        .pgs_button {
+          margin-top: 48px;
+          .button {
+            width: 100%;
+            max-width: 248px;
+            @include font-size("body-sp-bold");
           }
         }
       }
@@ -781,6 +897,38 @@
           white-space: pre-wrap;
           span {
             display: inline;
+          }
+        }
+      }
+    }
+
+    .service_news {
+      width: auto;
+      margin: 0 24px 100px;
+      &_title {
+        @include font-size("h1-sp");
+      }
+      &_link {
+        text-align: right;
+        margin-bottom: 16px;
+        a {
+          position: static;
+          @include font-size("body-sp-bold");
+        }
+      }
+      &_items {
+        @include font-size("body-sp-bold");
+        li {
+          margin-bottom: 24px;
+          span {
+            display: block;
+            width: auto;
+            margin-right: 0;
+            margin-bottom: 8px;
+          }
+          a {
+            color: $white;
+            text-decoration: none;
           }
         }
       }

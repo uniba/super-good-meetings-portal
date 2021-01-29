@@ -15,8 +15,18 @@ const Footer = () => {
         <div className={styles.footer_navigation}>
           <ul>
             <li>
-              <Link href="#about">サービス紹介</Link>
+              <Link href="/#about">サービス紹介</Link>
             </li>
+            <li>
+              <Link href="/#interview">
+                インタビュー
+              </Link>
+            </li>
+            <li>
+              <Link href="/#media">メディア掲載</Link>
+            </li>
+          </ul>
+          <ul>
             <li>
               <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
                 <a target="_blank" rel="noopener">
@@ -24,8 +34,9 @@ const Footer = () => {
                 </a>
               </Link>
             </li>
-          </ul>
-          <ul>
+            <li>
+              <Link href="/posts">お知らせ</Link>
+            </li>
             <li>
               <Link href="http://slack.projectsprint.org/">
                 <a target="_blank" rel="noopener">
