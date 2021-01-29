@@ -55,15 +55,13 @@ export default function Home ({ allPosts }) {
         <div className={styles.landing_container}>
           <div className={styles.service_hero_area}>
             <h1>
-              仕事をドライブさせる
-              <br />
-              会議にしよう
+              仕事をドライブさせる会議にしよう
             </h1>
             <p>
               ミーティングのアジェンダが、<span></span>プロジェクトをスムースに
             </p>
             <div className={styles.service_hero_area_movie}>
-              <video controls autoPlay muted playsInline src="/src/SGMs_LP_top.mp4"></video>
+              <video autoPlay muted playsInline src="/src/SGMs_LP_top.mp4" poster="/images/poster.png"></video>
             </div>
           </div>
 
