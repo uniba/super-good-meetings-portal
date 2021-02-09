@@ -688,9 +688,10 @@
 @media screen and (max-width: 1000px) {
   .landing_container {
     .service_hero_area {
-      margin-bottom: 160px;
+      margin-bottom: 100px;
       h1 {
         font-size: 34px;
+        padding: 0 16px;
       }
       p {
         margin-bottom: 80px;
@@ -700,6 +701,32 @@
         }
       }
     }
+
+    .service_trial {
+      width: auto;
+      margin: 0 24px 100px;
+      padding: 40px 24px;
+
+      &_heading {
+        display: block;
+        padding: 0;
+
+        img {
+          display: block;
+          margin-left: auto;
+        }
+
+        h2 {
+          @include font-size("h1-sp");
+          margin: 0;
+        }
+
+        p {
+          @include font-size("label-sp-bold");
+        }
+      }
+    }
+
     .service_about {
       width: auto;
       margin: auto 24px;
