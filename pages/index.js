@@ -75,7 +75,7 @@ export default function Home ({ allPosts }) {
               SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。ぜひお試しください！
             </p>
             <div className={styles.button} role="button">
-              <Link href="http://sgms.app/signup">新規登録</Link>
+              <a href="http://sgms.app/signup" id="ga_signup_body">新規登録</a>
             </div>
           </div>
 
@@ -312,9 +312,7 @@ export default function Home ({ allPosts }) {
               </div>
               <div className={styles.pgs_button}>
                 <div className={styles.button}>
-                  <Link href="http://projectsprint.org">
-                    <a target="_blank">projectsprint.org</a>
-                  </Link>
+                  <a id="ga_pjs" href="http://projectsprint.org" target="_blank">projectsprint.org</a>
                 </div>
               </div>
             </div>
@@ -336,8 +334,9 @@ export default function Home ({ allPosts }) {
               動画でわかる、
               <span>SuperGoodMeetings</span>
             </h2>
-            <div className={styles.dummymovie}>
+            <div className={styles.dummymovie} class="movie">
               <img
+                class="ga_movie"
                 id="movieArea"
                 src="/images/movie_thumb.png"
                 alt="クリックで再生"

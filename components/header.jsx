@@ -20,7 +20,7 @@ const Header = () => {
           <Link href="https://sgms.app/login">ログイン</Link>
         </li>
         <li className={styles.signup_button}>
-          <Link href="https://sgms.app/login">新規登録</Link>
+          <a href="https://sgms.app/signup" id="ga_signup_header">新規登録</a>
         </li>
       </ul>
     </div>
