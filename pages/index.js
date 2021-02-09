@@ -65,6 +65,20 @@ export default function Home ({ allPosts }) {
             </div>
           </div>
 
+          <div className={styles.service_trial}>
+            <div className={styles.service_trial_heading}>
+              <img src="/images/illust_trial.svg" alt="イメージイラスト" />
+              <h2>どなたでもSuperGoodMeetingsをお試しいただけます！</h2>
+            </div>
+            <p>
+              2021年2月1日より、SuperGoodMeetings β版の提供を開始いたします。<br />
+              SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。ぜひお試しください！
+            </p>
+            <div className={styles.button} role="button">
+              <Link href="http://sgms.app/signup">新規登録</Link>
+            </div>
+          </div>
+
           <div id="about" className={styles.service_about}>
             <div className={styles.service_about_message1}>
               <figure>
