@@ -65,6 +65,20 @@ export default function Home ({ allPosts }) {
             </div>
           </div>
 
+          <div className={styles.service_trial}>
+            <div className={styles.service_trial_heading}>
+              <img src="/images/illust_trial.svg" alt="イメージイラスト" />
+              <h2>どなたでもSuperGoodMeetingsをお試しいただけます！</h2>
+            </div>
+            <p>
+              2021年2月1日より、SuperGoodMeetings β版の提供を開始いたします。<br />
+              SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。ぜひお試しください！
+            </p>
+            <div className={styles.button} role="button">
+              <a href="http://sgms.app/signup" id="ga_signup_body">新規登録</a>
+            </div>
+          </div>
+
           <div id="about" className={styles.service_about}>
             <div className={styles.service_about_message1}>
               <figure>
@@ -298,9 +312,7 @@ export default function Home ({ allPosts }) {
               </div>
               <div className={styles.pgs_button}>
                 <div className={styles.button}>
-                  <Link href="http://projectsprint.org">
-                    <a target="_blank">projectsprint.org</a>
-                  </Link>
+                  <a id="ga_pjs" href="http://projectsprint.org" target="_blank">projectsprint.org</a>
                 </div>
               </div>
             </div>
@@ -308,7 +320,7 @@ export default function Home ({ allPosts }) {
               <h2>サービス紹介PDFをダウンロード</h2>
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
-                <Link href="/src/Supergoodmeetings_introduction_20210131.pdf">
+                <Link href="/src/SuperGoodMeetings_introduction_20210209.pdf">
                   <a>
                     SuperGoodMeetings Introduction.pdf<span></span>(2.6MB)
                   </a>
@@ -322,8 +334,9 @@ export default function Home ({ allPosts }) {
               動画でわかる、
               <span>SuperGoodMeetings</span>
             </h2>
-            <div className={styles.dummymovie}>
+            <div className={styles.dummymovie} class="movie">
               <img
+                class="ga_movie"
                 id="movieArea"
                 src="/images/movie_thumb.png"
                 alt="クリックで再生"

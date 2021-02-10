@@ -11,13 +11,16 @@ const Header = () => {
         </h1>
       </Link>
       <ul className={styles.sessions}>
-        <li>
-          <Link href="https://sgms.app/login">LOG IN</Link>
+        <li class={styles.contact_button}>
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
+            <a target="_blank">お問い合わせ</a>
+          </Link>
         </li>
         <li>
-          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
-            <a target="_blank">CONTACT US</a>
-          </Link>
+          <Link href="https://sgms.app/login">ログイン</Link>
+        </li>
+        <li className={styles.signup_button}>
+          <a href="https://sgms.app/signup" id="ga_signup_header">新規登録</a>
         </li>
       </ul>
     </div>

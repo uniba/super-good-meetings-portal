@@ -26,21 +26,26 @@
     align-items: center;
     margin-left: auto;
 
+    .contact_button {
+      margin-right: 56px;
+    }
+
+    .signup_button {
+      border-radius: 10px;
+      margin-left: 24px;
+      padding: 14px 16px;
+      background-color: $sky;
+    }
+
     a {
+      @include font-size("body-pc");
+      display: block;
       color: $white;
-      font-family: "Open Sans";
-      font-size: 20px;
-      font-weight: 800;
-      text-transform: uppercase;
       text-decoration: none;
-      line-height: 1.35;
+      line-height: 1;
 
       &:hover {
         opacity: 80%;
-      }
-
-      &:last-child {
-        margin-left: 48px;
       }
     }
   }
@@ -57,15 +62,22 @@
       }
       span {
         margin: 8px 0 0 0;
+        line-height: 1;
       }
     }
     .sessions {
+      .contact_button {
+        margin-right: 24px;
+      }
+
+      .signup_button {
+        margin-left: 8px;
+        padding: 4px 8px;
+      }
+
       a {
-        font-size: 16px;
         white-space: nowrap;
-        &:last-child {
-          margin-left: 24px;
-        }
+        @include font-size("body-sp-bold");
       }
     }
   }
