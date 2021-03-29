@@ -36,7 +36,7 @@ const CustomForm = ({ status, message, onValidated }) => {
     });
 
   return (
-    <div>
+    <div className={styles.submit_button}>
       {status === "sending" && <div style={{ color: "blue" }}>送信中...</div>}
       {status === "error" && (
         <div
@@ -480,7 +480,7 @@ export default function Home ({ allPosts }) {
                 </p>
               </div>
               <div className={styles.button} role="button">
-                <Link href="http://slack.projectsprint.org/">今すぐ登録！</Link>
+                <Link href="https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8ePJduQ#/shared-invite/email">今すぐ登録！</Link>
               </div>
               <p className={styles.caption}>
                 <Link href="https://projectsprint.slack.com/">
@@ -510,23 +510,25 @@ export default function Home ({ allPosts }) {
             </div>
           </div>
 
-          <div className={styles.newsletter}>
-            <h2>Newsletter</h2>
-            <MailchimpSubscribe
-              url="https://supergoodmeetings.us4.list-manage.com/subscribe/post?u=4914736f05d3b5eb761d836c4&amp;id=d6f47afc4c"
-              render={({ subscribe, status, message }) => (
-                <div>
-                  <p>
-                    SuperGoodMeetings開発進捗状況や、基本設計にも使われているプロジェクト推進メソッドに関する情報、プロジェクト進行のお役立ちTipsなどをお知らせいたします！
+          <div className={styles.newsletter_container}>
+            <div className={styles.newsletter}>
+              <h2>Newsletter</h2>
+              <MailchimpSubscribe
+                url="https://supergoodmeetings.us4.list-manage.com/subscribe/post?u=4914736f05d3b5eb761d836c4&amp;id=d6f47afc4c"
+                render={({ subscribe, status, message }) => (
+                  <div>
+                    <p>
+                      SuperGoodMeetings開発進捗状況や、基本設計にも使われているプロジェクト推進メソッドに関する情報、プロジェクト進行のお役立ちTipsなどをお知らせいたします！
                 </p>
-                  <CustomForm
-                    status={status}
-                    message={message}
-                    onValidated={formData => subscribe(formData)}
-                  />
-                </div>
-              )}
-            />
+                    <CustomForm
+                      status={status}
+                      message={message}
+                      onValidated={formData => subscribe(formData)}
+                    />
+                  </div>
+                )}
+              />
+            </div>
           </div>
         </div>
       </Layout>
