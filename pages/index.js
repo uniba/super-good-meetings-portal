@@ -89,16 +89,12 @@ export default function Home ({ allPosts }) {
             background-image: url(/images/icon_left.svg);
             left: 0;
           }
-          .swiper-container {
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-bottom: 50px;
-          }
           .swiper-pagination-bullet,
           .swiper-pagination-bullet-active{
             background: white;
           }
           .swiper-slide {
+            width: 100%;
             height: auto;
           }
           @media screen and (max-width: 1000px) {
@@ -451,6 +447,7 @@ export default function Home ({ allPosts }) {
                   width: 715,
                 }
               }}
+              className={styles.swiper_container}
             >
               <SwiperSlide className={styles.service_interview_content}>
                 <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
@@ -497,6 +494,7 @@ export default function Home ({ allPosts }) {
                   width: 940,
                 }
               }}
+              className={styles.swiper_container}
             >
               <SwiperSlide className={styles.service_media_contents_item}>
                 <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">

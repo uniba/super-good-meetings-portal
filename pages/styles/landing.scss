@@ -548,6 +548,11 @@
   .service_interview {
     width: 715px;
     margin: 0 auto 160px;
+    .swiper_container {
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 50px;
+    }
     a {
       color: $white;
       text-decoration: none;
@@ -601,12 +606,16 @@
   .service_media {
     width: 940px;
     margin: 0 auto 160px;
+    .swiper_container {
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 50px;
+    }
     &_title {
       @include font-size("h1-pc");
       text-align: center;
       margin: 0 0 40px;
     }
-
     &_contents {
       display: flex;
       justify-content: center;
