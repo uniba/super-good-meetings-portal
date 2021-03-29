@@ -546,7 +546,7 @@
   }
 
   .service_interview {
-    width: 615px;
+    width: 715px;
     margin: 0 auto 160px;
     a {
       color: $white;
@@ -556,6 +556,9 @@
       width: 100%;
       height: 100%;
       padding: 48px 40px 80px 40px;
+      &:hover {
+        opacity: 0.8;
+      }
     }
     &_title {
       @include font-size("h1-pc");
@@ -569,8 +572,8 @@
         line-height: 30px;
         margin: 0;
         img {
-          width: 160px;
-          height: 30px;
+          width: 120px;
+          height: auto;
         }
       }
       .image {
@@ -593,14 +596,11 @@
         }
       }
     }
-
-    &:hover {
-      opacity: 0.8;
-    }
   }
 
   .service_media {
-    margin-bottom: 160px;
+    width: 940px;
+    margin: 0 auto 160px;
     &_title {
       @include font-size("h1-pc");
       text-align: center;
@@ -611,7 +611,6 @@
       display: flex;
       justify-content: center;
       &_item {
-        width: 397px;
         margin-right: 40px;
         box-sizing: border-box;
         border-radius: 24px;
@@ -1056,7 +1055,7 @@
 
     .service_interview {
       width: auto;
-      margin: 100px 24px;
+      margin: 100px auto 100px;
       a {
         padding: 40px 24px 58px 24px;
       }
@@ -1087,7 +1086,8 @@
     }
 
     .service_media {
-      margin-bottom: 100px;
+      width: auto;
+      margin: 0 auto 100px;
       a {
         padding: 32px 16px 38px 16px;
       }
