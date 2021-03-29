@@ -98,6 +98,9 @@ export default function Home ({ allPosts }) {
           .swiper-pagination-bullet-active{
             background: white;
           }
+          .swiper-slide {
+            height: auto;
+          }
           @media screen and (max-width: 1000px) {
             .swiper-container {
               padding:0;
