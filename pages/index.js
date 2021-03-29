@@ -397,7 +397,7 @@ export default function Home ({ allPosts }) {
               動画でわかる、
               <span>SuperGoodMeetings</span>
             </h2>
-            <div className={styles.dummymovie} class="movie">
+            <div className={styles.dummymovie}>
               <img
                 class="ga_movie"
                 id="movieArea"
