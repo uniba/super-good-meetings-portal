@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/layout";
 import YouTube from "react-youtube";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import MediaQuery from "react-responsive";
 import styles from "./styles/landing.scss";
@@ -10,7 +10,7 @@ import { getAllPosts } from '../lib/api';
 import { findLastIndex } from "lodash";
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination]);
 
 function _onReady (event) {
   if (process.browser) {
