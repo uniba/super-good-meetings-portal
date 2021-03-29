@@ -38,7 +38,8 @@ const Footer = () => {
               <Link href="/posts">お知らせ</Link>
             </li>
             <li>
-              <Link href="http://slack.projectsprint.org/">
+              <Link href="
+https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8ePJduQ#/shared-invite/email">
                 <a target="_blank" rel="noopener">
                   ユーザーコミュニティ
                 </a>
