@@ -7,6 +7,7 @@ import styles from "./styles/landing.scss";
 import { getAllPosts } from '../lib/api';
 import Layout from "../components/layout";
 import { findLastIndex } from "lodash";
+import MailchimpSubscribe from "react-mailchimp-subscribe"
 
 function _onReady (event) {
   if (process.browser) {
@@ -24,6 +25,43 @@ function _onReady (event) {
     });
   }
 }
+
+const CustomForm = ({ status, message, onValidated }) => {
+  let email;
+  const submit = () =>
+    email &&
+    email.value.indexOf("@") > -1 &&
+    onValidated({
+      EMAIL: email.value
+    });
+
+  return (
+    <div>
+      {status === "sending" && <div style={{ color: "blue" }}>送信中...</div>}
+      {status === "error" && (
+        <div
+          style={{ color: "red" }}
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+      {status === "success" && (
+        <div
+          style={{ color: "white" }}
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+      <input
+        ref={node => (email = node)}
+        type="email"
+        placeholder="Eメールアドレスを入力してください"
+      />
+      <br />
+      <button onClick={submit}>
+        登録する
+      </button>
+    </div>
+  );
+};
 
 export default function Home ({ allPosts }) {
   const posts = allPosts.slice(0, 5);
@@ -470,6 +508,25 @@ export default function Home ({ allPosts }) {
                 </Link>
               </div>
             </div>
+          </div>
+
+          <div className={styles.newsletter}>
+            <h2>Newsletter</h2>
+            <MailchimpSubscribe
+              url="https://supergoodmeetings.us4.list-manage.com/subscribe/post?u=4914736f05d3b5eb761d836c4&amp;id=d6f47afc4c"
+              render={({ subscribe, status, message }) => (
+                <div>
+                  <p>
+                    SuperGoodMeetings開発進捗状況や、基本設計にも使われているプロジェクト推進メソッドに関する情報、プロジェクト進行のお役立ちTipsなどをお知らせいたします！
+                </p>
+                  <CustomForm
+                    status={status}
+                    message={message}
+                    onValidated={formData => subscribe(formData)}
+                  />
+                </div>
+              )}
+            />
           </div>
         </div>
       </Layout>
