@@ -39,18 +39,19 @@ const CustomForm = ({ status, message, onValidated }) => {
     });
 
   return (
-    <div className={styles.submit_button}>
-      {status === "sending" && <div style={{ color: "blue" }}>送信中...</div>}
+    <div className={styles.submit_area}>
+      {status === "sending" && <div
+        className={styles.submit_area_text}>送信中...</div>}
       {status === "error" && (
         <div
-          style={{ color: "red" }}
           dangerouslySetInnerHTML={{ __html: message }}
+          className={styles.submit_area_text}
         />
       )}
       {status === "success" && (
         <div
-          style={{ color: "white" }}
           dangerouslySetInnerHTML={{ __html: message }}
+          className={styles.submit_area_text}
         />
       )}
       <input

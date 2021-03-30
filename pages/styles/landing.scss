@@ -5,6 +5,7 @@
 @mixin button($color) {
   button {
     box-sizing: border-box;
+    cursor: pointer;
     width: 204px;
     height: 51px;
     border-radius: 30px;
@@ -23,6 +24,10 @@
       border: none;
       background: $white;
       color: $color;
+    }
+
+    &:focus {
+      outline: none;
     }
 
     @media screen and (max-width: 1000px) {
@@ -720,7 +725,7 @@
 
   //ニュースレター
   .newsletter_container {
-    @include button($blue);
+    @include button($sky);
     background: $sky;
     padding: 40px;
     .newsletter {
@@ -745,10 +750,16 @@
         padding: 0 24px;
         height: 48px;
       }
-      .submit_button {
+      .submit_area {
         display: flex;
         flex-direction: column;
         align-items: center;
+        &_text {
+          @include font-size("caption-pc");
+          margin-right: auto;
+          margin-bottom: 16px;
+          color: $blue;
+        }
       }
     }
   }
@@ -1195,10 +1206,10 @@
           padding: 0 24px;
           height: 48px;
         }
-        .submit_button {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+        .submit_area {
+          &_text {
+            @include font-size("body-sp-bold");
+          }
         }
       }
     }
