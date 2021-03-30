@@ -1076,6 +1076,9 @@
     .service_interview {
       width: auto;
       margin: 100px auto 100px;
+      .swiper_container {
+        padding: 0;
+      }
       a {
         padding: 40px 24px 58px 24px;
       }
@@ -1108,6 +1111,9 @@
     .service_media {
       width: auto;
       margin: 0 auto 100px;
+      .swiper_container {
+        padding: 0;
+      }
       a {
         padding: 32px 16px 38px 16px;
       }

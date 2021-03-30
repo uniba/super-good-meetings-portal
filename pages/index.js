@@ -436,11 +436,11 @@ export default function Home ({ allPosts }) {
           <div id="interview" className={styles.service_interview}>
             <h2 className={styles.service_interview_title}>インタビュー</h2>
             <Swiper
-              spaceBetween={30}
+              spaceBetween={16}
               navigation
               pagination={{ clickable: true }}
               centeredSlides={true}
-              slidesPerView={1.2}
+              slidesPerView={1.15}
               loop={true}
               breakpoints={{
                 1000: {
@@ -483,9 +483,9 @@ export default function Home ({ allPosts }) {
           <div id="media" className={styles.service_media}>
             <h2 className={styles.service_media_title}>メディア掲載</h2>
             <Swiper
-              spaceBetween={30}
+              spaceBetween={16}
               centeredSlides={true}
-              slidesPerView={1.2}
+              slidesPerView={1.15}
               breakpoints={{
                 1000: {
                   spaceBetween: 50,
