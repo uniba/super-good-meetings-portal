@@ -441,6 +441,7 @@ export default function Home ({ allPosts }) {
               pagination={{ clickable: true }}
               centeredSlides={true}
               slidesPerView={1.2}
+              loop={true}
               breakpoints={{
                 1000: {
                   slidesPerView: 1,
@@ -483,8 +484,6 @@ export default function Home ({ allPosts }) {
             <h2 className={styles.service_media_title}>メディア掲載</h2>
             <Swiper
               spaceBetween={30}
-              navigation
-              pagination={{ clickable: true }}
               centeredSlides={true}
               slidesPerView={1.2}
               breakpoints={{
