@@ -1244,8 +1244,10 @@
 @keyframes fadeOut {
   0% {
     opacity: 1;
+    visibility: visible;
   }
   100% {
     opacity: 0;
+    visibility: hidden;
   }
 }

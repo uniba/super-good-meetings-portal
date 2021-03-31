@@ -14,15 +14,10 @@ SwiperCore.use([Navigation, Pagination]);
 
 function _onReady (event) {
   if (process.browser) {
-    document.getElementById("movieArea").addEventListener("click", function () {
+    document.getElementsByClassName("movieArea")[0].addEventListener("click", function () {
       let promise = new Promise((resolve, reject) => {
         this.classList.add(styles.fadeout);
         resolve();
-      });
-      promise.then((msg) => {
-        return new Promise((resolve, reject) => {
-          this.classList.add(styles.displaynone);
-        });
       });
       event.target.playVideo();
     });
@@ -381,7 +376,7 @@ export default function Home ({ allPosts }) {
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
                 <Link href="/src/SuperGoodMeetings_introduction_20210209.pdf">
-                  <a>
+                  <a id="ga_intropdf_body">
                     SuperGoodMeetings Introduction.pdf<span></span>(2.6MB)
                   </a>
                 </Link>
@@ -396,8 +391,8 @@ export default function Home ({ allPosts }) {
             </h2>
             <div className={styles.dummymovie}>
               <img
-                class="ga_movie"
-                id="movieArea"
+                class="movieArea"
+                id="ga_movie"
                 src="/images/movie_thumb.png"
                 alt="クリックで再生"
               ></img>
@@ -531,7 +526,8 @@ export default function Home ({ allPosts }) {
                 </p>
               </div>
               <div className={styles.button} role="button">
-                <Link href="https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8ePJduQ#/shared-invite/email">今すぐ登録！</Link>
+                <Link href="https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8ePJduQ#/shared-invite/email">
+                  <a id="ga_usercommunity_body"></a>今すぐ登録！</Link>
               </div>
               <p className={styles.caption}>
                 <Link href="https://projectsprint.slack.com/">
@@ -555,7 +551,7 @@ export default function Home ({ allPosts }) {
               </div>
               <div className={styles.button} role="button">
                 <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
-                  お問い合わせ
+                  <a id="ga_contact_body">お問い合わせ</a>
                 </Link>
               </div>
             </div>
