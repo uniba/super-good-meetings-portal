@@ -16,7 +16,8 @@ const Footer = () => {
           <ul>
             <li>
               <Link href="/#about">
-                <a id="ga_about_footer">サービス紹介</a></Link>
+                <a id="ga_about_footer">サービス紹介</a>
+              </Link>
             </li>
             <li>
               <Link href="/#interview">
@@ -39,7 +40,8 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/posts">
-                <a id="ga_posts_footer">お知らせ</a></Link>
+                <a id="ga_posts_footer">お知らせ</a>
+              </Link>
             </li>
             <li>
               <Link href="

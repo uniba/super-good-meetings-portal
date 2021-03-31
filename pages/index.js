@@ -527,7 +527,7 @@ export default function Home ({ allPosts }) {
               </div>
               <div className={styles.button} role="button">
                 <Link href="https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8ePJduQ#/shared-invite/email">
-                  <a id="ga_usercommunity_body"></a>今すぐ登録！</Link>
+                  <a id="ga_usercommunity_body">今すぐ登録！</a></Link>
               </div>
               <p className={styles.caption}>
                 <Link href="https://projectsprint.slack.com/">
