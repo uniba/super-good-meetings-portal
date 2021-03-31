@@ -6,11 +6,11 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.footer_inner}>
         <Link href="/">
-          <h1>
-            <a id="ga_logo_footer">
+          <a id="ga_logo_footer">
+            <h1>
               <img src="/images/logo_mark.svg" alt="" />
-            </a>
-          </h1>
+            </h1>
+          </a>
         </Link>
         <div className={styles.footer_navigation}>
           <ul>
