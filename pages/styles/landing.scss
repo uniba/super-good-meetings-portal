@@ -3,6 +3,41 @@
 // ボタン用共通スタイル
 
 @mixin button($color) {
+  button {
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 204px;
+    height: 51px;
+    border-radius: 30px;
+    border: 5px solid $white;
+    background: transparent;
+
+    @include font-size("body-pc");
+    color: $white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 30px;
+    margin: 0;
+
+    &:hover {
+      border: none;
+      background: $white;
+      color: $color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+      max-width: 248px;
+      @include font-size("h2-sp");
+      line-height: 40px;
+    }
+  }
+
   .button {
     box-sizing: border-box;
     width: 204px;
@@ -32,18 +67,6 @@
       }
     }
 
-    &:hover {
-      border: none;
-
-      a {
-        width: 100%;
-        height: 100%;
-        line-height: 51px;
-        background: $white;
-        color: $color;
-      }
-    }
-
     @media screen and (max-width: 1000px) {
       width: 100%;
       max-width: 248px;
@@ -61,7 +84,6 @@
   height: 100%;
   background-color: $background;
   color: $white;
-  padding: 24px 0px 160px 0px;
 
   // ヒーローエリア----------------------------------------------
   .service_hero_area {
@@ -71,6 +93,7 @@
     background-repeat: no-repeat;
     background-position: left, right;
     text-align: center;
+    margin-top: 24px;
     margin-bottom: 200px;
     h1 {
       font-weight: 900;
@@ -528,8 +551,13 @@
   }
 
   .service_interview {
-    width: 615px;
+    width: 715px;
     margin: 0 auto 160px;
+    .swiper_container {
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 50px;
+    }
     a {
       color: $white;
       text-decoration: none;
@@ -538,6 +566,9 @@
       width: 100%;
       height: 100%;
       padding: 48px 40px 80px 40px;
+      &:hover {
+        opacity: 0.8;
+      }
     }
     &_title {
       @include font-size("h1-pc");
@@ -551,8 +582,8 @@
         line-height: 30px;
         margin: 0;
         img {
-          width: 160px;
-          height: 30px;
+          width: 120px;
+          height: auto;
         }
       }
       .image {
@@ -575,25 +606,25 @@
         }
       }
     }
-
-    &:hover {
-      opacity: 0.8;
-    }
   }
 
   .service_media {
-    margin-bottom: 160px;
+    width: 940px;
+    margin: 0 auto 160px;
+    .swiper_container {
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 50px;
+    }
     &_title {
       @include font-size("h1-pc");
       text-align: center;
       margin: 0 0 40px;
     }
-
     &_contents {
       display: flex;
       justify-content: center;
       &_item {
-        width: 397px;
         margin-right: 40px;
         box-sizing: border-box;
         border-radius: 24px;
@@ -629,7 +660,7 @@
   //ユーザコミュニティ、お問い合わせ----------------------------------------------
   .service_contact {
     width: 1056px;
-    margin: auto;
+    margin: 0 auto 160px;
     display: flex;
     .user_community {
       @include font-size("caption-pc");
@@ -688,6 +719,47 @@
       }
       .button {
         margin: 0 auto;
+      }
+    }
+  }
+
+  //ニュースレター
+  .newsletter_container {
+    @include button($sky);
+    background: $sky;
+    padding: 40px;
+    .newsletter {
+      margin: 0 auto;
+      max-width: 398px;
+      h2 {
+        margin-top: 0px;
+        font-family: $ENGtypo;
+        text-align: center;
+        @include font-size("h1-pc");
+      }
+      p {
+        @include font-size("caption-pc");
+      }
+      input {
+        box-sizing: border-box;
+        @include font-size("label-pc-medium");
+        color: $secondary;
+        border: 0;
+        border-radius: 8px;
+        width: 100%;
+        padding: 0 24px;
+        height: 48px;
+      }
+      .submit_area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &_text {
+          @include font-size("caption-pc");
+          margin-right: auto;
+          margin-bottom: 16px;
+          color: $blue;
+        }
       }
     }
   }
@@ -763,6 +835,10 @@
           p {
             @include font-size("body-sp-bold");
           }
+        }
+        .button {
+          width: 248px;
+          margin: auto;
         }
       }
 
@@ -999,7 +1075,10 @@
 
     .service_interview {
       width: auto;
-      margin: 100px 24px;
+      margin: 100px auto 100px;
+      .swiper_container {
+        padding: 0;
+      }
       a {
         padding: 40px 24px 58px 24px;
       }
@@ -1030,7 +1109,11 @@
     }
 
     .service_media {
-      margin-bottom: 100px;
+      width: auto;
+      margin: 0 auto 100px;
+      .swiper_container {
+        padding: 0;
+      }
       a {
         padding: 32px 16px 38px 16px;
       }
@@ -1067,7 +1150,7 @@
     .service_contact {
       display: block;
       width: auto;
-      margin: auto 24px;
+      margin: 0 24px 100px;
       .user_community {
         margin-right: 0;
         margin-bottom: 40px;
@@ -1105,6 +1188,37 @@
         }
       }
     }
+
+    .newsletter_container {
+      padding: 24px 24px 40px 24px;
+      .newsletter {
+        h2 {
+          margin-top: 0px;
+          font-family: $ENGtypo;
+          text-align: center;
+          @include font-size("h1-sp");
+        }
+        p {
+          @include font-size("body-sp-bold");
+          margin-bottom: 16px;
+        }
+        input {
+          box-sizing: border-box;
+          @include font-size("body-sp-medium");
+          color: $secondary;
+          border: 0;
+          border-radius: 8px;
+          width: 100%;
+          padding: 0 24px;
+          height: 48px;
+        }
+        .submit_area {
+          &_text {
+            @include font-size("body-sp-bold");
+          }
+        }
+      }
+    }
   }
 }
 
@@ -1130,8 +1244,10 @@
 @keyframes fadeOut {
   0% {
     opacity: 1;
+    visibility: visible;
   }
   100% {
     opacity: 0;
+    visibility: hidden;
   }
 }

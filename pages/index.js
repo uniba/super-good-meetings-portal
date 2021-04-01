@@ -1,29 +1,66 @@
 import Head from "next/head";
 import Link from "next/link";
+import Layout from "../components/layout";
 import YouTube from "react-youtube";
-import Swiper from 'react-id-swiper';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import MediaQuery from "react-responsive";
 import styles from "./styles/landing.scss";
 import { getAllPosts } from '../lib/api';
-import Layout from "../components/layout";
 import { findLastIndex } from "lodash";
+import MailchimpSubscribe from "react-mailchimp-subscribe"
+
+SwiperCore.use([Navigation, Pagination]);
 
 function _onReady (event) {
   if (process.browser) {
-    document.getElementById("movieArea").addEventListener("click", function () {
+    document.getElementsByClassName("movieArea")[0].addEventListener("click", function () {
       let promise = new Promise((resolve, reject) => {
         this.classList.add(styles.fadeout);
         resolve();
-      });
-      promise.then((msg) => {
-        return new Promise((resolve, reject) => {
-          this.classList.add(styles.displaynone);
-        });
       });
       event.target.playVideo();
     });
   }
 }
+
+const CustomForm = ({ status, message, onValidated }) => {
+  let email;
+  const submit = () =>
+    email &&
+    email.value.indexOf("@") > -1 &&
+    onValidated({
+      EMAIL: email.value
+    });
+
+  return (
+    <div className={styles.submit_area}>
+      {status === "sending" && <div
+        className={styles.submit_area_text}>送信中...</div>}
+      {status === "error" && (
+        <div
+          dangerouslySetInnerHTML={{ __html: message }}
+          className={styles.submit_area_text}
+        />
+      )}
+      {status === "success" && (
+        <div
+          dangerouslySetInnerHTML={{ __html: message }}
+          className={styles.submit_area_text}
+        />
+      )}
+      <input
+        ref={node => (email = node)}
+        type="email"
+        placeholder="Eメールアドレスを入力してください"
+      />
+      <br />
+      <button onClick={submit}>
+        登録する
+      </button>
+    </div>
+  );
+};
 
 export default function Home ({ allPosts }) {
   const posts = allPosts.slice(0, 5);
@@ -37,18 +74,36 @@ export default function Home ({ allPosts }) {
     <>
       <Head>
         <title>SuperGoodMeetings</title>
-        <style>{`.swiper-wrapper { 
-          display: flex;
-          margin-left: 24px;
-          margin-right: 24px; } 
-          .swiper-slide{  
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 90% !important;
-          margin-right: 48px; 
-          position: relative;
-          transition-property: transform;}/* custom! */`
-        }
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css" />
+        <style>
+          {`
+          .swiper-button-next{
+            background-image: url(/images/icon_right.svg);
+            right: 0;
+          }
+          .swiper-button-prev{
+            background-image: url(/images/icon_left.svg);
+            left: 0;
+          }
+          .swiper-pagination-bullet,
+          .swiper-pagination-bullet-active{
+            background: white;
+          }
+          .swiper-slide {
+            width: 100%;
+            height: auto;
+          }
+          @media screen and (max-width: 1000px) {
+            .swiper-container {
+              padding:0;
+            }
+            .swiper-button-next,
+            .swiper-button-prev,
+            .swiper-pagination-bullet{
+              display: none;
+            }
+          }
+        `}
         </style>
       </Head>
       <Layout>
@@ -321,7 +376,7 @@ export default function Home ({ allPosts }) {
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
                 <Link href="/src/SuperGoodMeetings_introduction_20210209.pdf">
-                  <a>
+                  <a id="ga_intropdf_body">
                     SuperGoodMeetings Introduction.pdf<span></span>(2.6MB)
                   </a>
                 </Link>
@@ -334,10 +389,10 @@ export default function Home ({ allPosts }) {
               動画でわかる、
               <span>SuperGoodMeetings</span>
             </h2>
-            <div className={styles.dummymovie} class="movie">
+            <div className={styles.dummymovie}>
               <img
-                class="ga_movie"
-                id="movieArea"
+                class="movieArea"
+                id="ga_movie"
                 src="/images/movie_thumb.png"
                 alt="クリックで再生"
               ></img>
@@ -375,51 +430,80 @@ export default function Home ({ allPosts }) {
 
           <div id="interview" className={styles.service_interview}>
             <h2 className={styles.service_interview_title}>インタビュー</h2>
-            <div className={styles.service_interview_content}>
-              <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
-                <figure className={styles.logo}><img src="/images/venect.svg" alt="ヴェネクトロゴ"></img></figure>
-                <figure className={styles.image}><img src="/images/interview_venect.png" alt="インタビュー見出し"></img></figure>
-                <h3 className={styles.caption}>会議は「事前に設計」するもの。<br />
+            <Swiper
+              spaceBetween={16}
+              navigation
+              pagination={{ clickable: true }}
+              centeredSlides={true}
+              slidesPerView={1.15}
+              loop={true}
+              breakpoints={{
+                1000: {
+                  slidesPerView: 1,
+                  spaceBetween: 50,
+                  width: 715,
+                }
+              }}
+              className={styles.swiper_container}
+            >
+              <SwiperSlide className={styles.service_interview_content}>
+                <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
+                  <figure className={styles.logo}><img src="/images/interview_venect_logo.svg" alt="ヴェネクトロゴ"></img></figure>
+                  <figure className={styles.image}><img src="/images/interview_venect.png" alt="インタビュー見出し"></img></figure>
+                  <h3 className={styles.caption}>会議は「事前に設計」するもの。<br />
               可視化がプロジェクトの進行を加速させる</h3>
-                <p className={styles.footnote}>ヴェネクト株式会社<br /><span>牟田和貴、加藤智司</span></p>
-              </a>
-            </div>
+                  <p className={styles.footnote}>ヴェネクト株式会社<br /><span>牟田和貴、加藤智司</span></p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className={styles.service_interview_content}>
+                <a href="https://note.com/sgms/n/nc218c6d07a22?magazine_key=m3633f7f797e5" target="_blank">
+                  <figure className={styles.logo}><img src="/images/interview_uniba_logo.svg" alt="ヴェネクトロゴ"></img></figure>
+                  <figure className={styles.image}><img src="/images/interview_uniba.png" alt="インタビュー見出し"></img></figure>
+                  <h3 className={styles.caption}>「定例ミーティング」を軸として、<br />プロジェクトの進行を円滑にする</h3>
+                  <p className={styles.footnote}>ユニバ株式会社<br /><span>安井貴啓、河合伶</span></p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className={styles.service_interview_content}>
+                <a href="https://note.com/sgms/n/n01bd46d99dcd?magazine_key=m3633f7f797e5" target="_blank">
+                  <figure className={styles.logo}><img src="/images/interview_gs_logo.svg" alt="ヴェネクトロゴ"></img></figure>
+                  <figure className={styles.image}><img src="/images/interview_gs.png" alt="インタビュー見出し"></img></figure>
+                  <h3 className={styles.caption}>「認識のズレを補正する仕組み」で、<br />
+                  社内のコミュニケーションを円滑に</h3>
+                  <p className={styles.footnote}>ゴール・システム・コンサルティング株式会社<br /><span>小笠原剛、但田真紀</span></p>
+                </a>
+              </SwiperSlide>
+            </Swiper>
           </div>
 
           <div id="media" className={styles.service_media}>
             <h2 className={styles.service_media_title}>メディア掲載</h2>
-            <MediaQuery query="(max-width: 1000px)">
-              <Swiper {...params}>
-                <div className={styles.service_media_contents_item}>
-                  <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
-                    <h3>Web Designing 2020年2月号</h3>
-                    <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
-                  </a>
-                </div>
-                <div className={styles.service_media_contents_item}>
-                  <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
-                    <h3>デザイン情報サイト[JDN]</h3>
-                    <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
-                  </a>
-                </div>
-              </Swiper>
-            </MediaQuery>
-            <MediaQuery query="(min-width: 1001px)">
-              <div className={styles.service_media_contents}>
-                <div className={styles.service_media_contents_item}>
-                  <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
-                    <h3>Web Designing 2020年2月号</h3>
-                    <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
-                  </a>
-                </div>
-                <div className={styles.service_media_contents_item}>
-                  <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
-                    <h3>デザイン情報サイト[JDN]</h3>
-                    <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
-                  </a>
-                </div>
-              </div>
-            </MediaQuery>
+            <Swiper
+              spaceBetween={16}
+              centeredSlides={true}
+              slidesPerView={1.15}
+              breakpoints={{
+                1000: {
+                  spaceBetween: 50,
+                  centeredSlides: false,
+                  slidesPerView: 2,
+                  width: 940,
+                }
+              }}
+              className={styles.swiper_container}
+            >
+              <SwiperSlide className={styles.service_media_contents_item}>
+                <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
+                  <h3>Web Designing 2020年2月号</h3>
+                  <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className={styles.service_media_contents_item}>
+                <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
+                  <h3>デザイン情報サイト[JDN]</h3>
+                  <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
+                </a>
+              </SwiperSlide>
+            </Swiper>
           </div>
 
           <div className={styles.service_contact}>
@@ -442,7 +526,8 @@ export default function Home ({ allPosts }) {
                 </p>
               </div>
               <div className={styles.button} role="button">
-                <Link href="http://slack.projectsprint.org/">今すぐ登録！</Link>
+                <Link href="https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8ePJduQ#/shared-invite/email">
+                  <a id="ga_usercommunity_body">今すぐ登録！</a></Link>
               </div>
               <p className={styles.caption}>
                 <Link href="https://projectsprint.slack.com/">
@@ -466,9 +551,30 @@ export default function Home ({ allPosts }) {
               </div>
               <div className={styles.button} role="button">
                 <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
-                  お問い合わせ
+                  <a id="ga_contact_body">お問い合わせ</a>
                 </Link>
               </div>
+            </div>
+          </div>
+
+          <div className={styles.newsletter_container}>
+            <div className={styles.newsletter}>
+              <h2>Newsletter</h2>
+              <MailchimpSubscribe
+                url="https://supergoodmeetings.us4.list-manage.com/subscribe/post?u=4914736f05d3b5eb761d836c4&amp;id=d6f47afc4c"
+                render={({ subscribe, status, message }) => (
+                  <div>
+                    <p>
+                      SuperGoodMeetings開発進捗状況や、基本設計にも使われているプロジェクト推進メソッドに関する情報、プロジェクト進行のお役立ちTipsなどをお知らせいたします！
+                </p>
+                    <CustomForm
+                      status={status}
+                      message={message}
+                      onValidated={formData => subscribe(formData)}
+                    />
+                  </div>
+                )}
+              />
             </div>
           </div>
         </div>
