@@ -5,10 +5,12 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <Link href="/">
-        <h1>
-          <img src="/images/sgm_logo.png" alt="SuperGoodMeetings" />
-          <span>β版</span>
-        </h1>
+        <a id="qa_logo_header">
+          <h1>
+            <img src="/images/sgm_logo.png" alt="SuperGoodMeetings" />
+            <span>β版</span>
+          </h1>
+        </a>
       </Link>
       <ul className={styles.sessions}>
         <li class={styles.contact_button}>

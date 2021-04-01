@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.footer_inner}>
         <Link href="/">
-          <a id="ga_logo_footer">
+          <a id="qa_logo_footer">
             <h1>
               <img src="/images/logo_mark.svg" alt="" />
             </h1>
@@ -69,7 +69,7 @@ https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8e
           <ul>
             <li>
               <Link href="/privacy">
-                <a id="ga_note_footer">プライバシーポリシー</a>
+                <a id="ga_privacy_footer">プライバシーポリシー</a>
               </Link>
             </li>
             <li>
