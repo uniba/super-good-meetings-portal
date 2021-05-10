@@ -134,8 +134,6 @@ export default function Home({ allPosts }) {
               <h2>どなたでもSuperGoodMeetingsをお試しいただけます！</h2>
             </div>
             <p>
-              2021年2月1日より、SuperGoodMeetings β版の提供を開始いたします。
-              <br />
               SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。ぜひお試しください！
             </p>
             <div className={styles.button} role="button">
