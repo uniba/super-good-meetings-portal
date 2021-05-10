@@ -12,7 +12,12 @@ const Header = () => {
         </h1>
       </Link>
       <ul className={styles.sessions}>
-        <li class={styles.contact_button}>
+        <li class={styles.button}>
+          <Link href="plan">
+            <a id="ga_plan_header">プランと料金</a>
+          </Link>
+        </li>
+        <li class={styles.button}>
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
             <a target="_blank" id="ga_contact_header">
               お問い合わせ
