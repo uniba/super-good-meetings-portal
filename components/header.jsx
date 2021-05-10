@@ -13,7 +13,7 @@ const Header = () => {
       </Link>
       <ul className={styles.sessions}>
         <li class={styles.button}>
-          <Link href="plan">
+          <Link href="/plan">
             <a id="ga_plan_header">プランと料金</a>
           </Link>
         </li>
