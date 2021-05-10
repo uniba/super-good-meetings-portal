@@ -8,14 +8,15 @@ const Header = () => {
         <h1>
           <a id="qa_logo_header">
             <img src="/images/sgm_logo.png" alt="SuperGoodMeetings" />
-            <span>β版</span>
           </a>
         </h1>
       </Link>
       <ul className={styles.sessions}>
         <li class={styles.contact_button}>
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
-            <a target="_blank" id="ga_contact_header">お問い合わせ</a>
+            <a target="_blank" id="ga_contact_header">
+              お問い合わせ
+            </a>
           </Link>
         </li>
         <li>
@@ -24,7 +25,9 @@ const Header = () => {
           </Link>
         </li>
         <li className={styles.signup_button}>
-          <a href="https://sgms.app/signup" id="ga_signup_header">新規登録</a>
+          <a href="https://sgms.app/signup" id="ga_signup_header">
+            新規登録
+          </a>
         </li>
       </ul>
     </div>
