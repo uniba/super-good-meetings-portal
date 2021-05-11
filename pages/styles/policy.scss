@@ -109,6 +109,13 @@
     }
   }
 
+  .simplelist > dt {
+    @include font-size("label-pc-bold");
+  }
+  .simplelist > dd {
+    margin-left: 0;
+  }
+
   .caption {
     @include font-size("caption-pc");
     margin: 0;
@@ -162,6 +169,10 @@
 
     .number > dd {
       margin-bottom: 8px;
+    }
+
+    .simplelist > dt {
+      @include font-size("body-sp-bold");
     }
   }
 }

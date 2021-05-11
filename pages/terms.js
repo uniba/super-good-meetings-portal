@@ -4,7 +4,7 @@ import styles from "./styles/policy.scss";
 
 import Layout from "../components/layout";
 
-export default function Terms () {
+export default function Terms() {
   return (
     <>
       <Head>
@@ -19,6 +19,12 @@ export default function Terms () {
               </li>
               <li className={styles.active}>
                 <Link href="/terms">利用規約</Link>
+              </li>
+              <li>
+                <Link href="/law">特定商取引法に基づく表示</Link>
+              </li>
+              <li>
+                <Link href="/security">セキュリティホワイトペーパー</Link>
               </li>
             </ul>
           </nav>

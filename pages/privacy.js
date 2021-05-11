@@ -11,7 +11,7 @@ export default function Privacy() {
         <title>プライバシーポリシー - SuperGoodMeetings</title>
       </Head>
       <Layout>
-        <div className={styles.policy}>
+        <div>
           <nav>
             <ul>
               <li className={styles.active}>
@@ -19,6 +19,12 @@ export default function Privacy() {
               </li>
               <li>
                 <Link href="/terms">利用規約</Link>
+              </li>
+              <li>
+                <Link href="/law">特定商取引法に基づく表示</Link>
+              </li>
+              <li>
+                <Link href="/security">セキュリティホワイトペーパー</Link>
               </li>
             </ul>
           </nav>
