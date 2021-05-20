@@ -55,7 +55,7 @@
 
   & > dl {
     & > dt {
-      @include font-size("h2-pc");
+      @include font-size("h3-pc");
       margin-top: 64px;
       margin-bottom: 32px;
       counter-increment: clause;
@@ -137,7 +137,7 @@
 
     & > dl {
       & > dt {
-        @include font-size("h2-sp");
+        @include font-size("h3-sp");
         margin-top: 32px;
         margin-bottom: 16px;
       }

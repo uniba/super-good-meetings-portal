@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Modal from "react-modal";
 import {
   Accordion,
   AccordionItem,
@@ -19,8 +20,8 @@ export default function Plan() {
       </Head>
       <Layout>
         <div className={styles.plan}>
-          <h1>プランと料金</h1>
-          <p>
+          <h1 className={styles.plan_title}>プランと料金</h1>
+          <p className={styles.plan_caption}>
             SuperGoodMeetingはアクティブプロジェクトの数*に応じた料金プランを用意しております。
             <span>
               *アーカイブしたプロジェクトは含まれません。現在ご利用いただいているプロジェクトの数になります。
@@ -104,7 +105,9 @@ export default function Plan() {
               今すぐ試す
             </a>
           </div>
-          <p>プランの変更は「設定」の「プラン変更」メニューからできます。</p>
+          <p className={styles.caption}>
+            プランの変更は「設定」の「プラン変更」メニューからできます。
+          </p>
 
           <h2>よくある質問</h2>
 

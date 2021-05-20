@@ -71,7 +71,7 @@
       width: 100%;
       max-width: 248px;
       a {
-        @include font-size("h2-sp");
+        @include font-size("h3-sp");
         line-height: 40px;
       }
     }
@@ -88,7 +88,8 @@
   // ヒーローエリア----------------------------------------------
   .service_hero_area {
     background-size: 100%;
-    background-image: url("/images/background_hero1.svg"), url("/images/background_hero2.svg");
+    background-image: url("/images/background_hero1.svg"),
+      url("/images/background_hero2.svg");
     background-size: contain, contain;
     background-repeat: no-repeat;
     background-position: left, right;
@@ -102,7 +103,7 @@
       margin: 0;
     }
     p {
-      @include font-size("h2-pc");
+      @include font-size("h3-pc");
       margin-bottom: 48px;
     }
     &_movie {
@@ -163,7 +164,7 @@
       .content {
         z-index: 1;
         h2 {
-          @include font-size("h1-pc");
+          @include font-size("h2-pc");
           margin-top: 56px;
           margin-bottom: 24px;
         }
@@ -189,7 +190,7 @@
           width: 183px;
         }
         h3 {
-          @include font-size("h2-pc");
+          @include font-size("h3-pc");
           margin: 0;
         }
         p {
@@ -212,7 +213,7 @@
           padding-bottom: 16px;
         }
         h3 {
-          @include font-size("h2-pc");
+          @include font-size("h3-pc");
           margin: 0;
         }
         p {
@@ -257,7 +258,7 @@
       .content {
         z-index: 1;
         h2 {
-          @include font-size("h1-pc");
+          @include font-size("h2-pc");
           margin-top: 220px;
           margin-bottom: 24px;
         }
@@ -285,7 +286,7 @@
       margin-bottom: 24px;
 
       h2 {
-        @include font-size("h1-pc");
+        @include font-size("h2-pc");
         margin: 0;
         margin-left: 16px;
       }
@@ -304,7 +305,7 @@
   .service_effect {
     h2 {
       width: 1056px;
-      @include font-size("h2-pc");
+      @include font-size("h3-pc");
       margin: 0 auto 32px;
     }
     .items {
@@ -333,7 +334,7 @@
     width: 1056px;
     margin: 0 auto 120px;
     h2 {
-      @include font-size("h2-pc");
+      @include font-size("h3-pc");
       margin: 0 0 32px 0;
     }
     .items {
@@ -438,7 +439,7 @@
       width: 424px;
       margin: 0 auto 160px;
       h2 {
-        @include font-size("h2-pc");
+        @include font-size("h3-pc");
         margin-bottom: 32px;
       }
       p {
@@ -470,7 +471,7 @@
       font-weight: 900;
       margin-bottom: 40px;
       span {
-        @include font-size("h1-pc");
+        @include font-size("h2-pc");
         font-family: $ENGtypo;
         font-style: oblique;
       }
@@ -515,7 +516,7 @@
     margin: 0 auto 160px;
     position: relative;
     &_title {
-      @include font-size("h1-pc");
+      @include font-size("h2-pc");
       text-align: center;
       margin: 0 0 40px;
     }
@@ -571,7 +572,7 @@
       }
     }
     &_title {
-      @include font-size("h1-pc");
+      @include font-size("h2-pc");
       text-align: center;
       margin: 0 0 40px;
     }
@@ -594,7 +595,7 @@
         }
       }
       .caption {
-        @include font-size("h2-pc");
+        @include font-size("h3-pc");
         margin: 0 0 16px;
       }
       .footnote {
@@ -617,7 +618,7 @@
       padding-bottom: 50px;
     }
     &_title {
-      @include font-size("h1-pc");
+      @include font-size("h2-pc");
       text-align: center;
       margin: 0 0 40px;
     }
@@ -639,7 +640,7 @@
           padding: 32px 32px 48px 32px;
         }
         h3 {
-          @include font-size("h2-pc");
+          @include font-size("h3-pc");
           text-align: center;
           margin: 0 0 24px;
         }
@@ -680,7 +681,7 @@
         margin-top: 0px;
         font-family: $ENGtypo;
         text-align: center;
-        @include font-size("h1-pc");
+        @include font-size("h2-pc");
       }
       .button {
         margin: 0 auto;
@@ -712,7 +713,7 @@
         margin-top: 0px;
         font-family: $ENGtypo;
         text-align: center;
-        @include font-size("h1-pc");
+        @include font-size("h2-pc");
       }
       .text {
         height: 160px;
@@ -735,7 +736,7 @@
         margin-top: 0px;
         font-family: $ENGtypo;
         text-align: center;
-        @include font-size("h1-pc");
+        @include font-size("h2-pc");
       }
       p {
         @include font-size("caption-pc");
@@ -777,7 +778,7 @@
       }
       p {
         margin-bottom: 80px;
-        @include font-size("h2-sp");
+        @include font-size("h3-sp");
         span {
           display: block;
         }
@@ -799,7 +800,7 @@
         }
 
         h2 {
-          @include font-size("h1-sp");
+          @include font-size("h2-sp");
           margin: 0;
         }
 
@@ -828,7 +829,7 @@
         }
         .content {
           h2 {
-            @include font-size("h1-sp");
+            @include font-size("h2-sp");
             margin-top: 24px;
             margin-bottom: 16px;
           }
@@ -858,7 +859,7 @@
             width: 171px;
           }
           h3 {
-            @include font-size("h2-sp");
+            @include font-size("h3-sp");
           }
           p {
             @include font-size("body-sp-bold");
@@ -875,7 +876,7 @@
             width: 162px;
           }
           h3 {
-            @include font-size("h2-sp");
+            @include font-size("h3-sp");
           }
           p {
             @include font-size("body-sp-bold");
@@ -905,7 +906,7 @@
         .content {
           order: 2;
           h2 {
-            @include font-size("h1-sp");
+            @include font-size("h2-sp");
             margin-top: 24px;
             margin-bottom: 16px;
           }
@@ -923,7 +924,7 @@
       h2 {
         width: auto;
         margin: auto;
-        @include font-size("h2-sp");
+        @include font-size("h3-sp");
         margin: 0 0 32px 0;
       }
       .items {
@@ -953,7 +954,7 @@
       width: auto;
       margin: auto 24px;
       h2 {
-        @include font-size("h2-sp");
+        @include font-size("h3-sp");
         margin: 0 0 32px 0;
       }
       .items {
@@ -1009,7 +1010,7 @@
         width: auto;
         margin: 0 auto 120px;
         h2 {
-          @include font-size("h1-sp");
+          @include font-size("h2-sp");
         }
         p {
           @include font-size("body-sp-bold");
@@ -1045,7 +1046,7 @@
       width: auto;
       margin: 0 24px 100px;
       &_title {
-        @include font-size("h1-sp");
+        @include font-size("h2-sp");
       }
       &_link {
         text-align: right;
@@ -1083,7 +1084,7 @@
         padding: 40px 24px 58px 24px;
       }
       &_title {
-        @include font-size("h1-sp");
+        @include font-size("h2-sp");
       }
       &_content {
         box-sizing: border-box;
@@ -1097,7 +1098,7 @@
           margin: 32px auto 32px;
         }
         .caption {
-          @include font-size("h1-sp");
+          @include font-size("h2-sp");
         }
         .footnote {
           @include font-size("body-sp-bold");
@@ -1118,13 +1119,13 @@
         padding: 32px 16px 38px 16px;
       }
       &_title {
-        @include font-size("h1-sp");
+        @include font-size("h2-sp");
       }
       &_contents {
         &_item {
           height: 202px;
           h3 {
-            @include font-size("h2-sp");
+            @include font-size("h3-sp");
             text-align: center;
           }
           p {
@@ -1138,9 +1139,9 @@
       width: auto;
       margin: 0 24px 120px;
       h2 {
-        @include font-size("h1-sp");
+        @include font-size("h2-sp");
         span {
-          @include font-size("h1-sp");
+          @include font-size("h2-sp");
           display: block;
           font-style: oblique;
         }
@@ -1157,7 +1158,7 @@
         padding: 40px;
         @include font-size("body-sp-bold");
         h2 {
-          @include font-size("h1-sp");
+          @include font-size("h2-sp");
         }
         figure {
           img {
@@ -1175,7 +1176,7 @@
         padding: 40px;
         @include font-size("body-sp-bold");
         h2 {
-          @include font-size("h1-sp");
+          @include font-size("h2-sp");
         }
         figure {
           img {
@@ -1196,7 +1197,7 @@
           margin-top: 0px;
           font-family: $ENGtypo;
           text-align: center;
-          @include font-size("h1-sp");
+          @include font-size("h2-sp");
         }
         p {
           @include font-size("body-sp-bold");

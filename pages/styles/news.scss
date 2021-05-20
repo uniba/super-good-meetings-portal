@@ -24,14 +24,14 @@
     a {
       color: $black;
       text-decoration: none;
-      @include font-size("h2-pc");
+      @include font-size("h3-pc");
     }
   }
 
   .pager {
     display: flex;
     justify-content: center;
-    @include font-size("h2-pc");
+    @include font-size("h3-pc");
     margin-top: 80px;
     li {
       margin-right: 8px;
@@ -57,12 +57,12 @@
         @include font-size("body-sp-medium");
       }
       a {
-        @include font-size("h2-sp");
+        @include font-size("h3-sp");
       }
     }
 
     .pager {
-      @include font-size("h2-sp");
+      @include font-size("h3-sp");
     }
   }
 }

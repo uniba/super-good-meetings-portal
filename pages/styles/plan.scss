@@ -19,9 +19,19 @@
     color: $sky;
   }
 
-  h1 {
+  .plan_title {
     margin: 0 0 24px 0;
     @include font-size("h1-pc");
+  }
+
+  .plan_caption {
+    @include font-size("label-pc-bold");
+    margin: 0 auto 40px;
+    span {
+      @include font-size("label-pc-medium");
+      color: $secondary;
+      display: block;
+    }
   }
 
   .button {
@@ -29,6 +39,7 @@
     width: 204px;
     height: 51px;
     border-radius: 30px;
+    margin: 0 auto 24px;
     border: 5px solid $black;
 
     a {
@@ -57,14 +68,21 @@
       width: 100%;
       max-width: 248px;
       a {
-        @include font-size("h2-sp");
+        @include font-size("h3-sp");
         line-height: 40px;
       }
     }
   }
 
+  .caption {
+    text-align: center;
+    @include font-size("label-pc-bold");
+    margin: 0 0 160px 0;
+  }
+
   .plan_list {
     display: flex;
+    margin: 0 0 48px 0;
 
     & li {
       box-sizing: border-box;
@@ -72,7 +90,7 @@
       display: flex;
       flex: 1;
       flex-direction: column;
-      height: 760px;
+      min-height: 760px;
       padding: 56px 0;
 
       &:nth-child(1) {
@@ -93,7 +111,7 @@
       h2 {
         text-align: center;
         margin: 0 0 8px 0;
-        @include font-size("h1-pc");
+        @include font-size("h2-pc");
       }
       p {
         color: $background;
@@ -109,7 +127,7 @@
         }
       }
       div {
-        @include font-size("h2-pc");
+        @include font-size("h3-pc");
         margin-top: auto;
         text-align: center;
         span {
@@ -128,7 +146,7 @@
   }
 
   .accordion__button {
-    @include font-size("h2-pc");
+    @include font-size("h3-pc");
     position: relative;
     cursor: pointer;
     padding: 32px 36px;
@@ -178,13 +196,87 @@
       margin: 0;
     }
     &:after {
-      @include font-size("h2-pc");
+      @include font-size("h3-pc");
       position: absolute;
       font-family: $ENGtypo;
       content: "A";
       color: $secondary;
       top: 0;
       left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .plan {
+    padding: 40px 24px 120px 24px;
+    .plan_title {
+      @include font-size("h1-sp");
+    }
+    .plan_caption {
+      margin: 0 auto 0;
+      @include font-size("body-sp-bold");
+      span {
+        @include font-size("body-sp-medium");
+      }
+    }
+
+    .plan_list {
+      display: block;
+      & li {
+        min-height: auto;
+        padding: 48px 0;
+        border-right: 0;
+        border-bottom: 1px solid $secondary;
+
+        &:nth-child(1) {
+          padding-right: 0px;
+        }
+        &:nth-child(2) {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+        &:nth-child(3) {
+          border: 0;
+          padding-left: 0px;
+        }
+
+        h2 {
+          @include font-size("h2-sp");
+        }
+        p {
+          @include font-size("body-sp-bold");
+        }
+        dl {
+          margin: 0 0 32px;
+          dt {
+            margin: 0 0 16px 0;
+            @include font-size("body-sp-bold");
+          }
+        }
+        div {
+          @include font-size("h2-sp");
+        }
+      }
+    }
+
+    .caption {
+      @include font-size("body-sp-bold");
+    }
+    h2 {
+      @include font-size("h1-sp");
+    }
+    .accordion__button {
+      &::before {
+        right: 0;
+      }
+      @include font-size("h3-sp");
+    }
+    .accordion__panel {
+      @include font-size("h3-sp");
+      &::after {
+        @include font-size("h3-sp");
+      }
     }
   }
 }
