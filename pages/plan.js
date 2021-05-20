@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import Modal from "react-modal";
 import {
   Accordion,
   AccordionItem,
@@ -101,7 +100,7 @@ export default function Plan() {
           </ul>
 
           <div className={styles.button} role="button">
-            <a href="http://sgms.app/signup" id="ga_signup_body">
+            <a href="https://sgms.app/login" id="ga_signup_body">
               今すぐ試す
             </a>
           </div>
