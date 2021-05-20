@@ -401,7 +401,7 @@ export default function Home({ allPosts }) {
               <h2>サービス紹介PDFをダウンロード</h2>
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
-                <Link href="/src/SuperGoodMeetings_introduction_20210209.pdf">
+                <Link href="/src/SuperGoodMeetings_introduction_20210531.pdf">
                   <a id="ga_intropdf_body">
                     SuperGoodMeetings Introduction.pdf<span></span>(2.6MB)
                   </a>
