@@ -11,7 +11,7 @@ export default function Privacy() {
         <title>プライバシーポリシー - SuperGoodMeetings</title>
       </Head>
       <Layout>
-        <div>
+        <div className={styles.policy}>
           <nav>
             <ul>
               <li className={styles.active}>
