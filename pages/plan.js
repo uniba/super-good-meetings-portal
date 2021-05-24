@@ -151,11 +151,17 @@ export default function Plan() {
               </AccordionItemHeading>
               <AccordionItemPanel className={styles.accordion__panel}>
                 <p>
-                  メールサポート（受付窓口はこちら）
+                  メールサポート（受付窓口は
+                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
+                    <a target="_blank">こちら</a>
+                  </Link>
+                  ）
                   <br />
                   平日（月曜日～金曜日）10:30～16:30
                   <br />
+                  <br />
                   ※いずれも、土日祝日、年末年始・夏季休業期間は除く
+                  <br />
                   <br />
                   上記の対応時間外にいただいたお問い合わせにつきましては、内容を確認しお返事いたします。
                 </p>

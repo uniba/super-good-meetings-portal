@@ -128,6 +128,11 @@
     nav {
       ul {
         @include font-size("body-sp-bold");
+        flex-wrap: wrap;
+
+        li {
+          margin-bottom: 16px;
+        }
       }
     }
 
