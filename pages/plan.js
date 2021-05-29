@@ -21,9 +21,9 @@ export default function Plan() {
         <div className={styles.plan}>
           <h1 className={styles.plan_title}>プランと料金</h1>
           <p className={styles.plan_caption}>
-            SuperGoodMeetingはアクティブプロジェクトの数*に応じた料金プランを用意しております。
+            SuperGoodMeetingsはユーザがオーナー権限を持つアクティブなプロジェクトの数*に応じた料金プランを用意しております。{" "}
             <span>
-              *アーカイブしたプロジェクトは含まれません。現在ご利用いただいているプロジェクトの数になります。
+              *別のユーザに招待されたプロジェクトやアーカイブ済みのプロジェクトは含みません
             </span>
           </p>
 
@@ -36,7 +36,7 @@ export default function Plan() {
                 />
               </figure>
               <h2>フリープラン</h2>
-              <p>アクティブプロジェクト数 1</p>
+              <p>オーナープロジェクト 最大1</p>
               <dl>
                 <dt>まずは SuperGoodMeetings を試したい方向け</dt>
                 <dt>自由にプロジェクトを作成、アーカイブ可能</dt>
@@ -56,7 +56,7 @@ export default function Plan() {
                 />
               </figure>
               <h2>スタンダードプラン</h2>
-              <p>アクティブプロジェクト数50</p>
+              <p>オーナープロジェクト 最大50</p>
               <dl>
                 <dt>
                   個人や小規模スタートアップ、企業の一部門のプロジェクトマネージャ向け
