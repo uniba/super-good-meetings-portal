@@ -635,8 +635,7 @@ export default function Home({ allPosts }) {
               <h2>Contact us</h2>
               <div className={styles.text}>
                 <p>
-                  SuperGoodMeetings
-                  クローズドβ版について、サービス詳細や本ツールを用いたプロジェクト推進サポートにご興味のある方は、こちらよりご連絡ください。
+                  SuperGoodMeetingsについて、サービス詳細や本ツールを用いたプロジェクト推進サポートにご興味のある方は、こちらよりご連絡ください。
                 </p>
               </div>
               <div className={styles.button} role="button">
