@@ -91,7 +91,7 @@ export default function Plan() {
               </dl>
               <div>
                 <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
-                  <a target="_blank" id="ga_contact_header">
+                  <a target="_blank" id="ga_contact_plan">
                     お問い合わせ
                   </a>
                 </Link>
@@ -100,7 +100,7 @@ export default function Plan() {
           </ul>
 
           <div className={styles.button} role="button">
-            <a href="https://sgms.app/login" id="ga_signup_body">
+            <a href="https://sgms.app/login" id="ga_signup_plan">
               今すぐ試す
             </a>
           </div>
