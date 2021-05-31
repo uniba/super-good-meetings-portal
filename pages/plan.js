@@ -21,9 +21,9 @@ export default function Plan() {
         <div className={styles.plan}>
           <h1 className={styles.plan_title}>プランと料金</h1>
           <p className={styles.plan_caption}>
-            SuperGoodMeetingsはユーザがオーナー権限を持つアクティブなプロジェクトの数*に応じた料金プランを用意しております。{" "}
+            SuperGoodMeetingsはユーザーがオーナー権限を持つアクティブなプロジェクトの数*に応じた料金プランを用意しております。
             <span>
-              *別のユーザに招待されたプロジェクトやアーカイブ済みのプロジェクトは含みません
+              *別のユーザーに招待されたプロジェクトやアーカイブ済みのプロジェクトは含みません
             </span>
           </p>
 
