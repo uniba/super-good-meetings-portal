@@ -20,6 +20,12 @@ export default function Privacy() {
               <li>
                 <Link href="/terms">利用規約</Link>
               </li>
+              <li>
+                <Link href="/law">特定商取引法に基づく表示</Link>
+              </li>
+              <li>
+                <Link href="/security">セキュリティホワイトペーパー</Link>
+              </li>
             </ul>
           </nav>
 

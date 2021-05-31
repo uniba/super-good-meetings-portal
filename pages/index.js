@@ -134,8 +134,6 @@ export default function Home({ allPosts }) {
               <h2>どなたでもSuperGoodMeetingsをお試しいただけます！</h2>
             </div>
             <p>
-              2021年2月1日より、SuperGoodMeetings β版の提供を開始いたします。
-              <br />
               SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。ぜひお試しください！
             </p>
             <div className={styles.button} role="button">
@@ -403,7 +401,7 @@ export default function Home({ allPosts }) {
               <h2>サービス紹介PDFをダウンロード</h2>
               <p>
                 <img src="/images/icon_pdf.svg" alt="pdfアイコン"></img>
-                <Link href="/src/SuperGoodMeetings_introduction_20210209.pdf">
+                <Link href="/src/SuperGoodMeetings_introduction_20210531_1.pdf">
                   <a id="ga_intropdf_body">
                     SuperGoodMeetings Introduction.pdf<span></span>(2.6MB)
                   </a>
@@ -637,8 +635,7 @@ export default function Home({ allPosts }) {
               <h2>Contact us</h2>
               <div className={styles.text}>
                 <p>
-                  SuperGoodMeetings
-                  クローズドβ版について、サービス詳細や本ツールを用いたプロジェクト推進サポートにご興味のある方は、こちらよりご連絡ください。
+                  SuperGoodMeetingsについて、サービス詳細や本ツールを用いたプロジェクト推進サポートにご興味のある方は、こちらよりご連絡ください。
                 </p>
               </div>
               <div className={styles.button} role="button">

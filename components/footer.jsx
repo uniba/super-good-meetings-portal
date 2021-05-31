@@ -20,6 +20,11 @@ const Footer = () => {
               </Link>
             </li>
             <li>
+              <Link href="/plan">
+                <a id="ga_plan_footer">プランと料金</a>
+              </Link>
+            </li>
+            <li>
               <Link href="/#interview">
                 <a id="ga_interview_footer">インタビュー</a>
               </Link>
@@ -32,6 +37,11 @@ const Footer = () => {
           </ul>
           <ul>
             <li>
+              <Link href="/posts">
+                <a id="ga_posts_footer">お知らせ</a>
+              </Link>
+            </li>
+            <li>
               <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
                 <a id="ga_contact_footer" target="_blank" rel="noopener">
                   お問い合わせ
@@ -39,13 +49,10 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/posts">
-                <a id="ga_posts_footer">お知らせ</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="
-https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8ePJduQ#/shared-invite/email">
+              <Link
+                href="
+https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8ePJduQ#/shared-invite/email"
+              >
                 <a id="ga_usercommunity_footer" target="_blank" rel="noopener">
                   ユーザーコミュニティ
                 </a>
@@ -75,6 +82,16 @@ https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8e
             <li>
               <Link href="/terms">
                 <a id="ga_terms_footer">利用規約</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/law">
+                <a id="ga_law_footer">特定商取引法に基づく表示</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/security">
+                <a id="ga_security_footer">セキュリティホワイトペーパー</a>
               </Link>
             </li>
           </ul>
