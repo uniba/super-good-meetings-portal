@@ -49,10 +49,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link
-                href="
-https://projectsprint.slack.com/join/shared_invite/zt-ne3rs685-PsoTjEhFs8skM_W8ePJduQ#/shared-invite/email"
-              >
+              <Link href="http://slack.projectsprint.org/">
                 <a id="ga_usercommunity_footer" target="_blank" rel="noopener">
                   ユーザーコミュニティ
                 </a>
