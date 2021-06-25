@@ -423,7 +423,7 @@ export default function Home({ allPosts }) {
                 alt="クリックで再生"
               ></img>
               <YouTube
-                videoId="gsYUS-lxhgE"
+                videoId="vE4l29Wlr8k"
                 opts={{
                   height: "200",
                   width: "300",

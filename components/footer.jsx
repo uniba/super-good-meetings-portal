@@ -25,18 +25,6 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/#interview">
-                <a id="ga_interview_footer">インタビュー</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/#media">
-                <a id="ga_media_footer">メディア掲載</a>
-              </Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
               <Link href="/posts">
                 <a id="ga_posts_footer">お知らせ</a>
               </Link>
@@ -46,6 +34,23 @@ const Footer = () => {
                 <a id="ga_contact_footer" target="_blank" rel="noopener">
                   お問い合わせ
                 </a>
+              </Link>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Link href="/#interview">
+                <a id="ga_interview_footer">インタビュー</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/#media">
+                <a id="ga_media_footer">メディア掲載</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://sites.google.com/copilot.jp/support-sgms/">
+                <a id="ga_guide_footer">ガイドページ</a>
               </Link>
             </li>
             <li>
