@@ -1,14 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/layout";
+import CustomForm from "../components/customform";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
 import YouTube from "react-youtube";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import MediaQuery from "react-responsive";
-import styles from "./styles/landing.scss";
+import styles from "./styles/landing.module.scss";
+import "swiper/swiper-bundle.min.css";
 import { getAllPosts } from "../lib/api";
-import { findLastIndex } from "lodash";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -26,43 +26,6 @@ function _onReady(event) {
   }
 }
 
-const CustomForm = ({ status, message, onValidated }) => {
-  let email;
-  const submit = () =>
-    email &&
-    email.value.indexOf("@") > -1 &&
-    onValidated({
-      EMAIL: email.value,
-    });
-
-  return (
-    <div className={styles.submit_area}>
-      {status === "sending" && (
-        <div className={styles.submit_area_text}>送信中...</div>
-      )}
-      {status === "error" && (
-        <div
-          dangerouslySetInnerHTML={{ __html: message }}
-          className={styles.submit_area_text}
-        />
-      )}
-      {status === "success" && (
-        <div
-          dangerouslySetInnerHTML={{ __html: message }}
-          className={styles.submit_area_text}
-        />
-      )}
-      <input
-        ref={(node) => (email = node)}
-        type="email"
-        placeholder="Eメールアドレスを入力してください"
-      />
-      <br />
-      <button onClick={submit}>登録する</button>
-    </div>
-  );
-};
-
 export default function Home({ allPosts }) {
   const posts = allPosts.slice(0, 5);
 
@@ -75,40 +38,6 @@ export default function Home({ allPosts }) {
     <>
       <Head>
         <title>SuperGoodMeetings</title>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css"
-        />
-        <style>
-          {`
-          .swiper-button-next{
-            background-image: url(/images/icon_right.svg);
-            right: 0;
-          }
-          .swiper-button-prev{
-            background-image: url(/images/icon_left.svg);
-            left: 0;
-          }
-          .swiper-pagination-bullet,
-          .swiper-pagination-bullet-active{
-            background: white;
-          }
-          .swiper-slide {
-            width: 100%;
-            height: auto;
-          }
-          @media screen and (max-width: 1000px) {
-            .swiper-container {
-              padding:0;
-            }
-            .swiper-button-next,
-            .swiper-button-prev,
-            .swiper-pagination-bullet{
-              display: none;
-            }
-          }
-        `}
-        </style>
       </Head>
       <Layout>
         <div className={styles.landing_container}>
@@ -212,6 +141,36 @@ export default function Home({ allPosts }) {
 
           <div id="interview" className={styles.service_interview}>
             <h2 className={styles.service_interview_title}>活用事例</h2>
+            <style global jsx>
+              {`
+                .swiper-button-next {
+                  background-image: url(/images/icon_right.svg);
+                  right: 0;
+                }
+                .swiper-button-prev {
+                  background-image: url(/images/icon_left.svg);
+                  left: 0;
+                }
+                .swiper-pagination-bullet,
+                .swiper-pagination-bullet-active {
+                  background: white;
+                }
+                .swiper-slide {
+                  width: 100%;
+                  height: auto;
+                }
+                @media screen and (max-width: 1000px) {
+                  .swiper-container {
+                    padding: 0;
+                  }
+                  .swiper-button-next,
+                  .swiper-button-prev,
+                  .swiper-pagination-bullet {
+                    display: none;
+                  }
+                }
+              `}
+            </style>
             <Swiper
               spaceBetween={16}
               navigation
@@ -226,7 +185,6 @@ export default function Home({ allPosts }) {
                   width: 1212,
                 },
               }}
-              className={styles.swiper_container}
             >
               <SwiperSlide className={styles.service_interview_content}>
                 <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
@@ -473,7 +431,6 @@ export default function Home({ allPosts }) {
                   width: 940,
                 },
               }}
-              className={styles.swiper_container}
             >
               <SwiperSlide className={styles.service_media_contents_item}>
                 <a

@@ -7,7 +7,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import styles from "./styles/plan.scss";
+import styles from "./styles/plan.module.scss";
 
 import Layout from "../components/layout";
 

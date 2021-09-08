@@ -1,30 +1,29 @@
-@import "normalize.scss";
 @import "typo.scss";
 @import "color.scss";
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
+// html,
+// body {
+//   margin: 0;
+//   padding: 0;
+// }
 
-body {
-  font-family: $JPtypo, "Hiragino Sans", "ヒラギノ角ゴシック",
-    "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans",
-    YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "ＭＳ Ｐゴシック",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
+// body {
+//   font-family: $JPtypo, "Hiragino Sans", "ヒラギノ角ゴシック",
+//     "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans",
+//     YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "ＭＳ Ｐゴシック",
+//     sans-serif;
+//   -webkit-font-smoothing: antialiased;
+// }
 
-ul {
-  padding: 0;
-  margin: 0;
-}
+// ul {
+//   padding: 0;
+//   margin: 0;
+// }
 
-li {
-  list-style: none;
-}
+// li {
+//   list-style: none;
+// }
 
-img {
-  vertical-align: bottom;
-}
+// img {
+//   vertical-align: bottom;
+// }
