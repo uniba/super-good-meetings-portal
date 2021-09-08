@@ -305,35 +305,62 @@
     }
   }
 
-  // 新規登録への導線2
-  .service_trial {
-    @include filledButton;
-    box-sizing: border-box;
-    width: 1052px;
-    padding: 56px 40px;
+  //活用事例
+  .service_interview {
+    width: 1206px;
     margin: 0 auto 200px;
-    border-radius: 30px;
-    background-color: $violet;
-
-    &_heading {
-      display: flex;
-      align-items: center;
-      padding-left: 24px;
-      margin-bottom: 24px;
-
-      h2 {
-        @include font-size("h2-pc");
-        margin: 0;
-        margin-left: 16px;
+    .swiper_container {
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 50px;
+    }
+    a {
+      color: $white;
+      text-decoration: none;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 48px 40px 80px 40px;
+      &:hover {
+        opacity: 0.8;
       }
     }
-
-    p {
-      @include font-size("label-pc-bold");
+    &_title {
+      @include font-size("h2-pc");
+      text-align: center;
+      margin: 0 0 40px;
     }
-
-    .filledButton {
-      margin: 46px auto 0;
+    &_content {
+      border-radius: 24px;
+      background: $blue;
+      .logo {
+        line-height: 30px;
+        margin: 0;
+        img {
+          width: 120px;
+          height: auto;
+        }
+      }
+      .image {
+        max-width: 280px;
+        margin: 24px auto 48px;
+        img {
+          width: 100%;
+        }
+      }
+      .caption {
+        @include font-size("h3-pc");
+        margin: 0 0 16px;
+      }
+      .footnote {
+        @include font-size("body-pc");
+        color: $sky;
+        margin: 0;
+        span {
+          @include font-size("label-pc-bold");
+        }
+      }
     }
   }
 
@@ -372,7 +399,7 @@
     }
   }
 
-  //PJsの紹介、サービス紹介PDFへのダウンロード
+  //PJsの紹介
   .service_detail {
     width: 1056px;
     margin: 0 auto 200px;
@@ -458,7 +485,7 @@
         font-style: oblique;
       }
     }
-    .dummymovie {
+    &_content {
       position: relative;
       border-radius: 24px;
       background: $secondary;
@@ -493,104 +520,7 @@
     }
   }
 
-  .service_news {
-    width: 1056px;
-    margin: 0 auto 200px;
-    position: relative;
-    &_title {
-      @include font-size("h2-pc");
-      text-align: center;
-      margin: 0 0 40px;
-    }
-    &_link {
-      a {
-        @include font-size("label-pc-bold");
-        color: $white;
-        position: absolute;
-        top: 0;
-        right: 0;
-        &:hover {
-          opacity: 0.8;
-        }
-      }
-    }
-    &_items {
-      @include font-size("label-pc-bold");
-      li {
-        margin-bottom: 16px;
-        span {
-          width: 108px;
-          margin-right: 80px;
-        }
-        a {
-          color: $white;
-          text-decoration: none;
-          &:hover {
-            opacity: 0.8;
-          }
-        }
-      }
-    }
-  }
-
-  .service_interview {
-    width: 1206px;
-    margin: 0 auto 200px;
-    .swiper_container {
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-bottom: 50px;
-    }
-    a {
-      color: $white;
-      text-decoration: none;
-      display: block;
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
-      padding: 48px 40px 80px 40px;
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-    &_title {
-      @include font-size("h2-pc");
-      text-align: center;
-      margin: 0 0 40px;
-    }
-    &_content {
-      border-radius: 24px;
-      background: $blue;
-      .logo {
-        line-height: 30px;
-        margin: 0;
-        img {
-          width: 120px;
-          height: auto;
-        }
-      }
-      .image {
-        max-width: 280px;
-        margin: 24px auto 48px;
-        img {
-          width: 100%;
-        }
-      }
-      .caption {
-        @include font-size("h3-pc");
-        margin: 0 0 16px;
-      }
-      .footnote {
-        @include font-size("body-pc");
-        color: $sky;
-        margin: 0;
-        span {
-          @include font-size("label-pc-bold");
-        }
-      }
-    }
-  }
-
+  //メディア掲載
   .service_media {
     width: 940px;
     margin: 0 auto 200px;
@@ -640,7 +570,81 @@
     }
   }
 
-  //ユーザコミュニティ、お問い合わせ----------------------------------------------
+  //お知らせ
+  .service_news {
+    width: 1056px;
+    margin: 0 auto 200px;
+    position: relative;
+    &_title {
+      @include font-size("h2-pc");
+      text-align: center;
+      margin: 0 0 40px;
+    }
+    &_link {
+      a {
+        @include font-size("label-pc-bold");
+        color: $white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    &_items {
+      @include font-size("label-pc-bold");
+      li {
+        margin-bottom: 16px;
+        span {
+          width: 108px;
+          margin-right: 80px;
+        }
+        a {
+          color: $white;
+          text-decoration: none;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+  // 新規登録への導線2
+  .service_trial {
+    @include filledButton;
+    box-sizing: border-box;
+    width: 1052px;
+    padding: 56px 40px;
+    margin: 0 auto 200px;
+    border-radius: 30px;
+    background-color: $violet;
+
+    &_heading {
+      display: flex;
+      align-items: center;
+      padding-left: 24px;
+      margin-bottom: 24px;
+
+      h2 {
+        @include font-size("h2-pc");
+        margin: 0;
+        margin-left: 16px;
+      }
+    }
+
+    p {
+      @include font-size("label-pc-bold");
+      margin-bottom: 48px;
+    }
+
+    .filledButton {
+      margin: 0 auto;
+    }
+  }
+
+  //ユーザコミュニティ
   .service_contact {
     width: 605px;
     margin: 0 auto 160px;
@@ -674,32 +678,6 @@
         a {
           color: $white;
         }
-      }
-    }
-    .contact_us {
-      @include font-size("caption-pc");
-      @include button($blue);
-      background: $blue;
-      border-radius: 24px;
-      padding: 32px;
-      figure {
-        text-align: center;
-        margin-bottom: 0px;
-        img {
-          height: 112px;
-        }
-      }
-      h2 {
-        margin-top: 0px;
-        font-family: $ENGtypo;
-        text-align: center;
-        @include font-size("h2-pc");
-      }
-      .text {
-        height: 160px;
-      }
-      .button {
-        margin: 0 auto;
       }
     }
   }
