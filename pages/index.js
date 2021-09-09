@@ -143,12 +143,21 @@ export default function Home({ allPosts }) {
             <h2 className={styles.service_interview_title}>活用事例</h2>
             <style global jsx>
               {`
+                .swiper-button-next,
+                .swiper-button-prev {
+                  width: 27px;
+                }
                 .swiper-button-next {
-                  background-image: url(/images/icon_right.svg);
+                  background: no-repeat center/100% url(/images/icon_right.svg);
                   right: 0;
                 }
+
+                .swiper-button-prev::after,
+                .swiper-button-next::after {
+                  content: "";
+                }
                 .swiper-button-prev {
-                  background-image: url(/images/icon_left.svg);
+                  background: no-repeat center/100% url(/images/icon_left.svg);
                   left: 0;
                 }
                 .swiper-pagination-bullet,
@@ -182,9 +191,10 @@ export default function Home({ allPosts }) {
                 1000: {
                   slidesPerView: 3,
                   spaceBetween: 50,
-                  width: 1212,
+                  width: 1208,
                 },
               }}
+              className={styles.swiper_container}
             >
               <SwiperSlide className={styles.service_interview_content}>
                 <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
