@@ -186,7 +186,6 @@ export default function Home({ allPosts }) {
               pagination={{ clickable: true }}
               slidesPerView={1.15}
               loopedSlides={3}
-              loop={true}
               breakpoints={{
                 1000: {
                   slidesPerView: 3,
