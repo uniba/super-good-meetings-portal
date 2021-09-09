@@ -430,7 +430,6 @@ export default function Home({ allPosts }) {
             <h2 className={styles.service_media_title}>メディア掲載</h2>
             <Swiper
               spaceBetween={16}
-              centeredSlides={true}
               slidesPerView={1.15}
               loopedSlides={2}
               breakpoints={{
@@ -441,6 +440,7 @@ export default function Home({ allPosts }) {
                   width: 940,
                 },
               }}
+              className={styles.swiper_container}
             >
               <SwiperSlide className={styles.service_media_contents_item}>
                 <a
@@ -496,7 +496,7 @@ export default function Home({ allPosts }) {
               SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。{" "}
             </p>
             <div className={styles.filledButton} role="button">
-              <a href="https://sgms.app/signup" id="ga_signup_body">
+              <a href="https://sgms.app/signup" id="ga_signup_bottom_body">
                 無料で始める
               </a>
             </div>
