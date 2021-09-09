@@ -302,6 +302,7 @@
       }
       &_title {
         @include font-size("h2-sp");
+        margin-right: 24px;
       }
       &_contents {
         &_item {
