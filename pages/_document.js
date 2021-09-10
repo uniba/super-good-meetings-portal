@@ -299,6 +299,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Lato:400,900|Open+Sans:400,700,700i,800,800i&display=swap"
             rel="stylesheet"
           />
+          <meta name="facebook-domain-verification" content="9dxq3avza6zfndu06nwwvbgmvdx7t0" />
           <script dangerouslySetInnerHTML={{ __html: gtmScript }} />
         </Head>
         <body>
