@@ -18,6 +18,11 @@ const Footer = () => {
               <Link href="/#about">
                 <a id="ga_about_footer">サービス紹介</a>
               </Link>
+              <Link href="/src/SuperGoodMeetings_introduction_ver6.pdf">
+                <a id="ga_intropdf_footer" className={styles.footer_sublink}>
+                  PDF版ダウンロード
+                </a>
+              </Link>
             </li>
             <li>
               <Link href="/plan">
@@ -40,7 +45,7 @@ const Footer = () => {
           <ul>
             <li>
               <Link href="/#interview">
-                <a id="ga_interview_footer">インタビュー</a>
+                <a id="ga_interview_footer">活用事例</a>
               </Link>
             </li>
             <li>
@@ -50,7 +55,7 @@ const Footer = () => {
             </li>
             <li>
               <Link href="https://sites.google.com/copilot.jp/support-sgms/">
-                <a id="ga_guide_footer">ガイドページ</a>
+                <a id="ga_userguide_footer">ガイドページ</a>
               </Link>
             </li>
             <li>

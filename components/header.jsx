@@ -37,7 +37,7 @@ const Header = () => {
           </li>
           <li className={styles.signup_button}>
             <a href="https://sgms.app/signup" id="ga_signup_header">
-              新規登録
+              無料で始める
             </a>
           </li>
         </ul>
@@ -87,7 +87,7 @@ const Header = () => {
           </li>
           <li>
             <a href="https://sgms.app/signup" id="ga_signup_header">
-              新規登録
+              無料で始める
             </a>
           </li>
         </ul>

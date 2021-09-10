@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import styles from "./styles/policy.scss";
+import styles from "./styles/policy.module.scss";
 
 import Layout from "../components/layout";
 
