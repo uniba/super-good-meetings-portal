@@ -1,16 +1,16 @@
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import Head from "next/head";
 import Layout from "../components/layout";
-import Link from 'next/link';
-import styles from "./styles/news.scss";
-import { chunk } from 'lodash';
-import { getAllPosts } from '../lib/api';
+import Link from "next/link";
+import styles from "./styles/news.module.scss";
+import { chunk } from "lodash";
+import { getAllPosts } from "../lib/api";
 
-export default function Posts ({ allPosts }) {
-  const router = useRouter()
-  const currentPage = router.query.page ? parseInt(router.query.page, 10) : 1
-  const pages = chunk(allPosts, 10)
-  const posts = pages[currentPage - 1]
+export default function Posts({ allPosts }) {
+  const router = useRouter();
+  const currentPage = router.query.page ? parseInt(router.query.page, 10) : 1;
+  const pages = chunk(allPosts, 10);
+  const posts = pages[currentPage - 1];
   return (
     <>
       <Head>
@@ -37,7 +37,13 @@ export default function Posts ({ allPosts }) {
               if (page === currentPage) {
                 return <li key={page}>{page}</li>;
               } else {
-                return <li key={page}><Link href={{ pathname: '/posts', query: { page } }}>{`${page}`}</Link></li>;
+                return (
+                  <li key={page}>
+                    <Link
+                      href={{ pathname: "/posts", query: { page } }}
+                    >{`${page}`}</Link>
+                  </li>
+                );
               }
             })}
           </ul>
@@ -47,9 +53,9 @@ export default function Posts ({ allPosts }) {
   );
 }
 
-export async function getStaticProps () {
-  const allPosts = getAllPosts(['slug', 'title', 'date']);
+export async function getStaticProps() {
+  const allPosts = getAllPosts(["slug", "title", "date"]);
   return {
-    props: { allPosts }
+    props: { allPosts },
   };
 }
