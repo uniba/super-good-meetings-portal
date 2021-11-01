@@ -196,28 +196,51 @@ export default function Home({ allPosts }) {
               className={styles.swiper_container}
             >
               <SwiperSlide className={styles.service_interview_content}>
-                <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
+                <a href="https://note.com/sgms/n/nfb32cb42307a" target="_blank">
                   <figure className={styles.logo}>
                     <img
-                      src="/images/interview_venect_logo.svg"
-                      alt="ヴェネクトロゴ"
+                      src="/images/interview_shinyo_logo.svg"
+                      alt="新陽高校ロゴ"
                     ></img>
                   </figure>
                   <figure className={styles.image}>
                     <img
-                      src="/images/interview_venect.png"
-                      alt="ヴェネクト画像"
+                      src="/images/interview_shinyo.png"
+                      alt="新陽高校画像"
                     ></img>
                   </figure>
                   <h3 className={styles.caption}>
-                    会議は「事前に設計」するもの。
+                    学校・教育現場でこそ、
                     <br />
-                    可視化がプロジェクトの進行を加速させる
+                    プロジェクト推進のためのメソッドが活きる
                   </h3>
                   <p className={styles.footnote}>
-                    ヴェネクト株式会社
+                    学校法人札幌慈恵学園 札幌新陽高等学校
                     <br />
-                    <span>牟田和貴、加藤智司</span>
+                    <span>高石大道、赤司展子、髙橋励起</span>
+                  </p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className={styles.service_interview_content}>
+                <a
+                  href="https://note.com/sgms/n/n01bd46d99dcd?magazine_key=m3633f7f797e5"
+                  target="_blank"
+                >
+                  <figure className={styles.logo}>
+                    <img src="/images/interview_gs_logo.svg" alt="GSロゴ"></img>
+                  </figure>
+                  <figure className={styles.image}>
+                    <img src="/images/interview_gs.png" alt="GS画像"></img>
+                  </figure>
+                  <h3 className={styles.caption}>
+                    「認識のズレを補正する仕組み」で、
+                    <br />
+                    社内のコミュニケーションを円滑に
+                  </h3>
+                  <p className={styles.footnote}>
+                    ゴール・システム・コンサルティング株式会社
+                    <br />
+                    <span>小笠原剛、但田真紀</span>
                   </p>
                 </a>
               </SwiperSlide>
@@ -251,51 +274,28 @@ export default function Home({ allPosts }) {
                 </a>
               </SwiperSlide>
               <SwiperSlide className={styles.service_interview_content}>
-                <a
-                  href="https://note.com/sgms/n/n01bd46d99dcd?magazine_key=m3633f7f797e5"
-                  target="_blank"
-                >
-                  <figure className={styles.logo}>
-                    <img src="/images/interview_gs_logo.svg" alt="GSロゴ"></img>
-                  </figure>
-                  <figure className={styles.image}>
-                    <img src="/images/interview_gs.png" alt="GS画像"></img>
-                  </figure>
-                  <h3 className={styles.caption}>
-                    「認識のズレを補正する仕組み」で、
-                    <br />
-                    社内のコミュニケーションを円滑に
-                  </h3>
-                  <p className={styles.footnote}>
-                    ゴール・システム・コンサルティング株式会社
-                    <br />
-                    <span>小笠原剛、但田真紀</span>
-                  </p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className={styles.service_interview_content}>
-                <a href="https://note.com/sgms/n/nfb32cb42307a" target="_blank">
+                <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
                   <figure className={styles.logo}>
                     <img
-                      src="/images/interview_shinyo_logo.svg"
-                      alt="新陽高校ロゴ"
+                      src="/images/interview_venect_logo.svg"
+                      alt="ヴェネクトロゴ"
                     ></img>
                   </figure>
                   <figure className={styles.image}>
                     <img
-                      src="/images/interview_shinyo.png"
-                      alt="新陽高校画像"
+                      src="/images/interview_venect.png"
+                      alt="ヴェネクト画像"
                     ></img>
                   </figure>
                   <h3 className={styles.caption}>
-                    学校・教育現場でこそ、
+                    会議は「事前に設計」するもの。
                     <br />
-                    プロジェクト推進のためのメソッドが活きる
+                    可視化がプロジェクトの進行を加速させる
                   </h3>
                   <p className={styles.footnote}>
-                    学校法人札幌慈恵学園 札幌新陽高等学校
+                    ヴェネクト株式会社
                     <br />
-                    <span>高石大道、赤司展子、髙橋励起</span>
+                    <span>牟田和貴、加藤智司</span>
                   </p>
                 </a>
               </SwiperSlide>
