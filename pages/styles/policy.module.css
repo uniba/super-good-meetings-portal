@@ -1,0 +1,217 @@
+.policy {
+  background: #fff;
+  color: #0c0c46;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 48px 194px 120px 194px;
+}
+
+.policy a {
+  color: #018eff;
+}
+
+.policy nav ul {
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.policy nav ul li {
+  margin-right: 40px;
+}
+
+.policy nav ul li a {
+  color: #6c6d71;
+  text-decoration: none;
+}
+
+.policy nav ul li a:hover {
+  color: #018eff;
+}
+
+.policy nav ul li.active a {
+  color: #018eff;
+}
+
+.policy h1 {
+  margin: 0 0 24px 0;
+  font-style: normal;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 44.8px;
+}
+
+.policy table {
+  margin-top: 24px;
+}
+
+.policy table th {
+  text-align: left;
+  vertical-align: top;
+  width: 4em;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1000px) {
+  .policy table th {
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19.5px;
+  }
+}
+
+.policy > dl > dt {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-top: 64px;
+  margin-bottom: 32px;
+  counter-increment: clause;
+}
+
+.policy > dl > dd {
+  margin: 0;
+}
+
+.policy > dl > dd > dl > dt {
+  margin-bottom: 16px;
+}
+
+.policy > dl > dd > dl > dd {
+  margin-bottom: 16px;
+}
+
+.policy > dl > dd:last-child {
+  margin-bottom: 64px !important;
+}
+
+.policy .parentheses {
+  padding-left: 24px;
+}
+
+.policy .parentheses > dt {
+  counter-increment: paren;
+  position: relative;
+  margin-bottom: 16px;
+  padding-left: 40px;
+}
+
+.policy .parentheses > dt::before {
+  position: absolute;
+  left: 0;
+  content: "(" counter(paren) ")";
+}
+
+.policy .bullet > dd {
+  display: list-item;
+  list-style-type: disc;
+}
+
+.policy .number > dd {
+  counter-increment: number;
+  position: relative;
+  padding-left: 32px;
+  margin-left: 0;
+  margin-bottom: 16px;
+}
+
+.policy .number > dd::before {
+  position: absolute;
+  left: 0;
+  content: counter(clause) "-" counter(number);
+}
+
+.policy .simplelist > dt {
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.policy .simplelist > dd {
+  margin-left: 0;
+}
+
+.policy .caption {
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .policy {
+    padding: 32px 24px 120px 24px;
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19.5px;
+  }
+  .policy nav ul {
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19.5px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .policy nav ul li {
+    margin-bottom: 16px;
+  }
+  .policy h1 {
+    font-style: normal;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 28px;
+  }
+  .policy > dl > dt {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 24px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  .policy > dl > dd > dl > dt {
+    margin-bottom: 8px;
+  }
+  .policy > dl > dd > dl > dd {
+    margin-bottom: 8px;
+  }
+  .policy > dl > dd:last-child {
+    margin-bottom: 32px;
+  }
+  .policy .parentheses {
+    padding-left: 0px;
+  }
+  .policy .parentheses dd {
+    margin-left: 2em;
+  }
+  .policy .parentheses > dt {
+    margin-bottom: 8px;
+    padding-left: 2em;
+  }
+  .policy .number > dd {
+    margin-bottom: 8px;
+  }
+  .policy .simplelist > dt {
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19.5px;
+  }
+}
+/*# sourceMappingURL=policy.module.css.map */
