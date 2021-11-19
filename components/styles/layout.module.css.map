@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAC;EACT,UAAU,EGHC,OAAO;EDKhB,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;EAChB,WAAW,EAAE,MAAM;CFHtB",
+    "sources": [
+        "layout.module.scss",
+        "../../styles/base_styles.scss",
+        "../../styles/typo.scss",
+        "../../styles/color.scss"
+    ],
+    "names": [],
+    "file": "layout.module.css"
+}

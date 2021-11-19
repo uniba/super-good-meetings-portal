@@ -36,16 +36,17 @@ export default function Plan() {
                 />
               </figure>
               <h2>フリープラン</h2>
-              <p>オーナープロジェクト 最大1</p>
-              <dl>
-                <dt>まずは SuperGoodMeetings を試したい方向け</dt>
-                <dt>自由にプロジェクトを作成、アーカイブ可能</dt>
-                <dt>ユーザーのプロジェクトへの招待</dt>
-                <dt>
-                  トラック、イベント、フェーズ、アジェンダやミーティングの作成
-                </dt>
+              <div className={styles.price}>
+                <span className={styles.large}>0円</span>/ 月
+              </div>
+              <p className={styles.notice}>
+                オーナープロジェクト 最大1
+                <br />
+                招待可能ユーザー数　無制限
+              </p>
+              <dl className={styles.text}>
+                まずは SuperGoodMeetings を試したい方向け
               </dl>
-              <div>0円 / 月</div>
             </li>
 
             <li>
@@ -56,20 +57,18 @@ export default function Plan() {
                 />
               </figure>
               <h2>スタンダードプラン</h2>
-              <p>オーナープロジェクト 最大50</p>
-              <dl>
-                <dt>
-                  個人や小規模スタートアップ、企業の一部門のプロジェクトマネージャ向け
-                </dt>
-                <dt>自由にプロジェクトを作成、アーカイブ可能</dt>
-                <dt>ユーザーのプロジェクトへの招待</dt>
-                <dt>
-                  トラック、イベント、フェーズ、アジェンダやミーティングの作成
-                </dt>
-              </dl>
-              <div>
-                7,800円 <span> (税込 8,580円) </span>/ 月
+              <div className={styles.price}>
+                <span className={styles.large}>800円</span>/ 月
+                <span className={styles.branket}>(税込 880円) </span>
               </div>
+              <p className={styles.notice}>
+                オーナープロジェクト 最大5
+                <br />
+                招待可能ユーザー数　無制限
+              </p>
+              <dl className={styles.text}>
+                複数プロジェクトを抱える個人やスタートアップの方向け
+              </dl>
             </li>
 
             <li>
@@ -79,25 +78,33 @@ export default function Plan() {
                   alt="エンタープライズ・イメージイラスト"
                 />
               </figure>
-              <h2>エンタプライズプラン</h2>
-              <p>お問い合わせください</p>
-              <dl>
-                <dt>より大規模な導入を検討する方向け</dt>
-                <dt>自由にプロジェクトを作成、アーカイブ可能</dt>
-                <dt>ユーザーのプロジェクトへの招待</dt>
-                <dt>
-                  トラック、イベント、フェーズ、アジェンダやミーティングの作成
-                </dt>
-              </dl>
-              <div>
-                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
-                  <a target="_blank" id="ga_contact_plan">
-                    お問い合わせ
-                  </a>
-                </Link>
+              <h2>ビジネスプラン</h2>
+              <div className={styles.price}>
+                <span className={styles.large}>7,800円</span>/ 月
+                <span className={styles.branket}>(税込 8,580円) </span>
               </div>
+              <p className={styles.notice}>
+                オーナープロジェクト 最大50
+                <br />
+                招待可能ユーザー数　無制限
+              </p>
+              <dl className={styles.text}>
+                複数案件を抱えているコンサルファーム、制作会社や、多数のチームを抱える大企業など、より大規模な導入を検討されている方向け
+              </dl>
             </li>
           </ul>
+
+          <div className={styles.features}>
+            <h2>ご利用いただける機能</h2>
+            <ul className={styles.features_list}>
+              <li>プロジェクト作成（アーカイブ可能）</li>
+              <li>ミーティングにおけるアジェンダ作成・管理</li>
+              <li>プロジェクトにおけるマイルストーン作成・管理</li>
+              <li>ミーティングにおけるログ管理</li>
+              <li>ミーティングの作成・管理</li>
+              <li>ユーザーのプロジェクト招待</li>
+            </ul>
+          </div>
 
           <div className={styles.button} role="button">
             <a href="https://sgms.app/login" id="ga_signup_plan">

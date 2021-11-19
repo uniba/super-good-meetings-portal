@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "base_styles.scss",
+        "typo.scss",
+        "color.scss"
+    ],
+    "names": [],
+    "file": "base_styles.css"
+}
