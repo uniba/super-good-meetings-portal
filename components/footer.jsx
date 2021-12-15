@@ -18,8 +18,8 @@ const Footer = () => {
               <Link href="/#about">
                 <a id="ga_about_footer">サービス紹介</a>
               </Link>
-              <Link href="/src/SuperGoodMeetings_introduction_ver8.pdf">
-                <a id="ga_intropdf_footer" className={styles.footer_sublink}>
+              <Link href="/src/SuperGoodMeetings_introduction.pdf">
+                <a id="ga_intropdf_footer"  target="_blank" className={styles.footer_sublink}>
                   PDF版ダウンロード
                 </a>
               </Link>
