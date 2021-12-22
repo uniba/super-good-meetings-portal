@@ -587,12 +587,14 @@
     &_items {
       @include font-size("label-pc-bold");
       li {
+        display: flex;
         margin-bottom: 16px;
         span {
           width: 108px;
           margin-right: 80px;
         }
         a {
+          flex: 1;
           color: $white;
           text-decoration: none;
           &:hover {

@@ -336,6 +336,7 @@
       &_items {
         @include font-size("body-sp-bold");
         li {
+          flex-direction: column;
           margin-bottom: 24px;
           span {
             display: block;
