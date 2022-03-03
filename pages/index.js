@@ -1,28 +1,26 @@
 import Head from "next/head";
 import Link from "next/link";
-import Layout from "../components/layout";
-import CustomForm from "../components/customform";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import YouTube from "react-youtube";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./styles/landing.module.scss";
 import "swiper/swiper-bundle.min.css";
+import CustomForm from "../components/customform";
+import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
+import styles from "./styles/landing.module.scss";
 
 SwiperCore.use([Navigation, Pagination]);
 
 function _onReady(event) {
   if (process.browser) {
-    document
-      .getElementsByClassName("movieArea")[0]
-      .addEventListener("click", function() {
-        let promise = new Promise((resolve, reject) => {
-          this.classList.add(styles.fadeout);
-          resolve();
-        });
-        event.target.playVideo();
+    document.getElementsByClassName("movieArea")[0].addEventListener("click", function () {
+      let promise = new Promise((resolve, reject) => {
+        this.classList.add(styles.fadeout);
+        resolve();
       });
+      event.target.playVideo();
+    });
   }
 }
 
@@ -198,16 +196,10 @@ export default function Home({ allPosts }) {
               <SwiperSlide className={styles.service_interview_content}>
                 <a href="https://note.com/sgms/n/nfb32cb42307a" target="_blank">
                   <figure className={styles.logo}>
-                    <img
-                      src="/images/interview_shinyo_logo.svg"
-                      alt="新陽高校ロゴ"
-                    ></img>
+                    <img src="/images/interview_shinyo_logo.svg" alt="新陽高校ロゴ"></img>
                   </figure>
                   <figure className={styles.image}>
-                    <img
-                      src="/images/interview_shinyo.png"
-                      alt="新陽高校画像"
-                    ></img>
+                    <img src="/images/interview_shinyo.png" alt="新陽高校画像"></img>
                   </figure>
                   <h3 className={styles.caption}>
                     学校・教育現場でこそ、
@@ -250,16 +242,10 @@ export default function Home({ allPosts }) {
                   target="_blank"
                 >
                   <figure className={styles.logo}>
-                    <img
-                      src="/images/interview_uniba_logo.svg"
-                      alt="ユニバロゴ"
-                    ></img>
+                    <img src="/images/interview_uniba_logo.svg" alt="ユニバロゴ"></img>
                   </figure>
                   <figure className={styles.image}>
-                    <img
-                      src="/images/interview_uniba.png"
-                      alt="ユニバ画像"
-                    ></img>
+                    <img src="/images/interview_uniba.png" alt="ユニバ画像"></img>
                   </figure>
                   <h3 className={styles.caption}>
                     「定例ミーティング」を軸として、
@@ -276,16 +262,10 @@ export default function Home({ allPosts }) {
               <SwiperSlide className={styles.service_interview_content}>
                 <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
                   <figure className={styles.logo}>
-                    <img
-                      src="/images/interview_venect_logo.svg"
-                      alt="ヴェネクトロゴ"
-                    ></img>
+                    <img src="/images/interview_venect_logo.svg" alt="ヴェネクトロゴ"></img>
                   </figure>
                   <figure className={styles.image}>
-                    <img
-                      src="/images/interview_venect.png"
-                      alt="ヴェネクト画像"
-                    ></img>
+                    <img src="/images/interview_venect.png" alt="ヴェネクト画像"></img>
                   </figure>
                   <h3 className={styles.caption}>
                     会議は「事前に設計」するもの。
@@ -307,28 +287,19 @@ export default function Home({ allPosts }) {
             <ul className={styles.service_effect_items}>
               <li>
                 <figure>
-                  <img
-                    src="/images/illust_change1.svg"
-                    alt="イメージイラスト"
-                  ></img>
+                  <img src="/images/illust_change1.svg" alt="イメージイラスト"></img>
                 </figure>
                 プロジェクトの目的やマイルストーン（目標）を常に意識して行動できる
               </li>
               <li>
                 <figure>
-                  <img
-                    src="/images/illust_change2.svg"
-                    alt="イメージイラスト"
-                  ></img>
+                  <img src="/images/illust_change2.svg" alt="イメージイラスト"></img>
                 </figure>
                 プロジェクトに関する情報がオープンな場で蓄積・共有される
               </li>
               <li>
                 <figure>
-                  <img
-                    src="/images/illust_change3.svg"
-                    alt="イメージイラスト"
-                  ></img>
+                  <img src="/images/illust_change3.svg" alt="イメージイラスト"></img>
                 </figure>
                 定期的に状況の変化を感知することができ、適応しやすくなる
               </li>
@@ -349,10 +320,7 @@ export default function Home({ allPosts }) {
               <h2>SuperGoodMeetingsに実装されているメソッドについて</h2>
               <div className={styles.pgs_about}>
                 <figure>
-                  <img
-                    src="/images/pjs_logo.png"
-                    alt="Project Sprintロゴ"
-                  ></img>
+                  <img src="/images/pjs_logo.png" alt="Project Sprintロゴ"></img>
                 </figure>
                 <p>
                   SuperGoodMeetingsは、運営元である株式会社コパイロツトが開発した、独自のプロジェクト推進メソッド
@@ -374,9 +342,7 @@ export default function Home({ allPosts }) {
                   </li>
                   <li>
                     <Link href="https://2019.pmconf.jp/">
-                      <a target="_blank">
-                        プロダクトマネージャーカンファレンス 2019（2019.11.13）
-                      </a>
+                      <a target="_blank">プロダクトマネージャーカンファレンス 2019（2019.11.13）</a>
                     </Link>
                   </li>
                   <li>
@@ -390,11 +356,7 @@ export default function Home({ allPosts }) {
               </div>
               <div className={styles.pgs_button}>
                 <div className={styles.button}>
-                  <a
-                    id="ga_pjs"
-                    href="http://projectsprint.org"
-                    target="_blank"
-                  >
+                  <a id="ga_pjs" href="http://projectsprint.org" target="_blank">
                     projectsprint.org
                   </a>
                 </div>
@@ -430,6 +392,8 @@ export default function Home({ allPosts }) {
             <Swiper
               spaceBetween={16}
               slidesPerView={1.15}
+              navigation
+              pagination={{ clickable: true }}
               loopedSlides={2}
               breakpoints={{
                 1000: {
@@ -442,10 +406,7 @@ export default function Home({ allPosts }) {
               className={styles.swiper_container}
             >
               <SwiperSlide className={styles.service_media_contents_item}>
-                <a
-                  href="https://book.mynavi.jp/wdonline/mag/detail/id=112183"
-                  target="_blank"
-                >
+                <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
                   <h3>Web Designing 2020年2月号</h3>
                   <p>
                     特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」
@@ -453,14 +414,25 @@ export default function Home({ allPosts }) {
                 </a>
               </SwiperSlide>
               <SwiperSlide className={styles.service_media_contents_item}>
-                <a
-                  href="https://www.japandesign.ne.jp/interview/value-copilot-1/"
-                  target="_blank"
-                >
+                <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
                   <h3>デザイン情報サイト[JDN]</h3>
                   <p>
                     その会議の時間、ちゃんと活かせてますか？
                     会議を使いこなすコパイロツトに学ぶテクニック
+                  </p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className={styles.service_media_contents_item}>
+                <a href="https://bizzine.jp/article/corner/248" target="_blank">
+                  <h3>Biz/Zine</h3>
+                  <p>これからの「プロジェクト推進」を考える</p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className={styles.service_media_contents_item}>
+                <a>
+                  <h3>TechCrunch Japan</h3>
+                  <p>
+                    新規事業開発パートナーのコパイロツト、誰でもプロマネを実践できるSuperGoodMeetingのスタートアップ向けプランを開始　
                   </p>
                 </a>
               </SwiperSlide>
@@ -477,9 +449,7 @@ export default function Home({ allPosts }) {
                 {posts.map((post, i) => (
                   <li key={i}>
                     <span>{post.date}</span>
-                    <Link href={`/posts/${encodeURIComponent(post.slug)}`}>
-                      {post.title}
-                    </Link>
+                    <Link href={`/posts/${encodeURIComponent(post.slug)}`}>{post.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -512,8 +482,7 @@ export default function Home({ allPosts }) {
               </figure>
               <div className={styles.text}>
                 <p>
-                  プロジェクト推進メソッド Project
-                  Sprintやミーティング活用クラウドサービス
+                  プロジェクト推進メソッド Project Sprintやミーティング活用クラウドサービス
                   SuperGoodMeetingsについて、ちょっとした質問や情報交換ができるユーザーコミュニティをSlackにて運営しています。
                 </p>
                 <p>
@@ -526,9 +495,7 @@ export default function Home({ allPosts }) {
                 </Link>
               </div>
               <p className={styles.caption}>
-                <Link href="https://projectsprint.slack.com/">
-                  すでに登録している方はこちら
-                </Link>
+                <Link href="https://projectsprint.slack.com/">すでに登録している方はこちら</Link>
               </p>
             </div>
           </div>
