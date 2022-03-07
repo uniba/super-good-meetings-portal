@@ -1,10 +1,10 @@
-import { useRouter } from "next/router";
-import Head from "next/head";
-import Layout from "../components/layout";
-import Link from "next/link";
-import styles from "./styles/news.module.scss";
 import { chunk } from "lodash";
+import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
+import styles from "./styles/news.module.scss";
 
 export default function Posts({ allPosts }) {
   const router = useRouter();
@@ -14,7 +14,7 @@ export default function Posts({ allPosts }) {
   return (
     <>
       <Head>
-        <title>プライバシーポリシー - SuperGoodMeetings</title>
+        <title>お知らせ - SuperGoodMeetings</title>
       </Head>
       <Layout>
         <div className={styles.posts_container}>
@@ -24,9 +24,7 @@ export default function Posts({ allPosts }) {
               <div key={i}>
                 <p className={styles.posts_item}>
                   <span>{post.date}</span>
-                  <Link href={`/posts/${encodeURIComponent(post.slug)}`}>
-                    {post.title}
-                  </Link>
+                  <Link href={`/posts/${encodeURIComponent(post.slug)}`}>{post.title}</Link>
                 </p>
               </div>
             ))}
@@ -39,9 +37,7 @@ export default function Posts({ allPosts }) {
               } else {
                 return (
                   <li key={page}>
-                    <Link
-                      href={{ pathname: "/posts", query: { page } }}
-                    >{`${page}`}</Link>
+                    <Link href={{ pathname: "/posts", query: { page } }}>{`${page}`}</Link>
                   </li>
                 );
               }
