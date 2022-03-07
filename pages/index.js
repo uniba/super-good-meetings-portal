@@ -97,18 +97,12 @@ export default function Home({ allPosts }) {
                 </p>
               </div>
               <figure>
-                <img
-                  src="/images/sgms_screenshot1.png"
-                  alt="SuperGoodMeetingsのスクリーンショット。トラックが表示されている"
-                ></img>
+                <img src="/images/sgms_screenshot1.png" alt="SuperGoodMeetingsのスクリーンショット。トラックが表示されている"></img>
               </figure>
             </div>
             <div className={styles.service_about_message2}>
               <figure>
-                <img
-                  src="/images/sgms_screenshot2.png"
-                  alt="SuperGoodMeetingsのスクリーンショット。ミーティングとアジェンダのリストが表示されている"
-                ></img>
+                <img src="/images/sgms_screenshot2.png" alt="SuperGoodMeetingsのスクリーンショット。ミーティングとアジェンダのリストが表示されている"></img>
               </figure>
               <div className={styles.content}>
                 <h2>
@@ -116,9 +110,7 @@ export default function Home({ allPosts }) {
                   <br />
                   効果的な運用をサポート
                 </h2>
-                <p>
-                  メンバーそれぞれが自律的に動ける環境をつくるために、私たちは「定例ミーティング」をうまく活用する方法を見出しました。SuperGoodMeetingsには、そのための機能を実装しています。
-                </p>
+                <p>メンバーそれぞれが自律的に動ける環境をつくるために、私たちは「定例ミーティング」をうまく活用する方法を見出しました。SuperGoodMeetingsには、そのための機能を実装しています。</p>
               </div>
             </div>
           </div>
@@ -214,10 +206,7 @@ export default function Home({ allPosts }) {
                 </a>
               </SwiperSlide>
               <SwiperSlide className={styles.service_interview_content}>
-                <a
-                  href="https://note.com/sgms/n/n01bd46d99dcd?magazine_key=m3633f7f797e5"
-                  target="_blank"
-                >
+                <a href="https://note.com/sgms/n/n01bd46d99dcd?magazine_key=m3633f7f797e5" target="_blank">
                   <figure className={styles.logo}>
                     <img src="/images/interview_gs_logo.svg" alt="GSロゴ"></img>
                   </figure>
@@ -237,10 +226,7 @@ export default function Home({ allPosts }) {
                 </a>
               </SwiperSlide>
               <SwiperSlide className={styles.service_interview_content}>
-                <a
-                  href="https://note.com/sgms/n/nc218c6d07a22?magazine_key=m3633f7f797e5"
-                  target="_blank"
-                >
+                <a href="https://note.com/sgms/n/nc218c6d07a22?magazine_key=m3633f7f797e5" target="_blank">
                   <figure className={styles.logo}>
                     <img src="/images/interview_uniba_logo.svg" alt="ユニバロゴ"></img>
                   </figure>
@@ -323,8 +309,7 @@ export default function Home({ allPosts }) {
                   <img src="/images/pjs_logo.png" alt="Project Sprintロゴ"></img>
                 </figure>
                 <p>
-                  SuperGoodMeetingsは、運営元である株式会社コパイロツトが開発した、独自のプロジェクト推進メソッド
-                  「Project Sprint」に基づいて設計されています。「Project
+                  SuperGoodMeetingsは、運営元である株式会社コパイロツトが開発した、独自のプロジェクト推進メソッド 「Project Sprint」に基づいて設計されています。「Project
                   Sprint」とは、ミーティングを活用してプロジェクトを推進する方法論です。コパイロツトがこれまでの業務において積み上げてきたプロジェクト推進の実践知を元に、汎用的な方法論にまとめ、オープンソースとして公開しています。
                 </p>
               </div>
@@ -334,10 +319,7 @@ export default function Home({ allPosts }) {
                   <li>経済産業省 DX-Techmembersランチ会（2020.09.29）</li>
                   <li>
                     <Link href="https://itr-lounge.connpass.com/event/183245/">
-                      <a target="_blank">
-                        ITR Lounge ハナシバ vol.5
-                        激動の時代、隣のプロジェクトマネージャが取り組んでいる事（2020.08.12）
-                      </a>
+                      <a target="_blank">ITR Lounge ハナシバ vol.5 激動の時代、隣のプロジェクトマネージャが取り組んでいる事（2020.08.12）</a>
                     </Link>
                   </li>
                   <li>
@@ -347,9 +329,7 @@ export default function Home({ allPosts }) {
                   </li>
                   <li>
                     <Link href="https://peatix.com/event/1366420/">
-                      <a target="_blank">
-                        日本ナレッジマネジメント学会：実践ナレッジ・イノベーション研究部会11月度（2019.11.12）
-                      </a>
+                      <a target="_blank">日本ナレッジマネジメント学会：実践ナレッジ・イノベーション研究部会11月度（2019.11.12）</a>
                     </Link>
                   </li>
                 </ul>
@@ -370,12 +350,7 @@ export default function Home({ allPosts }) {
               <span>SuperGoodMeetings</span>
             </h2>
             <div className={styles.service_movie_content}>
-              <img
-                className="movieArea"
-                id="ga_movie"
-                src="/images/movie_thumb.png"
-                alt="クリックで再生"
-              ></img>
+              <img className="movieArea" id="ga_movie" src="/images/movie_thumb.png" alt="クリックで再生"></img>
               <YouTube
                 videoId="vE4l29Wlr8k"
                 opts={{
@@ -406,23 +381,6 @@ export default function Home({ allPosts }) {
               className={styles.swiper_container}
             >
               <SwiperSlide className={styles.service_media_contents_item}>
-                <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
-                  <h3>Web Designing 2020年2月号</h3>
-                  <p>
-                    特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」
-                  </p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className={styles.service_media_contents_item}>
-                <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
-                  <h3>デザイン情報サイト[JDN]</h3>
-                  <p>
-                    その会議の時間、ちゃんと活かせてますか？
-                    会議を使いこなすコパイロツトに学ぶテクニック
-                  </p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className={styles.service_media_contents_item}>
                 <a href="https://bizzine.jp/article/corner/248" target="_blank">
                   <h3>Biz/Zine</h3>
                   <p>これからの「プロジェクト推進」を考える</p>
@@ -431,9 +389,19 @@ export default function Home({ allPosts }) {
               <SwiperSlide className={styles.service_media_contents_item}>
                 <a>
                   <h3>TechCrunch Japan</h3>
-                  <p>
-                    新規事業開発パートナーのコパイロツト、誰でもプロマネを実践できるSuperGoodMeetingのスタートアップ向けプランを開始　
-                  </p>
+                  <p>新規事業開発パートナーのコパイロツト、誰でもプロマネを実践できるSuperGoodMeetingのスタートアップ向けプランを開始　</p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className={styles.service_media_contents_item}>
+                <a href="https://book.mynavi.jp/wdonline/mag/detail/id=112183" target="_blank">
+                  <h3>Web Designing 2020年2月号</h3>
+                  <p>特集「失敗しないWebビジネスのプロジェクトマネジメント」｜定例会議がグレードアップする「プロジェクトスプリント」</p>
+                </a>
+              </SwiperSlide>
+              <SwiperSlide className={styles.service_media_contents_item}>
+                <a href="https://www.japandesign.ne.jp/interview/value-copilot-1/" target="_blank">
+                  <h3>デザイン情報サイト[JDN]</h3>
+                  <p>その会議の時間、ちゃんと活かせてますか？ 会議を使いこなすコパイロツトに学ぶテクニック</p>
                 </a>
               </SwiperSlide>
             </Swiper>
@@ -461,9 +429,7 @@ export default function Home({ allPosts }) {
               <img src="/images/illust_trial.svg" alt="イメージイラスト" />
               <h2> まずは1プロジェクト （ 無料 ）からお試しいただけます</h2>
             </div>
-            <p>
-              SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。{" "}
-            </p>
+            <p>SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。 </p>
             <div className={styles.filledButton} role="button">
               <a href="https://sgms.app/signup" id="ga_signup_bottom_body">
                 無料で始める
@@ -475,19 +441,13 @@ export default function Home({ allPosts }) {
             <div className={styles.user_community}>
               <h2>ユーザーコミュニティ</h2>
               <figure>
-                <img
-                  src="/images/illust_usercommunity.svg"
-                  alt="ユーザーコミュニティのイラスト"
-                ></img>
+                <img src="/images/illust_usercommunity.svg" alt="ユーザーコミュニティのイラスト"></img>
               </figure>
               <div className={styles.text}>
                 <p>
-                  プロジェクト推進メソッド Project Sprintやミーティング活用クラウドサービス
-                  SuperGoodMeetingsについて、ちょっとした質問や情報交換ができるユーザーコミュニティをSlackにて運営しています。
+                  プロジェクト推進メソッド Project Sprintやミーティング活用クラウドサービス SuperGoodMeetingsについて、ちょっとした質問や情報交換ができるユーザーコミュニティをSlackにて運営しています。
                 </p>
-                <p>
-                  メソッドやサービスの最新情報のキャッチアップや、使い方・不明点に関するご相談、開発メンバーとのコミュニケーションなど、ぜひお気軽にご活用ください！
-                </p>
+                <p>メソッドやサービスの最新情報のキャッチアップや、使い方・不明点に関するご相談、開発メンバーとのコミュニケーションなど、ぜひお気軽にご活用ください！</p>
               </div>
               <div className={styles.button} role="button">
                 <Link href="http://slack.projectsprint.org/">
@@ -507,14 +467,8 @@ export default function Home({ allPosts }) {
                 url="https://supergoodmeetings.us4.list-manage.com/subscribe/post?u=4914736f05d3b5eb761d836c4&amp;id=d6f47afc4c"
                 render={({ subscribe, status, message }) => (
                   <div>
-                    <p>
-                      SuperGoodMeetings開発進捗状況や、基本設計にも使われているプロジェクト推進メソッドに関する情報、プロジェクト進行のお役立ちTipsなどをお知らせいたします！
-                    </p>
-                    <CustomForm
-                      status={status}
-                      message={message}
-                      onValidated={(formData) => subscribe(formData)}
-                    />
+                    <p>SuperGoodMeetings開発進捗状況や、基本設計にも使われているプロジェクト推進メソッドに関する情報、プロジェクト進行のお役立ちTipsなどをお知らせいたします！</p>
+                    <CustomForm status={status} message={message} onValidated={(formData) => subscribe(formData)} />
                   </div>
                 )}
               />
