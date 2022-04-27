@@ -336,7 +336,7 @@ export default function Home({ allPosts }) {
               </div>
               <div className={styles.pgs_button}>
                 <div className={styles.button}>
-                  <a id="ga_pjs" href="http://projectsprint.org" target="_blank">
+                  <a id="ga_pjs" href="https://projectsprint.org" target="_blank">
                     projectsprint.org
                   </a>
                 </div>
@@ -450,7 +450,7 @@ export default function Home({ allPosts }) {
                 <p>メソッドやサービスの最新情報のキャッチアップや、使い方・不明点に関するご相談、開発メンバーとのコミュニケーションなど、ぜひお気軽にご活用ください！</p>
               </div>
               <div className={styles.button} role="button">
-                <Link href="http://slack.projectsprint.org/">
+                <Link href="https://slack.projectsprint.org/">
                   <a id="ga_usercommunity_body">今すぐ登録！</a>
                 </Link>
               </div>
