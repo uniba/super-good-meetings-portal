@@ -122,7 +122,7 @@ export default function Privacy() {
               当社は、個人情報の利用目的を相当の関連性を有すると合理的に認められる範囲内において変更することがあり、変更した場合にはユーザーに通知又は当ページにて公表します。
             </dd>
 
-            <dt>4. 通知・公表または同意取得の方法、利用中止要請の方法</dt>
+            <dt>4. Cookieの利用</dt>
             <dd>
               <dl className={styles.number}>
                 <dd>
