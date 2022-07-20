@@ -77,8 +77,10 @@ const Footer = () => {
           </ul>
           <ul>
             <li>
-              <Link href="/privacy">
-                <a id="ga_privacy_footer">プライバシーポリシー</a>
+              <Link href="https://copilot.jp/privacy-policy/">
+                <a target="_blank" rel="noopener" id="ga_privacy_footer">
+                  プライバシーポリシー
+                </a>
               </Link>
             </li>
             <li>
