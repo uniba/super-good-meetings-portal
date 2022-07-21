@@ -15,7 +15,13 @@ export default function Plan() {
           <nav>
             <ul>
               <li>
-                <Link href="/privacy">プライバシーポリシー</Link>
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://copilot.jp/privacy-policy/"
+                >
+                  プライバシーポリシー
+                </a>
               </li>
               <li>
                 <Link href="/terms">利用規約</Link>

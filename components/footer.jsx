@@ -18,11 +18,6 @@ const Footer = () => {
               <Link href="/#about">
                 <a id="ga_about_footer">サービス紹介</a>
               </Link>
-              <Link href="/src/SuperGoodMeetings_introduction.pdf">
-                <a id="ga_intropdf_footer"  target="_blank" className={styles.footer_sublink}>
-                  PDF版ダウンロード
-                </a>
-              </Link>
             </li>
             <li>
               <Link href="/plan">
@@ -82,8 +77,10 @@ const Footer = () => {
           </ul>
           <ul>
             <li>
-              <Link href="/privacy">
-                <a id="ga_privacy_footer">プライバシーポリシー</a>
+              <Link href="https://copilot.jp/privacy-policy/">
+                <a target="_blank" rel="noopener" id="ga_privacy_footer">
+                  プライバシーポリシー
+                </a>
               </Link>
             </li>
             <li>
