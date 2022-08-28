@@ -54,13 +54,6 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="https://slack.projectsprint.org/">
-                <a id="ga_usercommunity_footer" target="_blank" rel="noopener">
-                  ユーザーコミュニティ
-                </a>
-              </Link>
-            </li>
-            <li>
               <Link href="https://www.youtube.com/channel/UCOnbQVQNF5Q_7yjGZoNkFhw/">
                 <a id="ga_youtube_footer" target="_blank" rel="noopener">
                   Youtube
