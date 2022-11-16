@@ -159,7 +159,7 @@ export default function Plan() {
               <AccordionItemPanel className={styles.accordion__panel}>
                 <p>
                   メールサポート（受付窓口は
-                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
+                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform">
                     <a target="_blank">こちら</a>
                   </Link>
                   ）

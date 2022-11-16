@@ -24,7 +24,7 @@ const Header = () => {
             </Link>
           </li>
           <li className={styles.button}>
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform">
               <a target="_blank" id="ga_contact_header">
                 お問い合わせ
               </a>
@@ -71,7 +71,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform">
               <a target="_blank" id="ga_contact_header">
                 お問い合わせ
               </a>
