@@ -47,6 +47,7 @@ const Header = () => {
       </div>
       <Modal
         isOpen={modalIsOpen}
+        preventScroll={true}
         onRequestClose={() => setIsOpen(false)}
         className={styles.modal_content}
         overlayClassName={{
@@ -60,17 +61,17 @@ const Header = () => {
           <img src="/images/icon_close.svg" />
         </button>
         <ul>
-          <li>
+          <li onClick={() => setIsOpen(false)}>
             <Link href="/#about">
               <a id="ga_plan_header">サービス紹介</a>
             </Link>
           </li>
-          <li>
+          <li onClick={() => setIsOpen(false)}>
             <Link href="/plan">
               <a id="ga_plan_header">プランと料金</a>
             </Link>
           </li>
-          <li>
+          <li onClick={() => setIsOpen(false)}>
             <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
               <a target="_blank" id="ga_contact_header">
                 お問い合わせ
