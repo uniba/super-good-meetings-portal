@@ -30,7 +30,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfc2sXdcxDEz5Boi08Vymj7EtGeZAsCSljg6bBB0g1d9Aea0g/viewform">
+              <Link href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform">
                 <a id="ga_contact_footer" target="_blank" rel="noopener">
                   お問い合わせ
                 </a>
