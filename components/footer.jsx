@@ -91,6 +91,13 @@ const Footer = () => {
                 <a id="ga_security_footer">セキュリティホワイトペーパー</a>
               </Link>
             </li>
+            <li>
+              <Link href="https://sgms.app/userdata_external_transmission">
+                <a id="ga_userdata_footer" target="_blank" rel="noopener">
+                  利用者情報の外部送信について
+                </a>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
