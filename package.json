@@ -12,9 +12,6 @@
     "lint": "next lint",
     "prepare": "husky install"
   },
-  "lint-staged": {
-
-  },
   "dependencies": {
     "@types/node": "^20.4.9",
     "@types/react": "^18.2.20",
