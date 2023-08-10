@@ -5,97 +5,119 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.footer_inner}>
-        <Link href="/">
-          <a id="qa_logo_footer">
-            <h1>
-              <img src="/images/logo_mark.svg" alt="" />
-            </h1>
-          </a>
+        <Link href="/" id="qa_logo_footer">
+
+          <h1>
+            <img src="/images/logo_mark.svg" alt="" />
+          </h1>
+
         </Link>
         <div className={styles.footer_navigation}>
           <ul>
             <li>
-              <Link href="/#about">
-                <a id="ga_about_footer">サービス紹介</a>
+              <Link href="/#about" id="ga_about_footer">
+                サービス紹介
               </Link>
             </li>
             <li>
-              <Link href="/plan">
-                <a id="ga_plan_footer">プランと料金</a>
+              <Link href="/plan" id="ga_plan_footer">
+                プランと料金
               </Link>
             </li>
             <li>
-              <Link href="/posts">
-                <a id="ga_posts_footer">お知らせ</a>
+              <Link href="/posts" id="ga_posts_footer">
+                お知らせ
               </Link>
             </li>
             <li>
-              <Link href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform">
-                <a id="ga_contact_footer" target="_blank" rel="noopener">
+              <Link
+                href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform"
+                id="ga_contact_footer"
+                target="_blank"
+                rel="noopener">
+                
                   お問い合わせ
-                </a>
+                
               </Link>
             </li>
           </ul>
           <ul>
             <li>
-              <Link href="/#interview">
-                <a id="ga_interview_footer">活用事例</a>
+              <Link href="/#interview" id="ga_interview_footer">
+                活用事例
               </Link>
             </li>
             <li>
-              <Link href="/#media">
-                <a id="ga_media_footer">メディア掲載</a>
+              <Link href="/#media" id="ga_media_footer">
+                メディア掲載
               </Link>
             </li>
             <li>
-              <Link href="https://sites.google.com/copilot.jp/support-sgms/">
-                <a id="ga_userguide_footer">ガイドページ</a>
+              <Link
+                href="https://sites.google.com/copilot.jp/support-sgms/"
+                id="ga_userguide_footer">
+                ガイドページ
               </Link>
             </li>
             <li>
-              <Link href="https://www.youtube.com/channel/UCOnbQVQNF5Q_7yjGZoNkFhw/">
-                <a id="ga_youtube_footer" target="_blank" rel="noopener">
+              <Link
+                href="https://www.youtube.com/channel/UCOnbQVQNF5Q_7yjGZoNkFhw/"
+                id="ga_youtube_footer"
+                target="_blank"
+                rel="noopener">
+                
                   Youtube
-                </a>
+                
               </Link>
             </li>
             <li>
-              <Link href="https://note.com/sgms/m/m3633f7f797e5">
-                <a id="ga_note_footer" target="_blank" rel="noopener">
+              <Link
+                href="https://note.com/sgms/m/m3633f7f797e5"
+                id="ga_note_footer"
+                target="_blank"
+                rel="noopener">
+                
                   Note
-                </a>
+                
               </Link>
             </li>
           </ul>
           <ul>
             <li>
-              <Link href="https://copilot.jp/privacy-policy/">
-                <a target="_blank" rel="noopener" id="ga_privacy_footer">
+              <Link
+                href="https://copilot.jp/privacy-policy/"
+                target="_blank"
+                rel="noopener"
+                id="ga_privacy_footer">
+                
                   プライバシーポリシー
-                </a>
+                
               </Link>
             </li>
             <li>
-              <Link href="/terms">
-                <a id="ga_terms_footer">利用規約</a>
+              <Link href="/terms" id="ga_terms_footer">
+                利用規約
               </Link>
             </li>
             <li>
-              <Link href="/law">
-                <a id="ga_law_footer">特定商取引法に基づく表示</a>
+              <Link href="/law" id="ga_law_footer">
+                特定商取引法に基づく表示
               </Link>
             </li>
             <li>
-              <Link href="/security">
-                <a id="ga_security_footer">セキュリティホワイトペーパー</a>
+              <Link href="/security" id="ga_security_footer">
+                セキュリティホワイトペーパー
               </Link>
             </li>
             <li>
-              <Link href="https://sgms.app/userdata_external_transmission">
-                <a id="ga_userdata_footer" target="_blank" rel="noopener">
+              <Link
+                href="https://sgms.app/userdata_external_transmission"
+                id="ga_userdata_footer"
+                target="_blank"
+                rel="noopener">
+                
                   利用者情報の外部送信について
-                </a>
+                
               </Link>
             </li>
           </ul>
