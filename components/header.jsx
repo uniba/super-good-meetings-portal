@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import Modal from "react-modal";
 import styles from "./styles/header.module.scss";
