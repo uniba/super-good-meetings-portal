@@ -8,7 +8,7 @@ const Footer = () => {
         <Link href="/" id="qa_logo_footer">
 
           <h1>
-            <img src="/images/logo_mark.svg" alt="" />
+            <img src="/images/logo_mark.svg" alt="SuperGoodMeetings ロゴ" />
           </h1>
 
         </Link>
@@ -27,6 +27,12 @@ const Footer = () => {
             <li>
               <Link href="/posts" id="ga_posts_footer">
                 お知らせ
+              </Link>
+              <Link href="/releases" id="ga_posts_footer">
+              リリースノート
+              </Link>
+              <Link href="/achievements" id="ga_posts_footer">
+              実績記事
               </Link>
             </li>
             <li>
