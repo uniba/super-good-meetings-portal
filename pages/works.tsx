@@ -28,7 +28,7 @@ export default function Posts({ allPosts }: any) {
                 <p className={styles.posts_item}>
                   <span>{post.date}</span>
                   <Link
-                    href={`/news/${encodeURIComponent(post.slug)}`}
+                    href={`/works/${encodeURIComponent(post.slug)}`}
                     legacyBehavior
                   >
                     {post.title}
@@ -46,7 +46,7 @@ export default function Posts({ allPosts }: any) {
                 return (
                   <li key={page}>
                     <Link
-                      href={{ pathname: "/news", query: { page } }}
+                      href={{ pathname: "/works", query: { page } }}
                       legacyBehavior
                     >{`${page}`}</Link>
                   </li>

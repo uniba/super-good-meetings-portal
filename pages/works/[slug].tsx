@@ -21,7 +21,7 @@ export default function Post({ post }: any) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
           <div className={styles.post_all}>
-            <Link href="/achievements">実績記事一覧</Link>
+            <Link href="/works">実績記事一覧</Link>
           </div>
         </div>
       </Layout>
