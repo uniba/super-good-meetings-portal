@@ -2,7 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Layout from "../../components/layout";
 import styles from "../styles/news_single.module.scss";
-import { getAchievementBySlug, getAllAchievements } from "../../lib/api";
+import { getNewsBySlug, getAllNews } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 
 export default function Post({ post }: any) {
@@ -30,7 +30,7 @@ export default function Post({ post }: any) {
 }
 
 export async function getStaticProps({ params }: any) {
-  const post = getAchievementBySlug(params.slug, ["title", "date", "content"]);
+  const post = getNewsBySlug(params.slug, ["title", "date", "content"]);
   const content = await markdownToHtml(post.content || "");
 
   return {
@@ -44,7 +44,7 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllAchievements(["slug"]);
+  const posts = getAllNews(["slug"]);
 
   return {
     paths: posts.map((post) => {

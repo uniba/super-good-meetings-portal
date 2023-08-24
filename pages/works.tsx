@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../components/layout";
-import { getAllAchievements } from "../lib/api";
+import { getAllNews } from "../lib/api";
 import styles from "./styles/news.module.scss";
 
 export default function Posts({ allPosts }: any) {
@@ -28,7 +28,7 @@ export default function Posts({ allPosts }: any) {
                 <p className={styles.posts_item}>
                   <span>{post.date}</span>
                   <Link
-                    href={`/achievements/${encodeURIComponent(post.slug)}`}
+                    href={`/news/${encodeURIComponent(post.slug)}`}
                     legacyBehavior
                   >
                     {post.title}
@@ -46,7 +46,7 @@ export default function Posts({ allPosts }: any) {
                 return (
                   <li key={page}>
                     <Link
-                      href={{ pathname: "/achievements", query: { page } }}
+                      href={{ pathname: "/news", query: { page } }}
                       legacyBehavior
                     >{`${page}`}</Link>
                   </li>
@@ -61,7 +61,7 @@ export default function Posts({ allPosts }: any) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllAchievements(["slug", "title", "date"]);
+  const allPosts = getAllNews(["slug", "title", "date"]);
   return {
     props: { allPosts },
   };
