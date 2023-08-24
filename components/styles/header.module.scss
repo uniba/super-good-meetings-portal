@@ -14,8 +14,12 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    img {
+    a {
       width: 84px;
+      display: inline-block;
+      img {
+        position: relative !important;
+      }
     }
     span {
       margin-left: 2em;
@@ -61,7 +65,7 @@
       display: flex;
       flex-direction: column;
       font-size: 10px;
-      img {
+      a {
         width: 48px;
       }
       span {
@@ -79,8 +83,13 @@
       border: 0;
       background: none;
       margin-left: auto;
-      img {
-        display: block;
+      div {
+        width: 40px;
+        position: relative;
+        padding-top: 100%;
+        img {
+          display: block;
+        }
       }
     }
   }
@@ -125,6 +134,11 @@
     background: none;
     margin-left: auto;
     margin-bottom: 40px;
+    div {
+      position: relative;
+      padding-top: 100%;
+      width: 40px;
+    }
   }
   ul {
     li {
