@@ -9,7 +9,7 @@ const DIRECTORIES = {
 };
 
 function getSlugs(directory: string): string[] {
-  return fs.readdirSync(directory);
+  return fs.readdirSync(directory).filter((file) => file.endsWith(".md"));
 }
 
 export function getBySlug(
