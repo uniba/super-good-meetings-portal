@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../components/layout";
-import { getAllNews } from "../lib/api";
+import { getAllWorks } from "../lib/api";
 import styles from "./styles/news.module.scss";
 
 export default function Posts({ allPosts }: any) {
@@ -61,7 +61,7 @@ export default function Posts({ allPosts }: any) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllNews(["slug", "title", "date"]);
+  const allPosts = getAllWorks(["slug", "title", "date"]);
   return {
     props: { allPosts },
   };
