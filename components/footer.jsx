@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./styles/footer.module.scss";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -7,7 +8,12 @@ const Footer = () => {
       <div className={styles.footer_inner}>
         <Link href="/" id="qa_logo_footer">
           <h1>
-            <img src="/images/logo_mark.svg" alt="SuperGoodMeetings ロゴ" />
+            <Image
+              src="/images/logo_mark.svg"
+              alt="SuperGoodMeetings ロゴ"
+              layout="fill"
+              objectFit="contain"
+            />
           </h1>
         </Link>
         <div className={styles.footer_navigation}>
