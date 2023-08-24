@@ -5,7 +5,7 @@ import styles from "../styles/news_single.module.scss";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 
-export default function Post({ post }) {
+export default function Post({ post }: any) {
   return (
     <>
       <Head>
@@ -29,7 +29,7 @@ export default function Post({ post }) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const post = getPostBySlug(params.slug, ["title", "date", "content"]);
   const content = await markdownToHtml(post.content || "");
 

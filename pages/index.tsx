@@ -2,7 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import YouTube from "react-youtube";
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import CustomForm from "../components/customform";
@@ -12,21 +13,21 @@ import styles from "./styles/landing.module.scss";
 
 SwiperCore.use([Navigation, Pagination]);
 
-function _onReady(event) {
+function _onReady(event: { target: { playVideo: () => void } }) {
   if (process.browser) {
-    document
-      .getElementsByClassName("movieArea")[0]
-      .addEventListener("click", function () {
-        let promise = new Promise((resolve, reject) => {
-          this.classList.add(styles.fadeout);
-          resolve();
-        });
-        event.target.playVideo();
+    const target = document.getElementsByClassName("movieArea")[0];
+
+    target.addEventListener("click", function () {
+      let promise = new Promise<void>((resolve, reject) => {
+        target.classList.add(styles.fadeout);
+        resolve();
       });
+      event.target.playVideo();
+    });
   }
 }
 
-export default function Home({ allPosts }) {
+export default function Home({ allPosts }: { allPosts: any }) {
   const posts = allPosts.slice(0, 5);
 
   const params = {
@@ -521,7 +522,7 @@ export default function Home({ allPosts }) {
                 </Link>
               </div>
               <ul className={styles.service_news_items}>
-                {posts.map((post, i) => (
+                {posts.map((post: any, i: number) => (
                   <li key={i}>
                     <span>{post.date}</span>
                     <Link
@@ -556,7 +557,15 @@ export default function Home({ allPosts }) {
               <h2>メールマガジン</h2>
               <MailchimpSubscribe
                 url="https://supergoodmeetings.us4.list-manage.com/subscribe/post?u=4914736f05d3b5eb761d836c4&amp;id=d6f47afc4c"
-                render={({ subscribe, status, message }) => (
+                render={({
+                  subscribe,
+                  status,
+                  message,
+                }: {
+                  subscribe: any;
+                  status: any;
+                  message: any;
+                }) => (
                   <div>
                     <p>
                       SuperGoodMeetings開発進捗状況や、基本設計にも使われているプロジェクト推進メソッドに関する情報、プロジェクト進行のお役立ちTipsなどをお知らせいたします！
@@ -564,7 +573,7 @@ export default function Home({ allPosts }) {
                     <CustomForm
                       status={status}
                       message={message}
-                      onValidated={(formData) => subscribe(formData)}
+                      onValidated={(formData: any) => subscribe(formData)}
                     />
                   </div>
                 )}
