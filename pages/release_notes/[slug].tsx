@@ -2,7 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Layout from "../../components/layout";
 import styles from "../styles/news_single.module.scss";
-import { getReleaseBySlug, getAllReleases } from "../../lib/api";
+import { getReleaseNotesBySlug, getAllReleaseNotes } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 
 export default function Post({ post }: any) {
@@ -21,7 +21,7 @@ export default function Post({ post }: any) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
           <div className={styles.post_all}>
-            <Link href="/releases">リリースノート一覧</Link>
+            <Link href="/release_notes">リリースノート一覧</Link>
           </div>
         </div>
       </Layout>
@@ -30,7 +30,7 @@ export default function Post({ post }: any) {
 }
 
 export async function getStaticProps({ params }: any) {
-  const post = getReleaseBySlug(params.slug, ["title", "date", "content"]);
+  const post = getReleaseNotesBySlug(params.slug, ["title", "date", "content"]);
   const content = await markdownToHtml(post.content || "");
 
   return {
@@ -44,7 +44,7 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllReleases(["slug"]);
+  const posts = getAllReleaseNotes(["slug"]);
 
   return {
     paths: posts.map((post) => {
