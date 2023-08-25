@@ -9,6 +9,7 @@ const Footer = () => {
         <Link href="/" id="qa_logo_footer">
           <h1>
             <Image
+              className={styles.img}
               src="/images/logo_mark.svg"
               alt="SuperGoodMeetings ロゴ"
               layout="fill"

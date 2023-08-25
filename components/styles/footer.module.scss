@@ -10,9 +10,6 @@
     h1 {
       margin: 0;
       width: 315px;
-      img {
-        position: relative !important;
-      }
     }
 
     .footer_navigation {
@@ -47,6 +44,11 @@
     a {
       color: $white;
     }
+  }
+
+  .img {
+    position: relative !important;
+    width: 100%;
   }
 
   @media screen and (max-width: 1000px) {
