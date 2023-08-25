@@ -16,6 +16,7 @@ const Header = () => {
           <h1>
             <a id="qa_logo_header">
               <Image
+                className={styles.img}
                 src="/images/sgm_logo.png"
                 alt="SuperGoodMeetings"
                 layout="fill"
@@ -53,6 +54,7 @@ const Header = () => {
         <button onClick={() => setIsOpen(true)} className={styles.hamburger}>
           <div>
             <Image
+              className={styles.img}
               src="/images/icon_hambuger.svg"
               alt="hamburger menu"
               layout="fill"
@@ -76,6 +78,7 @@ const Header = () => {
         <button onClick={() => setIsOpen(false)}>
           <div>
             <Image
+              className={styles.img}
               src="/images/icon_close.svg"
               alt="close"
               layout="fill"

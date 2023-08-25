@@ -17,9 +17,6 @@
     a {
       width: 84px;
       display: inline-block;
-      img {
-        position: relative !important;
-      }
     }
     span {
       margin-left: 2em;
@@ -85,11 +82,8 @@
       margin-left: auto;
       div {
         width: 40px;
-        position: relative;
-        padding-top: 100%;
-        img {
-          display: block;
-        }
+        display: flex;
+        align-items: center;
       }
     }
   }
@@ -135,8 +129,6 @@
     margin-left: auto;
     margin-bottom: 40px;
     div {
-      position: relative;
-      padding-top: 100%;
       width: 40px;
     }
   }
@@ -154,4 +146,9 @@
     border: 1px solid $white;
     margin-bottom: 32px;
   }
+}
+
+.img {
+  width: 100%;
+  position: relative !important;
 }
