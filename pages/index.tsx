@@ -10,6 +10,7 @@ import CustomForm from "../components/customform";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import styles from "./styles/landing.module.scss";
+import Image from "next/image";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -68,19 +69,37 @@ export default function Home({ allPosts }: { allPosts: any }) {
             <ul>
               <li>
                 <figure>
-                  <img src="/images/illust_task01.svg"></img>
+                  <Image
+                    className={styles.img}
+                    src="/images/illust_task01.svg"
+                    alt="プロジェクトが複雑で、リーダーが管理しきれない"
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </figure>
                 プロジェクトが複雑で、リーダーが管理しきれない
               </li>
               <li>
                 <figure>
-                  <img src="/images/illust_task02.svg"></img>
+                  <Image
+                    className={styles.img}
+                    src="/images/illust_task02.svg"
+                    alt="プロジェクトを取り巻く環境の変化に適応するのが難しい"
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </figure>
                 プロジェクトを取り巻く環境の変化に適応するのが難しい
               </li>
               <li>
                 <figure>
-                  <img src="/images/illust_task03.svg"></img>
+                  <Image
+                    className={styles.img}
+                    src="/images/illust_task03.svg"
+                    alt="一人ひとりが自律的に行動できるプロジェクトチームを作りたい"
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </figure>
                 一人ひとりが自律的に行動できるプロジェクトチームを作りたい
               </li>
@@ -100,18 +119,24 @@ export default function Home({ allPosts }: { allPosts: any }) {
                 </p>
               </div>
               <figure>
-                <img
+                <Image
+                  className={styles.img}
                   src="/images/sgms_screenshot1.png"
                   alt="SuperGoodMeetingsのスクリーンショット。トラックが表示されている"
-                ></img>
+                  layout="fill"
+                  objectFit="contain"
+                />
               </figure>
             </div>
             <div className={styles.service_about_message2}>
               <figure>
-                <img
+                <Image
+                  className={styles.img}
                   src="/images/sgms_screenshot2.png"
                   alt="SuperGoodMeetingsのスクリーンショット。ミーティングとアジェンダのリストが表示されている"
-                ></img>
+                  layout="fill"
+                  objectFit="contain"
+                />
               </figure>
               <div className={styles.content}>
                 <h2>
@@ -199,16 +224,22 @@ export default function Home({ allPosts }: { allPosts: any }) {
               <SwiperSlide className={styles.service_interview_content}>
                 <a href="https://note.com/sgms/n/nfb32cb42307a" target="_blank">
                   <figure className={styles.logo}>
-                    <img
+                    <Image
+                      className={styles.img}
                       src="/images/interview_shinyo_logo.svg"
                       alt="新陽高校ロゴ"
-                    ></img>
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </figure>
                   <figure className={styles.image}>
-                    <img
+                    <Image
+                      className={styles.img}
                       src="/images/interview_shinyo.png"
                       alt="新陽高校画像"
-                    ></img>
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </figure>
                   <h3 className={styles.caption}>
                     学校・教育現場でこそ、
@@ -228,10 +259,22 @@ export default function Home({ allPosts }: { allPosts: any }) {
                   target="_blank"
                 >
                   <figure className={styles.logo}>
-                    <img src="/images/interview_gs_logo.svg" alt="GSロゴ"></img>
+                    <Image
+                      className={styles.img}
+                      src="/images/interview_gs_logo.svg"
+                      alt="GSロゴ"
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </figure>
                   <figure className={styles.image}>
-                    <img src="/images/interview_gs.png" alt="GS画像"></img>
+                    <Image
+                      className={styles.img}
+                      src="/images/interview_gs.png"
+                      alt="GS画像"
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </figure>
                   <h3 className={styles.caption}>
                     「認識のズレを補正する仕組み」で、
@@ -251,16 +294,22 @@ export default function Home({ allPosts }: { allPosts: any }) {
                   target="_blank"
                 >
                   <figure className={styles.logo}>
-                    <img
+                    <Image
+                      className={styles.img}
                       src="/images/interview_uniba_logo.svg"
                       alt="ユニバロゴ"
-                    ></img>
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </figure>
                   <figure className={styles.image}>
-                    <img
+                    <Image
+                      className={styles.img}
                       src="/images/interview_uniba.png"
                       alt="ユニバ画像"
-                    ></img>
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </figure>
                   <h3 className={styles.caption}>
                     「定例ミーティング」を軸として、
@@ -277,16 +326,22 @@ export default function Home({ allPosts }: { allPosts: any }) {
               <SwiperSlide className={styles.service_interview_content}>
                 <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
                   <figure className={styles.logo}>
-                    <img
+                    <Image
+                      className={styles.img}
                       src="/images/interview_venect_logo.svg"
                       alt="ヴェネクトロゴ"
-                    ></img>
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </figure>
                   <figure className={styles.image}>
-                    <img
+                    <Image
+                      className={styles.img}
                       src="/images/interview_venect.png"
                       alt="ヴェネクト画像"
-                    ></img>
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </figure>
                   <h3 className={styles.caption}>
                     会議は「事前に設計」するもの。
@@ -308,38 +363,59 @@ export default function Home({ allPosts }: { allPosts: any }) {
             <ul className={styles.service_effect_items}>
               <li>
                 <figure>
-                  <img
+                  <Image
+                    className={styles.img}
                     src="/images/illust_change1.svg"
                     alt="イメージイラスト"
-                  ></img>
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </figure>
                 プロジェクトの目的やマイルストーン（目標）を常に意識して行動できる
               </li>
               <li>
                 <figure>
-                  <img
+                  <Image
+                    className={styles.img}
                     src="/images/illust_change2.svg"
                     alt="イメージイラスト"
-                  ></img>
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </figure>
                 プロジェクトに関する情報がオープンな場で蓄積・共有される
               </li>
               <li>
                 <figure>
-                  <img
+                  <Image
+                    className={styles.img}
                     src="/images/illust_change3.svg"
                     alt="イメージイラスト"
-                  ></img>
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </figure>
                 定期的に状況の変化を感知することができ、適応しやすくなる
               </li>
             </ul>
             <figure className={styles.service_effect_arrow}>
-              <img src="/images/icon_arrow.svg"></img>
+              <Image
+                className={styles.img}
+                src="/images/icon_arrow.svg"
+                alt="下矢印 アイコン"
+                layout="fill"
+                objectFit="contain"
+              />
             </figure>
             <div className={styles.service_effect_result}>
               <figure>
-                <img src="/images/illust_change4.svg"></img>
+                <Image
+                  className={styles.img}
+                  src="/images/illust_change4.svg"
+                  alt="一人ひとりのメンバーが自律的に動きやすくなる"
+                  layout="fill"
+                  objectFit="contain"
+                />
               </figure>
               一人ひとりのメンバーが自律的に動きやすくなる
             </div>
@@ -350,10 +426,15 @@ export default function Home({ allPosts }: { allPosts: any }) {
               <h2>SuperGoodMeetingsに実装されているメソッドについて</h2>
               <div className={styles.pgs_about}>
                 <figure>
-                  <img
-                    src="/images/pjs_logo.png"
-                    alt="Project Sprintロゴ"
-                  ></img>
+                  <div>
+                    <Image
+                      className={styles.img}
+                      src="/images/pjs_logo.png"
+                      alt="Project Sprintロゴ"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
                 </figure>
                 <p>
                   SuperGoodMeetingsは、運営元である株式会社コパイロツトが開発した、独自のプロジェクト推進メソッド
@@ -415,12 +496,14 @@ export default function Home({ allPosts }: { allPosts: any }) {
               <span>SuperGoodMeetings</span>
             </h2>
             <div className={styles.service_movie_content}>
-              <img
+              <Image
                 className="movieArea"
                 id="ga_movie"
                 src="/images/movie_thumb.png"
                 alt="クリックで再生"
-              ></img>
+                layout="fill"
+                objectFit="contain"
+              />
               <YouTube
                 videoId="vE4l29Wlr8k"
                 opts={{
@@ -539,7 +622,15 @@ export default function Home({ allPosts }: { allPosts: any }) {
 
           <div className={styles.service_trial}>
             <div className={styles.service_trial_heading}>
-              <img src="/images/illust_trial.svg" alt="イメージイラスト" />
+              <div>
+                <Image
+                  className={styles.img}
+                  src="/images/illust_trial.svg"
+                  alt="イメージイラスト"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
               <h2> まずは1プロジェクト （ 無料 ）からお試しいただけます</h2>
             </div>
             <p>
