@@ -13,7 +13,7 @@ export default function Post({ post }: any) {
       </Head>
       <Layout>
         <div className={styles.post_container}>
-          <h1>実績記事</h1>
+          <h1>活用事例</h1>
           <p>{post.date}</p>
           <h2 className={styles.post_title}>{post.title}</h2>
           <div
@@ -21,7 +21,7 @@ export default function Post({ post }: any) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
           <div className={styles.post_all}>
-            <Link href="/works">実績記事一覧</Link>
+            <Link href="/works">活用事例一覧</Link>
           </div>
         </div>
       </Layout>

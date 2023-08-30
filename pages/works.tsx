@@ -17,11 +17,11 @@ export default function Posts({ allWorks }: any) {
   return (
     <>
       <Head>
-        <title>実績記事 - SuperGoodMeetings</title>
+        <title>活用事例 - SuperGoodMeetings</title>
       </Head>
       <Layout>
         <div className={styles.posts_container}>
-          <h1>実績記事</h1>
+          <h1>活用事例</h1>
           <div>
             {posts.map((post: any, i: any) => (
               <div key={i}>
