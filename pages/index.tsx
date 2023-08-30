@@ -28,8 +28,8 @@ function _onReady(event: { target: { playVideo: () => void } }) {
   }
 }
 
-export default function Home({ allPosts }: { allPosts: any }) {
-  const posts = allPosts.slice(0, 5);
+export default function Home({ allNews }: { allNews: any }) {
+  const posts = allNews.slice(0, 5);
 
   const params = {
     slidesPerView: "auto",
@@ -600,7 +600,7 @@ export default function Home({ allPosts }: { allPosts: any }) {
             <div className={styles.service_news}>
               <h2 className={styles.service_news_title}>お知らせ</h2>
               <div className={styles.service_news_link}>
-                <Link href="/posts" legacyBehavior>
+                <Link href="/news" legacyBehavior>
                   お知らせ一覧
                 </Link>
               </div>
@@ -609,7 +609,7 @@ export default function Home({ allPosts }: { allPosts: any }) {
                   <li key={i}>
                     <span>{post.date}</span>
                     <Link
-                      href={`/posts/${encodeURIComponent(post.slug)}`}
+                      href={`/news/${encodeURIComponent(post.slug)}`}
                       legacyBehavior
                     >
                       {post.title}
@@ -678,8 +678,8 @@ export default function Home({ allPosts }: { allPosts: any }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllNews(["slug", "title", "date"]);
+  const allNews = getAllNews(["slug", "title", "date"]);
   return {
-    props: { allPosts },
+    props: { allNews },
   };
 }
