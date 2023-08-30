@@ -6,13 +6,13 @@ import Layout from "../components/layout";
 import { getAllReleaseNotes } from "../lib/api";
 import styles from "./styles/news.module.scss";
 
-export default function Posts({ allPosts }: any) {
+export default function Posts({ allReleaseNotes }: any) {
   const router = useRouter();
   const pageQuery = Array.isArray(router.query.page)
     ? router.query.page[0]
     : router.query.page;
   const currentPage = pageQuery ? parseInt(pageQuery, 10) : 1;
-  const pages = chunk(allPosts, 10);
+  const pages = chunk(allReleaseNotes, 10);
   const posts = pages[currentPage - 1] || [];
   return (
     <>
@@ -61,8 +61,8 @@ export default function Posts({ allPosts }: any) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllReleaseNotes(["slug", "title", "date"]);
+  const allReleaseNotes = getAllReleaseNotes(["slug", "title", "date"]);
   return {
-    props: { allPosts },
+    props: { allReleaseNotes },
   };
 }
