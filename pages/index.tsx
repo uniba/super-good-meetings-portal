@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import CustomForm from "../components/customform";
 import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
+import { getAllNews } from "../lib/api";
 import styles from "./styles/landing.module.scss";
 import Image from "next/image";
 
@@ -678,7 +678,7 @@ export default function Home({ allPosts }: { allPosts: any }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(["slug", "title", "date"]);
+  const allPosts = getAllNews(["slug", "title", "date"]);
   return {
     props: { allPosts },
   };

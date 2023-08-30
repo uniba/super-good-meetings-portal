@@ -48,14 +48,14 @@ export function getAll(directory: string, fields: string[] = []): any[] {
   return posts;
 }
 
-export const getPostBySlug = (slug: string, fields: string[] = []) =>
+export const getNewsBySlug = (slug: string, fields: string[] = []) =>
   getBySlug(DIRECTORIES.posts, slug, fields);
 export const getReleaseNotesBySlug = (slug: string, fields: string[] = []) =>
   getBySlug(DIRECTORIES.releaseNotes, slug, fields);
 export const getWorksBySlug = (slug: string, fields: string[] = []) =>
   getBySlug(DIRECTORIES.works, slug, fields);
 
-export const getAllPosts = (fields: string[] = []) =>
+export const getAllNews = (fields: string[] = []) =>
   getAll(DIRECTORIES.posts, fields);
 export const getAllReleaseNotes = (fields: string[] = []) =>
   getAll(DIRECTORIES.releaseNotes, fields);
