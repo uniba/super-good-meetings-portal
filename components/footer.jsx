@@ -30,7 +30,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/posts" id="ga_posts_footer">
+              <Link href="/news" id="ga_posts_footer">
                 お知らせ
               </Link>
             </li>
