@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./styles/policy.module.scss";
-
 import Layout from "../components/layout";
 
 export default function Terms() {
@@ -24,13 +23,19 @@ export default function Terms() {
                 </a>
               </li>
               <li className={styles.active}>
-                <Link href="/terms">利用規約</Link>
+                <Link href="/terms" legacyBehavior>
+                  利用規約
+                </Link>
               </li>
               <li>
-                <Link href="/law">特定商取引法に基づく表示</Link>
+                <Link href="/law" legacyBehavior>
+                  特定商取引法に基づく表示
+                </Link>
               </li>
               <li>
-                <Link href="/security">セキュリティホワイトペーパー</Link>
+                <Link href="/security" legacyBehavior>
+                  セキュリティホワイトペーパー
+                </Link>
               </li>
             </ul>
           </nav>

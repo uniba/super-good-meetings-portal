@@ -1,8 +1,14 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from "next/document";
 import { GA_TRACKING_ID } from "../lib/gtag";
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
@@ -18,8 +24,14 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script src="https://www.googleoptimize.com/optimize.js?id=OPT-KDLCHR7"></script>
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+          <script
+            async
+            src="https://www.googleoptimize.com/optimize.js?id=OPT-KDLCHR7"
+          ></script>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -43,7 +55,10 @@ class MyDocument extends Document {
           />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://supergoodmeetings.com" />
-          <meta property="og:image" content="https://supergoodmeetings.com/images/og_sgm.png" />
+          <meta
+            property="og:image"
+            content="https://supergoodmeetings.com/images/og_sgm.png"
+          />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="SuperGoodMeetings" />
           <meta
@@ -51,8 +66,14 @@ class MyDocument extends Document {
             content="SuperGoodMeetings / スーパーグッドミーティングスは、複数のミーティングを俯瞰しながら、ミーティングやアジェンダを直感的に編集することができる、ミーティング活用ツールです。ミーティングを活用してプロジェクトを成功に向けて推進します。"
           />
           <meta name="twitter:url" content="https://supergoodmeetings.com" />
-          <meta name="twitter:image" content="https://supergoodmeetings.com/images/og_sgm.png" />
-          <meta name="msapplication-square70x70logo" content="/images/icons/site-tile-70x70.png" />
+          <meta
+            name="twitter:image"
+            content="https://supergoodmeetings.com/images/og_sgm.png"
+          />
+          <meta
+            name="msapplication-square70x70logo"
+            content="/images/icons/site-tile-70x70.png"
+          />
           <meta
             name="msapplication-square150x150logo"
             content="/images/icons/site-tile-150x150.png"
@@ -71,7 +92,11 @@ class MyDocument extends Document {
             type="image/vnd.microsoft.icon"
             href="/images/icons/favicon.ico"
           />
-          <link rel="icon" type="image/vnd.microsoft.icon" href="/images/icons/favicon.ico" />
+          <link
+            rel="icon"
+            type="image/vnd.microsoft.icon"
+            href="/images/icons/favicon.ico"
+          />
           <link
             rel="apple-touch-icon"
             sizes="57x57"
@@ -183,28 +208,111 @@ class MyDocument extends Document {
             sizes="512x512"
             href="/images/icons/android-chrome-512x512.png"
           />
-          <link rel="icon" type="image/png" sizes="36x36" href="/images/icons/icon-36x36.png" />
-          <link rel="icon" type="image/png" sizes="48x48" href="/images/icons/icon-48x48.png" />
-          <link rel="icon" type="image/png" sizes="72x72" href="/images/icons/icon-72x72.png" />
-          <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/icon-96x96.png" />
-          <link rel="icon" type="image/png" sizes="128x128" href="/images/icons/icon-128x128.png" />
-          <link rel="icon" type="image/png" sizes="144x144" href="/images/icons/icon-144x144.png" />
-          <link rel="icon" type="image/png" sizes="152x152" href="/images/icons/icon-152x152.png" />
-          <link rel="icon" type="image/png" sizes="160x160" href="/images/icons/icon-160x160.png" />
-          <link rel="icon" type="image/png" sizes="192x192" href="/images/icons/icon-192x192.png" />
-          <link rel="icon" type="image/png" sizes="196x196" href="/images/icons/icon-196x196.png" />
-          <link rel="icon" type="image/png" sizes="256x256" href="/images/icons/icon-256x256.png" />
-          <link rel="icon" type="image/png" sizes="384x384" href="/images/icons/icon-384x384.png" />
-          <link rel="icon" type="image/png" sizes="512x512" href="/images/icons/icon-512x512.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png" />
-          <link rel="icon" type="image/png" sizes="24x24" href="/images/icons/icon-24x24.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png" />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="36x36"
+            href="/images/icons/icon-36x36.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="48x48"
+            href="/images/icons/icon-48x48.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="72x72"
+            href="/images/icons/icon-72x72.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/images/icons/icon-96x96.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="128x128"
+            href="/images/icons/icon-128x128.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="144x144"
+            href="/images/icons/icon-144x144.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="152x152"
+            href="/images/icons/icon-152x152.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="160x160"
+            href="/images/icons/icon-160x160.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/images/icons/icon-192x192.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="196x196"
+            href="/images/icons/icon-196x196.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="256x256"
+            href="/images/icons/icon-256x256.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="384x384"
+            href="/images/icons/icon-384x384.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="512x512"
+            href="/images/icons/icon-512x512.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/icons/icon-16x16.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="24x24"
+            href="/images/icons/icon-24x24.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/icons/icon-32x32.png"
+          />
           <link rel="manifest" href="/images/icons/manifest.json" />
           <link
             href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Lato:400,900|Open+Sans:400,700,700i,800,800i&display=swap"
             rel="stylesheet"
           />
-          <meta name="facebook-domain-verification" content="9dxq3avza6zfndu06nwwvbgmvdx7t0" />
+          <meta
+            name="facebook-domain-verification"
+            content="9dxq3avza6zfndu06nwwvbgmvdx7t0"
+          />
           <script dangerouslySetInnerHTML={{ __html: gtmScript }} />
         </Head>
         <body>

@@ -6,9 +6,12 @@ import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import styles from "./styles/news.module.scss";
 
-export default function Posts({ allPosts }) {
+export default function Posts({ allPosts }: any) {
   const router = useRouter();
-  const currentPage = router.query.page ? parseInt(router.query.page, 10) : 1;
+  const pageQuery = Array.isArray(router.query.page)
+    ? router.query.page[0]
+    : router.query.page;
+  const currentPage = pageQuery ? parseInt(pageQuery, 10) : 1;
   const pages = chunk(allPosts, 10);
   const posts = pages[currentPage - 1];
   return (
@@ -20,11 +23,16 @@ export default function Posts({ allPosts }) {
         <div className={styles.posts_container}>
           <h1>お知らせ</h1>
           <div>
-            {posts.map((post, i) => (
+            {posts.map((post: any, i: any) => (
               <div key={i}>
                 <p className={styles.posts_item}>
                   <span>{post.date}</span>
-                  <Link href={`/posts/${encodeURIComponent(post.slug)}`}>{post.title}</Link>
+                  <Link
+                    href={`/posts/${encodeURIComponent(post.slug)}`}
+                    legacyBehavior
+                  >
+                    {post.title}
+                  </Link>
                 </p>
               </div>
             ))}
@@ -37,7 +45,10 @@ export default function Posts({ allPosts }) {
               } else {
                 return (
                   <li key={page}>
-                    <Link href={{ pathname: "/posts", query: { page } }}>{`${page}`}</Link>
+                    <Link
+                      href={{ pathname: "/posts", query: { page } }}
+                      legacyBehavior
+                    >{`${page}`}</Link>
                   </li>
                 );
               }
