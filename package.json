@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "postbuild": "next-sitemap",
+    "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install"
