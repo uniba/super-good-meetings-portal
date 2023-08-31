@@ -6,22 +6,22 @@ import Layout from "../components/layout";
 import { getAllWorks } from "../lib/api";
 import styles from "./styles/news.module.scss";
 
-export default function Posts({ allPosts }: any) {
+export default function Posts({ allWorks }: any) {
   const router = useRouter();
   const pageQuery = Array.isArray(router.query.page)
     ? router.query.page[0]
     : router.query.page;
   const currentPage = pageQuery ? parseInt(pageQuery, 10) : 1;
-  const pages = chunk(allPosts, 10);
+  const pages = chunk(allWorks, 10);
   const posts = pages[currentPage - 1] || [];
   return (
     <>
       <Head>
-        <title>実績記事 - SuperGoodMeetings</title>
+        <title>活用事例 - SuperGoodMeetings</title>
       </Head>
       <Layout>
         <div className={styles.posts_container}>
-          <h1>実績記事</h1>
+          <h1>活用事例</h1>
           <div>
             {posts.map((post: any, i: any) => (
               <div key={i}>
@@ -61,8 +61,8 @@ export default function Posts({ allPosts }: any) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllWorks(["slug", "title", "date"]);
+  const allWorks = getAllWorks(["slug", "title", "date"]);
   return {
-    props: { allPosts },
+    props: { allWorks },
   };
 }

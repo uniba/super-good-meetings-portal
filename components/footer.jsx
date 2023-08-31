@@ -41,7 +41,7 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/works" id="ga_posts_footer">
-                実績記事
+                活用事例
               </Link>
             </li>
             <li>

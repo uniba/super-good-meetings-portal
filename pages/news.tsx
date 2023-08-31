@@ -3,17 +3,17 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
+import { getAllNews } from "../lib/api";
 import styles from "./styles/news.module.scss";
 
-export default function Posts({ allPosts }: any) {
+export default function Posts({ allNews }: any) {
   const router = useRouter();
   const pageQuery = Array.isArray(router.query.page)
     ? router.query.page[0]
     : router.query.page;
   const currentPage = pageQuery ? parseInt(pageQuery, 10) : 1;
-  const pages = chunk(allPosts, 10);
-  const posts = pages[currentPage - 1];
+  const pages = chunk(allNews, 10);
+  const posts = pages[currentPage - 1] || [];
   return (
     <>
       <Head>
@@ -28,7 +28,7 @@ export default function Posts({ allPosts }: any) {
                 <p className={styles.posts_item}>
                   <span>{post.date}</span>
                   <Link
-                    href={`/posts/${encodeURIComponent(post.slug)}`}
+                    href={`/news/${encodeURIComponent(post.slug)}`}
                     legacyBehavior
                   >
                     {post.title}
@@ -46,7 +46,7 @@ export default function Posts({ allPosts }: any) {
                 return (
                   <li key={page}>
                     <Link
-                      href={{ pathname: "/posts", query: { page } }}
+                      href={{ pathname: "/news", query: { page } }}
                       legacyBehavior
                     >{`${page}`}</Link>
                   </li>
@@ -61,8 +61,8 @@ export default function Posts({ allPosts }: any) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(["slug", "title", "date"]);
+  const allNews = getAllNews(["slug", "title", "date"]);
   return {
-    props: { allPosts },
+    props: { allNews },
   };
 }
