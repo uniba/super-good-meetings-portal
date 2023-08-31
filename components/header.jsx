@@ -40,7 +40,12 @@ const Header = () => {
               お問い合わせ
             </Link>
           </li>
-          <li>
+          <li className={styles.button}>
+            <Link href="/news" id="ga_contact_header">
+              お知らせ
+            </Link>
+          </li>
+          <li className={styles.login_button}>
             <Link href="https://sgms.app/login" id="ga_login_header">
               ログイン
             </Link>
@@ -86,7 +91,7 @@ const Header = () => {
             />
           </div>
         </button>
-        <ul>
+        <ul className={styles.menu_list}>
           <li onClick={() => setIsOpen(false)}>
             <Link href="/#about" id="ga_plan_header">
               サービス紹介
@@ -97,7 +102,6 @@ const Header = () => {
               プランと料金
             </Link>
           </li>
-
           <li>
             <Link
               href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform"
@@ -107,15 +111,19 @@ const Header = () => {
               お問い合わせ
             </Link>
           </li>
+          <li onClick={() => setIsOpen(false)}>
+            <Link href="/news" id="ga_contact_header">
+              お知らせ
+            </Link>
+          </li>
         </ul>
-        <hr />
-        <ul>
-          <li>
+        <ul className={styles.auth_list}>
+          <li className={styles.login_button}>
             <Link href="https://sgms.app/login" id="ga_login_header">
               ログイン
             </Link>
           </li>
-          <li>
+          <li className={styles.signup_button}>
             <a href="https://sgms.app/signup" id="ga_signup_header">
               無料で始める
             </a>
