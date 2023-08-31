@@ -6,6 +6,7 @@ import SwiperCore from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/navigation";
 import CustomForm from "../components/customform";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
