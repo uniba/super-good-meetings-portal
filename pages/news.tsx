@@ -13,7 +13,7 @@ export default function Posts({ allNews }: any) {
     : router.query.page;
   const currentPage = pageQuery ? parseInt(pageQuery, 10) : 1;
   const pages = chunk(allNews, 10);
-  const posts = pages[currentPage - 1];
+  const posts = pages[currentPage - 1] || [];
   return (
     <>
       <Head>
