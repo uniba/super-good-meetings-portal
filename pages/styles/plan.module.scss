@@ -93,6 +93,12 @@
       min-height: 554px;
       padding: 45px 0 24px;
 
+      img {
+        position: relative !important;
+        width: auto !important;
+        height: 120px !important;
+      }
+
       &:nth-child(1) {
         padding-right: 20px;
       }

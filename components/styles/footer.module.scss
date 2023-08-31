@@ -9,9 +9,7 @@
     display: flex;
     h1 {
       margin: 0;
-      img {
-        width: 315px;
-      }
+      width: 315px;
     }
 
     .footer_navigation {
@@ -48,6 +46,11 @@
     }
   }
 
+  .img {
+    position: relative !important;
+    width: 100%;
+  }
+
   @media screen and (max-width: 1000px) {
     padding: 48px 40px 48px 40px;
 
@@ -57,9 +60,9 @@
       h1 {
         order: 2;
         margin: 0;
+        width: 240px;
 
         img {
-          width: 240px;
           margin-bottom: 24px;
         }
       }

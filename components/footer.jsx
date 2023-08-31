@@ -1,16 +1,21 @@
 import Link from "next/link";
 import styles from "./styles/footer.module.scss";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.footer_inner}>
         <Link href="/" id="qa_logo_footer">
-
           <h1>
-            <img src="/images/logo_mark.svg" alt="" />
+            <Image
+              className={styles.img}
+              src="/images/logo_mark.svg"
+              alt="SuperGoodMeetings ロゴ"
+              layout="fill"
+              objectFit="contain"
+            />
           </h1>
-
         </Link>
         <div className={styles.footer_navigation}>
           <ul>
@@ -30,14 +35,23 @@ const Footer = () => {
               </Link>
             </li>
             <li>
+              <Link href="/release_notes" id="ga_posts_footer">
+                リリースノート
+              </Link>
+            </li>
+            <li>
+              <Link href="/works" id="ga_posts_footer">
+                実績記事
+              </Link>
+            </li>
+            <li>
               <Link
                 href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform"
                 id="ga_contact_footer"
                 target="_blank"
-                rel="noopener">
-                
-                  お問い合わせ
-                
+                rel="noopener"
+              >
+                お問い合わせ
               </Link>
             </li>
           </ul>
@@ -55,7 +69,8 @@ const Footer = () => {
             <li>
               <Link
                 href="https://sites.google.com/copilot.jp/support-sgms/"
-                id="ga_userguide_footer">
+                id="ga_userguide_footer"
+              >
                 ガイドページ
               </Link>
             </li>
@@ -64,10 +79,9 @@ const Footer = () => {
                 href="https://www.youtube.com/channel/UCOnbQVQNF5Q_7yjGZoNkFhw/"
                 id="ga_youtube_footer"
                 target="_blank"
-                rel="noopener">
-                
-                  Youtube
-                
+                rel="noopener"
+              >
+                Youtube
               </Link>
             </li>
             <li>
@@ -75,10 +89,9 @@ const Footer = () => {
                 href="https://note.com/sgms/m/m3633f7f797e5"
                 id="ga_note_footer"
                 target="_blank"
-                rel="noopener">
-                
-                  Note
-                
+                rel="noopener"
+              >
+                Note
               </Link>
             </li>
           </ul>
@@ -88,10 +101,9 @@ const Footer = () => {
                 href="https://copilot.jp/privacy-policy/"
                 target="_blank"
                 rel="noopener"
-                id="ga_privacy_footer">
-                
-                  プライバシーポリシー
-                
+                id="ga_privacy_footer"
+              >
+                プライバシーポリシー
               </Link>
             </li>
             <li>
@@ -114,10 +126,9 @@ const Footer = () => {
                 href="https://sgms.app/userdata_external_transmission"
                 id="ga_userdata_footer"
                 target="_blank"
-                rel="noopener">
-                
-                  利用者情報の外部送信について
-                
+                rel="noopener"
+              >
+                利用者情報の外部送信について
               </Link>
             </li>
           </ul>

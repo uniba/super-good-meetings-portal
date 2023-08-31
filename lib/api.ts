@@ -2,18 +2,23 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
-const postsDirectory = join(process.cwd(), "_posts");
+const DIRECTORIES = {
+  posts: join(process.cwd(), "_posts"),
+  releaseNotes: join(process.cwd(), "_release_notes"),
+  works: join(process.cwd(), "_works"),
+};
 
-export function getPostSlugs(): string[] {
-  return fs.readdirSync(postsDirectory);
+function getSlugs(directory: string): string[] {
+  return fs.readdirSync(directory).filter((file) => file.endsWith(".md"));
 }
 
-export function getPostBySlug(
+export function getBySlug(
+  directory: string,
   slug: string,
   fields: string[] = []
 ): { [key: string]: any } {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = join(directory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -35,10 +40,24 @@ export function getPostBySlug(
   return items;
 }
 
-export function getAllPosts(fields: string[] = []): any[] {
-  const slugs = getPostSlugs();
+export function getAll(directory: string, fields: string[] = []): any[] {
+  const slugs = getSlugs(directory);
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
+    .map((slug) => getBySlug(directory, slug, fields))
     .sort((post1: any, post2: any) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+export const getPostBySlug = (slug: string, fields: string[] = []) =>
+  getBySlug(DIRECTORIES.posts, slug, fields);
+export const getReleaseNotesBySlug = (slug: string, fields: string[] = []) =>
+  getBySlug(DIRECTORIES.releaseNotes, slug, fields);
+export const getWorksBySlug = (slug: string, fields: string[] = []) =>
+  getBySlug(DIRECTORIES.works, slug, fields);
+
+export const getAllPosts = (fields: string[] = []) =>
+  getAll(DIRECTORIES.posts, fields);
+export const getAllReleaseNotes = (fields: string[] = []) =>
+  getAll(DIRECTORIES.releaseNotes, fields);
+export const getAllWorks = (fields: string[] = []) =>
+  getAll(DIRECTORIES.works, fields);

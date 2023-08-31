@@ -14,8 +14,9 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    img {
+    a {
       width: 84px;
+      display: inline-block;
     }
     span {
       margin-left: 2em;
@@ -61,7 +62,7 @@
       display: flex;
       flex-direction: column;
       font-size: 10px;
-      img {
+      a {
         width: 48px;
       }
       span {
@@ -79,8 +80,10 @@
       border: 0;
       background: none;
       margin-left: auto;
-      img {
-        display: block;
+      div {
+        width: 40px;
+        display: flex;
+        align-items: center;
       }
     }
   }
@@ -125,6 +128,9 @@
     background: none;
     margin-left: auto;
     margin-bottom: 40px;
+    div {
+      width: 40px;
+    }
   }
   ul {
     li {
@@ -140,4 +146,9 @@
     border: 1px solid $white;
     margin-bottom: 32px;
   }
+}
+
+.img {
+  width: 100%;
+  position: relative !important;
 }
