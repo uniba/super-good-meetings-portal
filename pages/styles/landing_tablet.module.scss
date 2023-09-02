@@ -4,7 +4,7 @@
     .service_hero_area {
       padding: 0 24px;
       height: 532px;
-      margin: 0 0 100px 0;
+      margin: 0 0 40px 0;
       background-size: 400px;
       h1 {
         font-size: 26px;
@@ -24,6 +24,33 @@
         margin-bottom: 0;
         .filledButton {
           margin: auto;
+        }
+      }
+    }
+
+    // リリースノート
+    .release_notes {
+      margin-bottom: 64px;
+      padding: 0 24px;
+
+      &_title {
+        margin-bottom: 24px;
+        @include font-size("h2-sp");
+      }
+
+      &_content {
+        border-radius: 24px;
+      }
+
+      & li {
+        &:not(:last-of-type) {
+          margin-bottom: 24px;
+        }
+
+        & span {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 4px;
         }
       }
     }

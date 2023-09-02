@@ -84,7 +84,7 @@
 
     a {
       @include font-size("body-pc");
-      background: $blue;
+      background: $darkBlack;
       color: $white;
       text-decoration: none;
       display: block;
@@ -122,7 +122,7 @@
     max-width: 1400px;
     width: 100%;
     height: 580px;
-    margin: 24px auto 200px;
+    margin: 24px auto 50px;
     padding: 0 54px;
     display: flex;
     flex-direction: column;
@@ -147,6 +147,60 @@
         margin-bottom: 16px;
       }
       @include filledButton;
+    }
+  }
+
+  // リリースノート
+  .release_notes {
+    padding: 0 54px;
+    max-width: 1400px;
+    margin-bottom: 100px;
+
+    &_title {
+      text-align: center;
+      margin-bottom: 40px;
+      @include font-size("h2-pc");
+    }
+
+    &_content {
+      padding: 24px;
+      background: $blue;
+      color: $white;
+      border-radius: 16px;
+    }
+
+    &_items {
+      & li {
+        @include font-size("label-pc-medium");
+
+        &:not(:last-of-type) {
+          margin-bottom: 16px;
+        }
+
+        & span {
+          font-weight: 700;
+          margin-right: 32px;
+        }
+
+        & a {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &_link {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 24px;
+
+      a {
+        @include font-size("label-pc-bold");
+        color: $white;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
   }
 

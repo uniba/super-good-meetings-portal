@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import CustomForm from "../components/customform";
 import Layout from "../components/layout";
-import { getAllNews } from "../lib/api";
+import { getAllNews, getAllReleaseNotes } from "../lib/api";
 import styles from "./styles/landing.module.scss";
 import Image from "next/image";
 
@@ -28,8 +28,15 @@ function _onReady(event: { target: { playVideo: () => void } }) {
   }
 }
 
-export default function Home({ allNews }: { allNews: any }) {
-  const posts = allNews.slice(0, 5);
+export default function Home({
+  allNews,
+  allReleaseNotes,
+}: {
+  allNews: any;
+  allReleaseNotes: any;
+}) {
+  const news = allNews.slice(0, 5);
+  const releaseNotes = allReleaseNotes.slice(0, 2);
 
   const params = {
     slidesPerView: "auto",
@@ -63,6 +70,34 @@ export default function Home({ allNews }: { allNews: any }) {
               </div>
             </div>
           </div>
+
+          {releaseNotes.length > 0 ? (
+            <div className={styles.release_notes}>
+              <h2 className={styles.release_notes_title}>リリースノート</h2>
+              <div className={styles.release_notes_content}>
+                <ul className={styles.release_notes_items}>
+                  {releaseNotes.map((post: any, i: number) => (
+                    <li key={i}>
+                      <span>{post.date}</span>
+                      <Link
+                        href={`/release_notes/${encodeURIComponent(post.slug)}`}
+                        legacyBehavior
+                      >
+                        {post.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className={styles.release_notes_link}>
+                  <Link href="/release_notes" legacyBehavior>
+                    もっと見る
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ) : null}
+          <div className={styles.release_notes}></div>
 
           <div className={styles.service_task}>
             <h2>こんな課題をお持ちの方に</h2>
@@ -596,7 +631,7 @@ export default function Home({ allNews }: { allNews: any }) {
             </Swiper>
           </div>
 
-          {posts.length > 0 ? (
+          {news.length > 0 ? (
             <div className={styles.service_news}>
               <h2 className={styles.service_news_title}>お知らせ</h2>
               <div className={styles.service_news_link}>
@@ -605,7 +640,7 @@ export default function Home({ allNews }: { allNews: any }) {
                 </Link>
               </div>
               <ul className={styles.service_news_items}>
-                {posts.map((post: any, i: number) => (
+                {news.map((post: any, i: number) => (
                   <li key={i}>
                     <span>{post.date}</span>
                     <Link
@@ -679,7 +714,8 @@ export default function Home({ allNews }: { allNews: any }) {
 
 export async function getStaticProps() {
   const allNews = getAllNews(["slug", "title", "date"]);
+  const allReleaseNotes = getAllReleaseNotes(["slug", "title", "date"]);
   return {
-    props: { allNews },
+    props: { allNews, allReleaseNotes },
   };
 }
