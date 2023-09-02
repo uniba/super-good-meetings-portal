@@ -187,16 +187,18 @@ export default function Home({
             </div>
 
             <div className={styles.service_start}>
-              <h2>まずは1プロジェクト （ 無料 ）からお試しいただけます</h2>
-              <p>
-                新しい手法を取り入れるには、いろいろとハードルもあるでしょう。
-                <br />
-                はじめはみなさんの身近にある、ごく小さなプロジェクトからでも、まずは3ヶ月、SuperGoodMeetingsを使ってみませんか？きっと成果を感じていただけるはずです。
-              </p>
-              <div className={styles.filledButton} role="button">
-                <a href="https://sgms.app/signup" id="ga_signup_body">
-                  無料で始める
-                </a>
+              <div className={styles.service_start_content}>
+                <h2>まずは1プロジェクト （ 無料 ）からお試しいただけます</h2>
+                <p>
+                  新しい手法を取り入れるには、いろいろとハードルもあるでしょう。
+                  <br />
+                  はじめはみなさんの身近にある、ごく小さなプロジェクトからでも、まずは3ヶ月、SuperGoodMeetingsを使ってみませんか？きっと成果を感じていただけるはずです。
+                </p>
+                <div className={styles.filledButton} role="button">
+                  <a href="https://sgms.app/signup" id="ga_signup_body">
+                    無料で始める
+                  </a>
+                </div>
               </div>
             </div>
 
