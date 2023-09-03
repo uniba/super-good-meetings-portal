@@ -97,49 +97,124 @@ export default function Home({
               </div>
             </div>
           ) : null}
-          <div className={styles.release_notes}></div>
 
-          <div className={styles.service_task}>
-            <h2>こんな課題をお持ちの方に</h2>
-            <ul>
-              <li>
+          <div className={styles.service_resolution}>
+            <div className={styles.service_task}>
+              <h2>こんな課題をお持ちの方に</h2>
+              <ul>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_task01.svg"
+                      alt="プロジェクトが複雑で、リーダーが管理しきれない"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  プロジェクトが複雑で、リーダーが管理しきれない
+                </li>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_task02.svg"
+                      alt="プロジェクトを取り巻く環境の変化に適応するのが難しい"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  プロジェクトを取り巻く環境の変化に適応するのが難しい
+                </li>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_task03.svg"
+                      alt="一人ひとりが自律的に行動できるプロジェクトチームを作りたい"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  一人ひとりが自律的に行動できるプロジェクトチームを作りたい
+                </li>
+              </ul>
+            </div>
+            <figure className={styles.arrow}>
+              <Image
+                className={styles.img}
+                src="/images/icon_arrow.svg"
+                alt="下矢印 アイコン"
+                layout="fill"
+                objectFit="contain"
+              />
+            </figure>
+            <div className={styles.service_effect}>
+              <h2>SuperGoodMeetingsの活用で期待できる変化</h2>
+              <ul className={styles.service_effect_items}>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_change1.svg"
+                      alt="イメージイラスト"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  プロジェクトの目的やマイルストーン（目標）を常に意識して行動できる
+                </li>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_change2.svg"
+                      alt="イメージイラスト"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  プロジェクトに関する情報がオープンな場で蓄積・共有される
+                </li>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_change3.svg"
+                      alt="イメージイラスト"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  定期的に状況の変化を感知することができ、適応しやすくなる
+                </li>
+              </ul>
+            </div>
+            <figure className={styles.arrow}>
+              <Image
+                className={styles.img}
+                src="/images/icon_arrow.svg"
+                alt="下矢印 アイコン"
+                layout="fill"
+                objectFit="contain"
+              />
+            </figure>
+            <div className={styles.service_result}>
+              <div className={styles.service_result_content}>
                 <figure>
                   <Image
                     className={styles.img}
-                    src="/images/illust_task01.svg"
-                    alt="プロジェクトが複雑で、リーダーが管理しきれない"
+                    src="/images/illust_change4.svg"
+                    alt="一人ひとりのメンバーが自律的に動きやすくなる"
                     layout="fill"
                     objectFit="contain"
                   />
                 </figure>
-                プロジェクトが複雑で、リーダーが管理しきれない
-              </li>
-              <li>
-                <figure>
-                  <Image
-                    className={styles.img}
-                    src="/images/illust_task02.svg"
-                    alt="プロジェクトを取り巻く環境の変化に適応するのが難しい"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </figure>
-                プロジェクトを取り巻く環境の変化に適応するのが難しい
-              </li>
-              <li>
-                <figure>
-                  <Image
-                    className={styles.img}
-                    src="/images/illust_task03.svg"
-                    alt="一人ひとりが自律的に行動できるプロジェクトチームを作りたい"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </figure>
-                一人ひとりが自律的に行動できるプロジェクトチームを作りたい
-              </li>
-            </ul>
+                一人ひとりのメンバーが自律的に動きやすくなる
+              </div>
+            </div>
           </div>
+
           <div className={styles.backgroundSky}>
             <div id="about" className={styles.service_about}>
               <div className={styles.service_about_message1}>
@@ -402,7 +477,7 @@ export default function Home({
               </Swiper>
             </div>
 
-            <div className={styles.service_effect}>
+            {/* <div className={styles.service_effect}>
               <h2>SuperGoodMeetingsの活用で期待できる変化</h2>
               <ul className={styles.service_effect_items}>
                 <li>
@@ -463,7 +538,7 @@ export default function Home({
                 </figure>
                 一人ひとりのメンバーが自律的に動きやすくなる
               </div>
-            </div>
+            </div> */}
 
             <div className={styles.service_detail}>
               <div className={styles.pgs}>
