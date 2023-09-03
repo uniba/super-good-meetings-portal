@@ -3,6 +3,7 @@ import { join } from "path";
 import matter from "gray-matter";
 
 const DIRECTORIES = {
+  posts: join(process.cwd(), "_posts"),
   news: join(process.cwd(), "_news"),
   releaseNotes: join(process.cwd(), "_release_notes"),
   works: join(process.cwd(), "_works"),
@@ -48,6 +49,8 @@ export function getAll(directory: string, fields: string[] = []): any[] {
   return posts;
 }
 
+export const getPostsBySlug = (slug: string, fields: string[] = []) =>
+  getBySlug(DIRECTORIES.posts, slug, fields);
 export const getNewsBySlug = (slug: string, fields: string[] = []) =>
   getBySlug(DIRECTORIES.news, slug, fields);
 export const getReleaseNotesBySlug = (slug: string, fields: string[] = []) =>
@@ -55,6 +58,8 @@ export const getReleaseNotesBySlug = (slug: string, fields: string[] = []) =>
 export const getWorksBySlug = (slug: string, fields: string[] = []) =>
   getBySlug(DIRECTORIES.works, slug, fields);
 
+export const getAllPosts = (fields: string[] = []) =>
+  getAll(DIRECTORIES.posts, fields);
 export const getAllNews = (fields: string[] = []) =>
   getAll(DIRECTORIES.news, fields);
 export const getAllReleaseNotes = (fields: string[] = []) =>
