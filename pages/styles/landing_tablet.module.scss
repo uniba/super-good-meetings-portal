@@ -71,7 +71,7 @@
       ul {
         flex-direction: column;
         li {
-          @include font-size("h3-sp");
+          @include font-size("body-sp-bold");
           width: 100%;
           display: flex;
           align-items: center;
@@ -90,7 +90,7 @@
     // サービス概要説明
     .service_about {
       width: auto;
-      margin: 0 24px 100px 24px;
+      margin: 0 24px;
 
       &::before {
         top: 15%;
@@ -107,6 +107,7 @@
 
       &_message1 {
         flex-direction: column;
+        padding-top: 64px;
         margin: 0 0 64px 0px;
         figure {
           width: auto;
@@ -132,7 +133,7 @@
 
       &_message2 {
         flex-direction: column;
-        margin: 0 0 80px 0;
+        margin: 0 0 64px 0;
         figure {
           width: auto;
           margin: 0;
@@ -154,7 +155,7 @@
     //新規登録への導線1
     .service_trial {
       width: auto;
-      margin: 0 24px 100px;
+      margin: 0 24px 64px;
       padding: 40px 24px;
 
       &_heading {
@@ -234,7 +235,7 @@
         flex-wrap: wrap;
         flex-direction: column;
         li {
-          @include font-size("h3-sp");
+          @include font-size("body-sp-bold");
           width: 100%;
           display: flex;
           align-items: center;
@@ -277,7 +278,7 @@
     //PJsの紹介
     .service_detail {
       width: auto;
-      margin: 0 24px 100px 24px;
+      margin: 0 24px 64px 24px;
       .pgs {
         h2 {
           @include font-size("h2-sp");
@@ -318,7 +319,7 @@
     //動画
     .service_movie {
       width: auto;
-      margin: 0 24px 120px;
+      margin: 0 24px 64px;
       h2 {
         @include font-size("h2-sp");
         span {
@@ -360,9 +361,11 @@
     //お知らせ
     .service_news {
       width: auto;
-      margin: 0 24px 100px;
+      margin-bottom: 64px;
+
       &_title {
         @include font-size("h2-sp");
+        margin-bottom: 24px;
       }
       &_link {
         text-align: right;
@@ -394,7 +397,8 @@
     //新規登録への導線2
     .service_start {
       width: auto;
-      margin: 0 auto 100px;
+      margin: 0 auto 64px;
+      padding-bottom: 64px;
       h2 {
         @include font-size("h2-sp");
         margin: 0 0 8px 0;
