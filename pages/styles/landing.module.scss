@@ -669,7 +669,8 @@
     padding: 56px 40px;
     margin: 0 auto 200px;
     border-radius: 30px;
-    background-color: $violet;
+    color: $darkBlack;
+    background-color: $white;
 
     &_heading {
       display: flex;
@@ -690,6 +691,7 @@
 
     p {
       @include font-size("label-pc-bold");
+      text-align: center;
       margin-bottom: 48px;
     }
 
