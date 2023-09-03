@@ -7,6 +7,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import CustomForm from "../components/customform";
 import Layout from "../components/layout";
 import { getAllNews, getAllReleaseNotes } from "../lib/api";

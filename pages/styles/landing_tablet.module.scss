@@ -184,7 +184,7 @@
     //活用事例
     .service_interview {
       width: auto;
-      margin: 100px 0 100px 24px;
+      margin: 0px 0 64px 24px;
       .swiper_container {
         padding: 0;
       }
@@ -194,6 +194,7 @@
       &_title {
         @include font-size("h2-sp");
         margin-right: 24px;
+        margin-bottom: 24px;
       }
       &_content {
         box-sizing: border-box;
@@ -333,7 +334,7 @@
     //メディア掲載
     .service_media {
       width: auto;
-      margin: 0 0 100px 24px;
+      margin: 0 0 64px 24px;
       .swiper_container {
         padding: 0;
       }
@@ -343,6 +344,7 @@
       &_title {
         @include font-size("h2-sp");
         margin-right: 24px;
+        margin-bottom: 24px;
       }
       &_contents {
         &_item {
