@@ -4,7 +4,7 @@
 
 @mixin button($color) {
   button {
-    @include font-size("body-pc");
+    @include font-size("body-pc-medium");
     box-sizing: border-box;
     cursor: pointer;
     width: 204px;
@@ -44,7 +44,7 @@
     border: 5px solid $white;
 
     a {
-      @include font-size("body-pc");
+      @include font-size("body-pc-medium");
       color: $white;
       text-decoration: none;
       display: block;
@@ -83,7 +83,7 @@
     height: 54px;
 
     a {
-      @include font-size("body-pc");
+      @include font-size("body-pc-medium");
       background: $darkBlack;
       color: $white;
       text-decoration: none;
@@ -221,7 +221,7 @@
       justify-content: space-between;
       li {
         width: 303px;
-        @include font-size("body-pc");
+        @include font-size("body-pc-medium");
         figure {
           width: 233px;
         }
@@ -276,7 +276,7 @@
           margin: 0 0 32px 0;
         }
         p {
-          @include font-size("body-pc");
+          @include font-size("body-pc-medium");
         }
       }
     }
@@ -298,7 +298,7 @@
           margin-bottom: 32px;
         }
         p {
-          @include font-size("body-pc");
+          @include font-size("body-pc-medium");
         }
       }
     }
@@ -326,7 +326,7 @@
       z-index: 1;
     }
     p {
-      @include font-size("body-pc");
+      @include font-size("body-pc-medium");
       position: relative;
       z-index: 1;
     }
@@ -404,7 +404,7 @@
         margin: 0 0 16px;
       }
       .footnote {
-        @include font-size("body-pc");
+        @include font-size("body-pc-medium");
         color: $sky;
         margin: 0;
         span {
@@ -431,7 +431,7 @@
       justify-content: space-between;
       li {
         width: 280px;
-        @include font-size("body-pc");
+        @include font-size("body-pc-medium");
         figure {
           width: 233px;
         }
