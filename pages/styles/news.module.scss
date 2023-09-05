@@ -5,20 +5,28 @@
   color: $black;
   min-height: calc(100vh - 650px);
   @include font-size("label-pc-medium");
-  padding: 48px 194px 120px 194px;
+  padding: 48px 0 80px;
 
-  h1 {
-    margin: 0 0 80px 0;
-    @include font-size("h1-pc");
+  .posts_content {
+    max-width: 840px;
+    margin: 0 auto;
+
+    h1 {
+      margin: 0 0 54px;
+      @include font-size("h1-pc");
+    }
   }
 
   .posts_item {
+    margin: 0 0 40px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     span {
-      display: block;
-      width: 80px;
-      margin-right: 64px;
+      display: inline-block;
+      background: $paleBlue;
+      padding: 0 16px;
+      height: 30px;
+      margin-right: 24px;
       @include font-size("label-pc-medium");
     }
     a {
@@ -32,7 +40,7 @@
     display: flex;
     justify-content: center;
     @include font-size("h3-pc");
-    margin-top: 80px;
+    margin-top: 64px;
     li {
       margin-right: 8px;
       a {
@@ -45,24 +53,34 @@
 
 @media screen and (max-width: 1000px) {
   .posts_container {
-    padding: 48px 24px 120px 24px;
-    h1 {
-      margin: 0 0 24px 0;
-      @include font-size("h1-sp");
+    padding: 40px 16px 64px 16px;
+
+    .posts_content {
+      max-width: 100%;
+
+      h1 {
+        margin: 0 0 24px 0;
+        @include font-size("h1-sp");
+      }
     }
 
     .posts_item {
+      margin: 0 0 32px;
       display: block;
       span {
         @include font-size("body-sp-medium");
+        margin-right: 0;
+        margin-bottom: 8px;
       }
       a {
         @include font-size("h3-sp");
+        display: block;
       }
     }
 
     .pager {
       @include font-size("h3-sp");
+      margin-top: 84px;
     }
   }
 }

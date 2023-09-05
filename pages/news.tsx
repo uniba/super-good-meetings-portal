@@ -21,39 +21,41 @@ export default function Posts({ allNews }: any) {
       </Head>
       <Layout>
         <div className={styles.posts_container}>
-          <h1>お知らせ</h1>
-          <div>
-            {posts.map((post: any, i: any) => (
-              <div key={i}>
-                <p className={styles.posts_item}>
-                  <span>{post.date}</span>
-                  <Link
-                    href={`/news/${encodeURIComponent(post.slug)}`}
-                    legacyBehavior
-                  >
-                    {post.title}
-                  </Link>
-                </p>
-              </div>
-            ))}
-          </div>
-          <ul className={styles.pager}>
-            {pages.map((_, i) => {
-              const page = i + 1;
-              if (page === currentPage) {
-                return <li key={page}>{page}</li>;
-              } else {
-                return (
-                  <li key={page}>
+          <div className={styles.posts_content}>
+            <h1>お知らせ</h1>
+            <div>
+              {posts.map((post: any, i: any) => (
+                <div key={i}>
+                  <p className={styles.posts_item}>
+                    <span>{post.date}</span>
                     <Link
-                      href={{ pathname: "/news", query: { page } }}
+                      href={`/news/${encodeURIComponent(post.slug)}`}
                       legacyBehavior
-                    >{`${page}`}</Link>
-                  </li>
-                );
-              }
-            })}
-          </ul>
+                    >
+                      {post.title}
+                    </Link>
+                  </p>
+                </div>
+              ))}
+            </div>
+            <ul className={styles.pager}>
+              {pages.map((_, i) => {
+                const page = i + 1;
+                if (page === currentPage) {
+                  return <li key={page}>{page}</li>;
+                } else {
+                  return (
+                    <li key={page}>
+                      <Link
+                        href={{ pathname: "/news", query: { page } }}
+                        legacyBehavior
+                      >{`${page}`}</Link>
+                    </li>
+                  );
+                }
+              })}
+            </ul>
+          </div>
         </div>
       </Layout>
     </>

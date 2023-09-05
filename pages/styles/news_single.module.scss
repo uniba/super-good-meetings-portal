@@ -1,15 +1,30 @@
 @import "../../styles/base_styles.scss";
 
 .post_container {
-  background: $white;
+  background: $paleBlue;
   color: $black;
   min-height: calc(100vh - 640px);
   @include font-size("label-pc-medium");
-  padding: 48px 194px 120px 194px;
+  padding: 48px 0px 80px;
 
-  h1 {
-    margin: 0 0 80px 0;
-    @include font-size("h1-pc");
+  .post_wrapper {
+    max-width: 840px;
+    margin: 0 auto;
+
+    h1 {
+      margin: 0 0 64px 0;
+      @include font-size("h1-pc");
+    }
+  }
+
+  .post_inner {
+    border-radius: 24px;
+    background: $white;
+    padding: 48px 120px;
+  }
+
+  .post_date {
+    margin-top: 0;
   }
 
   .post_title {
@@ -18,10 +33,15 @@
   }
 
   .post_all {
-    margin-top: 56px;
+    margin: 40px auto 0;
     text-align: center;
+    width: 600px;
+    padding: 16px 0;
+    background: $background;
+
     a {
-      color: $sky;
+      color: $white;
+      text-decoration: none;
       @include font-size("body-pc");
     }
   }
@@ -44,10 +64,18 @@
 
 @media screen and (max-width: 1000px) {
   .post_container {
-    padding: 48px 24px 120px 24px;
-    h1 {
-      margin: 0 0 24px 0;
-      @include font-size("h1-sp");
+    padding: 48px 16px;
+
+    .post_wrapper {
+      h1 {
+        margin: 0 0 24px 0;
+        @include font-size("h1-sp");
+      }
+    }
+
+    .post_inner {
+      padding: 24px;
+      border-radius: 16px;
     }
     .post_title {
       margin: 0 0 24px 0;
@@ -59,6 +87,9 @@
     }
 
     .post_all {
+      width: 100%;
+      margin-top: 24px;
+
       a {
         @include font-size("body-sp-medium");
       }

@@ -13,13 +13,17 @@ export default function Post({ post }: any) {
       </Head>
       <Layout>
         <div className={styles.post_container}>
-          <h1>お知らせ</h1>
-          <p>{post.date}</p>
-          <h2 className={styles.post_title}>{post.title}</h2>
-          <div
-            className={styles.post_content}
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          <div className={styles.post_wrapper}>
+            <h1>お知らせ</h1>
+            <div className={styles.post_inner}>
+              <p className={styles.post_date}>{post.date}</p>
+              <h2 className={styles.post_title}>{post.title}</h2>
+              <div
+                className={styles.post_content}
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            </div>
+          </div>
           <div className={styles.post_all}>
             <Link href="/news">お知らせ一覧</Link>
           </div>
