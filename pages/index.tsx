@@ -59,7 +59,7 @@ export default function Home({
               プロジェクトが変わる。
             </h1>
             <p>
-              自律的なプロジェクト推進をサポートする
+              定例会議を活用したプロジェクト推進を実現する
               <br />
               クラウドサービス
             </p>
@@ -324,7 +324,7 @@ export default function Home({
                 </ul>
                 <div className={styles.service_news_link}>
                   <Link href="/news" legacyBehavior>
-                    お知らせ一覧
+                    もっと見る
                   </Link>
                 </div>
               </div>
@@ -621,7 +621,7 @@ export default function Home({
                   </div>
                 </figure>
                 <p>
-                  SuperGoodMeetingsは、運営元である株式会社コパイロツトが開発した、独自のプロジェクト推進メソッド
+                  SuperGoodMeetingsは、運営元である株式会社コパイロツトが開発した、独自のプロジェクト推進フレームワーク
                   「Project Sprint」に基づいて設計されています。「Project
                   Sprint」とは、ミーティングを活用してプロジェクトを推進する方法論です。コパイロツトがこれまでの業務において積み上げてきたプロジェクト推進の実践知を元に、汎用的な方法論にまとめ、オープンソースとして公開しています。
                 </p>
