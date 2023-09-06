@@ -59,7 +59,7 @@
     }
 
     a {
-      @include font-size("body-pc-bold");
+      @include font-size("body-pc");
       display: block;
       color: $white;
       text-decoration: none;

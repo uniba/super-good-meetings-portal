@@ -43,7 +43,7 @@
     border: 5px solid $black;
 
     a {
-      @include font-size("body-pc-medium");
+      @include font-size("body-pc");
       color: $black;
       text-decoration: none;
       display: block;
@@ -123,7 +123,7 @@
         color: $background;
         text-align: center;
         margin-top: auto;
-        @include font-size("body-pc-medium");
+        @include font-size("body-pc");
       }
       .text {
         margin: 0;
@@ -138,7 +138,7 @@
         }
         .branket {
           display: block;
-          @include font-size("body-pc-medium");
+          @include font-size("body-pc");
         }
       }
     }
@@ -168,7 +168,7 @@
   }
 
   .accordion__item {
-    @include font-size("body-pc-medium");
+    @include font-size("body-pc");
     border-bottom: 1px solid $secondary;
   }
 

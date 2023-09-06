@@ -2,137 +2,71 @@ $JPtypo: "Noto Sans JP";
 $ENGtypo: "Open Sans";
 
 @mixin font-size($size) {
-  @if $size == "heading-pc" {
+  @if $size == "h1-pc" {
     font-style: normal;
     font-size: 48px;
-    font-weight: bold;
-    line-height: 100%;
-    letter-spacing: normal;
-  } @else if $size == "h1-pc" {
-    font-style: normal;
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 140%;
-    letter-spacing: -0.32px;
+    font-weight: 900;
+    line-height: 44.8px;
   } @else if $size == "h2-pc" {
     font-style: normal;
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 140%;
-    letter-spacing: -0.28px;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 44.8px;
   } @else if $size == "h3-pc" {
     font-style: normal;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 150%;
-    letter-spacing: -0.48px;
-  } @else if $size == "h4-pc" {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.6;
+  } @else if $size == "body-pc" {
     font-style: normal;
     font-size: 18px;
-    font-weight: bold;
-    line-height: 150%;
-    letter-spacing: -0.4px;
-  } @else if $size == "body-pc-medium" {
-    font-style: normal;
-    font-size: 18px;
-    font-weight: normal;
-    line-height: 200%;
-    letter-spacing: -0.36px;
-  } @else if $size == "body-pc-bold" {
-    font-style: normal;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 200%;
-    letter-spacing: -0.36px;
-  } @else if $size == "caption-pc-medium" {
-    font-style: normal;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 160%;
-    letter-spacing: normal;
-  } @else if $size == "caption-pc-bold" {
-    font-style: normal;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 160%;
-    letter-spacing: normal;
-  } @else if $size == "label-pc-medium" {
-    font-style: normal;
-    font-size: 13px;
-    font-weight: normal;
-    line-height: 100%;
-    letter-spacing: normal;
+    font-weight: 700;
+    line-height: 27px;
   } @else if $size == "label-pc-bold" {
     font-style: normal;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 100%;
-    letter-spacing: normal;
-  } @else if $size == "heading-sp" {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  } @else if $size == "label-pc-medium" {
     font-style: normal;
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 100%;
-    letter-spacing: normal;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  } @else if $size == "caption-pc" {
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
   } @else if $size == "h1-sp" {
     font-style: normal;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 140%;
-    letter-spacing: -0.32px;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 28px;
   } @else if $size == "h2-sp" {
     font-style: normal;
     font-size: 20px;
-    font-weight: bold;
-    line-height: 140%;
-    letter-spacing: -0.28px;
+    font-weight: 900;
+    line-height: 28px;
   } @else if $size == "h3-sp" {
     font-style: normal;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 150%;
-    letter-spacing: -0.48px;
-  } @else if $size == "h4-sp" {
-    font-style: normal;
     font-size: 16px;
-    font-weight: bold;
-    line-height: 150%;
-    letter-spacing: -0.4px;
-  } @else if $size == "body-sp-medium" {
-    font-style: normal;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 200%;
-    letter-spacing: -0.36px;
+    font-weight: 900;
+    line-height: 24px;
   } @else if $size == "body-sp-bold" {
     font-style: normal;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 200%;
-    letter-spacing: -0.36px;
-  } @else if $size == "caption-sp-medium" {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19.5px;
+  } @else if $size == "body-sp-medium" {
     font-style: normal;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 160%;
-    letter-spacing: normal;
-  } @else if $size == "caption-sp-bold" {
-    font-style: normal;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 160%;
-    letter-spacing: normal;
-  } @else if $size == "label-sp-medium" {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19.5px;
+  } @else if $size == "caption-sp" {
     font-style: normal;
     font-size: 12px;
-    font-weight: normal;
-    line-height: 100%;
-    letter-spacing: normal;
-  } @else if $size == "label-sp-bold" {
-    font-style: normal;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 100%;
-    letter-spacing: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.5px;
   }
 }
