@@ -1,0 +1,118 @@
+@import "../../styles/base_styles.scss";
+
+.works_container {
+  background: $white;
+  color: $black;
+  min-height: calc(100vh - 650px);
+  @include font-size("label-pc-medium");
+  padding: 48px 0 80px;
+
+  .works_content {
+    max-width: 840px;
+    margin: 0 auto;
+
+    h1 {
+      margin: 0 0 54px;
+      @include font-size("h1-pc");
+    }
+  }
+
+  .works_item {
+    margin: 0 0 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    &_text {
+      margin-right: 24px;
+      span {
+        display: inline-block;
+        background: $paleBlue;
+        padding: 0 16px;
+        height: 30px;
+        margin-right: 24px;
+        @include font-size("label-pc-medium");
+      }
+      a {
+        color: $black;
+        display: block;
+        text-decoration: none;
+        @include font-size("h3-pc");
+      }
+    }
+    &_image {
+      position: relative;
+      width: 336px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    &_date {
+      display: none;
+      background: $paleBlue;
+      padding: 0 12px;
+      height: 25px;
+      @include font-size("label-pc-medium");
+    }
+  }
+
+  .pager {
+    display: flex;
+    justify-content: center;
+    @include font-size("h3-pc");
+    margin-top: 64px;
+    li {
+      margin-right: 8px;
+      a {
+        color: $secondary;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .works_container {
+    padding: 40px 16px 64px 16px;
+
+    .works_content {
+      max-width: 100%;
+
+      h1 {
+        margin: 0 0 24px 0;
+        @include font-size("h1-sp");
+      }
+    }
+
+    .works_item {
+      margin: 0 0 32px;
+      flex-direction: column-reverse;
+      &_text {
+        margin-top: 8px;
+        margin-right: 0;
+        span {
+          display: none;
+        }
+        a {
+          @include font-size("h3-sp");
+          display: block;
+        }
+      }
+      &_image {
+        margin-top: 8px;
+        width: 100%;
+      }
+      &_date {
+        display: block;
+      }
+    }
+
+    .pager {
+      @include font-size("h3-sp");
+      margin-top: 84px;
+    }
+  }
+}
+
+.img {
+  position: relative !important;
+  width: 100%;
+}

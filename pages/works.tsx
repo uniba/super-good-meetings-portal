@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../components/layout";
 import { getAllWorks } from "../lib/api";
-import styles from "./styles/news.module.scss";
+import styles from "./styles/works.module.scss";
+import Image from "next/image";
 
 export default function Posts({ allWorks }: any) {
   const router = useRouter();
@@ -20,21 +21,35 @@ export default function Posts({ allWorks }: any) {
         <title>活用事例 - SuperGoodMeetings</title>
       </Head>
       <Layout>
-        <div className={styles.posts_container}>
-          <div className={styles.posts_content}>
+        <div className={styles.works_container}>
+          <div className={styles.works_content}>
             <h1>活用事例</h1>
             <div>
               {posts.map((post: any, i: any) => (
                 <div key={i}>
-                  <p className={styles.posts_item}>
-                    <span>{post.date}</span>
-                    <Link
-                      href={`/works/${encodeURIComponent(post.slug)}`}
-                      legacyBehavior
-                    >
-                      {post.title}
-                    </Link>
-                  </p>
+                  <div className={styles.works_item}>
+                    <div className={styles.works_item_text}>
+                      <span>{post.date}</span>
+                      <Link
+                        href={`/works/${encodeURIComponent(post.slug)}`}
+                        legacyBehavior
+                      >
+                        {post.title}
+                      </Link>
+                    </div>
+                    <div className={styles.works_item_image}>
+                      {post.image && (
+                        <Image
+                          className={styles.img}
+                          src={post.image}
+                          alt={post.title}
+                          layout="fill"
+                          objectFit="contain"
+                        ></Image>
+                      )}{" "}
+                    </div>
+                    <span className={styles.works_item_date}>{post.date}</span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -63,7 +78,7 @@ export default function Posts({ allWorks }: any) {
 }
 
 export async function getStaticProps() {
-  const allWorks = getAllWorks(["slug", "title", "date"]);
+  const allWorks = getAllWorks(["slug", "title", "date", "image"]);
   return {
     props: { allWorks },
   };

@@ -25,6 +25,15 @@ export function getBySlug(
 
   const items: { [key: string]: any } = {};
 
+  if (directory === DIRECTORIES.works) {
+    const imageRegexp = /!\[.*?\]\((.*?)\)/;
+
+    const matchImage = content.match(imageRegexp);
+    if (matchImage && matchImage[1]) {
+      items["image"] = matchImage[1];
+    }
+  }
+
   fields.forEach((field) => {
     if (field === "slug") {
       items[field] = realSlug;
