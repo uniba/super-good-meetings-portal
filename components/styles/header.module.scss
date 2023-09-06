@@ -59,11 +59,10 @@
     }
 
     a {
-      @include font-size("body-pc-medium");
+      @include font-size("body-pc-bold");
       display: block;
       color: $white;
       text-decoration: none;
-      line-height: 1;
 
       &:hover {
         opacity: 80%;
@@ -163,6 +162,9 @@
   .menu_list {
     li {
       margin-bottom: 24px;
+      a {
+        @include font-size("h2-sp");
+      }
     }
   }
   .auth_list {
