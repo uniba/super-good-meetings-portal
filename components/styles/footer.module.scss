@@ -16,7 +16,7 @@
       display: flex;
       margin-left: auto;
       margin-bottom: 48px;
-      @include font-size("h4-sp");
+      @include font-size("label-pc-bold");
 
       ul {
         margin-left: 56px;
@@ -39,7 +39,7 @@
     }
   }
   address {
-    @include font-size("caption-pc-bold");
+    @include font-size("caption-pc");
 
     a {
       color: $white;
@@ -79,7 +79,7 @@
     }
 
     address {
-      @include font-size("label-sp-bold");
+      @include font-size("caption-sp");
 
       .sp {
         display: block;
