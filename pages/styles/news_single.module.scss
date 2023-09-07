@@ -48,6 +48,19 @@
 
   //-----
 
+  blockquote {
+    margin: 0;
+    background: $paleBlue;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 24px;
+    margin: 24px 0 40px;
+
+    & p {
+      margin: 0;
+    }
+  }
+
   a {
     color: $sky;
   }
@@ -113,6 +126,10 @@
       a {
         @include font-size("body-sp-medium");
       }
+    }
+
+    blockquote {
+      padding: 16px;
     }
   }
 
