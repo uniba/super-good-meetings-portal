@@ -62,6 +62,26 @@
   }
 }
 
+.post_docs {
+  margin: 0 0 64px 0;
+  box-sizing: border-box;
+  padding: 24px;
+  background: $paleBlue;
+  border-radius: 8px;
+  &_title {
+    margin-bottom: 16px;
+    display: block;
+    @include font-size("caption-pc");
+  }
+  & li {
+    list-style-type: decimal;
+    @include font-size("caption-pc");
+    &:not(:last-of-type) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .post_container {
     padding: 48px 16px;
@@ -95,10 +115,8 @@
       }
     }
   }
-}
 
-.post_docs {
-  & li {
-    list-style-type: decimal;
+  .post_docs {
+    margin-bottom: 40px;
   }
 }

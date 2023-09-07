@@ -39,15 +39,13 @@ export function getBySlug(
     directory === DIRECTORIES.works
   ) {
     const headingRegexp = /^(#+) (.+)$/gm;
-    let matchHeading = content.match(headingRegexp);
-    if (matchHeading && matchHeading.length > 2) {
-      console.log("matchHeading", matchHeading);
-      matchHeading.map((doc) => {
+    const matchHeadings = content.match(headingRegexp);
+    if (matchHeadings && matchHeadings.length > 2) {
+      const replacedHeadings = matchHeadings.map((doc) => {
         console.log("doc", doc);
-        doc.replace("#", "");
+        return doc.replace(/#/g, "");
       });
-      items["docs"] = matchHeading;
-      console.log("matchHeading", matchHeading);
+      items["docs"] = replacedHeadings;
     }
   }
 
