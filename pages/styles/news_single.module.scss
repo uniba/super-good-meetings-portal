@@ -96,3 +96,9 @@
     }
   }
 }
+
+.post_docs {
+  & li {
+    list-style-type: decimal;
+  }
+}

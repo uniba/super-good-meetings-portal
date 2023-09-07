@@ -16,6 +16,13 @@ export default function Post({ post }: any) {
           <div className={styles.post_wrapper}>
             <h1>リリースノート</h1>
             <div className={styles.post_inner}>
+              {post.docs && (
+                <ol className={styles.post_docs}>
+                  {post.docs.map((doc: any, index: any) => (
+                    <li key={index}>{doc}</li>
+                  ))}
+                </ol>
+              )}
               <p>{post.date}</p>
               <h2 className={styles.post_title}>{post.title}</h2>
               <div
@@ -34,7 +41,12 @@ export default function Post({ post }: any) {
 }
 
 export async function getStaticProps({ params }: any) {
-  const post = getReleaseNotesBySlug(params.slug, ["title", "date", "content"]);
+  const post = getReleaseNotesBySlug(params.slug, [
+    "title",
+    "date",
+    "content",
+    "docs",
+  ]);
   const content = await markdownToHtml(post.content || "");
 
   return {

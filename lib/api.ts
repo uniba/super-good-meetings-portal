@@ -34,6 +34,23 @@ export function getBySlug(
     }
   }
 
+  if (
+    directory === DIRECTORIES.releaseNotes ||
+    directory === DIRECTORIES.works
+  ) {
+    const headingRegexp = /^(#+) (.+)$/gm;
+    let matchHeading = content.match(headingRegexp);
+    if (matchHeading && matchHeading.length > 2) {
+      console.log("matchHeading", matchHeading);
+      matchHeading.map((doc) => {
+        console.log("doc", doc);
+        doc.replace("#", "");
+      });
+      items["docs"] = matchHeading;
+      console.log("matchHeading", matchHeading);
+    }
+  }
+
   fields.forEach((field) => {
     if (field === "slug") {
       items[field] = realSlug;
@@ -57,6 +74,26 @@ export function getAll(directory: string, fields: string[] = []): any[] {
     .sort((post1: any, post2: any) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+// export function generateTableOfContents(content: string): any[] {
+//   const headersRegex = /^(#+) (.+)$/gm;
+//   let match;
+//   const toc: any[] = [];
+
+//   while ((match = headersRegex.exec(content)) !== null) {
+//     toc.push({
+//       level: match[1].length,
+//       title: match[2],
+//     });
+//   }
+
+//   return toc;
+// }
+
+// export const getTableOfContentsForSlug = (directory: string, slug: string) => {
+//   const content = getBySlug(directory, slug, ["content"]).content;
+//   return generateTableOfContents(content);
+// };
 
 export const getPostsBySlug = (slug: string, fields: string[] = []) =>
   getBySlug(DIRECTORIES.posts, slug, fields);
