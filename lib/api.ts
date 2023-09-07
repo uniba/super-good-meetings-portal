@@ -73,26 +73,6 @@ export function getAll(directory: string, fields: string[] = []): any[] {
   return posts;
 }
 
-// export function generateTableOfContents(content: string): any[] {
-//   const headersRegex = /^(#+) (.+)$/gm;
-//   let match;
-//   const toc: any[] = [];
-
-//   while ((match = headersRegex.exec(content)) !== null) {
-//     toc.push({
-//       level: match[1].length,
-//       title: match[2],
-//     });
-//   }
-
-//   return toc;
-// }
-
-// export const getTableOfContentsForSlug = (directory: string, slug: string) => {
-//   const content = getBySlug(directory, slug, ["content"]).content;
-//   return generateTableOfContents(content);
-// };
-
 export const getPostsBySlug = (slug: string, fields: string[] = []) =>
   getBySlug(DIRECTORIES.posts, slug, fields);
 export const getNewsBySlug = (slug: string, fields: string[] = []) =>
