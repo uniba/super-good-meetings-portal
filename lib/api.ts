@@ -1,6 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+import { last } from "lodash";
 
 const DIRECTORIES = {
   posts: join(process.cwd(), "_posts"),
@@ -39,14 +40,38 @@ export function getBySlug(
     directory === DIRECTORIES.works
   ) {
     const headingRegexp = /^(#+) (.+)$/gm;
-    const matchHeadings = content.match(headingRegexp);
-    if (matchHeadings && matchHeadings.length > 2) {
-      const replacedHeadings = matchHeadings.map((doc) => {
-        console.log("doc", doc);
-        return doc.replace(/#/g, "");
-      });
-      items["docs"] = replacedHeadings;
+
+    const list: any[] = [];
+    let currentList = list;
+    const listStack: string[] = [];
+    let match;
+
+    while ((match = headingRegexp.exec(content)) !== null) {
+      let hashes = match[1];
+      let heading = match[2];
+
+      if (
+        !listStack.length ||
+        hashes.length > listStack[listStack.length - 1].length
+      ) {
+        const newChildren: string[] = [];
+        currentList.push(newChildren);
+        listStack.push(hashes);
+        currentList = newChildren;
+      }
+
+      while (
+        listStack.length &&
+        hashes.length < listStack[listStack.length - 1].length
+      ) {
+        listStack.pop();
+        currentList = listStack.length ? list[listStack.length - 1] : list;
+      }
+
+      currentList.push(heading);
     }
+
+    items["docs"] = list;
   }
 
   fields.forEach((field) => {
