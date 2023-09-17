@@ -87,7 +87,7 @@
     @include font-size("caption-pc");
   }
   & li {
-    list-style-type: decimal;
+    list-style-type: disc;
     @include font-size("caption-pc");
     &:not(:last-of-type) {
       margin-bottom: 8px;
