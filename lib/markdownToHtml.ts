@@ -5,35 +5,90 @@ import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
 
-const insertDoc = (docsArr: Array<string>) => {
+const createNodeTree = (docsArr: Array<string>, parent: any) => {
+  docsArr.forEach((doc) => {
+    console.log(doc, typeof doc);
+    if (typeof doc === "string") {
+      const li = getLIElement(doc);
+      const a = getATextElement(doc);
+      li.children.push(a);
+      parent.children.push(li);
+      return;
+    } else {
+      const ul = getULElement();
+      parent.children.push(ul);
+      createNodeTree(doc, ul);
+      return false;
+    }
+  });
+};
+
+const insertDoc = (docsArr: Array<any>) => {
   return (tree: any) => {
     visit(tree, "element", (node) => {
       if (node.tagName === "p" && node.children[0].type === "text") {
         if (node.children[0].value.startsWith("[docs]")) {
-          console.log(node);
-          node.tagName = "div";
-          node.properties = {
-            className: ["docs"],
-          };
-          node.children = [];
-          docsArr.forEach((doc) => {
-            node.children.push({
-              type: "element",
-              tagName: "a",
-              properties: {
-                href: `#${doc}`,
-              },
-              children: [
-                {
-                  type: "text",
-                  value: doc,
-                },
-              ],
-            });
-          });
+          console.log("FIND docs");
+          const parentUL = getULElement();
+          node.children = [parentUL];
+          createNodeTree(docsArr, parentUL);
+          //   node.tagName = "div";
+          //   node.properties = {
+          //     className: ["docs"],
+          //   };
+          //   node.children = [];
+          //   docsArr.forEach((doc) => {
+          //     node.children.push({
+          //       type: "element",
+          //       tagName: "a",
+          //       properties: {
+          //         href: `#${doc}`,
+          //       },
+          //       children: [
+          //         {
+          //           type: "text",
+          //           value: doc,
+          //         },
+          //       ],
+          //     });
+          //   });
         }
       }
     });
+  };
+};
+
+const getULElement = () => {
+  return {
+    type: "element",
+    tagName: "ul",
+    properties: {},
+    children: [] as Array<any>,
+  };
+};
+
+const getLIElement = (doc: string) => {
+  return {
+    type: "element",
+    tagName: "li",
+    properties: {},
+    children: [] as Array<any>,
+  };
+};
+
+const getATextElement = (text: string) => {
+  return {
+    type: "element",
+    tagName: "a",
+    properties: {
+      href: `#${text}`,
+    },
+    children: [
+      {
+        type: "text",
+        value: text,
+      },
+    ],
   };
 };
 
@@ -52,6 +107,7 @@ export default async function markdownToHtml<MarkdownToHtmlArgs>(
   markdown: string,
   docsArr = []
 ) {
+  console.log(JSON.stringify(docsArr, null, 2));
   const result = await unified()
     .use(remarkParse as unknown as Plugin) // マークダウン → mdast
     .use(remarkRehype as unknown as Plugin) // mdast → hast
