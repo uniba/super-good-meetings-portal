@@ -43,7 +43,7 @@ export function getBySlug(
 
     const list: any[] = [];
     let currentList = list;
-    const listStack: string[] = [];
+    const listStack: any[][] = [];
     let match;
 
     while ((match = headingRegexp.exec(content)) !== null) {
@@ -54,26 +54,22 @@ export function getBySlug(
         continue;
       }
 
-      if (
-        !listStack.length ||
-        hashes.length > listStack[listStack.length - 1].length
-      ) {
-        const newChildren: string[] = [];
-        currentList.push(newChildren);
-        listStack.push(hashes);
-        currentList = newChildren;
+      while (listStack.length >= hashes.length) {
+        listStack.pop();
       }
 
-      while (
-        listStack.length &&
-        hashes.length < listStack[listStack.length - 1].length
-      ) {
-        listStack.pop();
-        currentList = listStack.length ? list[listStack.length - 1] : list;
+      if (hashes.length - 2 === listStack.length) {
+        const newChildren: any[] = [];
+        currentList.push(newChildren);
+        listStack.push(newChildren);
+        currentList = newChildren;
+      } else {
+        currentList = listStack[hashes.length - 2];
       }
 
       currentList.push(heading);
     }
+
     items["docs"] = list[0];
   }
 
