@@ -26,11 +26,8 @@ const createNodeTree = (docsArr: Array<string>, parent: any) => {
 const insertDoc = (docsArr: Array<any>) => {
   return (tree: any) => {
     visit(tree, "element", (node) => {
-      console.log("11111");
       if (node.tagName === "p" && node.children[0].type === "text") {
-        console.log("22222");
         if (node.children[0].value.startsWith("[docs]")) {
-          console.log("FIND docs");
           const parentUL = getULElement();
           node.children = [parentUL];
           createNodeTree(docsArr, parentUL);
