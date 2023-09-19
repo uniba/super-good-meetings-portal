@@ -50,6 +50,10 @@ export function getBySlug(
       let hashes = match[1];
       let heading = match[2];
 
+      if (hashes.length === 1) {
+        continue;
+      }
+
       if (
         !listStack.length ||
         hashes.length > listStack[listStack.length - 1].length
@@ -70,7 +74,6 @@ export function getBySlug(
 
       currentList.push(heading);
     }
-
     items["docs"] = list;
   }
 
