@@ -4,6 +4,7 @@ import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
+import styles from "../pages/styles/news_single.module.scss";
 
 const createNodeTree = (docsArr: Array<string>, parent: any) => {
   docsArr.forEach((doc) => {
@@ -28,12 +29,40 @@ const insertDoc = (docsArr: Array<any>) => {
     visit(tree, "element", (node) => {
       if (node.tagName === "p" && node.children[0].type === "text") {
         if (node.children[0].value.startsWith("[docs]")) {
+          const tocs = getTocsElement();
           const parentUL = getULElement();
           node.children = [parentUL];
+          tocs.children.push(parentUL);
           createNodeTree(docsArr, parentUL);
+          node.children = [tocs];
         }
       }
     });
+  };
+};
+
+const getTocsElement = () => {
+  return {
+    type: "element",
+    tagName: "div",
+    properties: {
+      className: styles.post_docs,
+    },
+    children: [
+      {
+        type: "element",
+        tagName: "h2",
+        properties: {
+          className: styles.post_docs_title,
+        },
+        children: [
+          {
+            type: "text",
+            value: "目次",
+          },
+        ],
+      },
+    ] as Array<any>,
   };
 };
 
@@ -71,9 +100,21 @@ const getATextElement = (text: string) => {
   };
 };
 
-const insertId = (docsArr: Array<string>) => {
+const insertId = () => {
   return (tree: any) => {
-    visit(tree, "element", (node) => {});
+    visit(tree, "element", (node) => {
+      if (
+        (node.tagName === "h2" ||
+          node.tagName === "h3" ||
+          node.tagName === "h4") &&
+        node.children[0].type === "text"
+      ) {
+        console.log("node", node);
+        node.properties = {
+          id: node.children[0].value,
+        };
+      }
+    });
   };
 };
 
@@ -94,7 +135,7 @@ export default async function markdownToHtml<MarkdownToHtmlArgs>(
       return insertDoc(docsArr);
     })
     .use(() => {
-      return insertId(docsArr);
+      return insertId();
     })
     .use(rehypeStringify, { allowDangerousHtml: true }) // hast → html
     .process(markdown); // 一連の処理にマークダウンを投入
