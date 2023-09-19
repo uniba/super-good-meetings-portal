@@ -74,7 +74,7 @@ export function getBySlug(
 
       currentList.push(heading);
     }
-    items["docs"] = list;
+    items["docs"] = list[0];
   }
 
   fields.forEach((field) => {
