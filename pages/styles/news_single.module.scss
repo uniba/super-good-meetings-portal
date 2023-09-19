@@ -78,19 +78,24 @@
 .post_docs {
   margin: 0 0 64px 0;
   box-sizing: border-box;
-  padding: 24px;
+  padding: 24px 24px 16px;
   background: $paleBlue;
   border-radius: 8px;
   &_title {
-    margin-bottom: 16px;
+    margin: 0 0 16px 0;
     display: block;
     @include font-size("caption-pc");
+  }
+  ul > ul {
+    padding-left: 1em;
   }
   & li {
     list-style-type: disc;
     @include font-size("caption-pc");
-    &:not(:last-of-type) {
-      margin-bottom: 8px;
+    margin-bottom: 8px;
+
+    & a {
+      color: $darkBlack;
     }
   }
 }
