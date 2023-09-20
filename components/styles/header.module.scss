@@ -10,7 +10,6 @@
 
   h1 {
     margin: 0;
-    font-size: 18px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -59,7 +58,7 @@
     }
 
     a {
-      @include font-size("body-pc");
+      @include font-size("h4-pc");
       display: block;
       color: $white;
       text-decoration: none;
@@ -80,7 +79,6 @@
     h1 {
       display: flex;
       flex-direction: column;
-      font-size: 10px;
       a {
         width: 48px;
       }
@@ -154,7 +152,7 @@
   ul {
     padding: 0 8px;
     a {
-      @include font-size("h2-sp");
+      @include font-size("h3-sp");
       color: $white;
       text-decoration: none;
     }
@@ -163,7 +161,7 @@
     li {
       margin-bottom: 24px;
       a {
-        @include font-size("h2-sp");
+        @include font-size("h3-sp");
       }
     }
   }
