@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import CustomForm from "../components/customform";
 import Layout from "../components/layout";
-import { getAllNews, getAllReleaseNotes } from "../lib/api";
+import { getAllNews, getAllReleaseNotes, getAllWorks } from "../lib/api";
 import styles from "./styles/landing.module.scss";
 import Image from "next/image";
 
@@ -33,12 +33,15 @@ function _onReady(event: { target: { playVideo: () => void } }) {
 export default function Home({
   allNews,
   allReleaseNotes,
+  allWorks,
 }: {
   allNews: any;
   allReleaseNotes: any;
+  allWorks: any;
 }) {
   const news = allNews.slice(0, 5);
   const releaseNotes = allReleaseNotes.slice(0, 2);
+  const works = allWorks;
 
   const params = {
     slidesPerView: "auto",
@@ -387,140 +390,37 @@ export default function Home({
               }}
               className={styles.swiper_container}
             >
-              <SwiperSlide className={styles.service_interview_content}>
-                <a href="https://note.com/sgms/n/nfb32cb42307a" target="_blank">
-                  <figure className={styles.logo}>
-                    <Image
-                      className={styles.img}
-                      src="/images/interview_shinyo_logo.svg"
-                      alt="新陽高校ロゴ"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </figure>
-                  <figure className={styles.image}>
-                    <Image
-                      className={styles.img}
-                      src="/images/interview_shinyo.png"
-                      alt="新陽高校画像"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </figure>
-                  <h3 className={styles.caption}>
-                    学校・教育現場でこそ、
-                    <br />
-                    プロジェクト推進のためのメソッドが活きる
-                  </h3>
-                  <p className={styles.footnote}>
-                    学校法人札幌慈恵学園 札幌新陽高等学校
-                    <br />
-                    <span>高石大道、赤司展子、髙橋励起</span>
-                  </p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className={styles.service_interview_content}>
-                <a
-                  href="https://note.com/sgms/n/n01bd46d99dcd?magazine_key=m3633f7f797e5"
-                  target="_blank"
+              {works.map((work: any, i: number) => (
+                <SwiperSlide
+                  className={styles.service_interview_content}
+                  key={i}
                 >
-                  <figure className={styles.logo}>
-                    <Image
-                      className={styles.img}
-                      src="/images/interview_gs_logo.svg"
-                      alt="GSロゴ"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </figure>
-                  <figure className={styles.image}>
-                    <Image
-                      className={styles.img}
-                      src="/images/interview_gs.png"
-                      alt="GS画像"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </figure>
-                  <h3 className={styles.caption}>
-                    「認識のズレを補正する仕組み」で、
-                    <br />
-                    社内のコミュニケーションを円滑に
-                  </h3>
-                  <p className={styles.footnote}>
-                    ゴール・システム・コンサルティング株式会社
-                    <br />
-                    <span>小笠原剛、但田真紀</span>
-                  </p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className={styles.service_interview_content}>
-                <a
-                  href="https://note.com/sgms/n/nc218c6d07a22?magazine_key=m3633f7f797e5"
-                  target="_blank"
-                >
-                  <figure className={styles.logo}>
-                    <Image
-                      className={styles.img}
-                      src="/images/interview_uniba_logo.svg"
-                      alt="ユニバロゴ"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </figure>
-                  <figure className={styles.image}>
-                    <Image
-                      className={styles.img}
-                      src="/images/interview_uniba.png"
-                      alt="ユニバ画像"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </figure>
-                  <h3 className={styles.caption}>
-                    「定例ミーティング」を軸として、
-                    <br />
-                    プロジェクトの進行を円滑にする
-                  </h3>
-                  <p className={styles.footnote}>
-                    ユニバ株式会社
-                    <br />
-                    <span>安井貴啓、河合伶</span>
-                  </p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className={styles.service_interview_content}>
-                <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
-                  <figure className={styles.logo}>
-                    <Image
-                      className={styles.img}
-                      src="/images/interview_venect_logo.svg"
-                      alt="ヴェネクトロゴ"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </figure>
-                  <figure className={styles.image}>
-                    <Image
-                      className={styles.img}
-                      src="/images/interview_venect.png"
-                      alt="ヴェネクト画像"
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </figure>
-                  <h3 className={styles.caption}>
-                    会議は「事前に設計」するもの。
-                    <br />
-                    可視化がプロジェクトの進行を加速させる
-                  </h3>
-                  <p className={styles.footnote}>
-                    ヴェネクト株式会社
-                    <br />
-                    <span>牟田和貴、加藤智司</span>
-                  </p>
-                </a>
-              </SwiperSlide>
+                  <Link href={`/works/${encodeURIComponent(work.slug)}`}>
+                    {work.logo && (
+                      <figure className={styles.logo}>
+                        <Image
+                          src={work.logo}
+                          alt={work.companyName + "ロゴ"}
+                          layout="fill"
+                          objectFit="contain"
+                        />
+                      </figure>
+                    )}
+                    <figure className={styles.image}>
+                      <Image
+                        className={styles.img}
+                        src={work.thumbnail}
+                        alt={work.companyName + "活用事例"}
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </figure>
+                    <h3 className={styles.caption}>{work.title}</h3>
+                    <p className={styles.companyName}>{work.companyName}</p>
+                    <p className={styles.members}>{work.members}</p>
+                  </Link>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
 
@@ -734,7 +634,16 @@ export default function Home({
 export async function getStaticProps() {
   const allNews = getAllNews(["slug", "title", "date"]);
   const allReleaseNotes = getAllReleaseNotes(["slug", "title", "date"]);
+  const allWorks = getAllWorks([
+    "slug",
+    "title",
+    "date",
+    "thumbnail",
+    "companyName",
+    "members",
+    "logo",
+  ]);
   return {
-    props: { allNews, allReleaseNotes },
+    props: { allNews, allReleaseNotes, allWorks },
   };
 }
