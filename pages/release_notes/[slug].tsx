@@ -16,14 +16,6 @@ export default function Post({ post }: any) {
           <div className={styles.post_wrapper}>
             <h1>リリースノート</h1>
             <div className={styles.post_inner}>
-              {/* {post.docs && (
-                <ul className={styles.post_docs}>
-                  <span className={styles.post_docs_title}>目次</span>
-                  {post.docs.map((doc: any, index: any) => (
-                    <li key={index}>{doc}</li>
-                  ))}
-                </ul>
-              )} */}
               <p>{post.date}</p>
               <h2 className={styles.post_title}>{post.title}</h2>
               <div
