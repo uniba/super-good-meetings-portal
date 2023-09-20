@@ -40,11 +40,6 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/works" id="ga_posts_footer">
-                活用事例
-              </Link>
-            </li>
-            <li>
               <Link
                 href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform"
                 id="ga_contact_footer"
@@ -57,7 +52,7 @@ const Footer = () => {
           </ul>
           <ul>
             <li>
-              <Link href="/#interview" id="ga_interview_footer">
+              <Link href="/works" id="ga_interview_footer">
                 活用事例
               </Link>
             </li>
