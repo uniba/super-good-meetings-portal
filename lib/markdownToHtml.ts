@@ -8,7 +8,6 @@ import styles from "../pages/styles/news_single.module.scss";
 
 const createNodeTree = (docsArr: Array<string>, parent: any) => {
   docsArr.forEach((doc) => {
-    console.log(doc, typeof doc);
     if (typeof doc === "string") {
       const li = getLIElement(doc);
       const a = getATextElement(doc);
@@ -109,7 +108,6 @@ const insertId = () => {
           node.tagName === "h4") &&
         node.children[0].type === "text"
       ) {
-        console.log("node", node);
         node.properties = {
           id: node.children[0].value,
         };
@@ -127,7 +125,6 @@ export default async function markdownToHtml<MarkdownToHtmlArgs>(
   markdown: string,
   docsArr = []
 ) {
-  console.log(JSON.stringify(docsArr, null, 2));
   const result = await unified()
     .use(remarkParse as unknown as Plugin) // マークダウン → mdast
     .use(remarkRehype as unknown as Plugin) // mdast → hast
