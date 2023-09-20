@@ -24,7 +24,7 @@ export default function Posts({ allReleaseNotes }: any) {
           <div className={styles.posts_content}>
             <h1>リリースノート</h1>
             <div>
-              {posts.map((post: any, i: any) => (
+              {posts.map((post: any, i: number) => (
                 <div key={i}>
                   <p className={styles.posts_item}>
                     <span>{post.date}</span>
