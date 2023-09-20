@@ -14,6 +14,7 @@ export default function Posts({ allReleaseNotes }: any) {
   const currentPage = pageQuery ? parseInt(pageQuery, 10) : 1;
   const pages = chunk(allReleaseNotes, 10);
   const posts = pages[currentPage - 1] || [];
+
   return (
     <>
       <Head>
@@ -27,7 +28,8 @@ export default function Posts({ allReleaseNotes }: any) {
               {posts.map((post: any, i: number) => (
                 <div key={i}>
                   <p className={styles.posts_item}>
-                    <span>{post.date}</span>
+                    <span className={styles.posts_date}>{post.date}</span>
+                    {getIconFromCategory(post.category)}
                     <Link
                       href={`/release_notes/${encodeURIComponent(post.slug)}`}
                       legacyBehavior
@@ -63,8 +65,26 @@ export default function Posts({ allReleaseNotes }: any) {
 }
 
 export async function getStaticProps() {
-  const allReleaseNotes = getAllReleaseNotes(["slug", "title", "date"]);
+  const allReleaseNotes = getAllReleaseNotes([
+    "slug",
+    "title",
+    "date",
+    "category",
+  ]);
   return {
     props: { allReleaseNotes },
   };
 }
+
+const getIconFromCategory = (category: string) => {
+  switch (category) {
+    case "更新":
+      return <span className={styles.posts_icon}>✨</span>;
+    case "修正":
+      return <span className={styles.posts_icon}>🐛</span>;
+    case "リリース":
+      return <span className={styles.posts_icon}>🎉</span>;
+    default:
+      return null;
+  }
+};
