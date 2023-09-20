@@ -24,12 +24,13 @@
     justify-content: space-between;
     &_text {
       margin-right: 24px;
+      width: calc(100% - 336px);
       span {
         display: inline-block;
         background: $paleBlue;
         padding: 0 16px;
         height: 30px;
-        margin-right: 24px;
+        margin-bottom: 8px;
         @include font-size("label-pc-medium");
       }
       a {
@@ -37,6 +38,9 @@
         display: block;
         text-decoration: none;
         @include font-size("h3-pc");
+      }
+      .companyName {
+        margin: 8px 0 0;
       }
     }
     &_image {
@@ -83,11 +87,12 @@
     }
 
     .works_item {
-      margin: 0 0 32px;
+      margin: 0 0 40px;
       flex-direction: column-reverse;
       &_text {
         margin-top: 8px;
         margin-right: 0;
+        width: 100%;
         span {
           display: none;
         }
@@ -107,7 +112,7 @@
 
     .pager {
       @include font-size("h3-sp");
-      margin-top: 84px;
+      margin-top: 48px;
     }
   }
 }

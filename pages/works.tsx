@@ -36,12 +36,13 @@ export default function Posts({ allWorks }: any) {
                       >
                         {post.title}
                       </Link>
+                      <p className={styles.companyName}>{post.companyName}</p>
                     </div>
                     <div className={styles.works_item_image}>
-                      {post.image && (
+                      {post.thumbnail && (
                         <Image
                           className={styles.img}
-                          src={post.image}
+                          src={post.thumbnail}
                           alt={post.title}
                           layout="fill"
                           objectFit="contain"
@@ -78,7 +79,13 @@ export default function Posts({ allWorks }: any) {
 }
 
 export async function getStaticProps() {
-  const allWorks = getAllWorks(["slug", "title", "date", "image"]);
+  const allWorks = getAllWorks([
+    "slug",
+    "title",
+    "date",
+    "thumbnail",
+    "companyName",
+  ]);
   return {
     props: { allWorks },
   };
