@@ -418,11 +418,16 @@
       &:nth-child(9n + 9) {
         background: $violet;
       }
-
       .logo {
-        line-height: 30px;
-        margin: 0;
-        width: 120px;
+        line-height: 34px;
+        height: 34px;
+        margin: 0 0 16px;
+        width: 100%;
+
+        & img {
+          position: relative !important;
+          width: auto !important;
+        }
       }
       figure {
         margin: 0;
@@ -430,6 +435,8 @@
       .image {
         width: 100%;
         margin-bottom: 16px;
+        border-radius: 8px;
+        overflow: hidden;
       }
       .caption {
         @include font-size("h3-pc");

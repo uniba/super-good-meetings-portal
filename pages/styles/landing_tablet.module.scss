@@ -184,12 +184,12 @@
     //活用事例
     .service_interview {
       width: auto;
-      margin: 0px 0 64px 24px;
+      margin: 0px 0 50px 24px;
       .swiper_container {
         padding: 0;
       }
       a {
-        padding: 40px 24px 58px 24px;
+        padding: 40px 18px 24px;
       }
       &_title {
         @include font-size("h2-sp");
@@ -200,21 +200,20 @@
         box-sizing: border-box;
         .logo {
           text-align: center;
-          img {
-            width: 132px;
-          }
-        }
-        .image {
-          margin: 32px auto 32px;
+          margin-bottom: 24px;
+          height: 24px;
+          line-height: 24px;
         }
         .caption {
           @include font-size("h2-sp");
+          margin: 0 0 40px;
         }
-        .footnote {
+        .companyName {
           @include font-size("body-sp-bold");
-          span {
-            @include font-size("body-sp-bold");
-          }
+          margin: 0 0 8px;
+        }
+        .members {
+          @include font-size("body-sp-bold");
         }
       }
     }
