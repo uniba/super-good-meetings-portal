@@ -45,6 +45,15 @@ const Header = () => {
               お知らせ
             </Link>
           </li>
+          <li className={styles.button}>
+            <Link
+              href="https://sites.google.com/copilot.jp/support-sgms/"
+              target="_blank"
+              id="ga_contact_header"
+            >
+              操作ガイド
+            </Link>
+          </li>
           <li className={styles.login_button}>
             <Link href="https://sgms.app/login" id="ga_login_header">
               ログイン
@@ -114,6 +123,15 @@ const Header = () => {
           <li onClick={() => setIsOpen(false)}>
             <Link href="/news" id="ga_contact_header">
               お知らせ
+            </Link>
+          </li>
+          <li onClick={() => setIsOpen(false)}>
+            <Link
+              href="https://sites.google.com/copilot.jp/support-sgms/"
+              id="ga_contact_header"
+              target="_blank"
+            >
+              操作ガイド
             </Link>
           </li>
         </ul>
