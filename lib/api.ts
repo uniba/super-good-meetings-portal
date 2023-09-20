@@ -26,15 +26,17 @@ export function getBySlug(
 
   const items: { [key: string]: any } = {};
 
+  // 画像取得
   if (directory === DIRECTORIES.works) {
     const imageRegexp = /!\[.*?\]\((.*?)\)/;
 
     const matchImage = content.match(imageRegexp);
     if (matchImage && matchImage[1]) {
-      items["image"] = matchImage[1];
+      items["thumbnail"] = matchImage[1];
     }
   }
 
+  // 目次配列取得
   if (
     directory === DIRECTORIES.releaseNotes ||
     directory === DIRECTORIES.works
