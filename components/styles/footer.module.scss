@@ -3,7 +3,7 @@
 .footer {
   color: $white;
   background: $blue;
-  padding: 56px 130px 80px 130px;
+  padding: 56px 130px 64px;
 
   .footer_inner {
     display: flex;
@@ -15,11 +15,11 @@
     .footer_navigation {
       display: flex;
       margin-left: auto;
-      margin-bottom: 48px;
-      @include font-size("label-pc-bold");
+      margin-bottom: 4px;
+      @include font-size("caption-pc-bold");
 
       ul {
-        margin-left: 56px;
+        margin-left: 68px;
 
         a {
           color: $white;
@@ -55,12 +55,13 @@
     padding: 48px 40px 48px 40px;
 
     .footer_inner {
-      flex-direction: column;
+      flex-direction: column-reverse;
 
       h1 {
         order: 2;
         margin: 0;
-        width: 240px;
+        width: 100%;
+        max-width: 315px;
 
         img {
           margin-bottom: 24px;
@@ -70,16 +71,17 @@
       .footer_navigation {
         display: block;
         margin-left: 0;
+        margin-bottom: 32px;
 
         ul {
           margin-left: 0;
-          margin-bottom: 24px;
+          margin-bottom: 32px;
         }
       }
     }
 
     address {
-      @include font-size("caption-sp");
+      @include font-size("caption-pc-bold");
 
       .sp {
         display: block;
