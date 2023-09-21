@@ -13,7 +13,7 @@
 
     h1 {
       margin: 0 0 54px;
-      @include font-size("h1-pc");
+      @include font-size("heading-pc");
     }
   }
 
@@ -22,16 +22,18 @@
     display: flex;
     align-items: flex-start;
     .posts_date {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       background: $paleBlue;
       padding: 0 16px;
       height: 30px;
       margin-right: 24px;
-      @include font-size("label-pc-medium");
+      @include font-size("caption-pc-bold");
     }
     .posts_icon {
-      @include font-size("h3-pc");
+      @include font-size("h4-pc");
       margin-right: 8px;
+      margin-top: 2px;
     }
     a {
       color: $black;
@@ -64,15 +66,17 @@
 
       h1 {
         margin: 0 0 24px 0;
-        @include font-size("h1-sp");
+        @include font-size("heading-sp");
       }
     }
 
     .posts_item {
       margin: 0 0 32px;
-      display: block;
+      flex-flow: column;
       .posts_date {
-        @include font-size("body-sp-medium");
+        @include font-size("label-sp-bold");
+        height: 25px;
+        padding: 0 12px;
         margin-right: 0;
         margin-bottom: 8px;
       }

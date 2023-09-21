@@ -27,7 +27,7 @@ export default function Posts({ allNews }: any) {
               {posts.map((post: any, i: any) => (
                 <div key={i}>
                   <p className={styles.posts_item}>
-                    <span>{post.date}</span>
+                    <span className={styles.posts_date}>{post.date}</span>
                     <Link
                       href={`/news/${encodeURIComponent(post.slug)}`}
                       legacyBehavior
