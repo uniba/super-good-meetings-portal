@@ -12,8 +12,8 @@
     margin: 0 auto;
 
     h1 {
-      margin: 0 0 54px;
-      @include font-size("h1-pc");
+      margin: 0 0 32px;
+      @include font-size("heading-pc");
     }
   }
 
@@ -22,25 +22,36 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    &_date {
+      display: inline-flex;
+      align-items: center;
+      background: $paleBlue;
+      padding: 0 12px;
+      height: 30px;
+      margin-bottom: 8px;
+      @include font-size("caption-pc-bold");
+    }
+    &_date_sp {
+      display: none;
+      background: $paleBlue;
+      padding: 0 12px;
+      height: 25px;
+      @include font-size("label-sp-bold");
+      margin-bottom: 8px;
+    }
     &_text {
       margin-right: 24px;
       width: calc(100% - 336px);
-      span {
-        display: inline-block;
-        background: $paleBlue;
-        padding: 0 16px;
-        height: 30px;
-        margin-bottom: 8px;
-        @include font-size("label-pc-medium");
-      }
       a {
         color: $black;
         display: block;
         text-decoration: none;
-        @include font-size("h3-pc");
+        @include font-size("h4-pc");
+        margin-bottom: 8px;
       }
       .companyName {
-        margin: 8px 0 0;
+        margin: 0;
+        @include font-size("label-pc");
       }
     }
     &_image {
@@ -48,13 +59,6 @@
       width: 336px;
       border-radius: 8px;
       overflow: hidden;
-    }
-    &_date {
-      display: none;
-      background: $paleBlue;
-      padding: 0 12px;
-      height: 25px;
-      @include font-size("label-pc-medium");
     }
   }
 
@@ -75,38 +79,41 @@
 
 @media screen and (max-width: 1000px) {
   .works_container {
-    padding: 40px 16px 64px 16px;
+    padding: 48px 16px 64px;
 
     .works_content {
       max-width: 100%;
 
       h1 {
         margin: 0 0 24px 0;
-        @include font-size("h1-sp");
+        @include font-size("heading-sp");
       }
     }
 
     .works_item {
       margin: 0 0 40px;
       flex-direction: column-reverse;
+      &_date {
+        display: none;
+      }
+      &_date_sp {
+        display: inline-flex;
+        align-items: center;
+      }
       &_text {
-        margin-top: 8px;
         margin-right: 0;
         width: 100%;
-        span {
-          display: none;
-        }
         a {
-          @include font-size("h3-sp");
+          @include font-size("h4-sp");
           display: block;
+        }
+        .companyName {
+          @include font-size("label-sp");
         }
       }
       &_image {
-        margin-top: 8px;
         width: 100%;
-      }
-      &_date {
-        display: block;
+        margin-bottom: 8px;
       }
     }
 

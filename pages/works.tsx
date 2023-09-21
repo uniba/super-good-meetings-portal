@@ -29,7 +29,9 @@ export default function Posts({ allWorks }: any) {
                 <div key={i}>
                   <div className={styles.works_item}>
                     <div className={styles.works_item_text}>
-                      <span>{post.date}</span>
+                      <span className={styles.works_item_date}>
+                        {post.date}
+                      </span>
                       <Link
                         href={`/works/${encodeURIComponent(post.slug)}`}
                         legacyBehavior
@@ -49,7 +51,9 @@ export default function Posts({ allWorks }: any) {
                         ></Image>
                       )}{" "}
                     </div>
-                    <span className={styles.works_item_date}>{post.date}</span>
+                    <span className={styles.works_item_date_sp}>
+                      {post.date}
+                    </span>
                   </div>
                 </div>
               ))}
