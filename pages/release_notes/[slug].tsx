@@ -16,7 +16,7 @@ export default function Post({ post }: any) {
           <div className={styles.post_wrapper}>
             <h1>リリースノート</h1>
             <div className={styles.post_inner}>
-              <p>{post.date}</p>
+              <p className={styles.post_date}>{post.date}</p>
               <h2 className={styles.post_title}>{post.title}</h2>
               <div
                 className={styles.post_content}
@@ -25,7 +25,7 @@ export default function Post({ post }: any) {
             </div>
           </div>
           <div className={styles.post_all}>
-            <Link href="/release_notes">リリースノート一覧</Link>
+            <Link href="/release_notes">リリースノート一覧へ</Link>
           </div>
         </div>
       </Layout>

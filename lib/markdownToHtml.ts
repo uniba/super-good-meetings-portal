@@ -50,7 +50,7 @@ const getTocsElement = () => {
     children: [
       {
         type: "element",
-        tagName: "h2",
+        tagName: "span",
         properties: {
           className: styles.post_docs_title,
         },

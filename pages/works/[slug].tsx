@@ -25,7 +25,7 @@ export default function Post({ post }: any) {
             </div>
           </div>
           <div className={styles.post_all}>
-            <Link href="/works">活用事例一覧</Link>
+            <Link href="/works">活用事例一覧へ</Link>
           </div>
         </div>
       </Layout>
