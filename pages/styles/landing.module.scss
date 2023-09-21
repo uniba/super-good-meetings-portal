@@ -31,8 +31,7 @@
     @media screen and (max-width: 1000px) {
       @include font-size("h2-sp");
       width: 100%;
-      max-width: 248px;
-      line-height: 40px;
+      max-width: 168px;
     }
   }
 
@@ -101,7 +100,7 @@
 
     @media screen and (max-width: 1000px) {
       width: 100%;
-      max-width: 272px;
+      height: 54px;
       a {
         @include font-size("h3-sp");
         line-height: 54px;
@@ -886,8 +885,18 @@
   background: #018eff;
 }
 
+// 矢印アイコン共通スタイル
 .arrow {
   margin: 0 auto 50px;
   text-align: center;
   width: 100px;
+}
+
+// SP時のみ改行
+.sp_br {
+  display: none;
+
+  @media screen and (max-width: 1000px) {
+    display: block;
+  }
 }

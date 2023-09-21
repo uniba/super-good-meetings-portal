@@ -62,12 +62,16 @@ export default function Home({
               プロジェクトが変わる。
             </h1>
             <p>
-              定例会議を活用したプロジェクト推進を実現する
+              定例ミーティングを活用した
               <br />
-              クラウドサービス
+              プロジェクト推進を実現するクラウドサービス
             </p>
             <div className={styles.service_hero_area_button}>
-              <span>まずは1プロジェクト(無料)からお試しいただけます</span>
+              <span>
+                まずは1プロジェクト(無料)から
+                <br className={styles.sp_br} />
+                お試しいただけます
+              </span>
               <div className={styles.filledButton} role="button">
                 <a href="https://sgms.app/signup" id="ga_signup_body">
                   無料で始める
@@ -155,7 +159,9 @@ export default function Home({
               />
             </figure>
             <div className={styles.service_effect}>
-              <h2>SuperGoodMeetingsの活用で期待できる変化</h2>
+              <h2>
+                SuperGoodMeetingsの<span>活用で期待できる変化</span>
+              </h2>
               <ul className={styles.service_effect_items}>
                 <li>
                   <figure>
@@ -215,7 +221,9 @@ export default function Home({
                     objectFit="contain"
                   />
                 </figure>
-                一人ひとりのメンバーが自律的に動きやすくなる
+                一人ひとりのメンバーが
+                <br className={styles.sp_br} />
+                自律的に動きやすくなる
               </div>
             </div>
           </div>
@@ -293,7 +301,10 @@ export default function Home({
 
             <div className={styles.service_start}>
               <div className={styles.service_start_content}>
-                <h2>まずは1プロジェクト （ 無料 ）からお試しいただけます</h2>
+                <h2>
+                  まずは1プロジェクト （ 無料 ）
+                  <span>からお試しいただけます</span>
+                </h2>
                 <p>
                   新しい手法を取り入れるには、いろいろとハードルもあるでしょう。
                   <br />
