@@ -297,7 +297,9 @@ export default function Home({
                 <p>
                   新しい手法を取り入れるには、いろいろとハードルもあるでしょう。
                   <br />
-                  はじめはみなさんの身近にある、ごく小さなプロジェクトからでも、まずは3ヶ月、SuperGoodMeetingsを使ってみませんか？きっと成果を感じていただけるはずです。
+                  はじめはみなさんの身近にある、ごく小さなプロジェクトからでも、
+                  <br />
+                  まずは3ヶ月、SuperGoodMeetingsを使ってみませんか？きっと成果を感じていただけるはずです。
                 </p>
                 <div className={styles.filledButton} role="button">
                   <a href="https://sgms.app/signup" id="ga_signup_body">
@@ -384,7 +386,7 @@ export default function Home({
               breakpoints={{
                 1000: {
                   slidesPerView: 3,
-                  spaceBetween: 50,
+                  spaceBetween: 40,
                   width: 1208,
                 },
               }}
@@ -416,8 +418,10 @@ export default function Home({
                       />
                     </figure>
                     <h3 className={styles.caption}>{work.title}</h3>
-                    <p className={styles.companyName}>{work.companyName}</p>
-                    <p className={styles.members}>{work.members}</p>
+                    <div className={styles.companyInfo}>
+                      <p className={styles.companyName}>{work.companyName}</p>
+                      <p className={styles.members}>{work.members}</p>
+                    </div>
                   </Link>
                 </SwiperSlide>
               ))}
