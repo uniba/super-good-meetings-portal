@@ -59,13 +59,13 @@ $ENGtypo: "Open Sans";
   } @else if $size == "label-pc" {
     font-style: normal;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 100%;
     letter-spacing: normal;
   } @else if $size == "label-pc-bold" {
     font-style: normal;
     font-size: 13px;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 100%;
     letter-spacing: normal;
   } @else if $size == "heading-sp" {
@@ -113,13 +113,13 @@ $ENGtypo: "Open Sans";
   } @else if $size == "caption-sp" {
     font-style: normal;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 160%;
     letter-spacing: normal;
   } @else if $size == "caption-sp-bold" {
     font-style: normal;
     font-size: 14px;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 160%;
     letter-spacing: normal;
   } @else if $size == "label-sp" {
