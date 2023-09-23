@@ -21,14 +21,15 @@
 
   .plan_title {
     margin: 0 0 24px 0;
-    @include font-size("h1-pc");
+    @include font-size("heading-pc");
   }
 
   .plan_caption {
-    @include font-size("label-pc-bold");
+    @include font-size("body-sp-bold");
+    line-height: 150%;
     margin: 0 auto 40px;
     span {
-      @include font-size("label-pc-medium");
+      @include font-size("body-sp");
       color: $secondary;
       display: block;
     }
@@ -43,7 +44,7 @@
     border: 5px solid $black;
 
     a {
-      @include font-size("body-pc");
+      @include font-size("body-pc-bold");
       color: $black;
       text-decoration: none;
       display: block;
@@ -76,8 +77,12 @@
 
   .caption {
     text-align: center;
-    @include font-size("label-pc-bold");
+    @include font-size("body-sp-bold");
     margin: 0 0 160px 0;
+  }
+
+  .question_title {
+    @include font-size("h1-sp");
   }
 
   .plan_list {
@@ -117,28 +122,32 @@
       h2 {
         text-align: center;
         margin: 0 0 8px 0;
-        @include font-size("h2-pc");
+        @include font-size("h1-pc");
       }
       .notice {
         color: $background;
         text-align: center;
-        margin-top: auto;
-        @include font-size("body-pc");
+        margin-top: 2em;
+        @include font-size("body-pc-bold");
+        line-height: 150%;
       }
       .text {
         margin: 0;
         height: 104px;
-        @include font-size("label-pc-bold");
+        @include font-size("body-sp-bold");
+        line-height: 150%;
       }
       .price {
-        @include font-size("h3-pc");
+        @include font-size("h1-sp");
         text-align: center;
+        flex-grow: 1;
         .large {
           @include font-size("h2-pc");
         }
         .branket {
           display: block;
-          @include font-size("body-pc");
+          @include font-size("body-pc-bold");
+          line-height: 150%;
         }
       }
     }
@@ -153,13 +162,15 @@
 
     h2 {
       margin-bottom: 24px;
+      @include font-size("h1-sp");
     }
     .features_list {
       margin: auto;
       display: flex;
       flex-wrap: wrap;
       text-align: left;
-      @include font-size("label-pc-bold");
+      @include font-size("body-sp-bold");
+      line-height: 150%;
       li {
         width: 50%;
         list-style: disc;
@@ -173,7 +184,7 @@
   }
 
   .accordion__button {
-    @include font-size("h3-pc");
+    @include font-size("h1-sp");
     position: relative;
     cursor: pointer;
     padding: 32px 36px;
@@ -221,9 +232,11 @@
     animation: fadein 0.35s ease-in;
     p {
       margin: 0;
+      @include font-size("body-pc-bold");
+      line-height: 150%;
     }
     &:after {
-      @include font-size("h3-pc");
+      @include font-size("h1-sp");
       position: absolute;
       font-family: $ENGtypo;
       content: "A";
@@ -238,13 +251,13 @@
   .plan {
     padding: 40px 24px 120px 24px;
     .plan_title {
-      @include font-size("h1-sp");
+      @include font-size("heading-sp");
     }
     .plan_caption {
       margin: 0 auto 0;
-      @include font-size("body-sp-bold");
+      @include font-size("caption-sp-bold");
       span {
-        @include font-size("body-sp-medium");
+        @include font-size("caption-sp");
       }
     }
 
@@ -273,11 +286,12 @@
           @include font-size("h2-sp");
         }
         .notice {
-          @include font-size("body-sp-bold");
+          margin-top: auto;
+          @include font-size("caption-sp-bold");
         }
         .price {
           margin-bottom: 24px;
-          @include font-size("h3-sp");
+          @include font-size("h4-sp");
           .large {
             @include font-size("h2-sp");
           }
@@ -287,7 +301,7 @@
         }
         .text {
           height: auto;
-          @include font-size("body-sp-bold");
+          @include font-size("caption-sp-bold");
         }
       }
     }
@@ -295,11 +309,11 @@
     .features {
       padding: 24px 16px;
       h2 {
-        @include font-size("h3-sp");
+        @include font-size("h4-sp");
         margin: 0 0 16px 0;
       }
       .features_list {
-        @include font-size("body-sp-bold");
+        @include font-size("caption-sp-bold");
         display: block;
         li {
           width: 100%;
@@ -309,21 +323,23 @@
     }
 
     .caption {
-      @include font-size("body-sp-bold");
+      @include font-size("caption-sp-bold");
     }
-    h2 {
-      @include font-size("h1-sp");
+    .question_title {
+      @include font-size("heading-sp");
     }
     .accordion__button {
       &::before {
         right: 0;
       }
-      @include font-size("h3-sp");
+      @include font-size("h4-sp");
     }
     .accordion__panel {
-      @include font-size("h3-sp");
+      p {
+        @include font-size("h4-sp");
+      }
       &::after {
-        @include font-size("h3-sp");
+        @include font-size("h4-sp");
       }
     }
   }

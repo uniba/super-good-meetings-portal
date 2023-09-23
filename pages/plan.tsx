@@ -121,7 +121,7 @@ export default function Plan() {
             プランの変更は「設定」の「プラン変更」メニューからできます。
           </p>
 
-          <h2>よくある質問</h2>
+          <h2 className={styles.question_title}>よくある質問</h2>
 
           <Accordion className={styles.accordion} allowZeroExpanded={true}>
             <AccordionItem className={styles.accordion__item}>
