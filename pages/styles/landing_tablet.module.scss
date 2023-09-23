@@ -281,15 +281,17 @@
         @include font-size("h3-sp");
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 100%;
+        max-width: 400px;
         box-sizing: border-box;
-        padding: 28px 24px;
+        padding: 28px 20px;
         border-radius: 20px;
         background: $sky;
 
         figure {
-          width: 74px;
-          margin: 0 24px 0 0;
+          width: 68px;
+          margin: 0 18px 0 0;
           img {
             width: 100%;
           }
