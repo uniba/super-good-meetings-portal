@@ -4,6 +4,7 @@ import Layout from "../../components/layout";
 import styles from "../styles/news_single.module.scss";
 import { getWorksBySlug, getAllWorks } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
+import Image from "next/image";
 
 export default function Post({ post }: any) {
   return (
@@ -22,6 +23,29 @@ export default function Post({ post }: any) {
                 className={styles.post_content}
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
+              <div className={styles.service_trial}>
+                <div className={styles.heading}>
+                  <div className={styles.image}>
+                    <Image
+                      src="/images/illust_trial.svg"
+                      alt="まずは1プロジェクト（無料）からお試しいただけます SGMs"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <h2>
+                    まずは1プロジェクト（無料）から
+                    <br />
+                    お試しいただけます
+                  </h2>
+                </div>
+                <p className={styles.text}>
+                  SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。
+                </p>
+                <div className={styles.filledButton} role="button">
+                  <a href="https://sgms.app/signup">無料で始める</a>
+                </div>
+              </div>
             </div>
           </div>
           <div className={styles.post_all}>
