@@ -66,8 +66,10 @@ export default function Post({ post, nextArticle }: any) {
               ) : null}
             </div>
           </div>
-          <div className={styles.post_all}>
-            <Link href="/works">活用事例一覧へ</Link>
+          <div>
+            <Link className={styles.post_all} href="/works">
+              活用事例一覧へ
+            </Link>
           </div>
         </div>
       </Layout>

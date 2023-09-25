@@ -27,6 +27,7 @@
       background: $paleBlue;
       padding: 0 16px;
       height: 30px;
+      margin-top: 2px;
       margin-right: 24px;
       @include font-size("caption-pc-bold");
     }
@@ -78,6 +79,7 @@
         height: 25px;
         padding: 0 12px;
         margin-right: 0;
+        margin-top: 0;
         margin-bottom: 8px;
       }
       .posts_icon {

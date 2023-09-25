@@ -54,12 +54,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    a {
-      color: $white;
-      text-decoration: none;
-      @include font-size("body-pc-bold");
-    }
+    color: $white;
+    text-decoration: none;
+    @include font-size("body-pc-bold");
   }
 
   //-----
@@ -85,7 +82,7 @@
   pre {
     text-wrap: wrap;
     @include font-size("caption-pc");
-    margin: 0 0 40px;
+    margin: -32px 0 40px;
     color: $secondary;
   }
 
@@ -292,10 +289,7 @@
       width: 100%;
       margin-top: 24px;
       height: 56px;
-
-      a {
-        @include font-size("h4-sp");
-      }
+      @include font-size("h4-sp");
     }
 
     h2 {

@@ -24,9 +24,9 @@ export default function Post({ post }: any) {
               />
             </div>
           </div>
-          <div className={styles.post_all}>
-            <Link href="/release_notes">リリースノート一覧へ</Link>
-          </div>
+          <Link className={styles.post_all} href="/release_notes">
+            リリースノート一覧へ
+          </Link>
         </div>
       </Layout>
     </>
