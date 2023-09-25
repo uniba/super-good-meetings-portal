@@ -1,7 +1,6 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { last } from "lodash";
 
 const DIRECTORIES = {
   posts: join(process.cwd(), "_posts"),
@@ -18,7 +17,7 @@ export function getBySlug(
   directory: string,
   slug: string,
   fields: string[] = []
-): { [key: string]: any } {
+) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(directory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -73,6 +72,10 @@ export function getBySlug(
     }
 
     items["docs"] = list[0];
+
+    if (typeof items["docs"] === "undefined") {
+      items["docs"] = null;
+    }
   }
 
   fields.forEach((field) => {
