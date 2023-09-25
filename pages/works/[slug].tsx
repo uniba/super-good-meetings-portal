@@ -13,7 +13,7 @@ export default function Post({ post, nextArticle }: any) {
         <title>{post.title} - SuperGoodMeetings</title>
       </Head>
       <Layout>
-        <div className={styles.post_container}>
+        <div className={`${styles.post_container} ${styles.works}`}>
           <div className={styles.post_wrapper}>
             <h1>活用事例</h1>
             <div className={styles.post_inner}>

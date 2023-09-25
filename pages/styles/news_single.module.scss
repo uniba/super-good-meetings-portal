@@ -7,6 +7,13 @@
   @include font-size("body-pc");
   padding: 48px 0px 80px;
 
+  &.works {
+    background-image: url("/images/works/background_works_pc.svg");
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+  }
+
   .post_wrapper {
     max-width: 840px;
     margin: 0 auto;
@@ -241,6 +248,10 @@
 @media screen and (max-width: 1000px) {
   .post_container {
     padding: 48px 16px;
+
+    &.works {
+      background-image: url("/images/works/background_works_sp.svg");
+    }
 
     .post_wrapper {
       h1 {
