@@ -82,7 +82,7 @@
 
     a {
       @include font-size("h3-pc");
-      background: $darkBlack;
+      background: $black;
       color: $white;
       text-decoration: none;
       display: block;
@@ -294,7 +294,7 @@
         z-index: 1;
         flex: 1;
         h2 {
-          @include font-size("h2-pc");
+          @include font-size("h1-pc");
           margin: 0 0 32px 0;
         }
         p {
@@ -333,7 +333,7 @@
       position: relative;
       z-index: 2;
       background: $white;
-      color: $darkBlack;
+      color: $black;
     }
     h2 {
       @include font-size("h1-pc");
@@ -745,7 +745,7 @@
     padding: 48px 42px;
     margin: 0 auto 100px;
     border-radius: 30px;
-    color: $darkBlack;
+    color: $black;
     background-color: $white;
 
     &_heading {
