@@ -282,11 +282,8 @@
 
       &_content {
         @include font-size("h3-sp");
-        display: flex;
-        align-items: center;
-        justify-content: center;
         width: 100%;
-        max-width: 400px;
+        max-width: 334px;
         box-sizing: border-box;
         padding: 28px 20px;
         border-radius: 20px;
