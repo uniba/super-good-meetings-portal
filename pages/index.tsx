@@ -87,12 +87,14 @@ export default function Home({
                 <ul className={styles.release_notes_items}>
                   {releaseNotes.map((post: any, i: number) => (
                     <li key={i}>
-                      <span>{post.date}</span>
                       <Link
                         href={`/release_notes/${encodeURIComponent(post.slug)}`}
                         legacyBehavior
                       >
-                        {post.title}
+                        <a>
+                          <span>{post.date}</span>
+                          {post.title}
+                        </a>
                       </Link>
                     </li>
                   ))}
@@ -328,12 +330,14 @@ export default function Home({
                 <ul className={styles.service_news_items}>
                   {news.map((post: any, i: number) => (
                     <li key={i}>
-                      <span>{post.date}</span>
                       <Link
                         href={`/news/${encodeURIComponent(post.slug)}`}
                         legacyBehavior
                       >
-                        {post.title}
+                        <a>
+                          <span>{post.date}</span>
+                          {post.title}
+                        </a>
                       </Link>
                     </li>
                   ))}

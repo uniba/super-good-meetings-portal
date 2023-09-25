@@ -453,12 +453,6 @@
         text-align: left;
         @include font-size("caption-sp-bold");
       }
-      &::before {
-        display: block;
-      }
-      &::after {
-        display: block;
-      }
       .filledButton {
         margin-top: 12px;
       }
