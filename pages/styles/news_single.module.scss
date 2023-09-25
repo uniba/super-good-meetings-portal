@@ -84,6 +84,9 @@
 
   pre {
     text-wrap: wrap;
+    @include font-size("caption-pc");
+    margin: 0 0 40px;
+    color: $secondary;
   }
 
   p {
