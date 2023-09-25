@@ -108,14 +108,14 @@
       margin: 0 24px;
 
       &::before {
-        top: 15%;
+        top: 16%;
         left: -80px;
         width: 140px;
         height: 140px;
       }
       &::after {
-        top: 50%;
-        right: -120px;
+        top: 40%;
+        right: -126px;
         width: 140px;
         height: 140px;
       }
@@ -163,6 +163,9 @@
           p {
             @include font-size("body-sp");
           }
+        }
+        &::before {
+          display: block;
         }
       }
     }
@@ -360,6 +363,12 @@
           font-style: oblique;
         }
       }
+      &::after {
+        display: none;
+      }
+      &::before {
+        display: none;
+      }
     }
 
     //メディア掲載
@@ -447,17 +456,11 @@
         text-align: left;
         @include font-size("caption-sp-bold");
       }
-      &::after {
-        top: -60px;
-        right: -60px;
-        width: 140px;
-        height: 140px;
-      }
       &::before {
-        top: 200px;
-        left: -60px;
-        width: 140px;
-        height: 140px;
+        display: block;
+      }
+      &::after {
+        display: block;
       }
       .filledButton {
         margin-top: 12px;
