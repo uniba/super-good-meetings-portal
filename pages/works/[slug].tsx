@@ -6,7 +6,7 @@ import { getWorksBySlug, getAllWorks } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 import Image from "next/image";
 
-export default function Post({ post }: any) {
+export default function Post({ post, nextArticle }: any) {
   return (
     <>
       <Head>
@@ -46,6 +46,24 @@ export default function Post({ post }: any) {
                   <a href="https://sgms.app/signup">無料で始める</a>
                 </div>
               </div>
+              {nextArticle ? (
+                <Link href={nextArticle.slug} className={styles.next_article}>
+                  <span className={styles.next_article_top}>NEXT ARTICLE</span>
+                  <div className={styles.next_article_content}>
+                    <h3 className={styles.next_article_title}>
+                      {nextArticle.title}
+                    </h3>
+                    <div className={styles.next_article_image}>
+                      <Image
+                        src={nextArticle.thumbnail}
+                        alt={nextArticle.title}
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </div>
+                  </div>
+                </Link>
+              ) : null}
             </div>
           </div>
           <div className={styles.post_all}>
@@ -66,12 +84,28 @@ export async function getStaticProps({ params }: any) {
   ]);
   const content = await markdownToHtml(post.content || "", post.docs);
 
+  const allPosts = getAllWorks(["slug", "title", "thumbnail"]);
+  let nextArticle: any;
+
+  if (allPosts.length > 1) {
+    const currentPostIndex = allPosts.findIndex(
+      (post) => post.slug === params.slug
+    );
+
+    nextArticle = allPosts[currentPostIndex + 1];
+
+    if (!nextArticle) {
+      nextArticle = allPosts[currentPostIndex - 1];
+    }
+  }
+
   return {
     props: {
       post: {
         ...post,
         content,
       },
+      nextArticle: nextArticle ? { ...nextArticle } : null,
     },
   };
 }

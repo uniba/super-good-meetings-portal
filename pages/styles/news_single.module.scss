@@ -197,6 +197,43 @@
   }
 }
 
+.next_article {
+  margin-top: 78px;
+  text-decoration: none;
+  display: block;
+
+  &_top {
+    border-bottom: 1px solid $sky;
+    @include font-size("caption-pc-bold");
+    color: $sky;
+    display: block;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+
+  &_content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &_title {
+    @include font-size("h4-pc");
+    margin-right: 24px;
+    width: calc(100% - 264px);
+    color: $black;
+  }
+
+  &_image {
+    width: 264px;
+    height: auto;
+
+    & img {
+      position: relative !important;
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .post_container {
     padding: 48px 16px;
@@ -293,6 +330,29 @@
 
     .filledButton {
       padding: 0 34px;
+    }
+  }
+
+  .next_article {
+    margin-top: 40px;
+
+    &_top {
+      @include font-size("caption-sp-bold");
+    }
+
+    &_content {
+      display: block;
+    }
+
+    &_title {
+      width: 100%;
+      @include font-size("h4-sp");
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+
+    &_image {
+      width: 100%;
     }
   }
 }
