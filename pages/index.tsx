@@ -398,7 +398,7 @@ export default function Home({
                 1000: {
                   slidesPerView: 3,
                   spaceBetween: 40,
-                  width: 1208,
+                  width: 1138,
                 },
               }}
               className={styles.swiper_container}
