@@ -25,11 +25,8 @@
   }
 
   .plan_caption {
-    @include font-size("body-sp-bold");
-    line-height: 150%;
     margin: 0 auto 40px;
     span {
-      @include font-size("body-sp");
       color: $secondary;
       display: block;
     }
@@ -44,7 +41,7 @@
     border: 5px solid $black;
 
     a {
-      @include font-size("body-pc-bold");
+      @include font-size("h4-pc");
       color: $black;
       text-decoration: none;
       display: block;
@@ -69,7 +66,7 @@
       width: 100%;
       max-width: 248px;
       a {
-        @include font-size("h3-sp");
+        @include font-size("h4-sp");
         line-height: 40px;
       }
     }
@@ -77,7 +74,6 @@
 
   .caption {
     text-align: center;
-    @include font-size("body-sp-bold");
     margin: 0 0 160px 0;
   }
 
@@ -125,29 +121,25 @@
         @include font-size("h1-pc");
       }
       .notice {
+        @include font-size("h4-pc");
         color: $background;
         text-align: center;
         margin-top: 2em;
-        @include font-size("body-pc-bold");
-        line-height: 150%;
       }
       .text {
         margin: 0;
         height: 104px;
-        @include font-size("body-sp-bold");
-        line-height: 150%;
       }
       .price {
         @include font-size("h1-sp");
         text-align: center;
         flex-grow: 1;
         .large {
-          @include font-size("h2-pc");
+          @include font-size("h1-pc");
         }
         .branket {
           display: block;
-          @include font-size("body-pc-bold");
-          line-height: 150%;
+          @include font-size("h4-pc");
         }
       }
     }
@@ -161,7 +153,7 @@
     text-align: center;
 
     h2 {
-      margin-bottom: 24px;
+      margin: 0 0 24px;
       @include font-size("h1-sp");
     }
     .features_list {
@@ -169,8 +161,6 @@
       display: flex;
       flex-wrap: wrap;
       text-align: left;
-      @include font-size("body-sp-bold");
-      line-height: 150%;
       li {
         width: 50%;
         list-style: disc;
@@ -255,9 +245,11 @@
     }
     .plan_caption {
       margin: 0 auto 0;
-      @include font-size("caption-sp-bold");
+      @include font-size("label-pc-bold");
+      line-height: 150%;
       span {
-        @include font-size("caption-sp");
+        @include font-size("label-pc");
+        line-height: 150%;
       }
     }
 
@@ -286,8 +278,9 @@
           @include font-size("h2-sp");
         }
         .notice {
+          @include font-size("label-pc-bold");
+          line-height: 150%;
           margin-top: auto;
-          @include font-size("caption-sp-bold");
         }
         .price {
           margin-bottom: 24px;
@@ -296,12 +289,11 @@
             @include font-size("h2-sp");
           }
           .branket {
-            @include font-size("h3-sp");
+            @include font-size("h4-sp");
           }
         }
         .text {
           height: auto;
-          @include font-size("caption-sp-bold");
         }
       }
     }
@@ -313,17 +305,12 @@
         margin: 0 0 16px 0;
       }
       .features_list {
-        @include font-size("caption-sp-bold");
         display: block;
         li {
           width: 100%;
           list-style: inside;
         }
       }
-    }
-
-    .caption {
-      @include font-size("caption-sp-bold");
     }
     .question_title {
       @include font-size("heading-sp");
@@ -341,6 +328,27 @@
       &::after {
         @include font-size("h4-sp");
       }
+    }
+  }
+}
+
+// 本文スタイル pc:16px, sp:13px
+.body_text {
+  @include font-size("body-sp");
+  line-height: 150%;
+
+  &_bold {
+    @include font-size("body-sp-bold");
+    line-height: 150%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    @include font-size("label-pc");
+    line-height: 150%;
+
+    &_bold {
+      @include font-size("label-pc-bold");
+      line-height: 150%;
     }
   }
 }

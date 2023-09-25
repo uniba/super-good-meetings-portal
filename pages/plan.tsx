@@ -20,9 +20,9 @@ export default function Plan() {
       <Layout>
         <div className={styles.plan}>
           <h1 className={styles.plan_title}>プランと料金</h1>
-          <p className={styles.plan_caption}>
+          <p className={`${styles.plan_caption} ${styles.body_text_bold}`}>
             SuperGoodMeetingsはユーザーがオーナー権限を持つアクティブなプロジェクトの数*に応じた料金プランを用意しております。
-            <span>
+            <span className={styles.body_text}>
               *別のユーザーに招待されたプロジェクトやアーカイブ済みのプロジェクトは含みません
             </span>
           </p>
@@ -46,7 +46,7 @@ export default function Plan() {
                 <br />
                 招待可能ユーザー数　無制限
               </p>
-              <dl className={styles.text}>
+              <dl className={`${styles.text} ${styles.body_text_bold}`}>
                 まずは SuperGoodMeetings を試したい方向け
               </dl>
             </li>
@@ -70,7 +70,7 @@ export default function Plan() {
                 <br />
                 招待可能ユーザー数　無制限
               </p>
-              <dl className={styles.text}>
+              <dl className={`${styles.text} ${styles.body_text_bold}`}>
                 複数プロジェクトを抱える個人やスタートアップの方向け
               </dl>
             </li>
@@ -94,7 +94,7 @@ export default function Plan() {
                 <br />
                 招待可能ユーザー数　無制限
               </p>
-              <dl className={styles.text}>
+              <dl className={`${styles.text} ${styles.body_text_bold}`}>
                 複数案件を抱えているコンサルファーム、制作会社や、多数のチームを抱える大企業など、より大規模な導入を検討されている方向け
               </dl>
             </li>
@@ -102,7 +102,7 @@ export default function Plan() {
 
           <div className={styles.features}>
             <h2>ご利用いただける機能</h2>
-            <ul className={styles.features_list}>
+            <ul className={`${styles.features_list} ${styles.body_text_bold}`}>
               <li>プロジェクト作成（アーカイブ可能）</li>
               <li>ミーティングにおけるアジェンダ作成・管理</li>
               <li>プロジェクトにおけるマイルストーン作成・管理</li>
@@ -117,7 +117,7 @@ export default function Plan() {
               今すぐ試す
             </a>
           </div>
-          <p className={styles.caption}>
+          <p className={`${styles.caption} ${styles.body_text_bold}`}>
             プランの変更は「設定」の「プラン変更」メニューからできます。
           </p>
 
