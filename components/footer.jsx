@@ -65,28 +65,9 @@ const Footer = () => {
               <Link
                 href="https://sites.google.com/copilot.jp/support-sgms/"
                 id="ga_userguide_footer"
-              >
-                ガイドページ
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.youtube.com/channel/UCOnbQVQNF5Q_7yjGZoNkFhw/"
-                id="ga_youtube_footer"
                 target="_blank"
-                rel="noopener"
               >
-                Youtube
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://note.com/sgms/m/m3633f7f797e5"
-                id="ga_note_footer"
-                target="_blank"
-                rel="noopener"
-              >
-                Note
+                操作ガイド
               </Link>
             </li>
           </ul>

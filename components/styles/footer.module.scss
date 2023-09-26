@@ -39,7 +39,7 @@
     }
   }
   address {
-    @include font-size("caption-pc");
+    @include font-size("caption-pc-bold");
 
     a {
       color: $white;
@@ -81,7 +81,8 @@
     }
 
     address {
-      @include font-size("caption-pc-bold");
+      @include font-size("label-sp-bold");
+      line-height: 150%;
 
       .sp {
         display: block;
