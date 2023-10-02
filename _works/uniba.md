@@ -2,7 +2,7 @@
 title: 「定例ミーティング」を軸として、プロジェクトの進行を円滑にする【SuperGoodMeetings導入事例】
 date: "2021.02.15"
 companyName: "ユニバ株式会社"
-members: "安井貴啓、河合伶"
+members: "安井貴啓さん、河合伶さん"
 logo: "/images/interview_uniba_logo.svg"
 ---
 
