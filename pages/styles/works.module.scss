@@ -80,7 +80,9 @@
     @include font-size("h3-pc");
     margin-top: 64px;
     li {
-      margin-right: 8px;
+      &:not(:last-of-type) {
+        margin-right: 16px;
+      }
       a {
         color: $secondary;
         text-decoration: none;
