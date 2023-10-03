@@ -21,6 +21,11 @@
     margin: 0 0 40px;
     display: flex;
     align-items: flex-start;
+    text-decoration: none;
+    color: $black;
+    &:hover {
+      opacity: 80%;
+    }
     .posts_date {
       display: inline-flex;
       align-items: center;
@@ -29,6 +34,7 @@
       height: 30px;
       margin-top: 2px;
       margin-right: 24px;
+      border-radius: 4px;
       @include font-size("caption-pc-bold");
     }
     .posts_icon {
@@ -36,8 +42,8 @@
       margin-right: 8px;
       margin-top: 2px;
     }
-    a {
-      color: $black;
+    h2 {
+      margin: 0;
       text-decoration: none;
       @include font-size("h3-pc");
     }

@@ -26,18 +26,19 @@ export default function Posts({ allReleaseNotes }: any) {
             <h1>リリースノート</h1>
             <div>
               {posts.map((post: any, i: number) => (
-                <div key={i}>
-                  <p className={styles.posts_item}>
+                <Link
+                  key={i}
+                  href={`/release_notes/${encodeURIComponent(post.slug)}`}
+                  legacyBehavior
+                >
+                  <a className={styles.posts_item}>
                     <span className={styles.posts_date}>{post.date}</span>
-                    {getIconFromCategory(post.category)}
-                    <Link
-                      href={`/release_notes/${encodeURIComponent(post.slug)}`}
-                      legacyBehavior
-                    >
+                    <h2>
+                      {getIconFromCategory(post.category)}
                       {post.title}
-                    </Link>
-                  </p>
-                </div>
+                    </h2>
+                  </a>
+                </Link>
               ))}
             </div>
             <ul className={styles.pager}>

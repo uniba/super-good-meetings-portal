@@ -25,17 +25,16 @@ export default function Posts({ allNews }: any) {
             <h1>お知らせ</h1>
             <div>
               {posts.map((post: any, i: any) => (
-                <div key={i}>
-                  <p className={styles.posts_item}>
+                <Link
+                  key={i}
+                  href={`/news/${encodeURIComponent(post.slug)}`}
+                  legacyBehavior
+                >
+                  <a className={styles.posts_item}>
                     <span className={styles.posts_date}>{post.date}</span>
-                    <Link
-                      href={`/news/${encodeURIComponent(post.slug)}`}
-                      legacyBehavior
-                    >
-                      {post.title}
-                    </Link>
-                  </p>
-                </div>
+                    <h2>{post.title}</h2>
+                  </a>
+                </Link>
               ))}
             </div>
             <ul className={styles.pager}>
