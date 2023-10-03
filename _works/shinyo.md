@@ -1,11 +1,12 @@
 ---
-title: 学校・教育現場でこそ、プロジェクト推進のためのメソッドが活きる【SuperGoodMeetings導入事例】
+title: 学校・教育現場でこそ、プロジェクト推進のためのメソッドが活きる
 date: "2021.08.18"
 companyName: "札幌新陽高等学校"
 members: "赤司展子さん、高石大道さん、髙橋励起さん"
 logo: "/images/interview_shinyo_logo.svg"
 ---
-![Shinyo_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/b5e0591d-757a-4163-bbc3-7a74b10ff515)
+
+![Shinyo_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/72439bbf-4853-4a11-aff7-ee5f1c6d0489)
 
 「学校で行われている業務を見渡したとき、一つひとつを個別の『プロジェクト』として捉えられると思ったんです」——そう話してくれたのは、元経営コンサルタントで、現在は教育に広く携わっている赤司展子さん。
 
@@ -30,7 +31,8 @@ https://sapporoshinyo-h.ed.jp/
 - アジェンダ設定や議事録のアーカイブなど、プロジェクトごとの定例ミーティングの情報が集まる共通の場所ができた。
 - 定例ミーティングの進め方に関するノウハウを得て、一つひとつのアジェンダの目的や、議論すべきことを明確化できるようになり、向き合い方が変わった。
 
-![Shinyo_sub001](https://github.com/uniba/super-good-meetings-portal/assets/77031650/dd568636-c4e6-4ad7-8b6a-19f6f0ac1bb8)
+
+![Shinyo_sub001](https://github.com/uniba/super-good-meetings-portal/assets/77031650/e9210566-aa7c-4f78-8e9e-dbfbe8b8fe9f)
 
 > ▲今回インタビューに答えてくださったのは、校長の赤司展子さん（写真中央）と、教員の高石大道さん（写真左）、髙橋励起さん（写真右）。インタビューは終始、和気あいあいとした雰囲気で進み、みなさんのチームワークの良さが垣間見えました。
 
@@ -89,7 +91,8 @@ https://sapporoshinyo-h.ed.jp/
 
 赤司：本校では教育プログラムの一環として、PBL（プロジェクトベースドラーニング）を取り入れています。いずれは生徒たちにも、SGMsを使ってプロジェクト推進の方法論を学んで欲しいと考えています。
 
-![PBL_IMG_1661](https://github.com/uniba/super-good-meetings-portal/assets/77031650/fe098471-2b08-4d97-b95d-464c8ba607bb)
+
+![PBL_IMG_1661](https://github.com/uniba/super-good-meetings-portal/assets/77031650/d7c7aa32-4404-4b8c-aafe-ca711509e30b)
 
 > ▲校内で実施されているPBLの様子。（写真提供：札幌新陽高等学校）
 
