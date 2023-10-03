@@ -413,8 +413,8 @@
         background: $violet;
       }
       .logo {
-        line-height: 34px;
-        height: 34px;
+        line-height: 24px;
+        height: 24px;
         margin: 0 0 16px;
         width: 100%;
 
@@ -428,6 +428,7 @@
       }
       .image {
         width: 100%;
+        aspect-ratio: 16 / 9;
         margin-bottom: 16px;
         border-radius: 8px;
         overflow: hidden;
