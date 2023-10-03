@@ -34,6 +34,7 @@
       padding: 0 12px;
       height: 30px;
       margin-bottom: 8px;
+      border-radius: 4px;
       @include font-size("caption-pc-bold");
     }
     &_date_sp {
@@ -43,12 +44,14 @@
       height: 25px;
       @include font-size("label-sp-bold");
       margin-bottom: 8px;
+      border-radius: 4px;
     }
     &_text {
       display: flex;
       flex-flow: column;
       align-items: flex-start;
-      margin-right: 24px;
+      padding-right: 24px;
+      box-sizing: border-box;
       width: calc(100% - 336px);
 
       .title {
@@ -110,7 +113,7 @@
         align-items: center;
       }
       &_text {
-        margin-right: 0;
+        padding-right: 0;
         width: 100%;
         a {
           @include font-size("h4-sp");
