@@ -5,7 +5,7 @@ companyName: "ヴェネクト株式会社"
 members: "牟田和貴さん、加藤智司さん"
 logo: "/images/interview_venect_logo.svg"
 ---
-![VENECT_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/d5c9442b-92fd-43d1-8f98-e56b7f0fe3fb)
+![VENECT_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/6944d4ef-46df-462c-a704-f44ee96f5b13)
 
 「会議後に議事録を1時間かけてつくるなら、事前のアジェンダ作りに時間を割くべき」——マーケティングエージェンシーのヴェネクト株式会社では、定例ミーティングのアジェンダ管理に「SuperGoodMeetings」を活用してくださっています。
 
@@ -29,8 +29,7 @@ https://www.venect.jp/
 - 定例会議のアジェンダ作成、共有、管理がすべて一つのツール上で完結できるようになり、事前準備や確認作業の手間が削減された。
 - 複数のステークホルダーが関わるプロジェクトの進行がツール上で可視化されるため、意思決定の履歴など、正確な情報を全員が把握できるようになった。
 - 会議をスムーズに進めるために準備する項目があらかじめ入力欄として設けられているので、新たなメンバーにも説明がしやすい。
-
-![VENECT_sub001](https://github.com/uniba/super-good-meetings-portal/assets/77031650/c861539d-5031-4b46-a482-96ab20674eb4)
+![VENECT_sub001](https://github.com/uniba/super-good-meetings-portal/assets/77031650/89fc7e6d-e0d6-400e-a8a8-06c3972e5995)
 
 ```
 ▲今回インタビューに答えてくださったのは、同社でテクニカルディレクターを務める加藤智司さん（右）と、牟田和貴さん（左）。各プロジェクトに対する技術支援や、テクノロジー領域のツール開発、ソリューション提供などを専門とするチームに所属。
