@@ -59,7 +59,7 @@ export default function Home({
             <div className={styles.top_image}>
               <Image
                 className={styles.img}
-                src="/images/illust_main_visual.svg"
+                src="/images/illust_main_visual.png"
                 alt="SGMs TOP画像"
                 layout="fill"
                 objectFit="contain"
