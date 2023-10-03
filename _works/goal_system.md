@@ -3,7 +3,7 @@ title: 「認識のズレを補正する仕組み」で、社内のコミュニ�
 date: "2021.03.08"
 companyName: "ゴール・システム・コンサルティング株式会社"
 members: "小笠原剛さん、但田真紀さん"
-logo: "/images/interview_uniba_logo.svg"
+logo: "/images/interview_gs_logo.svg"
 ---
 ![Goal_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/513836ac-d621-40c7-9366-88775a844b44)
 
