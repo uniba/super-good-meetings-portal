@@ -1,12 +1,12 @@
 ---
-title: 「定例ミーティング」を軸として、プロジェクトの進行を円滑にする【SuperGoodMeetings導入事例】
+title: 「定例ミーティング」を軸として、プロジェクトの進行を円滑にする
 date: "2021.02.15"
 companyName: "ユニバ株式会社"
 members: "安井貴啓さん、河合伶さん"
 logo: "/images/interview_uniba_logo.svg"
 ---
 
-![rectangle_large_type_2_b10d4d7470a35268c8b69a7cd37e3770](https://github.com/uniba/super-good-meetings-portal/assets/1608800/a253f669-3e03-447a-8a1b-dcb0240703d8)
+![UNIBA_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/49daa72d-74e4-49b6-a980-a7d207aec4e2)
 
 ガントチャート型の工程管理から、全体マイルストーンと定例ミーティングを軸に据えたプロジェクトマネジメントへ。
 
@@ -32,7 +32,8 @@ https://uniba.jp/
 - ツールを導入したことで、プロジェクト管理の仕方やミーティングのアジェンダ設定、進め方などの共通認識が生まれ、業務を標準化することができた。
 - 全体マイルストーン把握＋定例ミーティング実施による管理方法が共有され、プロジェクトの進行がスムーズになった。
 
-![picture_pc_84be30d960c24b28b98229d633d9f261](https://github.com/uniba/super-good-meetings-portal/assets/1608800/f97fdc6d-d712-4480-9b9b-e0430ed3cb27)
+![UNIBA_sub001](https://github.com/uniba/super-good-meetings-portal/assets/77031650/48de7e26-0251-4bec-bfd9-5fa917b8be88)
+
 
 ```
 ▲今回インタビューに答えてくださったのは、河合伶さん（左）と安井貴啓さん（右）。二人ともエンジニアとして、さまざまなプロジェクトの開発を手掛けています。
