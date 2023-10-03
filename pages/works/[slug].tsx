@@ -87,18 +87,18 @@ export async function getStaticProps({ params }: any) {
   ]);
   const content = await markdownToHtml(post.content || "", post.docs);
 
-  const allPosts = getAllWorks(["slug", "title", "thumbnail"]);
+  const allPosts = getAllWorks(["slug", "title", "thumbnail", "date"]);
   let nextArticle: any;
 
   if (allPosts.length > 1) {
-    const currentPostIndex = allPosts.findIndex(
-      (post) => post.slug === params.slug
-    );
+    const currentPostIndex = allPosts.findIndex((post) => {
+      return post.slug === params.slug;
+    });
 
-    nextArticle = allPosts[currentPostIndex + 1];
+    nextArticle = allPosts[currentPostIndex - 1];
 
     if (!nextArticle) {
-      nextArticle = allPosts[currentPostIndex - 1];
+      nextArticle = allPosts[currentPostIndex + 1];
     }
   }
 
