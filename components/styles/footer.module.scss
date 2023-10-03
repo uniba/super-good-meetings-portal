@@ -10,6 +10,17 @@
     h1 {
       margin: 0;
       width: 315px;
+
+      & a {
+        width: 100%;
+        display: block;
+        &:hover {
+          opacity: 80%;
+        }
+        & img {
+          display: block;
+        }
+      }
     }
 
     .footer_navigation {
@@ -43,6 +54,10 @@
 
     a {
       color: $white;
+
+      &:hover {
+        opacity: 80%;
+      }
     }
   }
 

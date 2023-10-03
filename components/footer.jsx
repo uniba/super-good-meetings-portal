@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.footer_inner}>
-        <Link href="/" id="qa_logo_footer">
-          <h1>
+        <h1>
+          <Link href="/" id="qa_logo_footer">
             <Image
               className={styles.img}
               src="/images/logo_mark.svg"
@@ -15,8 +15,8 @@ const Footer = () => {
               layout="fill"
               objectFit="contain"
             />
-          </h1>
-        </Link>
+          </Link>
+        </h1>
         <div className={styles.footer_navigation}>
           <ul>
             <li>
