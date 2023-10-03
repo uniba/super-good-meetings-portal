@@ -1,11 +1,11 @@
 ---
-title: 「認識のズレを補正する仕組み」で、社内のコミュニケーションを円滑に【SuperGoodMeetings導入事例】
+title: 「認識のズレを補正する仕組み」で、社内のコミュニケーションを円滑に
 date: "2021.03.08"
 companyName: "ゴール・システム・コンサルティング株式会社"
 members: "小笠原剛さん、但田真紀さん"
 logo: "/images/interview_gs_logo.svg"
 ---
-![Goal_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/513836ac-d621-40c7-9366-88775a844b44)
+![Goal_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/d97aabbe-be66-4926-9722-f4fb136dbbc1)
 
 社内で立ち上げたプロジェクトがなかなか進まない。コミュニケーションが円滑にできない。そんな課題を抱えている方も多いのではないでしょうか。
 
@@ -30,7 +30,8 @@ http://www.goal-consulting.com/
 - SuperGoodMeetings導入と同時に「Project Sprint」を学ぶことで、プロジェクトマネジメントにおける課題が顕在化した。
 - SuperGoodMeetings上に明文化された情報が集約されるようになったことで、コミュニケーションの仕方が変わり、組織にとってプラスになる動きが複数生まれた。
 
-![Goal_sub001](https://github.com/uniba/super-good-meetings-portal/assets/77031650/db81458d-a89a-4aeb-9d9d-f69d088aa1e0)
+
+![Goal_sub001](https://github.com/uniba/super-good-meetings-portal/assets/77031650/cfbbbf95-fdc4-4c3d-bc5e-16448ce5889c)
 
 > ▲今回インタビューに答えてくださったのは、小笠原剛さん（左）と但田真紀さん（右）。コンサルタントとして企業の経営コンサルティングに携わる傍ら、2020年は多くの社内プロジェクトを手掛けた。
 
