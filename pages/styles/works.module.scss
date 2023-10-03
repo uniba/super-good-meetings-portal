@@ -22,6 +22,11 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    text-decoration: none;
+    color: $black;
+    &:hover {
+      opacity: 80%;
+    }
     &_date {
       display: inline-flex;
       align-items: center;
@@ -40,14 +45,18 @@
       margin-bottom: 8px;
     }
     &_text {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
       margin-right: 24px;
       width: calc(100% - 336px);
-      a {
+
+      .title {
         color: $black;
         display: block;
         text-decoration: none;
         @include font-size("h4-pc");
-        margin-bottom: 8px;
+        margin: 0 0 8px;
       }
       .companyName {
         margin: 0;
@@ -57,7 +66,7 @@
     &_image {
       position: relative;
       width: 336px;
-      border-radius: 8px;
+      border-radius: 4px;
       overflow: hidden;
     }
   }

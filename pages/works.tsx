@@ -26,18 +26,17 @@ export default function Posts({ allWorks }: any) {
             <h1>活用事例</h1>
             <div>
               {posts.map((post: any, i: any) => (
-                <div key={i}>
-                  <div className={styles.works_item}>
+                <Link
+                  key={i}
+                  href={`/works/${encodeURIComponent(post.slug)}`}
+                  legacyBehavior
+                >
+                  <a className={styles.works_item}>
                     <div className={styles.works_item_text}>
                       <span className={styles.works_item_date}>
                         {post.date}
                       </span>
-                      <Link
-                        href={`/works/${encodeURIComponent(post.slug)}`}
-                        legacyBehavior
-                      >
-                        {post.title}
-                      </Link>
+                      <h2 className={styles.title}>{post.title}</h2>
                       <p className={styles.companyName}>{post.companyName}</p>
                     </div>
                     <div className={styles.works_item_image}>
@@ -54,8 +53,8 @@ export default function Posts({ allWorks }: any) {
                     <span className={styles.works_item_date_sp}>
                       {post.date}
                     </span>
-                  </div>
-                </div>
+                  </a>
+                </Link>
               ))}
             </div>
             <ul className={styles.pager}>
