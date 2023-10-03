@@ -3,7 +3,7 @@ title: 会議は「事前に設計」するもの。可視化がプロジェク�
 date: "2020.12.11"
 companyName: "ヴェネクト株式会社"
 members: "牟田和貴さん、加藤智司さん"
-logo: "/images/interview_venect_logo.svg"
+logo: "interview_venect_logo.svg"
 ---
 ![VENECT_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/6944d4ef-46df-462c-a704-f44ee96f5b13)
 

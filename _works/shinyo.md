@@ -3,7 +3,7 @@ title: 学校・教育現場でこそ、プロジェクト推進のためのメ�
 date: "2021.08.18"
 companyName: "札幌新陽高等学校"
 members: "赤司展子さん、高石大道さん、髙橋励起さん"
-logo: "/images/interview_shinyo_logo.svg"
+logo: "interview_shinyo_logo.svg"
 ---
 
 ![Shinyo_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/72439bbf-4853-4a11-aff7-ee5f1c6d0489)

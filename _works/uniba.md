@@ -3,7 +3,7 @@ title: 「定例ミーティング」を軸として、プロジェクトの進�
 date: "2021.02.15"
 companyName: "ユニバ株式会社"
 members: "安井貴啓さん、河合伶さん"
-logo: "/images/interview_uniba_logo.svg"
+logo: "interview_uniba_logo.svg"
 ---
 
 ![UNIBA_main](https://github.com/uniba/super-good-meetings-portal/assets/77031650/49daa72d-74e4-49b6-a980-a7d207aec4e2)
