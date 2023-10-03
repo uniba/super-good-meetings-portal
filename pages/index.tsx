@@ -56,6 +56,15 @@ export default function Home({
       <Layout>
         <div className={styles.landing_container}>
           <div className={styles.service_hero_area}>
+            <div className={styles.top_image}>
+              <Image
+                className={styles.img}
+                src="/images/illust_main_visual.svg"
+                alt="SGMs TOP画像"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
             <h1>
               定例ミーティングを変える。
               <br />

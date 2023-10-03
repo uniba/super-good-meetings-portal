@@ -124,7 +124,22 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background: no-repeat right url("/images/illust_main_visual.svg");
+    position: relative;
+    z-index: 0;
+    overflow-x: hidden;
+    .top_image {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      right: -2px;
+      max-width: 774px;
+      z-index: -1;
+
+      & img {
+        width: 100%;
+        height: auto;
+      }
+    }
     h1 {
       font-weight: 900;
       font-size: 62px;

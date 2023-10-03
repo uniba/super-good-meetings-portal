@@ -3,9 +3,15 @@
     // ヒーローエリア
     .service_hero_area {
       padding: 0 24px;
-      height: 606px;
+      height: 550px;
       margin: 8px 0 40px 0;
-      background-size: 400px;
+      .top_image {
+        bottom: 118px;
+        max-width: 540px;
+        width: calc(100% + 26px);
+        top: auto;
+        right: -16px;
+      }
       h1 {
         font-size: 26px;
       }
