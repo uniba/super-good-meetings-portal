@@ -80,10 +80,13 @@
   }
 
   pre {
-    text-wrap: wrap;
+    background: $paleBlue;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 24px;
+    margin: 0 0 40px;
     @include font-size("caption-pc");
-    margin: -32px 0 40px;
-    color: $secondary;
+    text-wrap: wrap;
   }
 
   p {
@@ -95,15 +98,12 @@
   }
 
   blockquote {
-    background: $paleBlue;
-    border-radius: 8px;
-    box-sizing: border-box;
-    padding: 24px;
-    margin: 0 0 40px;
+    @include font-size("caption-pc");
+    margin: -32px 0 24px;
+    color: $secondary;
 
     & p {
       margin: 0;
-      @include font-size("caption-pc");
     }
   }
 
@@ -310,12 +310,9 @@
       margin: 0 0 16px;
     }
 
-    blockquote {
+    pre {
       padding: 16px;
-
-      & p {
-        @include font-size("caption-sp");
-      }
+      @include font-size("caption-sp");
     }
   }
 
