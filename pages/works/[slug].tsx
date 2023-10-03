@@ -47,12 +47,15 @@ export default function Post({ post, nextArticle }: any) {
                 </div>
               </div>
               {nextArticle ? (
-                <Link href={nextArticle.slug} className={styles.next_article}>
+                <div className={styles.next_article}>
                   <span className={styles.next_article_top}>NEXT ARTICLE</span>
-                  <div className={styles.next_article_content}>
-                    <h3 className={styles.next_article_title}>
+                  <Link
+                    href={nextArticle.slug}
+                    className={styles.next_article_content}
+                  >
+                    <span className={styles.next_article_title}>
                       {nextArticle.title}
-                    </h3>
+                    </span>
                     <div className={styles.next_article_image}>
                       <Image
                         src={nextArticle.thumbnail}
@@ -61,16 +64,14 @@ export default function Post({ post, nextArticle }: any) {
                         objectFit="contain"
                       />
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               ) : null}
             </div>
           </div>
-          <div>
-            <Link className={styles.post_all} href="/works">
-              活用事例一覧へ
-            </Link>
-          </div>
+          <Link className={styles.post_all} href="/works">
+            活用事例一覧へ
+          </Link>
         </div>
       </Layout>
     </>

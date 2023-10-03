@@ -58,6 +58,9 @@
     color: $white;
     text-decoration: none;
     @include font-size("body-pc-bold");
+    &:hover {
+      opacity: 80%;
+    }
   }
 
   //-----
@@ -110,6 +113,9 @@
 
   a {
     color: $sky;
+    &:hover {
+      opacity: 80%;
+    }
   }
 
   img {
@@ -211,6 +217,9 @@
       line-height: 54px;
       display: block;
       text-decoration: none;
+      &:hover {
+        opacity: 80%;
+      }
     }
   }
 }
@@ -233,11 +242,17 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    text-decoration: none;
+    &:hover {
+      opacity: 80%;
+    }
   }
 
   &_title {
     @include font-size("h4-pc");
-    margin-right: 24px;
+    margin: 0;
+    padding-right: 24px;
+    box-sizing: border-box;
     width: calc(100% - 264px);
     color: $black;
   }
@@ -245,7 +260,6 @@
   &_image {
     width: 264px;
     height: auto;
-
     & img {
       position: relative !important;
     }
