@@ -425,7 +425,7 @@ export default function Home({
                     {work.logo && (
                       <figure className={styles.logo}>
                         <Image
-                          src={work.logo}
+                          src={`/logos/${work.logo}`}
                           alt={work.companyName + "ロゴ"}
                           layout="fill"
                           objectFit="contain"
