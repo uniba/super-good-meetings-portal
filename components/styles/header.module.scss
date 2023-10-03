@@ -16,6 +16,9 @@
     a {
       width: 84px;
       display: inline-block;
+      &:hover {
+        opacity: 80%;
+      }
     }
     span {
       margin-left: 2em;
@@ -40,9 +43,7 @@
       background-color: $white;
       border: 3px solid $black;
       box-sizing: border-box;
-      a {
-        color: $black;
-      }
+      color: $black;
     }
 
     .signup_button {
@@ -179,9 +180,7 @@
       border: 3px solid $black;
       box-sizing: border-box;
       margin-bottom: 16px;
-      a {
-        color: $black;
-      }
+      color: $black;
     }
 
     .signup_button {

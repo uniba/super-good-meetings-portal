@@ -12,8 +12,8 @@ const Header = () => {
   return (
     <>
       <div className={styles.header}>
-        <Link href="/" legacyBehavior>
-          <h1>
+        <h1>
+          <Link href="/" legacyBehavior>
             <a id="qa_logo_header">
               <Image
                 className={styles.img}
@@ -23,8 +23,8 @@ const Header = () => {
                 objectFit="contain"
               />
             </a>
-          </h1>
-        </Link>
+          </Link>
+        </h1>
         <ul className={styles.sessions}>
           <li className={styles.button}>
             <Link href="/plan" id="ga_plan_header">
@@ -54,15 +54,23 @@ const Header = () => {
               操作ガイド
             </Link>
           </li>
-          <li className={styles.login_button}>
-            <Link href="https://sgms.app/login" id="ga_login_header">
+          <li>
+            <Link
+              className={styles.login_button}
+              href="https://sgms.app/login"
+              id="ga_login_header"
+            >
               ログイン
             </Link>
           </li>
-          <li className={styles.signup_button}>
-            <a href="https://sgms.app/signup" id="ga_signup_header">
+          <li>
+            <Link
+              className={styles.signup_button}
+              href="https://sgms.app/signup"
+              id="ga_signup_header"
+            >
               無料で始める
-            </a>
+            </Link>
           </li>
         </ul>
         <button onClick={() => setIsOpen(true)} className={styles.hamburger}>
@@ -136,13 +144,21 @@ const Header = () => {
           </li>
         </ul>
         <ul className={styles.auth_list}>
-          <li className={styles.login_button}>
-            <Link href="https://sgms.app/login" id="ga_login_header">
+          <li>
+            <Link
+              className={styles.login_button}
+              href="https://sgms.app/login"
+              id="ga_login_header"
+            >
               ログイン
             </Link>
           </li>
-          <li className={styles.signup_button}>
-            <a href="https://sgms.app/signup" id="ga_signup_header">
+          <li>
+            <a
+              className={styles.signup_button}
+              href="https://sgms.app/signup"
+              id="ga_signup_header"
+            >
               無料で始める
             </a>
           </li>
