@@ -33,10 +33,8 @@ export default function Posts({ allReleaseNotes }: any) {
                 >
                   <a className={styles.posts_item}>
                     <span className={styles.posts_date}>{post.date}</span>
-                    <h2>
-                      {getIconFromCategory(post.category)}
-                      {post.title}
-                    </h2>
+                    {getIconFromCategory(post.category)}
+                    <h2>{post.title}</h2>
                   </a>
                 </Link>
               ))}
@@ -86,6 +84,6 @@ const getIconFromCategory = (category: string) => {
     case "リリース":
       return <span className={styles.posts_icon}>🎉</span>;
     default:
-      return null;
+      return <span className={styles.posts_icon}>✨</span>;
   }
 };
