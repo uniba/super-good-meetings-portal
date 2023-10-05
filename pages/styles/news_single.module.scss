@@ -90,7 +90,7 @@
     padding: 24px;
     margin: 0 0 40px;
     @include font-size("caption-pc");
-    text-wrap: wrap;
+    white-space: pre-wrap;
   }
 
   p {
