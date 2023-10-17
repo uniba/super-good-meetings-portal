@@ -4,7 +4,7 @@
 
 @mixin button($color) {
   button {
-    @include font-size("body-pc");
+    @include font-size("h4-pc");
     box-sizing: border-box;
     cursor: pointer;
     width: 204px;
@@ -29,22 +29,20 @@
     }
 
     @media screen and (max-width: 1000px) {
-      @include font-size("h2-sp");
       width: 100%;
-      max-width: 248px;
-      line-height: 40px;
+      max-width: 168px;
     }
   }
 
   .button {
     box-sizing: border-box;
-    width: 204px;
+    width: 248px;
     height: 51px;
     border-radius: 30px;
     border: 5px solid $white;
 
     a {
-      @include font-size("body-pc");
+      @include font-size("h4-pc");
       color: $white;
       text-decoration: none;
       display: block;
@@ -79,17 +77,17 @@
 @mixin filledButton {
   .filledButton {
     box-sizing: border-box;
-    width: 384px;
-    height: 54px;
+    width: 420px;
+    height: 64px;
 
     a {
-      @include font-size("body-pc");
-      background: $blue;
+      @include font-size("h3-pc");
+      background: $black;
       color: $white;
       text-decoration: none;
       display: block;
       text-align: center;
-      line-height: 54px;
+      line-height: 64px;
       width: 100%;
       border-radius: 10px;
       margin: 0;
@@ -101,7 +99,7 @@
 
     @media screen and (max-width: 1000px) {
       width: 100%;
-      max-width: 272px;
+      height: 54px;
       a {
         @include font-size("h3-sp");
         line-height: 54px;
@@ -119,15 +117,29 @@
 
   // ヒーローエリア
   .service_hero_area {
-    max-width: 1400px;
     width: 100%;
-    height: 580px;
-    margin: 24px auto 200px;
+    height: 638px;
+    margin: 8px 0 40px;
     padding: 0 54px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background: no-repeat right url("/images/illust_main_visual.svg");
+    position: relative;
+    z-index: 0;
+    overflow-x: hidden;
+    .top_image {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      right: 0;
+      max-width: 774px;
+      z-index: -1;
+
+      & img {
+        width: 100%;
+        height: auto;
+      }
+    }
     h1 {
       font-weight: 900;
       font-size: 62px;
@@ -136,34 +148,97 @@
       margin: 0;
     }
     p {
-      @include font-size("h3-pc");
-      margin-bottom: 48px;
+      @include font-size("h2-pc");
+      margin: 16px 0 0;
     }
     &_button {
       margin-top: auto;
       span {
         display: block;
-        @include font-size("label-pc-bold");
-        margin-bottom: 16px;
+        @include font-size("body-pc-bold");
+        margin-bottom: 4px;
       }
       @include filledButton;
     }
   }
 
+  // リリースノート
+  .release_notes {
+    padding: 0 54px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+
+    &_title {
+      text-align: center;
+      margin: 0 0 40px;
+      @include font-size("h1-pc");
+    }
+
+    &_content {
+      padding: 24px;
+      background: $blue;
+      color: $white;
+      border-radius: 16px;
+    }
+
+    &_items {
+      & li {
+        display: flex;
+        margin-bottom: 8px;
+
+        & span {
+          @include font-size("body-pc-bold");
+          margin-right: 24px;
+        }
+
+        & a {
+          color: $white;
+          @include font-size("body-pc");
+          text-decoration: none;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+    &_link {
+      display: flex;
+      justify-content: flex-end;
+
+      a {
+        @include font-size("body-pc-bold");
+        color: $white;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  // サービス導入
+  .service_resolution {
+    margin-bottom: 100px;
+  }
+
   // 課題説明
   .service_task {
     width: 1008px;
-    margin: 0 auto 200px;
+    margin: 0 auto 50px;
     h2 {
-      @include font-size("h2-pc");
+      @include font-size("h1-pc");
       text-align: center;
+      margin: 0 0 24px;
     }
     ul {
       display: flex;
       justify-content: space-between;
       li {
-        width: 303px;
-        @include font-size("body-pc");
+        width: 280px;
+        @include font-size("h4-pc");
+        figure {
+          width: 233px;
+        }
       }
     }
   }
@@ -177,7 +252,7 @@
       content: "";
       position: absolute;
       top: 300px;
-      right: -240px;
+      right: -270px;
       width: 300px;
       height: 300px;
       background-image: url("/images/background_bubbles3.svg");
@@ -187,7 +262,7 @@
     &::before {
       content: "";
       position: absolute;
-      top: 100px;
+      top: 160px;
       left: -200px;
       width: 260px;
       height: 260px;
@@ -201,23 +276,22 @@
       display: flex;
       justify-content: space-between;
       margin: 0 -100px 160px 0;
+      padding-top: 100px;
       figure {
         z-index: 1;
         width: 680px;
         margin: 0;
-        img {
-          width: 100%;
-        }
       }
       .content {
         z-index: 1;
         flex: 1;
         h2 {
-          @include font-size("h2-pc");
+          @include font-size("h1-pc");
           margin: 0 0 32px 0;
         }
         p {
-          @include font-size("body-pc");
+          @include font-size("body-pc-bold");
+          margin: 0;
         }
       }
     }
@@ -225,132 +299,168 @@
       display: flex;
       justify-content: space-between;
       position: relative;
-      margin: 0 0 160px -100px;
+      margin: 0 0 100px -100px;
       figure {
         z-index: 1;
         width: 680px;
         margin: 32px 0 0 0;
-        img {
-          width: 100%;
-        }
       }
       .content {
         z-index: 1;
         flex: 1;
         h2 {
-          @include font-size("h2-pc");
-          margin-bottom: 32px;
+          @include font-size("h1-pc");
+          margin: 0 0 32px 0;
         }
         p {
-          @include font-size("body-pc");
+          @include font-size("body-pc-bold");
+          margin: 0;
         }
+      }
+      &::before {
+        content: "";
+        display: none;
+        position: absolute;
+        top: 346px;
+        right: -64px;
+        width: 80px;
+        height: 85px;
+        background-size: contain;
+        background-image: url("/images/background_about_project.svg");
+        background-position: bottom 0px right 0px;
+        background-repeat: no-repeat;
       }
     }
   }
 
   //新規登録への導線1
   .service_start {
-    @include filledButton;
     position: relative;
-    width: 1056px;
-    margin: 0 auto 200px;
-    text-align: center;
-    z-index: 2;
+    padding: 0 24px 100px;
+    max-width: 1056px;
+    margin: 0 auto 100px;
+
+    &_content {
+      padding: 48px 74px;
+      border-radius: 30px;
+      @include filledButton;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      background: $white;
+      color: $black;
+    }
     h2 {
-      @include font-size("h2-pc");
+      @include font-size("h1-pc");
+      margin: 0 0 20px;
       position: relative;
       z-index: 1;
     }
     p {
-      @include font-size("body-pc");
+      @include font-size("body-pc-bold");
+      margin: 0;
       position: relative;
       z-index: 1;
     }
     .filledButton {
       position: relative;
       z-index: 1;
-      margin: 46px auto 0;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: -100px;
-      right: -400px;
-      width: 300px;
-      height: 300px;
-      background-image: url("/images/background_bubbles4.svg");
-      background-position: bottom 0px right 0px;
-      background-repeat: no-repeat;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      top: 10px;
-      left: -346px;
-      width: 300px;
-      height: 340px;
-      background-image: url("/images/background_bubbles5.svg");
-      background-size: 100% 100%;
-      background-position: bottom 0px right 0px;
-      background-repeat: no-repeat;
+      margin: 24px auto 0;
     }
   }
 
   //活用事例
   .service_interview {
-    width: 1206px;
-    margin: 0 auto 200px;
+    width: 1136px;
+    margin: 0 auto 100px;
     .swiper_container {
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-bottom: 50px;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 60px;
     }
     a {
       color: $white;
       text-decoration: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
       box-sizing: border-box;
       width: 100%;
       height: 100%;
-      padding: 48px 40px 80px 40px;
+      padding: 40px 24px 54px;
       &:hover {
         opacity: 0.8;
       }
     }
     &_title {
-      @include font-size("h2-pc");
+      @include font-size("h1-pc");
       text-align: center;
       margin: 0 0 40px;
     }
     &_content {
       border-radius: 24px;
       background: $blue;
+
+      &:nth-child(9n + 1) {
+        background: $pink;
+      }
+      &:nth-child(9n + 2) {
+        background: $red;
+      }
+      &:nth-child(9n + 3) {
+        background: $orange;
+      }
+      &:nth-child(9n + 4) {
+        background: $yellow;
+      }
+      &:nth-child(9n + 5) {
+        background: $green;
+      }
+      &:nth-child(9n + 6) {
+        background: $turquoiseBlue;
+      }
+      &:nth-child(9n + 7) {
+        background: $sky;
+      }
+      &:nth-child(9n + 8) {
+        background: $blue;
+      }
+      &:nth-child(9n + 9) {
+        background: $violet;
+      }
       .logo {
-        line-height: 30px;
-        margin: 0;
-        img {
-          width: 120px;
-          height: auto;
+        line-height: 24px;
+        height: 24px;
+        margin: 0 0 16px;
+        width: 100%;
+
+        & img {
+          position: relative !important;
+          width: auto !important;
         }
+      }
+      figure {
+        margin: 0;
       }
       .image {
-        max-width: 280px;
-        margin: 24px auto 48px;
-        img {
-          width: 100%;
-        }
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        overflow: hidden;
       }
       .caption {
-        @include font-size("h3-pc");
-        margin: 0 0 16px;
+        @include font-size("h4-pc");
+        margin: 0 0 48px;
       }
-      .footnote {
-        @include font-size("body-pc");
-        color: $sky;
-        margin: 0;
-        span {
-          @include font-size("label-pc-bold");
+      .companyInfo {
+        margin-top: auto;
+        .companyName {
+          @include font-size("caption-pc-bold");
+          margin: 0 0 6px;
+        }
+        .members {
+          @include font-size("caption-pc");
+          margin: 0;
         }
       }
     }
@@ -358,11 +468,11 @@
 
   //サービス導入の効果説明
   .service_effect {
-    margin-bottom: 200px;
+    margin-bottom: 50px;
     h2 {
       width: 1056px;
       text-align: center;
-      @include font-size("h2-pc");
+      @include font-size("h1-pc");
       margin: 0 auto 40px;
     }
     &_items {
@@ -373,46 +483,52 @@
       justify-content: space-between;
       li {
         width: 280px;
-        @include font-size("body-pc");
+        @include font-size("h4-pc");
+        figure {
+          width: 233px;
+        }
       }
     }
-    &_arrow {
-      margin: 0 auto 40px;
-      text-align: center;
-    }
-    &_result {
-      @include font-size("h3-pc");
+  }
+
+  // サービス導入の結果
+  .service_result {
+    &_content {
+      @include font-size("h2-pc");
       display: flex;
       align-items: center;
-      width: 836px;
+      width: 860px;
       margin: 0 auto;
       border-radius: 20px;
       background: $sky;
+
+      & figure {
+        margin: 20px 24px 20px 54px;
+      }
     }
   }
 
   //PJsの紹介
   .service_detail {
     width: 1056px;
-    margin: 0 auto 200px;
+    margin: 0 auto 50px;
     .pgs {
       h2 {
-        @include font-size("h2-pc");
+        @include font-size("h1-pc");
         text-align: center;
         margin: 0 0 40px 0;
       }
       background: $blue;
-      width: 1056px;
       box-sizing: border-box;
-      padding: 64px 48px 64px 48px;
+      padding: 48px 48px 40px;
       border-radius: 30px;
       display: flex;
       flex-direction: column;
       .pgs_about {
         display: flex;
-        margin-bottom: 32px;
+        margin-bottom: 24px;
         figure {
-          margin: 0 16px 0 0;
+          margin: 0 24px 0 0;
           min-width: 96px;
           width: 96px;
           height: 96px;
@@ -421,31 +537,31 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          img {
+          div {
             display: block;
             width: 88%;
           }
         }
         p {
-          @include font-size("label-pc-medium");
+          @include font-size("caption-pc");
           margin: 0;
         }
       }
       .pgs_title {
-        @include font-size("label-pc-bold");
-        margin-bottom: 8px;
+        @include font-size("h3-pc");
+        margin: 0 0 16px;
       }
       .pgs_link {
-        margin-bottom: 48px;
+        margin-bottom: 24px;
         li {
           list-style: "- ";
           list-style-position: inside;
-          @include font-size("label-pc-medium");
+          @include font-size("caption-pc");
           margin-left: 0.6em;
           a {
             margin: 0;
             color: $white;
-            @include font-size("label-pc-medium");
+            @include font-size("caption-pc");
             &:hover {
               opacity: 0.8;
             }
@@ -464,15 +580,14 @@
 
   //動画
   .service_movie {
+    position: relative;
     text-align: center;
     width: 720px;
-    margin: 0 auto 200px;
+    margin: 0 auto 100px;
     h2 {
-      font-size: 20px;
-      font-weight: 900;
-      margin-bottom: 40px;
+      margin: 0 0 40px;
+      @include font-size("h1-pc");
       span {
-        @include font-size("h2-pc");
         font-family: $ENGtypo;
         font-style: oblique;
       }
@@ -487,7 +602,7 @@
       img {
         position: absolute;
         width: 100%;
-        height: 102.6%;
+        height: 102.6% !important;
         left: 0;
         top: 0;
         z-index: 1;
@@ -510,19 +625,42 @@
         }
       }
     }
+    &::after {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -460px;
+      width: 300px;
+      height: 300px;
+      background-image: url("/images/background_bubbles4.svg");
+      background-position: bottom 0px right 0px;
+      background-repeat: no-repeat;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 90px;
+      left: -460px;
+      width: 300px;
+      height: 340px;
+      background-image: url("/images/background_bubbles5.svg");
+      background-size: 100% 100%;
+      background-position: bottom 0px right 0px;
+      background-repeat: no-repeat;
+    }
   }
 
   //メディア掲載
   .service_media {
     width: 940px;
-    margin: 0 auto 200px;
+    margin: 0 auto 100px;
     .swiper_container {
       padding-left: 50px;
       padding-right: 50px;
-      padding-bottom: 50px;
+      padding-bottom: 60px;
     }
     &_title {
-      @include font-size("h2-pc");
+      @include font-size("h1-pc");
       text-align: center;
       margin: 0 0 40px;
     }
@@ -533,7 +671,7 @@
         margin-right: 40px;
         box-sizing: border-box;
         border-radius: 24px;
-        background: $green;
+        background: $blue;
         a {
           color: $white;
           text-decoration: none;
@@ -541,15 +679,16 @@
           box-sizing: border-box;
           width: 100%;
           height: 100%;
-          padding: 32px 32px 48px 32px;
+          padding: 32px 32px 54px 32px;
         }
         h3 {
           @include font-size("h3-pc");
           text-align: center;
-          margin: 0 0 24px;
+          margin: 0 0 14px;
         }
         p {
-          @include font-size("label-pc-bold");
+          @include font-size("caption-pc");
+          margin: 0;
         }
         &:last-child {
           margin-right: 0;
@@ -564,39 +703,48 @@
 
   //お知らせ
   .service_news {
-    width: 1056px;
-    margin: 0 auto 200px;
-    position: relative;
+    margin: 0 auto 100px;
+    padding: 0 24px;
+    max-width: 1056px;
+
     &_title {
-      @include font-size("h2-pc");
+      @include font-size("h1-pc");
       text-align: center;
       margin: 0 0 40px;
     }
+
+    &_content {
+      padding: 24px;
+      background: $blue;
+      color: $white;
+      border-radius: 16px;
+    }
+
     &_link {
+      display: flex;
+      justify-content: flex-end;
+
       a {
-        @include font-size("label-pc-bold");
+        @include font-size("body-pc-bold");
         color: $white;
-        position: absolute;
-        top: 0;
-        right: 0;
         &:hover {
           opacity: 0.8;
         }
       }
     }
     &_items {
-      @include font-size("label-pc-bold");
       li {
         display: flex;
-        margin-bottom: 16px;
+        margin-bottom: 8px;
         span {
-          width: 108px;
-          margin-right: 80px;
+          margin-right: 32px;
+          @include font-size("body-pc-bold");
         }
         a {
           flex: 1;
           color: $white;
           text-decoration: none;
+          @include font-size("body-pc");
           &:hover {
             opacity: 0.8;
           }
@@ -609,11 +757,12 @@
   .service_trial {
     @include filledButton;
     box-sizing: border-box;
-    width: 1052px;
-    padding: 56px 40px;
-    margin: 0 auto 200px;
+    width: 1056px;
+    padding: 48px 42px;
+    margin: 0 auto 100px;
     border-radius: 30px;
-    background-color: $violet;
+    color: $black;
+    background-color: $white;
 
     &_heading {
       display: flex;
@@ -622,15 +771,20 @@
       margin-bottom: 24px;
 
       h2 {
-        @include font-size("h2-pc");
+        @include font-size("h1-pc");
         margin: 0;
         margin-left: 16px;
+      }
+
+      div {
+        width: 76px;
       }
     }
 
     p {
-      @include font-size("label-pc-bold");
-      margin-bottom: 48px;
+      @include font-size("body-pc-bold");
+      text-align: center;
+      margin: 0 0 48px;
     }
 
     .filledButton {
@@ -680,29 +834,30 @@
   .newsletter_container {
     @include button($sky);
     background: $sky;
-    padding: 40px;
+    padding: 50px;
     .newsletter {
       margin: 0 auto;
-      max-width: 580px;
+      max-width: 604px;
       h2 {
-        margin-top: 0px;
+        margin: 0 0 16px;
         text-align: center;
         @include font-size("h2-pc");
       }
       p {
-        @include font-size("caption-pc");
-        margin: 0 0 24px 0;
+        @include font-size("body-sp");
+        margin: 0 0 14px 0;
       }
       input {
         box-sizing: border-box;
-        @include font-size("label-pc-medium");
+        @include font-size("body-pc");
         color: $secondary;
         border: 0;
         border-radius: 8px;
         width: 100%;
+        max-width: 400px;
         padding: 0 24px;
         height: 48px;
-        margin-right: 40px;
+        margin-right: 24px;
       }
       .submit_area {
         display: flex;
@@ -749,5 +904,31 @@
   100% {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+// Imageコンポーネントに指定するスタイル
+.img {
+  position: relative !important;
+  width: 100%;
+}
+
+.backgroundSky {
+  background: #018eff;
+}
+
+// 矢印アイコン共通スタイル
+.arrow {
+  margin: 0 auto 50px;
+  text-align: center;
+  width: 100px;
+}
+
+// SP時のみ改行
+.sp_br {
+  display: none;
+
+  @media screen and (max-width: 1000px) {
+    display: block;
   }
 }

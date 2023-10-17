@@ -7,10 +7,12 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import CustomForm from "../components/customform";
 import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
+import { getAllNews, getAllReleaseNotes, getAllWorks } from "../lib/api";
 import styles from "./styles/landing.module.scss";
+import Image from "next/image";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -28,8 +30,18 @@ function _onReady(event: { target: { playVideo: () => void } }) {
   }
 }
 
-export default function Home({ allPosts }: { allPosts: any }) {
-  const posts = allPosts.slice(0, 5);
+export default function Home({
+  allNews,
+  allReleaseNotes,
+  allWorks,
+}: {
+  allNews: any;
+  allReleaseNotes: any;
+  allWorks: any;
+}) {
+  const news = allNews.slice(0, 5);
+  const releaseNotes = allReleaseNotes.slice(0, 2);
+  const works = allWorks;
 
   const params = {
     slidesPerView: "auto",
@@ -44,18 +56,31 @@ export default function Home({ allPosts }: { allPosts: any }) {
       <Layout>
         <div className={styles.landing_container}>
           <div className={styles.service_hero_area}>
+            <div className={styles.top_image}>
+              <Image
+                className={styles.img}
+                src="/images/illust_main_visual.png"
+                alt="SGMs TOP画像"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
             <h1>
               定例ミーティングを変える。
               <br />
               プロジェクトが変わる。
             </h1>
             <p>
-              自律的なプロジェクト推進をサポートする
+              定例ミーティングを活用した
               <br />
-              クラウドサービス
+              プロジェクト推進を実現するクラウドサービス
             </p>
             <div className={styles.service_hero_area_button}>
-              <span>まずは1プロジェクト(無料)からお試しいただけます</span>
+              <span>
+                まずは1プロジェクト(無料)から
+                <br className={styles.sp_br} />
+                お試しいただけます
+              </span>
               <div className={styles.filledButton} role="button">
                 <a href="https://sgms.app/signup" id="ga_signup_body">
                   無料で始める
@@ -64,82 +89,275 @@ export default function Home({ allPosts }: { allPosts: any }) {
             </div>
           </div>
 
-          <div className={styles.service_task}>
-            <h2>こんな課題をお持ちの方に</h2>
-            <ul>
-              <li>
-                <figure>
-                  <img src="/images/illust_task01.svg"></img>
-                </figure>
-                プロジェクトが複雑で、リーダーが管理しきれない
-              </li>
-              <li>
-                <figure>
-                  <img src="/images/illust_task02.svg"></img>
-                </figure>
-                プロジェクトを取り巻く環境の変化に適応するのが難しい
-              </li>
-              <li>
-                <figure>
-                  <img src="/images/illust_task03.svg"></img>
-                </figure>
-                一人ひとりが自律的に行動できるプロジェクトチームを作りたい
-              </li>
-            </ul>
-          </div>
+          {releaseNotes.length > 0 ? (
+            <div className={styles.release_notes}>
+              <h2 className={styles.release_notes_title}>リリースノート</h2>
+              <div className={styles.release_notes_content}>
+                <ul className={styles.release_notes_items}>
+                  {releaseNotes.map((post: any, i: number) => (
+                    <li key={i}>
+                      <Link
+                        href={`/release_notes/${encodeURIComponent(post.slug)}`}
+                        legacyBehavior
+                      >
+                        <a>
+                          <span>{post.date}</span>
+                          {post.title}
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
 
-          <div id="about" className={styles.service_about}>
-            <div className={styles.service_about_message1}>
-              <div className={styles.content}>
-                <h2>
-                  いま必要とされる
-                  <br />
-                  「自律的に動けるチーム」
-                </h2>
-                <p>
-                  社会の状況がめまぐるしく変化し、先の予測がどんどん難しくなっているいま。複雑なプロジェクトを前に進めるために、一人ひとりが自律的に行動できる環境、チームの重要性が高まっています。
-                </p>
-              </div>
-              <figure>
-                <img
-                  src="/images/sgms_screenshot1.png"
-                  alt="SuperGoodMeetingsのスクリーンショット。トラックが表示されている"
-                ></img>
-              </figure>
-            </div>
-            <div className={styles.service_about_message2}>
-              <figure>
-                <img
-                  src="/images/sgms_screenshot2.png"
-                  alt="SuperGoodMeetingsのスクリーンショット。ミーティングとアジェンダのリストが表示されている"
-                ></img>
-              </figure>
-              <div className={styles.content}>
-                <h2>
-                  定例ミーティングの
-                  <br />
-                  効果的な運用をサポート
-                </h2>
-                <p>
-                  メンバーそれぞれが自律的に動ける環境をつくるために、私たちは「定例ミーティング」をうまく活用する方法を見出しました。SuperGoodMeetingsには、そのための機能を実装しています。
-                </p>
+                <div className={styles.release_notes_link}>
+                  <Link href="/release_notes" legacyBehavior>
+                    もっと見る
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          ) : null}
 
-          <div className={styles.service_start}>
-            <h2>まずは1プロジェクト （ 無料 ）からお試しいただけます</h2>
-            <p>
-              新しい手法を取り入れるには、いろいろとハードルもあるでしょう。
-              <br />
-              はじめはみなさんの身近にある、ごく小さなプロジェクトからでも、まずは3ヶ月、SuperGoodMeetingsを使ってみませんか？きっと成果を感じていただけるはずです。
-            </p>
-            <div className={styles.filledButton} role="button">
-              <a href="https://sgms.app/signup" id="ga_signup_body">
-                無料で始める
-              </a>
+          <div className={styles.service_resolution}>
+            <div className={styles.service_task}>
+              <h2>こんな課題をお持ちの方に</h2>
+              <ul>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_task01.svg"
+                      alt="プロジェクトが複雑で、リーダーが管理しきれない"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  プロジェクトが複雑で、リーダーが管理しきれない
+                </li>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_task02.svg"
+                      alt="プロジェクトを取り巻く環境の変化に適応するのが難しい"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  プロジェクトを取り巻く環境の変化に適応するのが難しい
+                </li>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_task03.svg"
+                      alt="一人ひとりが自律的に行動できるプロジェクトチームを作りたい"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  一人ひとりが自律的に行動できるプロジェクトチームを作りたい
+                </li>
+              </ul>
+            </div>
+            <figure className={styles.arrow}>
+              <Image
+                className={styles.img}
+                src="/images/icon_arrow.svg"
+                alt="下矢印 アイコン"
+                layout="fill"
+                objectFit="contain"
+              />
+            </figure>
+            <div className={styles.service_effect}>
+              <h2>
+                SuperGoodMeetingsの<span>活用で期待できる変化</span>
+              </h2>
+              <ul className={styles.service_effect_items}>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_change1.svg"
+                      alt="イメージイラスト"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  プロジェクトの目的やマイルストーン（目標）を常に意識して行動できる
+                </li>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_change2.svg"
+                      alt="イメージイラスト"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  プロジェクトに関する情報がオープンな場で蓄積・共有される
+                </li>
+                <li>
+                  <figure>
+                    <Image
+                      className={styles.img}
+                      src="/images/illust_change3.svg"
+                      alt="イメージイラスト"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </figure>
+                  定期的に状況の変化を感知することができ、適応しやすくなる
+                </li>
+              </ul>
+            </div>
+            <figure className={styles.arrow}>
+              <Image
+                className={styles.img}
+                src="/images/icon_arrow.svg"
+                alt="下矢印 アイコン"
+                layout="fill"
+                objectFit="contain"
+              />
+            </figure>
+            <div className={styles.service_result}>
+              <div className={styles.service_result_content}>
+                <figure>
+                  <Image
+                    className={styles.img}
+                    src="/images/illust_change4.svg"
+                    alt="一人ひとりのメンバーが自律的に動きやすくなる"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </figure>
+                一人ひとりのメンバーが
+                <br className={styles.sp_br} />
+                自律的に動きやすくなる
+              </div>
             </div>
           </div>
+
+          <div className={styles.backgroundSky}>
+            <div id="about" className={styles.service_about}>
+              <div className={styles.service_about_message1}>
+                <div className={styles.content}>
+                  <h2>
+                    いま必要とされる
+                    <br />
+                    「自律的に動けるチーム」
+                  </h2>
+                  <p>
+                    社会の状況がめまぐるしく変化し、先の予測がどんどん難しくなっているいま。複雑なプロジェクトを前に進めるために、一人ひとりが自律的に行動できる環境、チームの重要性が高まっています。
+                  </p>
+                </div>
+                <figure>
+                  <Image
+                    className={styles.img}
+                    src="/images/sgms_screenshot1.png"
+                    alt="SuperGoodMeetingsのスクリーンショット。トラックが表示されている"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </figure>
+              </div>
+              <div className={styles.service_about_message2}>
+                <figure>
+                  <Image
+                    className={styles.img}
+                    src="/images/sgms_screenshot2.png"
+                    alt="SuperGoodMeetingsのスクリーンショット。ミーティングとアジェンダのリストが表示されている"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </figure>
+                <div className={styles.content}>
+                  <h2>
+                    定例ミーティングの
+                    <br />
+                    効果的な運用をサポート
+                  </h2>
+                  <p>
+                    メンバーそれぞれが自律的に動ける環境をつくるために、私たちは「定例ミーティング」をうまく活用する方法を見出しました。SuperGoodMeetingsには、そのための機能を実装しています。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.service_movie}>
+              <h2>
+                動画でわかる、
+                <span>SuperGoodMeetings</span>
+              </h2>
+              <div className={styles.service_movie_content}>
+                <Image
+                  className="movieArea"
+                  id="ga_movie"
+                  src="/images/movie_thumb.png"
+                  alt="クリックで再生"
+                  layout="fill"
+                  objectFit="contain"
+                />
+                <YouTube
+                  videoId="vE4l29Wlr8k"
+                  opts={{
+                    height: "200",
+                    width: "300",
+                  }}
+                  onReady={_onReady}
+                />
+              </div>
+            </div>
+
+            <div className={styles.service_start}>
+              <div className={styles.service_start_content}>
+                <h2>
+                  まずは1プロジェクト（無料）<span>からお試しいただけます</span>
+                </h2>
+                <p>
+                  新しい手法を取り入れるには、いろいろとハードルもあるでしょう。
+                  <br />
+                  はじめはみなさんの身近にある、ごく小さなプロジェクトからでも、
+                  <br />
+                  まずは3ヶ月、SuperGoodMeetingsを使ってみませんか？きっと成果を感じていただけるはずです。
+                </p>
+                <div className={styles.filledButton} role="button">
+                  <a href="https://sgms.app/signup" id="ga_signup_body">
+                    無料で始める
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {news.length > 0 ? (
+            <div className={styles.service_news}>
+              <h2 className={styles.service_news_title}>お知らせ</h2>
+              <div className={styles.service_news_content}>
+                <ul className={styles.service_news_items}>
+                  {news.map((post: any, i: number) => (
+                    <li key={i}>
+                      <Link
+                        href={`/news/${encodeURIComponent(post.slug)}`}
+                        legacyBehavior
+                      >
+                        <a>
+                          <span>{post.date}</span>
+                          {post.title}
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <div className={styles.service_news_link}>
+                  <Link href="/news" legacyBehavior>
+                    もっと見る
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ) : null}
 
           <div id="interview" className={styles.service_interview}>
             <h2 className={styles.service_interview_title}>活用事例</h2>
@@ -191,246 +409,46 @@ export default function Home({ allPosts }: { allPosts: any }) {
               breakpoints={{
                 1000: {
                   slidesPerView: 3,
-                  spaceBetween: 50,
-                  width: 1208,
+                  spaceBetween: 40,
+                  width: 1138,
                 },
               }}
               className={styles.swiper_container}
             >
-              <SwiperSlide className={styles.service_interview_content}>
-                <a href="https://note.com/sgms/n/nfb32cb42307a" target="_blank">
-                  <figure className={styles.logo}>
-                    <img
-                      src="/images/interview_shinyo_logo.svg"
-                      alt="新陽高校ロゴ"
-                    ></img>
-                  </figure>
-                  <figure className={styles.image}>
-                    <img
-                      src="/images/interview_shinyo.png"
-                      alt="新陽高校画像"
-                    ></img>
-                  </figure>
-                  <h3 className={styles.caption}>
-                    学校・教育現場でこそ、
-                    <br />
-                    プロジェクト推進のためのメソッドが活きる
-                  </h3>
-                  <p className={styles.footnote}>
-                    学校法人札幌慈恵学園 札幌新陽高等学校
-                    <br />
-                    <span>高石大道、赤司展子、髙橋励起</span>
-                  </p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className={styles.service_interview_content}>
-                <a
-                  href="https://note.com/sgms/n/n01bd46d99dcd?magazine_key=m3633f7f797e5"
-                  target="_blank"
+              {works.map((work: any, i: number) => (
+                <SwiperSlide
+                  className={styles.service_interview_content}
+                  key={i}
                 >
-                  <figure className={styles.logo}>
-                    <img src="/images/interview_gs_logo.svg" alt="GSロゴ"></img>
-                  </figure>
-                  <figure className={styles.image}>
-                    <img src="/images/interview_gs.png" alt="GS画像"></img>
-                  </figure>
-                  <h3 className={styles.caption}>
-                    「認識のズレを補正する仕組み」で、
-                    <br />
-                    社内のコミュニケーションを円滑に
-                  </h3>
-                  <p className={styles.footnote}>
-                    ゴール・システム・コンサルティング株式会社
-                    <br />
-                    <span>小笠原剛、但田真紀</span>
-                  </p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className={styles.service_interview_content}>
-                <a
-                  href="https://note.com/sgms/n/nc218c6d07a22?magazine_key=m3633f7f797e5"
-                  target="_blank"
-                >
-                  <figure className={styles.logo}>
-                    <img
-                      src="/images/interview_uniba_logo.svg"
-                      alt="ユニバロゴ"
-                    ></img>
-                  </figure>
-                  <figure className={styles.image}>
-                    <img
-                      src="/images/interview_uniba.png"
-                      alt="ユニバ画像"
-                    ></img>
-                  </figure>
-                  <h3 className={styles.caption}>
-                    「定例ミーティング」を軸として、
-                    <br />
-                    プロジェクトの進行を円滑にする
-                  </h3>
-                  <p className={styles.footnote}>
-                    ユニバ株式会社
-                    <br />
-                    <span>安井貴啓、河合伶</span>
-                  </p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className={styles.service_interview_content}>
-                <a href="https://note.com/sgms/n/n0064b44bbf81" target="_blank">
-                  <figure className={styles.logo}>
-                    <img
-                      src="/images/interview_venect_logo.svg"
-                      alt="ヴェネクトロゴ"
-                    ></img>
-                  </figure>
-                  <figure className={styles.image}>
-                    <img
-                      src="/images/interview_venect.png"
-                      alt="ヴェネクト画像"
-                    ></img>
-                  </figure>
-                  <h3 className={styles.caption}>
-                    会議は「事前に設計」するもの。
-                    <br />
-                    可視化がプロジェクトの進行を加速させる
-                  </h3>
-                  <p className={styles.footnote}>
-                    ヴェネクト株式会社
-                    <br />
-                    <span>牟田和貴、加藤智司</span>
-                  </p>
-                </a>
-              </SwiperSlide>
+                  <Link href={`/works/${encodeURIComponent(work.slug)}`}>
+                    {work.logo && (
+                      <figure className={styles.logo}>
+                        <Image
+                          src={`/logos/${work.logo}`}
+                          alt={work.companyName + "ロゴ"}
+                          layout="fill"
+                          objectFit="contain"
+                        />
+                      </figure>
+                    )}
+                    <figure className={styles.image}>
+                      <Image
+                        className={styles.img}
+                        src={work.thumbnail}
+                        alt={work.companyName + "活用事例"}
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </figure>
+                    <h3 className={styles.caption}>{work.title}</h3>
+                    <div className={styles.companyInfo}>
+                      <p className={styles.companyName}>{work.companyName}</p>
+                      <p className={styles.members}>{work.members}</p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              ))}
             </Swiper>
-          </div>
-
-          <div className={styles.service_effect}>
-            <h2>SuperGoodMeetingsの活用で期待できる変化</h2>
-            <ul className={styles.service_effect_items}>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change1.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                プロジェクトの目的やマイルストーン（目標）を常に意識して行動できる
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change2.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                プロジェクトに関する情報がオープンな場で蓄積・共有される
-              </li>
-              <li>
-                <figure>
-                  <img
-                    src="/images/illust_change3.svg"
-                    alt="イメージイラスト"
-                  ></img>
-                </figure>
-                定期的に状況の変化を感知することができ、適応しやすくなる
-              </li>
-            </ul>
-            <figure className={styles.service_effect_arrow}>
-              <img src="/images/icon_arrow.svg"></img>
-            </figure>
-            <div className={styles.service_effect_result}>
-              <figure>
-                <img src="/images/illust_change4.svg"></img>
-              </figure>
-              一人ひとりのメンバーが自律的に動きやすくなる
-            </div>
-          </div>
-
-          <div className={styles.service_detail}>
-            <div className={styles.pgs}>
-              <h2>SuperGoodMeetingsに実装されているメソッドについて</h2>
-              <div className={styles.pgs_about}>
-                <figure>
-                  <img
-                    src="/images/pjs_logo.png"
-                    alt="Project Sprintロゴ"
-                  ></img>
-                </figure>
-                <p>
-                  SuperGoodMeetingsは、運営元である株式会社コパイロツトが開発した、独自のプロジェクト推進メソッド
-                  「Project Sprint」に基づいて設計されています。「Project
-                  Sprint」とは、ミーティングを活用してプロジェクトを推進する方法論です。コパイロツトがこれまでの業務において積み上げてきたプロジェクト推進の実践知を元に、汎用的な方法論にまとめ、オープンソースとして公開しています。
-                </p>
-              </div>
-              <div className={styles.pgs_conference}>
-                <h3 className={styles.pgs_title}>Project Sprintの登壇実績</h3>
-                <ul className={styles.pgs_link}>
-                  <li>経済産業省 DX-Techmembersランチ会（2020.09.29）</li>
-                  <li>
-                    <Link
-                      href="https://itr-lounge.connpass.com/event/183245/"
-                      legacyBehavior
-                    >
-                      <a target="_blank">
-                        ITR Lounge ハナシバ vol.5
-                        激動の時代、隣のプロジェクトマネージャが取り組んでいる事（2020.08.12）
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="https://2019.pmconf.jp/" legacyBehavior>
-                      <a target="_blank">
-                        プロダクトマネージャーカンファレンス 2019（2019.11.13）
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://peatix.com/event/1366420/"
-                      legacyBehavior
-                    >
-                      <a target="_blank">
-                        日本ナレッジマネジメント学会：実践ナレッジ・イノベーション研究部会11月度（2019.11.12）
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className={styles.pgs_button}>
-                <div className={styles.button}>
-                  <a
-                    id="ga_pjs"
-                    href="https://projectsprint.org"
-                    target="_blank"
-                  >
-                    projectsprint.org
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.service_movie}>
-            <h2>
-              動画でわかる、
-              <span>SuperGoodMeetings</span>
-            </h2>
-            <div className={styles.service_movie_content}>
-              <img
-                className="movieArea"
-                id="ga_movie"
-                src="/images/movie_thumb.png"
-                alt="クリックで再生"
-              ></img>
-              <YouTube
-                videoId="vE4l29Wlr8k"
-                opts={{
-                  height: "200",
-                  width: "300",
-                }}
-                onReady={_onReady}
-              />
-            </div>
           </div>
 
           <div id="media" className={styles.service_media}>
@@ -514,34 +532,87 @@ export default function Home({ allPosts }: { allPosts: any }) {
             </Swiper>
           </div>
 
-          {posts.length > 0 ? (
-            <div className={styles.service_news}>
-              <h2 className={styles.service_news_title}>お知らせ</h2>
-              <div className={styles.service_news_link}>
-                <Link href="/posts" legacyBehavior>
-                  お知らせ一覧
-                </Link>
+          <div className={styles.service_detail}>
+            <div className={styles.pgs}>
+              <h2>SuperGoodMeetingsに実装されているメソッドについて</h2>
+              <div className={styles.pgs_about}>
+                <figure>
+                  <div>
+                    <Image
+                      className={styles.img}
+                      src="/images/pjs_logo.png"
+                      alt="Project Sprintロゴ"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                </figure>
+                <p>
+                  SuperGoodMeetingsは、運営元である株式会社コパイロツトが開発した、独自のプロジェクト推進フレームワーク
+                  「Project Sprint」に基づいて設計されています。「Project
+                  Sprint」とは、ミーティングを活用してプロジェクトを推進する方法論です。コパイロツトがこれまでの業務において積み上げてきたプロジェクト推進の実践知を元に、汎用的な方法論にまとめ、オープンソースとして公開しています。
+                </p>
               </div>
-              <ul className={styles.service_news_items}>
-                {posts.map((post: any, i: number) => (
-                  <li key={i}>
-                    <span>{post.date}</span>
+              <div className={styles.pgs_conference}>
+                <h3 className={styles.pgs_title}>Project Sprintの登壇実績</h3>
+                <ul className={styles.pgs_link}>
+                  <li>経済産業省 DX-Techmembersランチ会（2020.09.29）</li>
+                  <li>
                     <Link
-                      href={`/posts/${encodeURIComponent(post.slug)}`}
+                      href="https://itr-lounge.connpass.com/event/183245/"
                       legacyBehavior
                     >
-                      {post.title}
+                      <a target="_blank">
+                        ITR Lounge ハナシバ vol.5
+                        激動の時代、隣のプロジェクトマネージャが取り組んでいる事（2020.08.12）
+                      </a>
                     </Link>
                   </li>
-                ))}
-              </ul>
+                  <li>
+                    <Link href="https://2019.pmconf.jp/" legacyBehavior>
+                      <a target="_blank">
+                        プロダクトマネージャーカンファレンス 2019（2019.11.13）
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://peatix.com/event/1366420/"
+                      legacyBehavior
+                    >
+                      <a target="_blank">
+                        日本ナレッジマネジメント学会：実践ナレッジ・イノベーション研究部会11月度（2019.11.12）
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.pgs_button}>
+                <div className={styles.button}>
+                  <a
+                    id="ga_pjs"
+                    href="https://projectsprint.org"
+                    target="_blank"
+                  >
+                    projectsprint.org
+                  </a>
+                </div>
+              </div>
             </div>
-          ) : null}
+          </div>
 
           <div className={styles.service_trial}>
             <div className={styles.service_trial_heading}>
-              <img src="/images/illust_trial.svg" alt="イメージイラスト" />
-              <h2> まずは1プロジェクト （ 無料 ）からお試しいただけます</h2>
+              <div>
+                <Image
+                  className={styles.img}
+                  src="/images/illust_trial.svg"
+                  alt="イメージイラスト"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+              <h2> まずは1プロジェクト（無料）からお試しいただけます</h2>
             </div>
             <p>
               SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。{" "}
@@ -588,8 +659,18 @@ export default function Home({ allPosts }: { allPosts: any }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(["slug", "title", "date"]);
+  const allNews = getAllNews(["slug", "title", "date"]);
+  const allReleaseNotes = getAllReleaseNotes(["slug", "title", "date"]);
+  const allWorks = getAllWorks([
+    "slug",
+    "title",
+    "date",
+    "thumbnail",
+    "companyName",
+    "members",
+    "logo",
+  ]);
   return {
-    props: { allPosts },
+    props: { allNews, allReleaseNotes, allWorks },
   };
 }

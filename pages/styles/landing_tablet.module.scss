@@ -3,53 +3,105 @@
     // ヒーローエリア
     .service_hero_area {
       padding: 0 24px;
-      height: 532px;
-      margin: 0 0 100px 0;
-      background-size: 400px;
+      height: 550px;
+      margin: 8px 0 40px 0;
+      .top_image {
+        bottom: 118px;
+        max-width: 540px;
+        width: calc(100% + 8px);
+        top: auto;
+      }
       h1 {
         font-size: 26px;
       }
       p {
-        margin-bottom: 80px;
-        @include font-size("body-sp-bold");
+        margin: 8px 0 0;
+        @include font-size("caption-sp-bold");
         span {
           display: block;
         }
       }
       &_button {
+        text-align: center;
         span {
-          @include font-size("body-sp-bold");
+          @include font-size("caption-sp-bold");
+          margin: 0 0 10px;
         }
-        margin: auto;
         margin-bottom: 0;
         .filledButton {
           margin: auto;
+          height: 54px;
         }
       }
+    }
+
+    // リリースノート
+    .release_notes {
+      margin-bottom: 50px;
+      padding: 0 24px;
+
+      &_title {
+        margin-bottom: 18px;
+        @include font-size("h1-sp");
+      }
+
+      &_content {
+        border-radius: 24px;
+      }
+
+      & li {
+        flex-flow: column;
+        margin-bottom: 16px;
+
+        & span {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 4px;
+          @include font-size("caption-sp-bold");
+        }
+
+        & a {
+          @include font-size("caption-sp");
+        }
+      }
+
+      &_link {
+        a {
+          @include font-size("caption-sp-bold");
+        }
+      }
+    }
+
+    // サービス導入
+    .service_resolution {
+      margin-bottom: 50px;
     }
 
     // 課題説明
     .service_task {
       width: auto;
-      margin: 0 24px 100px;
+      margin: 0 24px 24px;
       h2 {
-        @include font-size("h2-sp");
-        margin: 0 0 24px 0;
+        @include font-size("h1-sp");
+        margin: 0 0 18px 0;
       }
       ul {
         flex-direction: column;
         li {
-          @include font-size("body-sp-bold");
+          @include font-size("caption-sp-bold");
           width: 100%;
           display: flex;
           align-items: center;
           figure {
-            margin: 0 15px 0 0;
+            margin: 0 8px 0 0;
             width: 156px;
             flex-shrink: 0;
             img {
               width: 100%;
             }
+          }
+          &:not(:last-of-type) {
+            margin-bottom: 16px;
           }
         }
       }
@@ -58,24 +110,25 @@
     // サービス概要説明
     .service_about {
       width: auto;
-      margin: 0 24px 100px 24px;
+      margin: 0 24px;
 
       &::before {
-        top: 15%;
+        top: 16%;
         left: -80px;
         width: 140px;
         height: 140px;
       }
       &::after {
-        top: 50%;
-        right: -120px;
+        top: 40%;
+        right: -126px;
         width: 140px;
         height: 140px;
       }
 
       &_message1 {
         flex-direction: column;
-        margin: 0 0 64px 0px;
+        padding-top: 50px;
+        margin: 0 0 56px 0px;
         figure {
           width: auto;
           margin: 0;
@@ -86,10 +139,10 @@
           h2 {
             @include font-size("h2-sp");
             margin-top: 24px;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
           }
           p {
-            @include font-size("body-sp-bold");
+            @include font-size("body-sp");
           }
         }
         .button {
@@ -100,7 +153,7 @@
 
       &_message2 {
         flex-direction: column;
-        margin: 0 0 80px 0;
+        margin: 0 0 50px 0;
         figure {
           width: auto;
           margin: 0;
@@ -110,11 +163,14 @@
           h2 {
             @include font-size("h2-sp");
             margin-top: 24px;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
           }
           p {
-            @include font-size("body-sp-bold");
+            @include font-size("body-sp");
           }
+        }
+        &::before {
+          display: block;
         }
       }
     }
@@ -122,15 +178,15 @@
     //新規登録への導線1
     .service_trial {
       width: auto;
-      margin: 0 24px 100px;
-      padding: 40px 24px;
+      margin: 0 24px 50px;
+      padding: 24px;
 
       &_heading {
         display: block;
         padding: 0;
         margin-bottom: 8px;
 
-        img {
+        div {
           display: block;
           margin: 0 auto 24px;
         }
@@ -142,43 +198,45 @@
       }
 
       p {
-        @include font-size("body-sp-bold");
-        margin-bottom: 40px;
+        @include font-size("caption-sp-bold");
+        margin-bottom: 24px;
+        text-align: left;
       }
     }
 
     //活用事例
     .service_interview {
       width: auto;
-      margin: 100px 0 100px 24px;
+      margin: 0 0 50px;
       .swiper_container {
-        padding: 0;
+        padding: 0 24px;
       }
       a {
-        padding: 40px 24px 58px 24px;
+        padding: 40px 18px 24px;
       }
       &_title {
-        @include font-size("h2-sp");
-        margin-right: 24px;
+        @include font-size("h1-sp");
+        margin-bottom: 24px;
       }
       &_content {
         box-sizing: border-box;
         .logo {
           text-align: center;
-          img {
-            width: 132px;
-          }
-        }
-        .image {
-          margin: 32px auto 32px;
+          margin-bottom: 24px;
+          height: 24px;
+          line-height: 24px;
         }
         .caption {
-          @include font-size("h2-sp");
+          @include font-size("h4-sp");
+          margin: 0 0 40px;
         }
-        .footnote {
-          @include font-size("body-sp-bold");
-          span {
-            @include font-size("body-sp-bold");
+        .companyInfo {
+          .companyName {
+            @include font-size("caption-sp-bold");
+            margin: 0 0 8px;
+          }
+          .members {
+            @include font-size("caption-sp-bold");
           }
         }
       }
@@ -188,12 +246,15 @@
     .service_effect {
       background-image: none;
       width: auto;
-      margin: 0 24px 80px;
+      margin: 0 24px 24px;
       h2 {
         width: auto;
         margin: auto;
-        @include font-size("h2-sp");
-        margin: 0 0 24px 0;
+        @include font-size("h1-sp");
+        margin: 0 0 12px 0;
+        & span {
+          display: block;
+        }
       }
       &_items {
         width: auto;
@@ -201,33 +262,41 @@
         flex-wrap: wrap;
         flex-direction: column;
         li {
-          @include font-size("body-sp-bold");
+          @include font-size("caption-sp-bold");
           width: 100%;
           display: flex;
           align-items: center;
           figure {
-            margin: 0 15px 0 0;
+            margin: 0 8px 0 0;
             width: 156px;
             flex-shrink: 0;
             img {
               width: 100%;
             }
           }
+          &:not(:last-of-type) {
+            margin-bottom: 16px;
+          }
         }
       }
-      &_result {
-        @include font-size("body-sp-bold");
-        display: flex;
-        align-items: center;
+    }
+
+    // サービス導入の結果
+    .service_result {
+      padding: 0 24px;
+
+      &_content {
+        @include font-size("h3-sp");
         width: 100%;
+        max-width: 334px;
         box-sizing: border-box;
-        padding: 24px;
-        margin: 0 auto;
+        padding: 28px 20px;
         border-radius: 20px;
         background: $sky;
+
         figure {
-          width: 74px;
-          margin: 0 16px 0 0;
+          width: 68px;
+          margin: 0 18px 0 0;
           img {
             width: 100%;
           }
@@ -238,7 +307,7 @@
     //PJsの紹介
     .service_detail {
       width: auto;
-      margin: 0 24px 100px 24px;
+      margin: 0 24px 24px;
       .pgs {
         h2 {
           @include font-size("h2-sp");
@@ -246,17 +315,25 @@
         }
         width: 100%;
         box-sizing: border-box;
-        padding: 40px 24px;
+        padding: 40px 24px 24px;
         .pgs_about {
           align-items: center;
           flex-direction: column;
-          margin-bottom: 24px;
+          margin-bottom: 40px;
           figure {
             margin-bottom: 24px;
+            margin-right: 0;
+            width: 88px;
+            height: 88px;
+            min-width: 88px;
           }
           p {
             @include font-size("body-sp-medium");
           }
+        }
+        .pgs_title {
+          @include font-size("h3-sp");
+          margin-bottom: 8px;
         }
         .pgs_link {
           li {
@@ -279,40 +356,47 @@
     //動画
     .service_movie {
       width: auto;
-      margin: 0 24px 120px;
+      margin: 0 24px 64px;
       h2 {
-        @include font-size("h2-sp");
+        @include font-size("h1-sp");
+        margin-bottom: 18px;
         span {
-          @include font-size("h2-sp");
           display: block;
           font-style: oblique;
         }
+      }
+      &::after {
+        display: none;
+      }
+      &::before {
+        display: none;
       }
     }
 
     //メディア掲載
     .service_media {
       width: auto;
-      margin: 0 0 100px 24px;
+      margin: 0 0 50px;
       .swiper_container {
-        padding: 0;
+        padding: 0 24px;
       }
       a {
-        padding: 32px 16px 38px 16px;
+        padding: 32px 16px;
       }
       &_title {
-        @include font-size("h2-sp");
-        margin-right: 24px;
+        @include font-size("h1-sp");
+        margin-bottom: 18px;
       }
       &_contents {
         &_item {
           height: 202px;
           h3 {
-            @include font-size("h3-sp");
+            @include font-size("h4-pc");
+            margin-bottom: 16px;
             text-align: center;
           }
           p {
-            @include font-size("body-sp-bold");
+            @include font-size("caption-sp");
           }
         }
       }
@@ -321,32 +405,33 @@
     //お知らせ
     .service_news {
       width: auto;
-      margin: 0 24px 100px;
+      margin-bottom: 50px;
+
       &_title {
-        @include font-size("h2-sp");
+        @include font-size("h1-sp");
+        margin-bottom: 24px;
       }
       &_link {
         text-align: right;
-        margin-bottom: 16px;
         a {
-          position: static;
-          @include font-size("body-sp-bold");
+          @include font-size("caption-sp-bold");
         }
       }
       &_items {
-        @include font-size("body-sp-bold");
         li {
           flex-direction: column;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
           span {
             display: block;
             width: auto;
             margin-right: 0;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
+            @include font-size("caption-sp-bold");
           }
           a {
             color: $white;
             text-decoration: none;
+            @include font-size("caption-sp");
           }
         }
       }
@@ -355,25 +440,26 @@
     //新規登録への導線2
     .service_start {
       width: auto;
-      margin: 0 24px 100px;
+      margin: 0 auto 50px;
+      padding-bottom: 50px;
+
+      &_content {
+        padding: 24px;
+      }
       h2 {
         @include font-size("h2-sp");
-        margin: 0 0 8px 0;
+        margin: 0 0 24px 0;
+
+        & span {
+          display: block;
+        }
       }
       p {
-        @include font-size("body-sp-bold");
+        text-align: left;
+        @include font-size("caption-sp-bold");
       }
-      &::after {
-        top: -60px;
-        right: -60px;
-        width: 140px;
-        height: 140px;
-      }
-      &::before {
-        top: 200px;
-        left: -60px;
-        width: 140px;
-        height: 140px;
+      .filledButton {
+        margin-top: 12px;
       }
     }
 
@@ -404,35 +490,40 @@
 
     //ニュースレター
     .newsletter_container {
-      padding: 24px 24px 40px 24px;
+      padding: 32px 24px;
       .newsletter {
         h2 {
-          margin-top: 0px;
+          margin-bottom: 12px;
           text-align: center;
           @include font-size("h2-sp");
         }
         p {
-          @include font-size("body-sp-bold");
-          margin-bottom: 16px;
+          @include font-size("caption-sp-bold");
+          margin-bottom: 24px;
         }
         input {
           box-sizing: border-box;
-          @include font-size("body-sp-medium");
+          @include font-size("body-sp");
           color: $secondary;
           border: 0;
           border-radius: 8px;
           width: 100%;
-          padding: 0 24px;
+          padding: 0 16px;
           height: 48px;
           margin: 0;
         }
         .submit_area {
           flex-direction: column;
+          gap: 24px;
           &_text {
             @include font-size("body-sp-bold");
           }
         }
       }
+    }
+
+    .arrow {
+      margin: 0 auto 24px;
     }
   }
 }

@@ -13,7 +13,7 @@ export default function Posts({ allPosts }: any) {
     : router.query.page;
   const currentPage = pageQuery ? parseInt(pageQuery, 10) : 1;
   const pages = chunk(allPosts, 10);
-  const posts = pages[currentPage - 1];
+  const posts = pages[currentPage - 1] || [];
   return (
     <>
       <Head>
@@ -21,39 +21,40 @@ export default function Posts({ allPosts }: any) {
       </Head>
       <Layout>
         <div className={styles.posts_container}>
-          <h1>お知らせ</h1>
-          <div>
-            {posts.map((post: any, i: any) => (
-              <div key={i}>
-                <p className={styles.posts_item}>
-                  <span>{post.date}</span>
-                  <Link
-                    href={`/posts/${encodeURIComponent(post.slug)}`}
-                    legacyBehavior
-                  >
-                    {post.title}
-                  </Link>
-                </p>
-              </div>
-            ))}
+          <div className={styles.posts_content}>
+            <h1>お知らせ</h1>
+            <div>
+              {posts.map((post: any, i: any) => (
+                <Link
+                  key={i}
+                  href={`/posts/${encodeURIComponent(post.slug)}`}
+                  legacyBehavior
+                >
+                  <a className={styles.posts_item}>
+                    <span className={styles.posts_date}>{post.date}</span>
+                    <h2>{post.title}</h2>
+                  </a>
+                </Link>
+              ))}
+            </div>
+            <ul className={styles.pager}>
+              {pages.map((_, i) => {
+                const page = i + 1;
+                if (page === currentPage) {
+                  return <li key={page}>{page}</li>;
+                } else {
+                  return (
+                    <li key={page}>
+                      <Link
+                        href={{ pathname: "/posts", query: { page } }}
+                        legacyBehavior
+                      >{`${page}`}</Link>
+                    </li>
+                  );
+                }
+              })}
+            </ul>
           </div>
-          <ul className={styles.pager}>
-            {pages.map((_, i) => {
-              const page = i + 1;
-              if (page === currentPage) {
-                return <li key={page}>{page}</li>;
-              } else {
-                return (
-                  <li key={page}>
-                    <Link
-                      href={{ pathname: "/posts", query: { page } }}
-                      legacyBehavior
-                    >{`${page}`}</Link>
-                  </li>
-                );
-              }
-            })}
-          </ul>
         </div>
       </Layout>
     </>
