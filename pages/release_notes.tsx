@@ -33,7 +33,7 @@ export default function Posts({ allReleaseNotes }: any) {
                 >
                   <a className={styles.posts_item}>
                     <span className={styles.posts_date}>{post.date}</span>
-                    {getIconFromCategory(post.category)}
+                    {getIcon(post.icon)}
                     <h2>{post.title}</h2>
                   </a>
                 </Link>
@@ -64,26 +64,16 @@ export default function Posts({ allReleaseNotes }: any) {
 }
 
 export async function getStaticProps() {
-  const allReleaseNotes = getAllReleaseNotes([
-    "slug",
-    "title",
-    "date",
-    "category",
-  ]);
+  const allReleaseNotes = getAllReleaseNotes(["slug", "title", "date", "icon"]);
   return {
     props: { allReleaseNotes },
   };
 }
 
-const getIconFromCategory = (category: string) => {
-  switch (category) {
-    case "更新":
-      return <span className={styles.posts_icon}>✨</span>;
-    case "修正":
-      return <span className={styles.posts_icon}>🐛</span>;
-    case "リリース":
-      return <span className={styles.posts_icon}>🎉</span>;
-    default:
-      return <span className={styles.posts_icon}>✨</span>;
+const getIcon = (icon: string) => {
+  if (icon) {
+    return <span className={styles.posts_icon}>{icon}</span>;
+  } else {
+    return <span className={styles.posts_icon}>✨</span>;
   }
 };
