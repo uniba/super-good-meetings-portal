@@ -117,7 +117,7 @@
       &_text {
         padding-right: 0;
         width: 100%;
-        a {
+        .title {
           @include font-size("h4-sp");
           display: block;
         }
