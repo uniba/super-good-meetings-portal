@@ -117,7 +117,8 @@
   }
 
   .simplelist > dt {
-    @include font-size("label-pc-bold");
+    @include font-size("body-sp-bold");
+    line-height: 150%;
   }
   .simplelist > dd {
     margin-left: 0;
@@ -191,7 +192,8 @@
     }
 
     .simplelist > dt {
-      @include font-size("body-sp-bold");
+      @include font-size("label-pc-bold");
+      line-height: 150%;
     }
   }
 }
