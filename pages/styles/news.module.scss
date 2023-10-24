@@ -5,24 +5,45 @@
   color: $black;
   min-height: calc(100vh - 650px);
   @include font-size("label-pc-medium");
-  padding: 48px 194px 120px 194px;
+  padding: 48px 0 80px;
 
-  h1 {
-    margin: 0 0 80px 0;
-    @include font-size("h1-pc");
+  .posts_content {
+    max-width: 840px;
+    margin: 0 auto;
+
+    h1 {
+      margin: 0 0 54px;
+      @include font-size("heading-pc");
+    }
   }
 
   .posts_item {
+    margin: 0 0 40px;
     display: flex;
-    align-items: center;
-    span {
-      display: block;
-      width: 80px;
-      margin-right: 64px;
-      @include font-size("label-pc-medium");
+    align-items: flex-start;
+    text-decoration: none;
+    color: $black;
+    &:hover {
+      opacity: 80%;
     }
-    a {
-      color: $black;
+    .posts_date {
+      display: inline-flex;
+      align-items: center;
+      background: $paleBlue;
+      padding: 0 16px;
+      height: 30px;
+      margin-top: 2px;
+      margin-right: 24px;
+      border-radius: 4px;
+      @include font-size("caption-pc-bold");
+    }
+    .posts_icon {
+      @include font-size("h4-pc");
+      margin-right: 8px;
+      margin-top: 2px;
+    }
+    h2 {
+      margin: 0;
       text-decoration: none;
       @include font-size("h3-pc");
     }
@@ -32,9 +53,11 @@
     display: flex;
     justify-content: center;
     @include font-size("h3-pc");
-    margin-top: 80px;
+    margin-top: 64px;
     li {
-      margin-right: 8px;
+      &:not(:last-of-type) {
+        margin-right: 16px;
+      }
       a {
         color: $secondary;
         text-decoration: none;
@@ -45,24 +68,40 @@
 
 @media screen and (max-width: 1000px) {
   .posts_container {
-    padding: 48px 24px 120px 24px;
-    h1 {
-      margin: 0 0 24px 0;
-      @include font-size("h1-sp");
+    padding: 40px 16px 64px 16px;
+
+    .posts_content {
+      max-width: 100%;
+
+      h1 {
+        margin: 0 0 24px 0;
+        @include font-size("heading-sp");
+      }
     }
 
     .posts_item {
-      display: block;
-      span {
-        @include font-size("body-sp-medium");
+      margin: 0 0 32px;
+      flex-flow: column;
+      .posts_date {
+        @include font-size("label-sp-bold");
+        height: 25px;
+        padding: 0 12px;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 8px;
       }
-      a {
+      .posts_icon {
+        display: none;
+      }
+      h2 {
         @include font-size("h3-sp");
+        display: block;
       }
     }
 
     .pager {
       @include font-size("h3-sp");
+      margin-top: 84px;
     }
   }
 }

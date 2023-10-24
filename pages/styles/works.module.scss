@@ -1,0 +1,144 @@
+@import "../../styles/base_styles.scss";
+
+.works_container {
+  background: $white;
+  color: $black;
+  min-height: calc(100vh - 650px);
+  @include font-size("label-pc-medium");
+  padding: 48px 0 80px;
+
+  .works_content {
+    max-width: 840px;
+    margin: 0 auto;
+
+    h1 {
+      margin: 0 0 32px;
+      @include font-size("heading-pc");
+    }
+  }
+
+  .works_item {
+    margin: 0 0 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-decoration: none;
+    color: $black;
+    &:hover {
+      opacity: 80%;
+    }
+    &_date {
+      display: inline-flex;
+      align-items: center;
+      background: $paleBlue;
+      padding: 0 12px;
+      height: 30px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      @include font-size("caption-pc-bold");
+    }
+    &_date_sp {
+      display: none;
+      background: $paleBlue;
+      padding: 0 12px;
+      height: 25px;
+      @include font-size("label-sp-bold");
+      margin-bottom: 8px;
+      border-radius: 4px;
+    }
+    &_text {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      padding-right: 24px;
+      box-sizing: border-box;
+      width: calc(100% - 336px);
+
+      .title {
+        color: $black;
+        display: block;
+        text-decoration: none;
+        @include font-size("h4-pc");
+        margin: 0 0 8px;
+      }
+      .companyName {
+        margin: 0;
+        @include font-size("label-pc");
+      }
+    }
+    &_image {
+      position: relative;
+      width: 336px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+
+  .pager {
+    display: flex;
+    justify-content: center;
+    @include font-size("h3-pc");
+    margin-top: 64px;
+    li {
+      &:not(:last-of-type) {
+        margin-right: 16px;
+      }
+      a {
+        color: $secondary;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .works_container {
+    padding: 48px 16px 64px;
+
+    .works_content {
+      max-width: 100%;
+
+      h1 {
+        margin: 0 0 24px 0;
+        @include font-size("heading-sp");
+      }
+    }
+
+    .works_item {
+      margin: 0 0 40px;
+      flex-direction: column-reverse;
+      &_date {
+        display: none;
+      }
+      &_date_sp {
+        display: inline-flex;
+        align-items: center;
+      }
+      &_text {
+        padding-right: 0;
+        width: 100%;
+        .title {
+          @include font-size("h4-sp");
+          display: block;
+        }
+        .companyName {
+          @include font-size("label-sp");
+        }
+      }
+      &_image {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+    }
+
+    .pager {
+      @include font-size("h3-sp");
+      margin-top: 48px;
+    }
+  }
+}
+
+.img {
+  position: relative !important;
+  width: 100%;
+}
