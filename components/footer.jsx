@@ -70,6 +70,15 @@ const Footer = () => {
                 操作ガイド
               </Link>
             </li>
+            <li>
+              <Link
+                href="https://sites.google.com/copilot.jp/support-sgms/faq?authuser=0"
+                id="ga_userguide_footer"
+                target="_blank"
+              >
+                よくある質問
+              </Link>
+            </li>
           </ul>
           <ul>
             <li>
