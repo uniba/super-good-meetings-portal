@@ -70,6 +70,15 @@ const Footer = () => {
                 操作ガイド
               </Link>
             </li>
+            <li>
+              <Link
+                href="https://sites.google.com/copilot.jp/support-sgms/faq?authuser=0"
+                id="ga_userguide_footer"
+                target="_blank"
+              >
+                よくある質問
+              </Link>
+            </li>
           </ul>
           <ul>
             <li>
@@ -110,18 +119,21 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <address>
-        Developed by
-        <br />
-        <a href="https://copilot.jp/" target="_blank" rel="noopener">
-          COPILOT Inc.
-        </a>
-        &nbsp;+&nbsp;
-        <a href="https://uniba.jp/" target="_blank" rel="noopener">
-          UNIBA Inc.
-        </a>
-        &nbsp;Project Sprint Team.
-      </address>
+      <div className={styles.footer_bottom}>
+        <address>
+          Developed by
+          <br />
+          <a href="https://copilot.jp/" target="_blank" rel="noopener">
+            COPILOT Inc.
+          </a>
+          &nbsp;+&nbsp;
+          <a href="https://uniba.jp/" target="_blank" rel="noopener">
+            UNIBA Inc.
+          </a>
+          &nbsp;Project Sprint Team.
+        </address>
+        <p>R2 事業再構築</p>
+      </div>
     </div>
   );
 };

@@ -3,10 +3,12 @@
 .footer {
   color: $white;
   background: $blue;
-  padding: 56px 130px 64px;
+  padding: 40px;
 
   .footer_inner {
+    max-width: 1156px;
     display: flex;
+    margin: auto;
     h1 {
       margin: 0;
       width: 315px;
@@ -30,7 +32,11 @@
       @include font-size("caption-pc-bold");
 
       ul {
-        margin-left: 68px;
+        margin-left: 80px;
+
+        & li:not(:last-of-type) {
+          margin-bottom: 4px;
+        }
 
         a {
           color: $white;
@@ -49,15 +55,30 @@
       }
     }
   }
-  address {
-    @include font-size("caption-pc-bold");
 
-    a {
-      color: $white;
+  .footer_bottom {
+    max-width: 1156px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 64px auto 0;
 
-      &:hover {
-        opacity: 80%;
+    address {
+      @include font-size("caption-pc");
+
+      a {
+        color: $white;
+
+        &:hover {
+          opacity: 80%;
+        }
       }
+    }
+
+    p {
+      margin: 0;
+      @include font-size("label-pc");
+      opacity: 0.4;
     }
   }
 
@@ -67,7 +88,7 @@
   }
 
   @media screen and (max-width: 1000px) {
-    padding: 48px 40px 48px 40px;
+    padding: 48px 40px;
 
     .footer_inner {
       flex-direction: column-reverse;
@@ -76,31 +97,41 @@
         order: 2;
         margin: 0;
         width: 100%;
-        max-width: 315px;
+        max-width: 250px;
 
         img {
-          margin-bottom: 24px;
+          margin-bottom: 40px;
         }
       }
 
       .footer_navigation {
         display: block;
         margin-left: 0;
-        margin-bottom: 32px;
 
         ul {
           margin-left: 0;
-          margin-bottom: 32px;
+          &:not(:last-of-type) {
+            margin-bottom: 32px;
+          }
         }
       }
     }
 
-    address {
-      @include font-size("label-sp-bold");
-      line-height: 150%;
+    .footer_bottom {
+      display: block;
 
-      .sp {
-        display: block;
+      address {
+        @include font-size("label-sp");
+        line-height: 150%;
+
+        .sp {
+          display: block;
+        }
+      }
+
+      p {
+        @include font-size("label-sp");
+        margin-top: 24px;
       }
     }
   }
