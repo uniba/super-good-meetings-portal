@@ -194,6 +194,10 @@
         h2 {
           @include font-size("h2-sp");
           margin: 0;
+
+          span {
+            display: inline-block;
+          }
         }
       }
 
@@ -451,7 +455,7 @@
         margin: 0 0 24px 0;
 
         & span {
-          display: block;
+          display: inline-block;
         }
       }
       p {

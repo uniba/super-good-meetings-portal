@@ -313,7 +313,7 @@ export default function Home({
             <div className={styles.service_start}>
               <div className={styles.service_start_content}>
                 <h2>
-                  まずは1プロジェクト（無料）<span>からお試しいただけます</span>
+                  まずは1プロジェクト（無料）<span>からお試し</span>いただけます
                 </h2>
                 <p>
                   新しい手法を取り入れるには、いろいろとハードルもあるでしょう。
@@ -612,7 +612,9 @@ export default function Home({
                   objectFit="contain"
                 />
               </div>
-              <h2> まずは1プロジェクト（無料）からお試しいただけます</h2>
+              <h2>
+                まずは1プロジェクト（無料）<span>からお試し</span>いただけます
+              </h2>
             </div>
             <p>
               SuperGoodMeetingsを使えば、プロジェクトの目的や目指すべきゴール、議論したい内容をかんたんに可視化できます。{" "}
