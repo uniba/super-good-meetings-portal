@@ -32,6 +32,11 @@ export default function Plan() {
               <li>
                 <Link href="/security">セキュリティホワイトペーパー</Link>
               </li>
+              <li>
+                <Link href="/policy" legacyBehavior>
+                  セキュリティポリシー
+                </Link>
+              </li>
             </ul>
           </nav>
 

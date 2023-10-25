@@ -37,6 +37,11 @@ export default function Terms() {
                   セキュリティホワイトペーパー
                 </Link>
               </li>
+              <li>
+                <Link href="/policy" legacyBehavior>
+                  セキュリティポリシー
+                </Link>
+              </li>
             </ul>
           </nav>
 
