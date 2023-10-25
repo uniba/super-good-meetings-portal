@@ -35,9 +35,42 @@
     }
   }
 
+  .numberList {
+    counter-reset: number;
+    position: relative;
+
+    & > dd {
+      margin-left: 24px;
+    }
+
+    & > dd::before {
+      position: absolute;
+      left: 0;
+      counter-increment: number;
+      content: counter(number) "　";
+    }
+  }
+
+  .discList {
+    margin: 0;
+    & > dd {
+      display: list-item;
+      list-style-type: disc;
+      margin-left: 24px;
+      margin-bottom: 8px;
+      @include font-size("body-sp");
+    }
+  }
+
   h1 {
     margin: 0 0 24px 0;
     @include font-size("heading-pc");
+  }
+
+  h2 {
+    margin-top: 64px;
+    margin-bottom: 32px;
+    @include font-size("h1-pc");
   }
 
   p {
@@ -59,10 +92,12 @@
   }
 
   & > dl {
+    margin: 0;
+
     & > dt {
-      @include font-size("h1-sp");
-      margin-top: 64px;
-      margin-bottom: 32px;
+      @include font-size("h2-sp");
+      margin-top: 32px;
+      margin-bottom: 16px;
       counter-increment: clause;
     }
     & > dd {
@@ -71,7 +106,7 @@
       margin: 0;
       & > dl {
         & > dt {
-          margin-bottom: 16px;
+          margin-bottom: 8px;
         }
         & > dd {
           margin-bottom: 16px;
@@ -148,23 +183,31 @@
       @include font-size("h1-sp");
     }
 
+    h2 {
+      @include font-size("h2-sp");
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+
     p {
       @include font-size("label-pc");
       line-height: 150%;
     }
 
     & > dl {
+      margin: 0;
+
       & > dt {
         @include font-size("h4-sp");
-        margin-top: 32px;
-        margin-bottom: 16px;
+        margin-top: 16px;
+        margin-bottom: 8px;
       }
       & > dd {
         @include font-size("label-pc");
         line-height: 150%;
         & > dl {
           & > dt {
-            margin-bottom: 8px;
+            margin-bottom: 4px;
           }
           & > dd {
             margin-bottom: 8px;
@@ -194,6 +237,20 @@
     .simplelist > dt {
       @include font-size("label-pc-bold");
       line-height: 150%;
+    }
+
+    .numberList {
+      & > dd {
+        margin-left: 16px;
+      }
+    }
+
+    .discList {
+      & > dd {
+        margin-left: 16px;
+        @include font-size("label-pc");
+        line-height: 150%;
+      }
     }
   }
 }
