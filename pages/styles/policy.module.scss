@@ -128,6 +128,7 @@
   .bullet > dd {
     display: list-item;
     list-style-type: disc;
+    margin-bottom: 0 !important;
   }
 
   .number > dd {
@@ -145,6 +146,7 @@
 
   .simplelist > dt {
     @include font-size("body-pc-bold");
+    font-weight: 900;
     margin-bottom: 8px;
     margin-top: 32px;
   }

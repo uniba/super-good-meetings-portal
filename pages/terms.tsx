@@ -444,7 +444,7 @@ export default function Terms() {
       </Layout>
       <style jsx>{`
         dl:first-of-type > dd {
-          margin-bottom: 8px;
+          margin-bottom: 16px;
         }
         dl:first-of-type > dd > dl > dd {
           margin-left: 24px;
