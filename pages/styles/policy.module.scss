@@ -104,15 +104,6 @@
     & > dd {
       @include font-size("body-pc");
       margin: 0;
-      & > dl {
-        & > dt {
-          // margin-bottom: 8px;
-        }
-        & > dd {
-          // margin-bottom: 32px;
-          // margin-bottom: 8px;
-        }
-      }
       &:last-child {
         margin-bottom: 64px !important;
       }
@@ -234,7 +225,6 @@
     .simplelist > dt {
       @include font-size("body-sp-bold");
       margin-top: 24px;
-      // line-height: 150%;
     }
 
     .numberList {
