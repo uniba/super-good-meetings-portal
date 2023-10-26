@@ -42,6 +42,7 @@
     & > dd {
       margin-left: 24px;
       margin-bottom: 4px;
+      @include font-size("body-pc");
     }
 
     & > dd::before {
@@ -59,7 +60,7 @@
       list-style-type: disc;
       margin-left: 24px;
       margin-bottom: 4px;
-      @include font-size("body-sp");
+      @include font-size("body-pc");
     }
   }
 
@@ -232,6 +233,7 @@
     .numberList {
       & > dd {
         margin-left: 16px;
+        @include font-size("body-sp");
       }
     }
 
