@@ -12,7 +12,7 @@
   nav {
     ul {
       @include font-size("h4-sp");
-      margin-bottom: 56px;
+      margin-bottom: 80px;
       display: flex;
 
       li {
@@ -35,14 +35,49 @@
     }
   }
 
+  .numberList {
+    counter-reset: number;
+    position: relative;
+
+    & > dd {
+      margin-left: 24px;
+      margin-bottom: 4px;
+      @include font-size("body-pc");
+    }
+
+    & > dd::before {
+      position: absolute;
+      left: 0;
+      counter-increment: number;
+      content: counter(number) "　";
+    }
+  }
+
+  .discList {
+    margin: 0;
+    & > dd {
+      display: list-item;
+      list-style-type: disc;
+      margin-left: 24px;
+      margin-bottom: 4px;
+      @include font-size("body-pc");
+    }
+  }
+
   h1 {
-    margin: 0 0 24px 0;
+    margin: 0 0 40px 0;
     @include font-size("heading-pc");
   }
 
+  h2 {
+    margin-top: 64px;
+    margin-bottom: 32px;
+    @include font-size("h1-pc");
+  }
+
   p {
-    @include font-size("body-sp");
-    line-height: 150%;
+    @include font-size("body-pc");
+    margin: 0;
   }
 
   table {
@@ -59,24 +94,17 @@
   }
 
   & > dl {
+    margin: 0;
+
     & > dt {
-      @include font-size("h1-sp");
-      margin-top: 64px;
-      margin-bottom: 32px;
+      @include font-size("h3-pc");
+      margin-top: 32px;
+      margin-bottom: 8px;
       counter-increment: clause;
     }
     & > dd {
-      @include font-size("body-sp");
-      line-height: 150%;
+      @include font-size("body-pc");
       margin: 0;
-      & > dl {
-        & > dt {
-          margin-bottom: 16px;
-        }
-        & > dd {
-          margin-bottom: 16px;
-        }
-      }
       &:last-child {
         margin-bottom: 64px !important;
       }
@@ -101,6 +129,7 @@
   .bullet > dd {
     display: list-item;
     list-style-type: disc;
+    margin-bottom: 0 !important;
   }
 
   .number > dd {
@@ -117,15 +146,17 @@
   }
 
   .simplelist > dt {
-    @include font-size("body-sp-bold");
-    line-height: 150%;
+    @include font-size("body-pc-bold");
+    font-weight: 900;
+    margin-bottom: 8px;
+    margin-top: 32px;
   }
   .simplelist > dd {
     margin-left: 0;
   }
 
   .caption {
-    @include font-size("caption-pc-bold");
+    @include font-size("body-pc");
     margin: 0;
   }
 
@@ -137,6 +168,7 @@
       ul {
         @include font-size("label-pc-bold");
         flex-wrap: wrap;
+        margin-bottom: 40px;
 
         li {
           margin-bottom: 16px;
@@ -145,33 +177,35 @@
     }
 
     h1 {
+      @include font-size("heading-sp");
+    }
+
+    h2 {
       @include font-size("h1-sp");
+      margin-top: 40px;
+      margin-bottom: 16px;
     }
 
     p {
-      @include font-size("label-pc");
-      line-height: 150%;
+      @include font-size("body-sp");
     }
 
     & > dl {
+      margin: 0;
+
       & > dt {
-        @include font-size("h4-sp");
-        margin-top: 32px;
-        margin-bottom: 16px;
+        @include font-size("h3-sp");
+        margin-top: 24px;
       }
       & > dd {
-        @include font-size("label-pc");
-        line-height: 150%;
+        @include font-size("body-sp");
         & > dl {
-          & > dt {
-            margin-bottom: 8px;
-          }
           & > dd {
-            margin-bottom: 8px;
+            margin-bottom: 24px;
           }
         }
         &:last-child {
-          margin-bottom: 32px;
+          margin-bottom: 40px !important;
         }
       }
     }
@@ -192,8 +226,26 @@
     }
 
     .simplelist > dt {
-      @include font-size("label-pc-bold");
-      line-height: 150%;
+      @include font-size("body-sp-bold");
+      margin-top: 24px;
+    }
+
+    .numberList {
+      & > dd {
+        margin-left: 16px;
+        @include font-size("body-sp");
+      }
+    }
+
+    .discList {
+      & > dd {
+        margin-left: 16px;
+        @include font-size("body-sp");
+      }
+    }
+
+    .caption {
+      @include font-size("body-sp");
     }
   }
 }

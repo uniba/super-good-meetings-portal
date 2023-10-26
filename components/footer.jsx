@@ -107,6 +107,11 @@ const Footer = () => {
               </Link>
             </li>
             <li>
+              <Link href="/policy" id="ga_policy_footer">
+                セキュリティポリシー
+              </Link>
+            </li>
+            <li>
               <Link
                 href="https://sgms.app/userdata_external_transmission"
                 id="ga_userdata_footer"
