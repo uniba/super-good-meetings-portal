@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./styles/footer.module.scss";
-import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -63,7 +63,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="https://sites.google.com/copilot.jp/support-sgms/"
+                href="https://docs.google.com/document/d/1CwJQ9hysAZbJRahUdwtPCzMqDVB8bdY6sCW5tPPXWPc/"
                 id="ga_userguide_footer"
                 target="_blank"
               >
@@ -72,7 +72,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="https://sites.google.com/copilot.jp/support-sgms/faq?authuser=0"
+                href="https://docs.google.com/document/d/1CwJQ9hysAZbJRahUdwtPCzMqDVB8bdY6sCW5tPPXWPc/#heading=h.a4oa9w4chbj0"
                 id="ga_userguide_footer"
                 target="_blank"
               >

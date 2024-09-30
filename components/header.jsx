@@ -1,8 +1,8 @@
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import Modal from "react-modal";
 import styles from "./styles/header.module.scss";
-import Image from "next/image";
 
 Modal.setAppElement("#__next");
 
@@ -47,7 +47,7 @@ const Header = () => {
           </li>
           <li className={styles.button}>
             <Link
-              href="https://sites.google.com/copilot.jp/support-sgms/"
+              href="https://docs.google.com/document/d/1CwJQ9hysAZbJRahUdwtPCzMqDVB8bdY6sCW5tPPXWPc/"
               target="_blank"
               id="ga_contact_header"
             >
@@ -135,7 +135,7 @@ const Header = () => {
           </li>
           <li onClick={() => setIsOpen(false)}>
             <Link
-              href="https://sites.google.com/copilot.jp/support-sgms/"
+              href="https://docs.google.com/document/d/1CwJQ9hysAZbJRahUdwtPCzMqDVB8bdY6sCW5tPPXWPc/"
               id="ga_contact_header"
               target="_blank"
             >
