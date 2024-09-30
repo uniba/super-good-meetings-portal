@@ -27,6 +27,11 @@ const Header = () => {
         </h1>
         <ul className={styles.sessions}>
           <li className={styles.button}>
+            <Link href="/release_notes" id="ga_release_note_header">
+              リリースノート
+            </Link>
+          </li>
+          <li className={styles.button}>
             <Link href="/plan" id="ga_plan_header">
               プランと料金
             </Link>
@@ -112,6 +117,11 @@ const Header = () => {
           <li onClick={() => setIsOpen(false)}>
             <Link href="/#about" id="ga_plan_header">
               サービス紹介
+            </Link>
+          </li>
+          <li onClick={() => setIsOpen(false)}>
+            <Link href="/release_notes" id="ga_release_note_header">
+              リリースノート
             </Link>
           </li>
           <li onClick={() => setIsOpen(false)}>
