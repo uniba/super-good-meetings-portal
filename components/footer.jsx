@@ -67,7 +67,7 @@ const Footer = () => {
                 id="ga_userguide_footer"
                 target="_blank"
               >
-                操作ガイド
+                ハンドブック
               </Link>
             </li>
             <li>

@@ -56,7 +56,7 @@ const Header = () => {
               target="_blank"
               id="ga_contact_header"
             >
-              操作ガイド
+              ハンドブック
             </Link>
           </li>
           <li>
@@ -149,7 +149,7 @@ const Header = () => {
               id="ga_contact_header"
               target="_blank"
             >
-              操作ガイド
+              ハンドブック
             </Link>
           </li>
         </ul>
