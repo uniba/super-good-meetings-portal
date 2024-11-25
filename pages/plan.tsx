@@ -100,9 +100,33 @@ export default function Plan() {
             </li>
           </ul>
 
-          <div className={styles.features}>
-            <h2>ご利用いただける機能</h2>
-            <ul className={`${styles.features_list} ${styles.body_text_bold}`}>
+          <div className={styles.enterprise}>
+            <h2 className={styles.enterprise__title}>エンタープライズプラン</h2>
+            <div className={styles.enterprise__body}>
+              <div className={styles.enterprise__description}>
+                <div className={`${styles.text} ${styles.body_text_bold}`}>
+                  株式会社コパイロツトは、企業向けプロジェクト支援サービスを提供しています。
+                </div>
+                <div className={`${styles.text} ${styles.body_text_bold}`}>
+                  この支援で培った知見を活かし、企業向けの機能開発や、ハンズオンサポートを通じて、貴社のニーズに最適なプロジェクト推進環境を提供します。
+                </div>
+              </div>
+              <ul className={`${styles.text} ${styles.body_text_bold} ${styles.enterprise__features}`}>
+                <li>情報管理のセキュリティ向上</li>
+                <li>SuperGoodMeetings の導入支援、サービスをより効果的に活用するためのハンズオン</li>
+                <li>プロジェクト・会議をよりよく進行するための知識を増やす定期セミナーの開催</li>
+              </ul>
+            </div>
+            <div className={`${styles.button} ${styles.enterprise__button_contact}`} role="button">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScCyzYCVpWlBvP6wIDY8_RiWEb5zFt2GHzIB4Jvi8ccWkm9Gw/viewform" id="ga_contact" target="_blank">
+                お問い合わせ
+              </a>
+            </div>
+          </div>
+
+          <div className={styles.common_features}>
+            <h2>すべてのプランでご利用いただける機能</h2>
+            <ul className={`${styles.common_features__features} ${styles.body_text_bold}`}>
               <li>プロジェクト作成（アーカイブ可能）</li>
               <li>ミーティングにおけるアジェンダ作成・管理</li>
               <li>プロジェクトにおけるマイルストーン作成・管理</li>
@@ -110,16 +134,15 @@ export default function Plan() {
               <li>ミーティングの作成・管理</li>
               <li>ユーザーのプロジェクト招待</li>
             </ul>
+            <div className={`${styles.button} ${styles.common_features__button_try_now}`} role="button">
+              <a href="https://sgms.app/login" id="ga_signup_plan">
+                今すぐ試す
+              </a>
+            </div>
+            <p className={`${styles.caption} ${styles.body_text_bold}`}>
+              プランの変更は「設定」の「プラン変更」メニューからできます。
+            </p>
           </div>
-
-          <div className={styles.button} role="button">
-            <a href="https://sgms.app/login" id="ga_signup_plan">
-              今すぐ試す
-            </a>
-          </div>
-          <p className={`${styles.caption} ${styles.body_text_bold}`}>
-            プランの変更は「設定」の「プラン変更」メニューからできます。
-          </p>
 
           <h2 className={styles.question_title}>よくある質問</h2>
 
