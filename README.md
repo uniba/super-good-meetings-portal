@@ -18,9 +18,11 @@ https://github.com/uniba/super-good-meetings-portal/deployments
 
 1. 該当するディレクトリに、リリースノートのファイルを格納する
 - super-good-meetings-portal/_release_notes/ の中に、リリースノートのファイルを格納する（前回のリリースノートのファイルをコピーして使うと早い）
-3. https://supergoodmeetings.uni.ba/ で追加したリリースノートの見え方を確認する
+
+2. https://supergoodmeetings.uni.ba/ で追加したリリースノートの見え方を確認する
 - ファイルをアップロードしてから数十秒ほどで上記 URL のページに反映されます
-4. devel ブランチで行った変更（1の操作）を master ブランチに反映して、リリースノートを本番環境に反映させる
+
+3. devel ブランチで行った変更（1の操作）を master ブランチに反映して、リリースノートを本番環境に反映させる
 - PullRequestを作成し、master にマージする。数十秒すると https://supergoodmeetings.com/ に内容が反映される
 
 
