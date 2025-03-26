@@ -16,7 +16,7 @@ https://github.com/uniba/super-good-meetings-portal/deployments
 
 ## リリースノートの更新方法
 
-1. 該当するディレクトリ（super-good-meetings-portal/_release_notes/）に、リリースノートのファイル（yyyymmdd.md）を格納する
+1. 該当するディレクトリ（super-good-meetings-portal/_release_notes/）に、リリースノートのファイルを追加する
 2. https://supergoodmeetings.uni.ba/ で追加したリリースノートの見え方を確認する
 3. devel ブランチで行った変更（1の操作）を master ブランチにマージして、リリースノートを本番環境に反映させる
 
