@@ -14,7 +14,7 @@ https://github.com/uniba/super-good-meetings-portal/deployments
 
 ***
 
-## リリースノートの更新方法
+## リリースノートの追加方法
 
 1. 該当するディレクトリ（super-good-meetings-portal/_release_notes/）に、リリースノートのファイルを追加する
 2. https://supergoodmeetings.uni.ba/ で追加したリリースノートの見え方を確認する
