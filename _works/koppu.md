@@ -8,7 +8,7 @@ logo: "interview_koppu_logo.png"
 
 ![koppu_main](https://github.com/user-attachments/assets/3e2f6132-bb82-4cad-a5bc-c0e3bac7fed7)
 
-© INAMORI FOUNDATION
+> © INAMORI FOUNDATION
 
 「進行含めた会議参加者みんなで定例会議を作り上げ、アジェンダベースで効率化をおこなう」――株式会社こっぷ代表の中澤匠さんは「SuperGoodMeetings」を活用してくださっています。主にクライアントとの定例会議の管理を目的に使っていらっしゃるそうです。
 
