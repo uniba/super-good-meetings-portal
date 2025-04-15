@@ -6,7 +6,7 @@ members: "中澤匠さん"
 logo: "interview_koppu_logo.png"
 ---
 
-![koppu_main](https://github.com/user-attachments/assets/d9c64a34-b48d-4971-b06e-f080612dd903)
+![koppu_main](https://github.com/user-attachments/assets/3e2f6132-bb82-4cad-a5bc-c0e3bac7fed7)
 
 © INAMORI FOUNDATION
 
