@@ -42,6 +42,8 @@ jobs:
         id: deploy
         run: echo "url=$(vercel deploy --skip-domain --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
 
+      - run: vercel alias ${{ steps.deploy.outputs.url }} supergoodmeetings.uni.ba --scope=uniba --token=${{ secrets.VERCEL_TOKEN }}
+
   prod:
     if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
