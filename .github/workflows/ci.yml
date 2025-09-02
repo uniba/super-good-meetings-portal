@@ -9,22 +9,24 @@ env:
 on:
   push:
     branches:
-      - main
+      - master
+      - devel
 
 jobs:
   preview:
-    if: ${{ github.ref != 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/devel' }}
     runs-on: ubuntu-latest
     environment:
       name: preview
       url: ${{ steps.deploy.outputs.url }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: 'npm'
           check-latest: true
 
       - name: Install Vercel CLI
@@ -41,15 +43,16 @@ jobs:
         run: echo "url=$(vercel deploy --skip-domain --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
 
   prod:
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: 'npm'
           check-latest: true
 
       - name: Install Vercel CLI
