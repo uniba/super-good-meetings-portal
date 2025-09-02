@@ -37,7 +37,6 @@
     width: 204px;
     height: 51px;
     border-radius: 30px;
-    margin: 0 auto 24px;
     border: 5px solid $black;
 
     a {
@@ -51,6 +50,7 @@
       border-radius: 30px;
       margin: 0;
     }
+
     &:hover {
       border: none;
       a {
@@ -72,18 +72,13 @@
     }
   }
 
-  .caption {
-    text-align: center;
-    margin: 0 0 160px 0;
-  }
-
   .question_title {
     @include font-size("h1-sp");
   }
 
   .plan_list {
     display: flex;
-    margin: 0 0 48px 0;
+    margin: 0 0 38px 0;
 
     & li {
       box-sizing: border-box;
@@ -145,26 +140,103 @@
     }
   }
 
-  .features {
-    padding: 40px 100px 48px;
-    margin-bottom: 48px;
-    border: 1px solid $black;
-    border-radius: 4px;
+  /*
+   * エンタープライズプラン
+   */
+
+  .enterprise {
+    margin-bottom: 24px;
+
+    &__title {
+      @include font-size("h2-pc");
+      padding-top: 24px;
+      border-top: 1px solid $secondary;
+
+      @media screen and (max-width: 1000px) {
+        @include font-size("h2-sp");
+        text-align: center;
+      }
+    }
+
+    li {
+      list-style-type: disc;
+      margin-left: 1.4em;
+    }
+
+    &__body {
+      display: flex;
+      box-sizing: border-box;
+      gap: 16px;
+
+      @media screen and (max-width: 1000px) {
+        flex-direction: column;
+      }
+    }
+
+    &__description {
+      flex: 1;
+
+      & > :not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+
+    &__features {
+      @include font-size("caption-pc-bold");
+      flex: 0 0 360px;
+
+      @media screen and (max-width: 1000px) {
+        flex: 1;
+      }
+    }
+
+    &__button_contact {
+      margin: 40px auto 48px;
+    }
+  }
+
+  /*
+   * すべてのプランでご利用いただける機能
+   */
+
+  .common_features {
     text-align: center;
+    background-color: #F4F8FF;
+
+    padding: 40px 96px 24px;
+    margin-bottom: 48px;
+
+    @media screen and (max-width: 1000px) {
+      padding: 24px 16px;
+    }
 
     h2 {
-      margin: 0 0 24px;
-      @include font-size("h1-sp");
-    }
-    .features_list {
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      text-align: left;
-      li {
-        width: 50%;
-        list-style: disc;
+      @include font-size("h2-pc");
+      margin: 0;
+
+      @media screen and (max-width: 1000px) {
+        @include font-size("h2-sp");
       }
+    }
+
+    &__features {
+      display: grid;
+      column-gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      margin: 24px auto 0;
+      border-bottom: 1px solid $secondary;
+      padding-bottom: 24px;
+      text-align: left;
+
+      li {
+        list-style: disc;
+        margin-left: 1.4em;
+      }
+
+    }
+
+    &__button_try_now {
+      margin: 24px auto;
     }
   }
 
@@ -298,20 +370,6 @@
       }
     }
 
-    .features {
-      padding: 24px 16px;
-      h2 {
-        @include font-size("h4-sp");
-        margin: 0 0 16px 0;
-      }
-      .features_list {
-        display: block;
-        li {
-          width: 100%;
-          list-style: inside;
-        }
-      }
-    }
     .question_title {
       @include font-size("heading-sp");
     }
