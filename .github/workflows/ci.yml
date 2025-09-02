@@ -40,7 +40,7 @@ jobs:
 
       - name: Deploy Project Artifacts to Vercel
         id: deploy
-        run: echo "url=$(vercel deploy --skip-domain --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
+        run: echo "url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
 
       - run: vercel alias ${{ steps.deploy.outputs.url }} supergoodmeetings.uni.ba --scope=uniba --token=${{ secrets.VERCEL_TOKEN }}
 
@@ -67,4 +67,7 @@ jobs:
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+        id: deploy
+        run: echo "url=$(vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
+
+      - run: vercel alias ${{ steps.deploy.outputs.url }} supergoodmeetings.com --scope=uniba --token=${{ secrets.VERCEL_TOKEN }}
