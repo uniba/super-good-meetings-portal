@@ -1,6 +1,4 @@
-# .github/workflows/ci.yaml
-
-name: CI
+name: Deploy
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
