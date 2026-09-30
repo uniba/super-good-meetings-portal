@@ -489,7 +489,7 @@ export default function Terms() {
           <p className={styles.caption}>2021年5月31日改定</p>
           <p className={styles.caption}>2021年11月5日改定</p>
           <p className={styles.caption}>2022年5月20日改定</p>
-          <p className={styles.caption}>2026年9月24日改定</p>
+          <p className={styles.caption}>2026年9月25日改定</p>
         </div>
       </Layout>
       <style jsx>{`
