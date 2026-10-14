@@ -1,4 +1,5 @@
 ---
+name: release-notes
 description: SuperGoodMeetings のリリースノートを生成する。「リリースノート書いて」「リリースノート作って」といった指示で起動する。
 ---
 
