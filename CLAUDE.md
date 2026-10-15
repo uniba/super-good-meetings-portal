@@ -86,7 +86,7 @@ The site uses a file-based CMS with markdown files:
 
 ## Important Notes
 
-- The project uses Node.js version 20.x (specified in package.json engines)
+- The project uses Node.js version 24.x (specified in package.json engines)
 - Static export mode means no server-side features are available
 - Images are unoptimized due to static export configuration
 - All styling uses SCSS with automatic CSS compilation
