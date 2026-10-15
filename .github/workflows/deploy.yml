@@ -31,8 +31,7 @@ jobs:
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
+      # --prod で、プロジェクトに登録した本番のドメイン（supergoodmeetings.com）がこのデプロイに付く
       - name: Deploy Project Artifacts to Vercel
-        id: deploy
-        run: echo "url=$(vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
+        run: vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
 
-      - run: vercel alias ${{ steps.deploy.outputs.url }} supergoodmeetings.com --scope=uniba --token=${{ secrets.VERCEL_TOKEN }}
