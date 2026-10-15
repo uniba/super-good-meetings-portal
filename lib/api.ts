@@ -42,33 +42,35 @@ export function getBySlug(
   ) {
     const headingRegexp = /^(#+) (.+)$/gm;
 
+    // list に直接 push する形にしておく。別の変数を通して push すると、
+    // Next.js 14 の SWC の圧縮が list を空のままとみなし、目次が null になる
     const list: any[] = [];
-    let currentList = list;
     const listStack: any[][] = [];
     let match;
 
     while ((match = headingRegexp.exec(content)) !== null) {
-      let hashes = match[1];
-      let heading = match[2];
+      const depth = match[1].length - 2; // h2 が 0
+      const heading = match[2];
 
-      if (hashes.length === 1) {
+      if (depth < 0) {
         continue;
       }
 
-      while (listStack.length >= hashes.length) {
+      while (listStack.length > depth + 1) {
         listStack.pop();
       }
 
-      if (hashes.length - 2 === listStack.length) {
+      if (listStack.length === depth) {
         const newChildren: any[] = [];
-        currentList.push(newChildren);
+        if (listStack.length === 0) {
+          list.push(newChildren);
+        } else {
+          listStack[listStack.length - 1].push(newChildren);
+        }
         listStack.push(newChildren);
-        currentList = newChildren;
-      } else {
-        currentList = listStack[hashes.length - 2];
       }
 
-      currentList.push(heading);
+      listStack[depth].push(heading);
     }
 
     items["docs"] = list[0];
