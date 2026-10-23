@@ -19,8 +19,8 @@ const Header = () => {
                 className={styles.img}
                 src="/images/sgm_logo.png"
                 alt="SuperGoodMeetings"
-                layout="fill"
-                objectFit="contain"
+                fill
+                style={{ objectFit: "contain" }}
               />
             </a>
           </Link>
@@ -84,8 +84,8 @@ const Header = () => {
               className={styles.img}
               src="/images/icon_hambuger.svg"
               alt="hamburger menu"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: "contain" }}
             />
           </div>
         </button>
@@ -108,8 +108,8 @@ const Header = () => {
               className={styles.img}
               src="/images/icon_close.svg"
               alt="close"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: "contain" }}
             />
           </div>
         </button>

@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import YouTube from "react-youtube";
-import SwiperCore from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,8 +12,6 @@ import Layout from "../components/layout";
 import { getAllNews, getAllReleaseNotes, getAllWorks } from "../lib/api";
 import styles from "./styles/landing.module.scss";
 import Image from "next/image";
-
-SwiperCore.use([Navigation, Pagination]);
 
 function _onReady(event: { target: { playVideo: () => void } }) {
   if (process.browser) {
@@ -61,8 +58,8 @@ export default function Home({
                 className={styles.img}
                 src="/images/illust_main_visual.png"
                 alt="SGMs TOP画像"
-                layout="fill"
-                objectFit="contain"
+                fill
+                style={{ objectFit: "contain" }}
               />
             </div>
             <h1>
@@ -128,8 +125,8 @@ export default function Home({
                       className={styles.img}
                       src="/images/illust_task01.svg"
                       alt="プロジェクトが複雑で、リーダーが管理しきれない"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                     />
                   </figure>
                   プロジェクトが複雑で、リーダーが管理しきれない
@@ -140,8 +137,8 @@ export default function Home({
                       className={styles.img}
                       src="/images/illust_task02.svg"
                       alt="プロジェクトを取り巻く環境の変化に適応するのが難しい"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                     />
                   </figure>
                   プロジェクトを取り巻く環境の変化に適応するのが難しい
@@ -152,8 +149,8 @@ export default function Home({
                       className={styles.img}
                       src="/images/illust_task03.svg"
                       alt="一人ひとりが自律的に行動できるプロジェクトチームを作りたい"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                     />
                   </figure>
                   一人ひとりが自律的に行動できるプロジェクトチームを作りたい
@@ -165,8 +162,8 @@ export default function Home({
                 className={styles.img}
                 src="/images/icon_arrow.svg"
                 alt="下矢印 アイコン"
-                layout="fill"
-                objectFit="contain"
+                fill
+                style={{ objectFit: "contain" }}
               />
             </figure>
             <div className={styles.service_effect}>
@@ -180,8 +177,8 @@ export default function Home({
                       className={styles.img}
                       src="/images/illust_change1.svg"
                       alt="イメージイラスト"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                     />
                   </figure>
                   プロジェクトの目的やマイルストーン（目標）を常に意識して行動できる
@@ -192,8 +189,8 @@ export default function Home({
                       className={styles.img}
                       src="/images/illust_change2.svg"
                       alt="イメージイラスト"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                     />
                   </figure>
                   プロジェクトに関する情報がオープンな場で蓄積・共有される
@@ -204,8 +201,8 @@ export default function Home({
                       className={styles.img}
                       src="/images/illust_change3.svg"
                       alt="イメージイラスト"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                     />
                   </figure>
                   定期的に状況の変化を感知することができ、適応しやすくなる
@@ -217,8 +214,8 @@ export default function Home({
                 className={styles.img}
                 src="/images/icon_arrow.svg"
                 alt="下矢印 アイコン"
-                layout="fill"
-                objectFit="contain"
+                fill
+                style={{ objectFit: "contain" }}
               />
             </figure>
             <div className={styles.service_result}>
@@ -228,8 +225,8 @@ export default function Home({
                     className={styles.img}
                     src="/images/illust_change4.svg"
                     alt="一人ひとりのメンバーが自律的に動きやすくなる"
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    style={{ objectFit: "contain" }}
                   />
                 </figure>
                 一人ひとりのメンバーが
@@ -257,8 +254,8 @@ export default function Home({
                     className={styles.img}
                     src="/images/sgms_screenshot1.png"
                     alt="SuperGoodMeetingsのスクリーンショット。トラックが表示されている"
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    style={{ objectFit: "contain" }}
                   />
                 </figure>
               </div>
@@ -268,8 +265,8 @@ export default function Home({
                     className={styles.img}
                     src="/images/sgms_screenshot2.png"
                     alt="SuperGoodMeetingsのスクリーンショット。ミーティングとアジェンダのリストが表示されている"
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    style={{ objectFit: "contain" }}
                   />
                 </figure>
                 <div className={styles.content}>
@@ -296,8 +293,8 @@ export default function Home({
                   id="ga_movie"
                   src="/images/movie_thumb.png"
                   alt="クリックで再生"
-                  layout="fill"
-                  objectFit="contain"
+                  fill
+                  style={{ objectFit: "contain" }}
                 />
                 <YouTube
                   videoId="pZj7Y08Ovw8"
@@ -401,6 +398,7 @@ export default function Home({
               `}
             </style>
             <Swiper
+              modules={[Navigation, Pagination]}
               spaceBetween={16}
               navigation
               pagination={{ clickable: true }}
@@ -426,8 +424,8 @@ export default function Home({
                         <Image
                           src={`/logos/${work.logo}`}
                           alt={work.companyName + "ロゴ"}
-                          layout="fill"
-                          objectFit="contain"
+                          fill
+                          style={{ objectFit: "contain" }}
                         />
                       </figure>
                     )}
@@ -436,8 +434,8 @@ export default function Home({
                         className={styles.img}
                         src={work.thumbnail}
                         alt={work.companyName + "活用事例"}
-                        layout="fill"
-                        objectFit="contain"
+                        fill
+                        style={{ objectFit: "contain" }}
                       />
                     </figure>
                     <h3 className={styles.caption}>{work.title}</h3>
@@ -454,6 +452,7 @@ export default function Home({
           <div id="media" className={styles.service_media}>
             <h2 className={styles.service_media_title}>メディア掲載</h2>
             <Swiper
+              modules={[Navigation, Pagination]}
               spaceBetween={16}
               slidesPerView={1.15}
               navigation
@@ -542,8 +541,8 @@ export default function Home({
                       className={styles.img}
                       src="/images/pjs_logo.png"
                       alt="Project Sprintロゴ"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                     />
                   </div>
                 </figure>
@@ -608,8 +607,8 @@ export default function Home({
                   className={styles.img}
                   src="/images/illust_trial.svg"
                   alt="イメージイラスト"
-                  layout="fill"
-                  objectFit="contain"
+                  fill
+                  style={{ objectFit: "contain" }}
                 />
               </div>
               <h2>

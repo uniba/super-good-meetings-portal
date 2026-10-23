@@ -45,8 +45,8 @@ export default function Posts({ allWorks }: any) {
                           className={styles.img}
                           src={post.thumbnail}
                           alt={post.title}
-                          layout="fill"
-                          objectFit="contain"
+                          fill
+                          style={{ objectFit: "contain" }}
                         ></Image>
                       )}{" "}
                     </div>
