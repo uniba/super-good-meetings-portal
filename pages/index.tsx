@@ -95,21 +95,16 @@ export default function Home({
                     <li key={i}>
                       <Link
                         href={`/release_notes/${encodeURIComponent(post.slug)}`}
-                        legacyBehavior
                       >
-                        <a>
-                          <span>{post.date}</span>
-                          {post.title}
-                        </a>
+                        <span>{post.date}</span>
+                        {post.title}
                       </Link>
                     </li>
                   ))}
                 </ul>
 
                 <div className={styles.release_notes_link}>
-                  <Link href="/release_notes" legacyBehavior>
-                    もっと見る
-                  </Link>
+                  <Link href="/release_notes">もっと見る</Link>
                 </div>
               </div>
             </div>
@@ -335,22 +330,15 @@ export default function Home({
                 <ul className={styles.service_news_items}>
                   {news.map((post: any, i: number) => (
                     <li key={i}>
-                      <Link
-                        href={`/news/${encodeURIComponent(post.slug)}`}
-                        legacyBehavior
-                      >
-                        <a>
-                          <span>{post.date}</span>
-                          {post.title}
-                        </a>
+                      <Link href={`/news/${encodeURIComponent(post.slug)}`}>
+                        <span>{post.date}</span>
+                        {post.title}
                       </Link>
                     </li>
                   ))}
                 </ul>
                 <div className={styles.service_news_link}>
-                  <Link href="/news" legacyBehavior>
-                    もっと見る
-                  </Link>
+                  <Link href="/news">もっと見る</Link>
                 </div>
               </div>
             </div>
@@ -559,29 +547,23 @@ export default function Home({
                   <li>
                     <Link
                       href="https://itr-lounge.connpass.com/event/183245/"
-                      legacyBehavior
+                      target="_blank"
                     >
-                      <a target="_blank">
-                        ITR Lounge ハナシバ vol.5
-                        激動の時代、隣のプロジェクトマネージャが取り組んでいる事（2020.08.12）
-                      </a>
+                      ITR Lounge ハナシバ vol.5
+                      激動の時代、隣のプロジェクトマネージャが取り組んでいる事（2020.08.12）
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://2019.pmconf.jp/" legacyBehavior>
-                      <a target="_blank">
-                        プロダクトマネージャーカンファレンス 2019（2019.11.13）
-                      </a>
+                    <Link href="https://2019.pmconf.jp/" target="_blank">
+                      プロダクトマネージャーカンファレンス 2019（2019.11.13）
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="https://peatix.com/event/1366420/"
-                      legacyBehavior
+                      target="_blank"
                     >
-                      <a target="_blank">
-                        日本ナレッジマネジメント学会：実践ナレッジ・イノベーション研究部会11月度（2019.11.12）
-                      </a>
+                      日本ナレッジマネジメント学会：実践ナレッジ・イノベーション研究部会11月度（2019.11.12）
                     </Link>
                   </li>
                 </ul>

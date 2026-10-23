@@ -29,31 +29,25 @@ export default function Posts({ allWorks }: any) {
                 <Link
                   key={i}
                   href={`/works/${encodeURIComponent(post.slug)}`}
-                  legacyBehavior
+                  className={styles.works_item}
                 >
-                  <a className={styles.works_item}>
-                    <div className={styles.works_item_text}>
-                      <span className={styles.works_item_date}>
-                        {post.date}
-                      </span>
-                      <h2 className={styles.title}>{post.title}</h2>
-                      <p className={styles.companyName}>{post.companyName}</p>
-                    </div>
-                    <div className={styles.works_item_image}>
-                      {post.thumbnail && (
-                        <Image
-                          className={styles.img}
-                          src={post.thumbnail}
-                          alt={post.title}
-                          fill
-                          style={{ objectFit: "contain" }}
-                        ></Image>
-                      )}{" "}
-                    </div>
-                    <span className={styles.works_item_date_sp}>
-                      {post.date}
-                    </span>
-                  </a>
+                  <div className={styles.works_item_text}>
+                    <span className={styles.works_item_date}>{post.date}</span>
+                    <h2 className={styles.title}>{post.title}</h2>
+                    <p className={styles.companyName}>{post.companyName}</p>
+                  </div>
+                  <div className={styles.works_item_image}>
+                    {post.thumbnail && (
+                      <Image
+                        className={styles.img}
+                        src={post.thumbnail}
+                        alt={post.title}
+                        fill
+                        style={{ objectFit: "contain" }}
+                      ></Image>
+                    )}{" "}
+                  </div>
+                  <span className={styles.works_item_date_sp}>{post.date}</span>
                 </Link>
               ))}
             </div>
@@ -65,10 +59,9 @@ export default function Posts({ allWorks }: any) {
                 } else {
                   return (
                     <li key={page}>
-                      <Link
-                        href={{ pathname: "/works", query: { page } }}
-                        legacyBehavior
-                      >{`${page}`}</Link>
+                      <Link href={{ pathname: "/works", query: { page } }}>
+                        {`${page}`}
+                      </Link>
                     </li>
                   );
                 }

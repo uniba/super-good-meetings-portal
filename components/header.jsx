@@ -13,16 +13,14 @@ const Header = () => {
     <>
       <div className={styles.header}>
         <h1>
-          <Link href="/" legacyBehavior>
-            <a id="qa_logo_header">
-              <Image
-                className={styles.img}
-                src="/images/sgm_logo.png"
-                alt="SuperGoodMeetings"
-                fill
-                style={{ objectFit: "contain" }}
-              />
-            </a>
+          <Link href="/" id="qa_logo_header">
+            <Image
+              className={styles.img}
+              src="/images/sgm_logo.png"
+              alt="SuperGoodMeetings"
+              fill
+              style={{ objectFit: "contain" }}
+            />
           </Link>
         </h1>
         <ul className={styles.sessions}>

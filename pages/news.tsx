@@ -28,12 +28,10 @@ export default function Posts({ allNews }: any) {
                 <Link
                   key={i}
                   href={`/news/${encodeURIComponent(post.slug)}`}
-                  legacyBehavior
+                  className={styles.posts_item}
                 >
-                  <a className={styles.posts_item}>
-                    <span className={styles.posts_date}>{post.date}</span>
-                    <h2>{post.title}</h2>
-                  </a>
+                  <span className={styles.posts_date}>{post.date}</span>
+                  <h2>{post.title}</h2>
                 </Link>
               ))}
             </div>
@@ -45,10 +43,9 @@ export default function Posts({ allNews }: any) {
                 } else {
                   return (
                     <li key={page}>
-                      <Link
-                        href={{ pathname: "/news", query: { page } }}
-                        legacyBehavior
-                      >{`${page}`}</Link>
+                      <Link href={{ pathname: "/news", query: { page } }}>
+                        {`${page}`}
+                      </Link>
                     </li>
                   );
                 }

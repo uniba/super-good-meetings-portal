@@ -23,22 +23,22 @@ export default function Terms() {
                 </a>
               </li>
               <li className={styles.active}>
-                <Link href="/terms" legacyBehavior>
+                <Link href="/terms">
                   利用規約
                 </Link>
               </li>
               <li>
-                <Link href="/law" legacyBehavior>
+                <Link href="/law">
                   特定商取引法に基づく表示
                 </Link>
               </li>
               <li>
-                <Link href="/security" legacyBehavior>
+                <Link href="/security">
                   セキュリティホワイトペーパー
                 </Link>
               </li>
               <li>
-                <Link href="/policy" legacyBehavior>
+                <Link href="/policy">
                   セキュリティポリシー
                 </Link>
               </li>
