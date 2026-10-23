@@ -1,13 +1,16 @@
+import { useRef } from "react";
 import styles from "../pages/styles/landing.module.scss";
 
 const CustomForm = ({ status, message, onValidated }) => {
-  let email;
-  const submit = () =>
+  const emailRef = useRef(null);
+  const submit = () => {
+    const email = emailRef.current;
     email &&
-    email.value.indexOf("@") > -1 &&
-    onValidated({
-      EMAIL: email.value,
-    });
+      email.value.indexOf("@") > -1 &&
+      onValidated({
+        EMAIL: email.value,
+      });
+  };
 
   return (
     <div className={styles.submit_area}>
@@ -27,7 +30,7 @@ const CustomForm = ({ status, message, onValidated }) => {
         />
       )}
       <input
-        ref={(node) => (email = node)}
+        ref={emailRef}
         type="email"
         placeholder="Eメールアドレスを入力してください"
       />
