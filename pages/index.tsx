@@ -59,6 +59,7 @@ export default function Home({
                 src="/images/illust_main_visual.png"
                 alt="SGMs TOP画像"
                 fill
+                loading="eager"
                 style={{ objectFit: "contain" }}
               />
             </div>

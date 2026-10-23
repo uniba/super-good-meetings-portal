@@ -368,3 +368,12 @@ template {
 [hidden] {
   display: none;
 }
+
+/**
+ * next/image の fill は親が position: static だと警告を出す。
+ * 各ページの CSS で img 自体を position: relative に上書きしているので、親を relative にしても配置は変わらない。
+ */
+
+:has(> img[data-nimg="fill"]) {
+  position: relative;
+}
