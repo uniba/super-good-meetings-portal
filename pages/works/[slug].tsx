@@ -10,7 +10,7 @@ export default function Post({ post, nextArticle }: any) {
   return (
     <>
       <Head>
-        <title>{post.title} - SuperGoodMeetings</title>
+        <title>{`${post.title} - SuperGoodMeetings`}</title>
       </Head>
       <Layout>
         <div className={`${styles.post_container} ${styles.works}`}>
@@ -29,8 +29,8 @@ export default function Post({ post, nextArticle }: any) {
                     <Image
                       src="/images/illust_trial.svg"
                       alt="まずは1プロジェクト（無料）からお試しいただけます SGMs"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                     />
                   </div>
                   <h2>
@@ -60,8 +60,8 @@ export default function Post({ post, nextArticle }: any) {
                       <Image
                         src={nextArticle.thumbnail}
                         alt={nextArticle.title}
-                        layout="fill"
-                        objectFit="contain"
+                        fill
+                        style={{ objectFit: "contain" }}
                       />
                     </div>
                   </Link>

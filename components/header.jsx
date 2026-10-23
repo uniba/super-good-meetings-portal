@@ -13,16 +13,14 @@ const Header = () => {
     <>
       <div className={styles.header}>
         <h1>
-          <Link href="/" legacyBehavior>
-            <a id="qa_logo_header">
-              <Image
-                className={styles.img}
-                src="/images/sgm_logo.png"
-                alt="SuperGoodMeetings"
-                layout="fill"
-                objectFit="contain"
-              />
-            </a>
+          <Link href="/" id="qa_logo_header">
+            <Image
+              className={styles.img}
+              src="/images/sgm_logo.png"
+              alt="SuperGoodMeetings"
+              fill
+              style={{ objectFit: "contain" }}
+            />
           </Link>
         </h1>
         <ul className={styles.sessions}>
@@ -84,8 +82,8 @@ const Header = () => {
               className={styles.img}
               src="/images/icon_hambuger.svg"
               alt="hamburger menu"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: "contain" }}
             />
           </div>
         </button>
@@ -108,8 +106,8 @@ const Header = () => {
               className={styles.img}
               src="/images/icon_close.svg"
               alt="close"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: "contain" }}
             />
           </div>
         </button>

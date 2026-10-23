@@ -12,8 +12,8 @@ const Footer = () => {
               className={styles.img}
               src="/images/logo_mark.svg"
               alt="SuperGoodMeetings ロゴ"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: "contain" }}
             />
           </Link>
         </h1>
