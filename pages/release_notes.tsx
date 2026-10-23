@@ -29,13 +29,11 @@ export default function Posts({ allReleaseNotes }: any) {
                 <Link
                   key={i}
                   href={`/release_notes/${encodeURIComponent(post.slug)}`}
-                  legacyBehavior
+                  className={styles.posts_item}
                 >
-                  <a className={styles.posts_item}>
-                    <span className={styles.posts_date}>{post.date}</span>
-                    {getIcon(post.icon)}
-                    <h2>{post.title}</h2>
-                  </a>
+                  <span className={styles.posts_date}>{post.date}</span>
+                  {getIcon(post.icon)}
+                  <h2>{post.title}</h2>
                 </Link>
               ))}
             </div>
@@ -49,8 +47,9 @@ export default function Posts({ allReleaseNotes }: any) {
                     <li key={page}>
                       <Link
                         href={{ pathname: "/release_notes", query: { page } }}
-                        legacyBehavior
-                      >{`${page}`}</Link>
+                      >
+                        {`${page}`}
+                      </Link>
                     </li>
                   );
                 }

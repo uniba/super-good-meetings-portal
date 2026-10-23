@@ -9,7 +9,7 @@ export default function Post({ post }: any) {
   return (
     <>
       <Head>
-        <title>{post.title} - SuperGoodMeetings</title>
+        <title>{`${post.title} - SuperGoodMeetings`}</title>
       </Head>
       <Layout>
         <div className={styles.post_container}>

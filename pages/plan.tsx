@@ -33,8 +33,8 @@ export default function Plan() {
                 <Image
                   src="/images/plan_free.svg"
                   alt="フリープラン・イメージイラスト"
-                  layout="fill"
-                  objectFit="contain"
+                  fill
+                  style={{ objectFit: "contain" }}
                 />
               </figure>
               <h2>フリープラン</h2>
@@ -56,8 +56,8 @@ export default function Plan() {
                 <Image
                   src="/images/plan_standard.svg"
                   alt="スタンダード・イメージイラスト"
-                  layout="fill"
-                  objectFit="contain"
+                  fill
+                  style={{ objectFit: "contain" }}
                 />
               </figure>
               <h2>スタンダードプラン</h2>
@@ -80,8 +80,8 @@ export default function Plan() {
                 <Image
                   src="/images/plan_enterprise.svg"
                   alt="エンタープライズ・イメージイラスト"
-                  layout="fill"
-                  objectFit="contain"
+                  fill
+                  style={{ objectFit: "contain" }}
                 />
               </figure>
               <h2>ビジネスプラン</h2>
