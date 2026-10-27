@@ -306,6 +306,12 @@ class MyDocument extends Document {
           />
           <link rel="manifest" href="/images/icons/manifest.json" />
           <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="SuperGoodMeetings リリースノート"
+            href="/release_notes/feed.xml"
+          />
+          <link
             href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Lato:400,900|Open+Sans:400,700,700i,800,800i&display=swap"
             rel="stylesheet"
           />
